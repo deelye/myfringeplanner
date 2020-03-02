@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Performance.destroy_all
+Show.destroy_all
+Venue.destroy_all
+
+FringeJob.perform_now
