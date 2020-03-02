@@ -1,7 +1,6 @@
 class FringeJob < ApplicationJob
   require "json"
   require "rest-client"
-  require "pry-byebug"
 
   def perform
     url = "https://api.edinburghfestivalcity.com/events?festival=demofringe&key=#{ENV['FRINGE_KEY']}&signature=#{ENV['FRINGE_SIGNATURE']}"
