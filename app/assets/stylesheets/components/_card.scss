@@ -15,14 +15,15 @@
   font-size: 14px;
 
   img {
-    height: 100px;
+    // width: 1fr;
+    // height: 1fr;
     width: 100px;
     object-fit: cover;
     border-radius: 5px 0px 0px 5px;
   }
 
   h6 {
-    width: 230px;
+    // width: 230px;
     height: 40px;
     font-weight: bold;
     margin: 0px;
@@ -48,6 +49,7 @@
 }
 
 .card-info {
+  // width: 1fr 1fr 1fr;
   padding-left: 10px;
   padding-top: 5px;
   padding-right: 10px;
