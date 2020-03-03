@@ -17,11 +17,18 @@
 </div>
 
 <div class="show-bottom">
-  <div>CALENDAR</div>
+  <div>
+    <%= month_calendar do |date| %>
+      <%= date %>
+    <% end %>
+  </div>
 
   <div>
     <p>Details</p>
-    <i class="far fa-clock"></i>
+    <p><i class="far fa-clock"></i> TIME (LENGTH)</p>
+    <p><i class="fas fa-map-marker-alt"></i> <%= @show.venue.name %> - <%= @show.venue.space %></p>
+    <p><i class="fas fa-coins"></i>full price <%= link_to "(see Fringe for full details)", @show.website %> </p>
+    <p><i class="far fa-thumbs-up"></i> <%= @show.age_category %></p>
+    <p><i class="fas fa-exclamation-triangle"></i> <%= @show.warnings %></p>
   </div>
-  <div>MAP</div>
 </div>
