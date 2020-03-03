@@ -1,3 +1,32 @@
+<div>
+  <p>ALL</p>
+  <p>COMEDY</p>
+  <p>CABARET & VARIETY</p>
+  <p>CIRCUS, DANCE & PHYSICAL THEATRE</p>
+  <p>THEATRE, MUSICALS & OPERA</p>
+  <p>OTHER</p>
+</div>
+
 <% @shows.each do |show| %>
-<h6><%= show.title %></h6>
+  <div>
+    <!-- Make a button, if following, a click will cause gem to stop following and visa versa. -->
+    <!-- Delete shorlist model as a part of the if/else statement -->
+    <% if current_user.following? %>
+      <i class="fa fa-star star-yellow" aria-hidden="true"></i>
+    <% else %>
+      <i class="fa fa-star star-gray" aria-hidden="true"></i>
+    <% end %>
+    <%= show.original_image %>
+  </div>
+  <h6><%= show.title %></h6>
+  <h6><%= show.artist %></h6>
+  <p><%= show.genre %></p>
+  <div>
+    <p><%= show.start_time %></p>
+    <p><%= show.dates %></p>
+  </div>
+  <div>
+    <p><%= show.location %></p>
+    <p>£<%= show.price %></p>
+  </div>
 <% end %>

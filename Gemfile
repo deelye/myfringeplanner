@@ -27,8 +27,9 @@ gem 'rest-client'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-
+# Sets up all the relationships for user sessions
 gem 'devise'
+
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
@@ -61,3 +62,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Allows our users to 'follow' certain shows
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower'
