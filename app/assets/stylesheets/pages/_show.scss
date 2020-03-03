@@ -2,8 +2,33 @@
   padding: 10px 0px;
 }
 
-.show-top, .show-bottom, .show-genre-twitter {
+.show-top, .show-genre-twitter {
   display: flex;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-rows: 250px;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.show-calendar {
+  grid-column: 1 / 2
+}
+
+.show-bottom-details {
+  grid-column: 2 / 3;
+  padding: 0px 20px;
+    i {
+      width: 30px;
+    };
+    h4 {
+      margin-bottom: 1rem;
+    }
+}
+
+.show-map {
+  grid-column: 3 / 4;
 }
 
 .show-top-details {
@@ -12,6 +37,10 @@
 
 .show-title {
   border-bottom: 1px solid;
+}
+
+.show-description {
+  font-size: 22px;
 }
 
 .show-shortlist-bar {
@@ -25,8 +54,16 @@
   font-size: 1.1rem;
 }
 
+.table {
+  margin: 0;
+}
+
 .show-table {
   color: white;
+}
+
+.show-table td {
+  border: white solid 1px;
 }
 
 .calendar-heading {
@@ -37,6 +74,11 @@
 
 .calendar-days-header {
   background-color: #b3bec3;
+}
+
+.calendar-days-header th {
+  border: white solid 1px;
+  text-align: center;
 }
 
 .calendar-body {
