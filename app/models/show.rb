@@ -2,7 +2,14 @@ class Show < ApplicationRecord
   GENRES = [
     "Cabaret and Variety",
     "Children's Shows",
-    "Comedy"
+    "Comedy",
+    "Dance, Physical Theatre and Circus",
+    "Events",
+    "Exhibitions",
+    "Music",
+    "Musicals and Opera",
+    "Spoken Word",
+    "Theatre"
     # TODO: finish the list
   ]
   belongs_to :venue
