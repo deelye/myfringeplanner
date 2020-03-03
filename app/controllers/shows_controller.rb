@@ -3,6 +3,7 @@ class ShowsController < ApplicationController
 
   def index
     @shows = Show.all
+    @performances = Performance.all
   end
 
   def show

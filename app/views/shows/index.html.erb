@@ -8,25 +8,30 @@
 </div>
 
 <% @shows.each do |show| %>
-  <div>
+  <div class="card">
     <!-- Make a button, if following, a click will cause gem to stop following and visa versa. -->
     <!-- Delete shorlist model as a part of the if/else statement -->
-    <% if current_user.following? %>
-      <i class="fa fa-star star-yellow" aria-hidden="true"></i>
-    <% else %>
-      <i class="fa fa-star star-gray" aria-hidden="true"></i>
-    <% end %>
-    <%= show.original_image %>
-  </div>
-  <h6><%= show.title %></h6>
-  <h6><%= show.artist %></h6>
-  <p><%= show.genre %></p>
-  <div>
-    <p><%= show.start_time %></p>
-    <p><%= show.dates %></p>
-  </div>
-  <div>
-    <p><%= show.location %></p>
-    <p>£<%= show.price %></p>
+    <div class="card-image">
+      <% if current_user %>
+        <i class="fa fa-star star-yellow" aria-hidden="true"></i>
+      <% else %>
+        <i class="fa fa-star star-gray" aria-hidden="true"></i>
+      <% end %>
+      <%= show.original_image %>
+    </div>
+    <div class="card-info">
+      <h6><%= show.title %></h6>
+      <p><%= show.genre %></p>
+      <div>
+        <% @performances = Performance.where(show_id: show.id)%>
+        <p><%= @performances.first.start %></p>
+        <!-- Iterate through performances to find the month and date of occurance -->
+        <p><%= @performances.last.end %></p>
+      </div>
+      <div>
+        <p><%= show.venue.name %></p>
+        <p>£<%= @performances.last.price %></p>
+      </div>
+    </div>
   </div>
 <% end %>
