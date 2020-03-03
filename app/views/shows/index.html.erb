@@ -9,53 +9,55 @@
     <p class="color-chart-label color-other">OTHER</p>
   </div>
 
-  <% @shows.each do |show| %>
-     <div class="cards">
-      <div class="card">
-        <!-- Make a button, if following, a click will cause gem to stop following and visa versa. -->
-        <!-- Delete shorlist model as a part of the if/else statement -->
-        <div class="card-star-n-image">
-          <% if current_user %>
-            <i class="fa fa-star star-yellow" aria-hidden="true"></i>
-          <% else %>
-            <i class="fa fa-star star-gray" aria-hidden="true"></i>
-          <% end %>
-          <%= image_tag(show.original_image, :alt => "Flyer image for show") %>
-        </div>
-        <div class="card-info">
-          <h6><%= truncate(show.title, length: 45) %></h6>
-          <p><%= show.genre %></p>
-          <div class="d-flex">
-
-            <% dates = [] %>
-            <% performances = Performance.where(show_id: show.id) %>
-            <% performances.each_with_index do |performance, index| %>
-              <% if index == 0 %>
-                <% dates << performances.first.start.strftime("%b")  %>
-                <% dates << " " %>
-                <% dates << performances.first.start.strftime("%e").to_i %>
-              <% elsif performances[index - 1].start.strftime("%e").to_i + 1 == performance.start.strftime("%e").to_i %>
-
-              <% elsif performances[index - 1].start.strftime("%e").to_i >= performance.start.strftime("%e").to_i %>
-                <% dates << performance.start.strftime("%b") %>
-                <% dates << " " %>
-                <% dates << performance.start.strftime("%e") %>
-              <% else %>
-                <% dates << "-" %>
-                <% dates << performance.start.strftime("%e").to_i  %>
-              <% end %>
+  <div class="cards">
+    <% @shows.each do |show| %>
+        <div class="card">
+          <!-- Make a button, if following, a click will cause gem to stop following and visa versa. -->
+          <!-- Delete shorlist model as a part of the if/else statement -->
+          <div class="card-star-n-image">
+            <% if current_user %>
+              <i class="fa fa-star star-yellow" aria-hidden="true"></i>
+            <% else %>
+              <i class="fa fa-star star-gray" aria-hidden="true"></i>
             <% end %>
-
-            <p><i class="fas fa-clock" aria-hidden="true"></i> <%= performances.first.start.strftime("%H:%M") %></p>
-            <p><i class="fa fa-calendar card-dates" aria-hidden="true"></i> <%= dates.join %></p>
+            <%= image_tag(show.original_image, :alt => "Flyer image for show") %>
           </div>
-          <div class="d-flex justify-content-between">
-            <p><%= truncate(show.venue.name, length: 27) %></p>
-            <p>£<%= performances.last.price %></p>
+          <div class="card-info">
+            <h6><%= truncate(show.title, length: 45) %></h6>
+            <p><%= show.genre %></p>
+            <div class="d-flex">
+
+              <% dates = [] %>
+              <% performances = Performance.where(show_id: show.id) %>
+              <% performances.each_with_index do |performance, index| %>
+                <% if index == 0 %>
+                  <% dates << performances.first.start.strftime("%b")  %>
+                  <% dates << " " %>
+                  <% dates << performances.first.start.strftime("%e").to_i %>
+                <% elsif performances[index - 1].start.strftime("%e").to_i + 1 == performance.start.strftime("%e").to_i %>
+                <% elsif performances[index - 1].start.strftime("%e").to_i >= performance.start.strftime("%e").to_i %>
+                  <% dates << performance.start.strftime("%b") %>
+                  <% dates << " " %>
+                  <% dates << performance.start.strftime("%e") %>
+                <% elsif dates[-2] == "-" %>
+                  <% dates << ", "%>
+                  <% dates << performance.start.strftime("%e").to_i %>
+                <% else %>
+                  <% dates << "-" %>
+                  <% dates << performance.start.strftime("%e").to_i %>
+                <% end %>
+              <% end %>
+
+              <p><i class="fas fa-clock" aria-hidden="true"></i> <%= performances.first.start.strftime("%H:%M") %></p>
+              <p><i class="fa fa-calendar card-dates" aria-hidden="true"></i> <%= dates.join %></p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p><%= truncate(show.venue.name, length: 27) %></p>
+              <p>£<%= performances.last.price %></p>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 
 </div>

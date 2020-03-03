@@ -1,11 +1,17 @@
 .color-chart {
   display: flex;
   justify-content: space-around;
+
+  p {
+    margin: 0px;
+  }
 }
 
 .color-chart-label {
   width: 169px;
-  height: 16px;
+  height: 23px;
+  padding-top: 4px;
+  padding-bottom: 3px;
 
   color: white;
   font-weight: bold;
