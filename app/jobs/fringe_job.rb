@@ -47,7 +47,7 @@ class FringeJob < ApplicationJob
       name: show['venue']['name'],
       space: show['performance_space']['name'],
       address: show['venue']['address'],
-      postcode: show['venue']['postcode'],
+      postcode: show['venue']['post_code'],
       longitude: show['venue']['position']['lon'],
       latitude: show['venue']['position']['lat'],
       wheelchair_access: show['performance_space']['wheelchair_access'],
