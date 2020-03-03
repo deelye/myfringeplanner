@@ -3,7 +3,8 @@
     <div>
       <%= image_tag "#{@show.original_image}", alt: "#{@show.title}" %>
       <div class="show-shortlist-bar">
-        <span class="show-shortlist">SHORTLIST</span><i class="fas fa-star show-star"></i>
+        <!-- act as follower: change shortlist text accordingly -->
+        <span class="show-shortlist">REMOVE FROM SHORTLIST</span><i class="fas fa-star show-star"></i>
       </div>
     </div>
 
@@ -26,7 +27,7 @@
       <p>Details</p>
       <p><i class="far fa-clock"></i> TIME (LENGTH)</p>
       <p><i class="fas fa-map-marker-alt"></i> <%= @show.venue.name %> - <%= @show.venue.space %></p>
-      <p><i class="fas fa-coins"></i>full price <%= link_to "(see Fringe for full details)", @show.website %> </p>
+      <p><i class="fas fa-coins"></i>full price <%= link_to "(see Fringe for full details)", @show.website, target: :blank %> </p>
       <p><i class="far fa-thumbs-up"></i> <%= @show.age_category %></p>
       <p><i class="fas fa-exclamation-triangle"></i> <%= @show.warnings %></p>
     </div>

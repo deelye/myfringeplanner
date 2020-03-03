@@ -15,14 +15,12 @@
 }
 
 .show-shortlist-bar {
+  height: 40px;
+  padding: 0px 15px;
   background-color: #4eacd9;
   color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
 }
-
-// .show-shortlist {
-//   float: left;
-// }
-
-// .show-star {
-//   float: right;
-// }
