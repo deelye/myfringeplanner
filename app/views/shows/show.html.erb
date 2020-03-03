@@ -1,0 +1,34 @@
+<div class="show-top">
+  <div>
+    <%= image_tag "#{@show.original_image}", alt: "#{@show.title}" %>
+    <div class="show-shortlist-bar">
+      <span>SHORTLIST</span><i class="fas fa-star"></i>
+    </div>
+  </div>
+
+  <div>
+    <h1><%= @show.title %></h1>
+    <div>
+      <span>@show.genre</span>
+      <i class="fab fa-twitter"></i>
+    </div>
+    <p>@show.description</p>
+  </div>
+</div>
+
+<div class="show-bottom">
+  <div>
+    <%= month_calendar do |date| %>
+      <%= date %>
+    <% end %>
+  </div>
+
+  <div>
+    <p>Details</p>
+    <p><i class="far fa-clock"></i> TIME (LENGTH)</p>
+    <p><i class="fas fa-map-marker-alt"></i> <%= @show.venue.name %> - <%= @show.venue.space %></p>
+    <p><i class="fas fa-coins"></i>full price <%= link_to "(see Fringe for full details)", @show.website %> </p>
+    <p><i class="far fa-thumbs-up"></i> <%= @show.age_category %></p>
+    <p><i class="fas fa-exclamation-triangle"></i> <%= @show.warnings %></p>
+  </div>
+</div>
