@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_02_174220) do
+ActiveRecord::Schema.define(version: 2020_03_03_103010) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,10 +27,10 @@ ActiveRecord::Schema.define(version: 2020_03_02_174220) do
 
   create_table "planners", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "show_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["show_id"], name: "index_planners_on_show_id"
+    t.bigint "performance_id"
+    t.index ["performance_id"], name: "index_planners_on_performance_id"
     t.index ["user_id"], name: "index_planners_on_user_id"
   end
 
@@ -53,7 +53,6 @@ ActiveRecord::Schema.define(version: 2020_03_02_174220) do
     t.datetime "end_time"
     t.string "original_image"
     t.string "thumb_image"
-    t.integer "price"
     t.string "age_category"
     t.string "warnings"
     t.string "website"
@@ -103,7 +102,6 @@ ActiveRecord::Schema.define(version: 2020_03_02_174220) do
   end
 
   add_foreign_key "performances", "shows"
-  add_foreign_key "planners", "shows"
   add_foreign_key "planners", "users"
   add_foreign_key "shortlists", "shows"
   add_foreign_key "shortlists", "users"
