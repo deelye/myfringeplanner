@@ -7,5 +7,10 @@ class ShowsController < ApplicationController
 
   def show
     @show = Show.find(params[:id])
+
+    @marker = {
+      lat: @show.venue.latitude,
+      lng: @show.venue.longitude,
+    }
   end
 end
