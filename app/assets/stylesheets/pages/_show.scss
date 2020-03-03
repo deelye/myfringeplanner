@@ -25,12 +25,23 @@
   font-size: 1.1rem;
 }
 
+.show-table {
+  color: white;
+}
+
 .calendar-heading {
   text-align: center;
+  background-color: #878888;
+  font-size: 16px;
+}
+
+.calendar-days-header {
+  background-color: #b3bec3;
 }
 
 .calendar-body {
   text-align: center;
+  background-color: #efefef;
 }
 
 td[value="8"] {
