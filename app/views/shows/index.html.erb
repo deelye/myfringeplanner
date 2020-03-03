@@ -49,8 +49,8 @@
             <p><i class="fas fa-clock" aria-hidden="true"></i> <%= performances.first.start.strftime("%H:%M") %></p>
             <p><i class="fa fa-calendar card-dates" aria-hidden="true"></i> <%= dates.join %></p>
           </div>
-          <div>
-            <p><%= truncate(show.venue.name, length: 20) %></p>
+          <div class="d-flex justify-content-between">
+            <p><%= truncate(show.venue.name, length: 27) %></p>
             <p>£<%= performances.last.price %></p>
           </div>
         </div>
