@@ -11,13 +11,13 @@
   <div class="card">
     <!-- Make a button, if following, a click will cause gem to stop following and visa versa. -->
     <!-- Delete shorlist model as a part of the if/else statement -->
-    <div class="card-image">
+    <div class="card-star-n-image">
       <% if current_user %>
         <i class="fa fa-star star-yellow" aria-hidden="true"></i>
       <% else %>
         <i class="fa fa-star star-gray" aria-hidden="true"></i>
       <% end %>
-      <%= show.original_image %>
+      <%= image_tag(show.original_image, :alt => "Flyer image for show") %>
     </div>
     <div class="card-info">
       <h6><%= show.title %></h6>

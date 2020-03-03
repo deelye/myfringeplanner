@@ -1,5 +1,5 @@
 .card {
-  position: relative;
+  display: flex;
   width: 350px;
   height: 100px;
 
@@ -9,4 +9,15 @@
   h6 {
 
   }
+
+  img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 5px 0px 0px 5px;
+  }
+}
+
+.card-star-n-image {
+  position: relative;
 }
