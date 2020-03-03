@@ -1,6 +1,6 @@
 <div class="simple-calendar">
 
-  <table class="table">
+  <table id="show-table" class="table">
     <thead>
       <div class="calendar-heading">
         <h5 class="calendar-title"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></h5>
@@ -14,17 +14,39 @@
     </thead>
 
     <tbody class="calendar-body">
+      <% days = @show.performances.map do |performance| %>
+        <% performance.start.day %>
+      <% end %>
+
+
       <% date_range.each_slice(7) do |week| %>
         <%= content_tag :tr, class: calendar.tr_classes_for(week) do %>
           <% week.each do |day| %>
-            <%= content_tag :td, class: calendar.td_classes_for(day) do %>
-              <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(block) %>
-                <% capture_haml(day, sorted_events.fetch(day, []), &block) %>
-              <% else %>
-                <% block.call day, sorted_events.fetch(day, []) %>
+
+            <% if days.include?(day.day) %>
+              <%= content_tag :td, class: calendar.td_classes_for(day), style: "background-color: #4eacd9;" do %>
+                <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(block) %>
+                  <% capture_haml(day, sorted_events.fetch(day, []), &block) %>
+                <% else %>
+                  <% block.call day, sorted_events.fetch(day, []) %>
+                <% end %>
               <% end %>
+
+            <% else %>
+              <%= content_tag :td, class: calendar.td_classes_for(day) do %>
+                <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(block) %>
+                  <% capture_haml(day, sorted_events.fetch(day, []), &block) %>
+                <% else %>
+                  <% block.call day, sorted_events.fetch(day, []) %>
+                <% end %>
+              <% end %>
+
             <% end %>
+
+
+
           <% end %>
+
         <% end %>
       <% end %>
     </tbody>
