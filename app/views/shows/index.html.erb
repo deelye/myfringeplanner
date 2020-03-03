@@ -1,32 +1,17 @@
 
 <div class="container">
-    <%= form_tag shows_path, method: :get, class: "form-search d-flex" do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: 'form-control',
-        placeholder: 'Show...'
-      %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: 'form-control',
-        placeholder: 'Category...'
-      %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: 'form-control',
-        placeholder: 'Venue...'
-      %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: 'form-control',
-        placeholder: 'Dates...'
-      %>
-
-      <%= submit_tag 'Search', class: 'btn btn-success ml-2 px-3'%>
+    <p>Filter</p>
+    <%= simple_form_for :filter, url: shows_path, method: :get, class: "form-search d-flex" do |f| %>
+      <%= f.input :show, label: false, placeholder: "Show..." %>
+      <%= f.input :genre, label: false, collection: Show::GENRES %>
+      <%= f.submit %>
     <% end %>
 
+
+
+
     <% @shows.each do |show| %>
-      <li><%= show.title %></li>
+      <li><%= show.title %> |<%= show.genre %>| (<%= show.performances.map(&:start).join(", ") %>)</li>
     <% end %>
 </div>
 

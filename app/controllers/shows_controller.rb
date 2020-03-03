@@ -4,7 +4,20 @@ class ShowsController < ApplicationController
   # def index
   #   @shows = Show.all
   def index
-    @shows = Show.where("title ILIKE ?", "%#{params[:query]}%")
+
+    if params[:filter] # filter by category and title
+      if params[:filter][:show].present? && params[:filter][:genre].present?
+        @shows = Show.where(genre: params[:filter][:genre]).search(params[:filter][:show])
+      elsif params[:filter][:show].present?
+        @shows = Show.search(params[:filter][:show])
+
+      elsif params[:filter][:genre].present?
+        @shows = Show.where(genre: params[:filter][:genre])
+      end
+    else
+      @shows = Show.all
+
+    end
   end
   # if params[:query].present?
   #   @search_term = params[:query]
