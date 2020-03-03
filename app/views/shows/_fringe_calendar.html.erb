@@ -3,7 +3,7 @@
   <table id="show-table" class="table">
     <thead>
       <div class="calendar-heading">
-        <h5 class="calendar-title"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></h5>
+        <h5 class="calendar-title"><%= t('date.month_names')[start_date.month].upcase %> <%= start_date.year %></h5>
       </div>
 
       <tr>
@@ -15,7 +15,6 @@
         <th>S</th>
         <th>S</th>
       </tr>
-
 
     </thead>
 
