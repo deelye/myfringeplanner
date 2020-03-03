@@ -20,7 +20,7 @@
 
   <div class="show-bottom">
     <div>
-      <%= month_calendar do |date| %>
+      <%= FringeCalendar.new(self, {}).render do |date| %>
         <%= date.day %>
       <% end %>
     </div>
