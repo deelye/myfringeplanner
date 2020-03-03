@@ -1,3 +1,22 @@
-<% @shows.each do |show| %>
-<h6><%= show.title %></h6>
-<% end %>
+
+<div class="container">
+    <%= form_tag shows_path, method: :get, class: "form-inline form-search d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: 'form-control',
+        placeholder: 'Find a Show'
+        %>
+      <%= submit_tag 'Search', class: 'btn btn-success ml-2 px-3'%>
+    <% end %>
+  </div>
+
+<!-- # <div class="container">
+#   <div class="row">
+#     <div class="col-sm-8 offset-sm-2">
+#       <div id="shows">
+
+#        </div>
+#     </div>
+#   </div>
+# </div> -->
+ -->
