@@ -32,7 +32,6 @@ class ShowsController < ApplicationController
 
 
   def show
-
     @marker = {
       lat: @show.venue.latitude,
       lng: @show.venue.longitude,
