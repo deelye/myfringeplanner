@@ -17,6 +17,14 @@ class ShowsController < ApplicationController
       @shows = Show.all
     end
   end
+  
+  def show
+
+    @marker = {
+      lat: @show.venue.latitude,
+      lng: @show.venue.longitude,
+    }
+  end
 
   def follow
     current_user.follow(@show)
@@ -26,14 +34,6 @@ class ShowsController < ApplicationController
   def unfollow
     current_user.stop_following(@show)
     redirect_to shows_path
-  end
-
-  def show
-
-    @marker = {
-      lat: @show.venue.latitude,
-      lng: @show.venue.longitude,
-    }
   end
 
   private
