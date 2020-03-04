@@ -1,9 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: coral;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  // padding-top: 20px;
+  // padding-bottom: 20px;
   margin-bottom: 20px;
+  background-size: cover;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -16,11 +16,15 @@
   display: inline-block;
 }
 
-.img {
-  width: 300px;
+.logo {
+  width: 250px;
 
 }
-
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .inline div {
   display: inline-block;
 }
@@ -31,13 +35,11 @@
 
 .search-show-input {
   width: 70%;
-  margin-top: 100px;
 }
 
 
 .form-group {
   width: 50%;
-  margin-top: 100px;
 }
 
 .genre-style {
@@ -56,5 +58,4 @@
 
 .submit {
   height: 38px;
-  margin-top: 100px;
 }
