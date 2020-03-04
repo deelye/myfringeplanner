@@ -1,21 +1,18 @@
 // Specific CSS for your home-page
 .searchbar {
   align-items: center;
- max-width: 70%;
-margin-left: 200px;
+  max-width: 70%;
+  margin-left: 200px;
 }
 
 .home_h1 {
-font-family: Roboto Condensed;
-font-style: normal;
-font-weight: bold;
-font-size: 65px;
-line-height: 76px;
-display: flex;
-align-items: center;
-text-align: center;
-
-color: #E75A79;
+  font-family: Roboto Condensed;
+  font-size: 65px;
+  // line-height: 76px;
+  // display: flex;
+  // align-items: center;
+  text-align: center;
+  color: $blue;
 }
 
 .home_cards {

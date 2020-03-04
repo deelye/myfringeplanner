@@ -1,53 +1,39 @@
 <div class="container, text-center" >
   <h1 class= "home_h1">Welcome To MyFringePlanner</h1>
-    <div class= "searchbar">
-      <%= form_tag shows_path, method: :get, class: "form-inline form-search d-flex" do %>
-      <%= text_field_tag :query,params[:query],
-      class: 'form-control flex-fill text-center',placeholder: 'Find your favourite shows!'%>
-      <%= submit_tag 'Search', class: 'btn btn-home ml-2 px-3'%>
-      <% end %>
-</div>
-<div>
-  <h2>How it works</h2>
-</div>
-
-<!-- <div class="home" > -->
-
-<div class="row home_cards">
-  <div class="home_card" style="width: 27rem;">
-    <img class="home_card-img-top" src="https://res.cloudinary.com/dilq1zbdq/image/upload/v1583248517/festival_dude_hu6yxi.jpg" alt="home_card image cap">
-    <div class="home_card-body">
-      <h3 class="home_card-title">1 Find your favorite shows</h3>
-      <a href="#" class="btn btn-home">Find them now!</a>
-    </div>
+  <div class= "searchbar">
+    <%= form_tag shows_path, method: :get, class: "form-inline form-search d-flex" do %>
+    <%= text_field_tag :query,params[:query],
+    class: 'form-control flex-fill text-center',placeholder: 'Find your favourite shows!'%>
+    <%= submit_tag 'Search', class: 'btn btn-home ml-2 px-3'%>
+    <% end %>
+  </div>
+  <div>
+    <h2>How it works</h2>
   </div>
 
-  <div class="home_card" style="width: 27rem;">
-    <img class="home_card-img-top" src="https://res.cloudinary.com/dilq1zbdq/image/upload/v1583248517/festival_dude_hu6yxi.jpg" alt="home_card image cap">
-    <div class="home_card-body">
-      <h3 class="home_card-title">2 Add them to your shortlist</h3>
-      <a href="#" class="btn btn-home">Add</a>
+  <div class="row home_cards">
+    <div class="home_card" style="width: 27rem;">
+      <img class="home_card-img-top" src="https://res.cloudinary.com/dilq1zbdq/image/upload/v1583248517/festival_dude_hu6yxi.jpg" alt="home_card image cap">
+      <div class="home_card-body">
+        <h3 class="home_card-title">1 Find your favorite shows</h3>
+        <a href="#" class="btn btn-home">Find them now!</a>
+      </div>
     </div>
-  </div>
 
-  <div class="home_card" style="width: 27rem;">
-    <img class="home_card-img-top" src="https://res.cloudinary.com/dilq1zbdq/image/upload/v1583248517/festival_dude_hu6yxi.jpg" alt="home_card image cap">
-    <div class="home_card-body">
-      <h3 class="home_card-title">3 Make MyFringePlanner</h3>
-      <a href="#" class="btn btn-home">MyFringePlanner</a>
+    <div class="home_card" style="width: 27rem;">
+      <img class="home_card-img-top" src="https://res.cloudinary.com/dilq1zbdq/image/upload/v1583248517/festival_dude_hu6yxi.jpg" alt="home_card image cap">
+      <div class="home_card-body">
+        <h3 class="home_card-title">2 Add them to your shortlist</h3>
+        <a href="#" class="btn btn-home">Add</a>
+      </div>
     </div>
-  </div>
 
-  <div class="home_card" style="width: 27rem;">
-    <img class="home_card-img-top" src="https://res.cloudinary.com/dilq1zbdq/image/upload/v1583248517/festival_dude_hu6yxi.jpg" alt="home_card image cap">
-    <div class="home_card-body">
-      <h3 class="home_card-title">4 Share with your friends!</h3>
-      <a href="#" class="btn btn-home">Share!</a>
+    <div class="home_card" style="width: 27rem;">
+      <img class="home_card-img-top" src="https://res.cloudinary.com/dilq1zbdq/image/upload/v1583248517/festival_dude_hu6yxi.jpg" alt="home_card image cap">
+      <div class="home_card-body">
+        <h3 class="home_card-title">3 Make MyFringePlanner</h3>
+        <a href="#" class="btn btn-home">MyFringePlanner</a>
+      </div>
     </div>
   </div>
 </div>
-<!-- </div> -->
-
-
-
-
