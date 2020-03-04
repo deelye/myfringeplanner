@@ -8,6 +8,8 @@ gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
+# Searxh bar
+gem 'pg_search'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -30,8 +32,9 @@ gem 'geocoder'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-
+# Sets up all the relationships for user sessions
 gem 'devise'
+
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
