@@ -1,15 +1,22 @@
 .show-div {
   padding: 10px 0px;
+  width: 1170px;
 }
 
 .show-top, .show-genre-twitter {
   display: flex;
 }
 
+.show-image-star-bar, .show-calendar, .show-bottom-details {
+  box-shadow: 3px 3px 5px grey;
+}
+
 .card-grid {
   display: grid;
   grid-template-rows: 250px;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 250px 500px 250px;
+  grid-gap: 25px;
+  justify-content: space-between;
 }
 
 .show-calendar {
@@ -18,7 +25,7 @@
 
 .show-bottom-details {
   grid-column: 2 / 3;
-  padding: 0px 20px;
+  padding: 10px;
     i {
       width: 30px;
     };
@@ -29,6 +36,7 @@
 
 .show-map {
   grid-column: 3 / 4;
+  box-shadow: 3px 3px 5px grey;
 }
 
 .show-top-details {
@@ -37,10 +45,11 @@
 
 .show-title {
   border-bottom: 1px solid;
+  font-size: 2rem;
 }
 
 .show-description {
-  font-size: 22px;
+  font-size: 18 px;
 }
 
 .show-shortlist-bar {
