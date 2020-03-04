@@ -46,6 +46,30 @@
   }
 }
 
+.comedy-colour {
+  box-shadow: 5px 5px 5px $comedy;
+}
+
+.cabaret-variety-colour {
+  box-shadow: 5px 5px 5px $cabaret-variety;
+}
+
+.circus-etc-colour {
+  box-shadow: 5px 5px 5px $circus-etc;
+}
+
+.theatre-etc-colour {
+  box-shadow: 5px 5px 5px $theatre-etc;
+}
+
+.events-etc-colour {
+  box-shadow: 5px 5px 5px $events-etc;
+}
+
+.other-colour {
+  box-shadow: 5px 5px 5px $other;
+}
+
 .card-star-n-image {
   position: relative;
 
