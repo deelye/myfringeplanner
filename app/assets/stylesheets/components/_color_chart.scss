@@ -1,6 +1,6 @@
 .color-chart {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-bottom: 20px;
 
   p {
@@ -9,21 +9,16 @@
 }
 
 .color-chart-label {
-  width: 169px;
-  height: 32px;
+  width: 200px;
+  height: 21px;
   padding-top: 4px;
   padding-bottom: 3px;
-
+  border-radius: 5px;
   color: white;
-  font-weight: bold;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 12px;
   align-items: center;
   text-align: center;
-}
-
-.color-all {
-  background-color: $blue;
 }
 
 .color-comedy {
@@ -42,6 +37,11 @@
   background-color: $blue;
 }
 
+.color-spoken-word {
+  background-color: $blue;
+}
+
 .color-other {
   background-color: $blue;
 }
+
