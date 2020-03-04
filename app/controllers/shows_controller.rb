@@ -20,12 +20,12 @@ class ShowsController < ApplicationController
 
   def follow
     current_user.follow(@show)
-    redirect_to shows_path
+    redirect_to request.referrer
   end
 
   def unfollow
     current_user.stop_following(@show)
-    redirect_to shows_path
+    redirect_to request.referrer
   end
 
 

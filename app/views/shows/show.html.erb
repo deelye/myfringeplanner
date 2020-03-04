@@ -1,10 +1,21 @@
 <div class="container show-div">
+
   <div class="show-top">
+
     <div class="show-image-star-bar">
       <%= image_tag "#{@show.original_image}", alt: "#{@show.title}", class: "show-image" %>
       <div class="show-shortlist-bar">
-        <!-- act as follower: change shortlist text accordingly -->
-        <span>REMOVE FROM SHORTLIST</span><i class="fas fa-star show-star"></i>
+        <% if current_user&.following?(@show) %>
+          <span>REMOVE FROM SHORTLIST</span>
+          <%= link_to unfollow_show_path(@show) do %>
+            <i class="fa fa-star star-yellow" aria-hidden="true"></i>
+          <% end %>
+        <% else %>
+          <span>ADD TO SHORTLIST</span>
+          <%= link_to follow_show_path(@show) do %>
+            <i class="fa fa-star star-white" aria-hidden="true"></i>
+          <% end %>
+        <% end %>
       </div>
     </div>
 
@@ -15,6 +26,15 @@
     </div>
 
   </div>
+
+
+
+
+
+
+
+
+
 
   <br><br>
 
