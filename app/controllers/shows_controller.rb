@@ -6,15 +6,15 @@ class ShowsController < ApplicationController
   def index
     if params[:filter] # filter by category and title
       if params[:filter][:show].present? && params[:filter][:genre].present?
-        @shows = Show.includes(:performance, :venue).where(genre: params[:filter][:genre]).search(params[:filter][:show])
+        @shows = Show.includes(:performances, :venue).where(genre: params[:filter][:genre]).search(params[:filter][:show])
       elsif params[:filter][:show].present?
-        @shows = Show.includes(:performance, :venue).search(params[:filter][:show])
+        @shows = Show.includes(:performances, :venue).search(params[:filter][:show])
 
       elsif params[:filter][:genre].present?
-        @shows = Show.includes(:performance, :venue).where(genre: params[:filter][:genre])
+        @shows = Show.includes(:performances, :venue).where(genre: params[:filter][:genre])
       end
     else
-      @shows = Show.all
+      @shows = Show.includes(:performances, :venue).all
     end
   end
 
