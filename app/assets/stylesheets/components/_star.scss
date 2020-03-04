@@ -1,7 +1,14 @@
-star-yellow {
-  color: yellow;
-}
+.star-yellow {
+  color: yellow !important;
 
-star-gray {
-  color: gray;
+  &:hover {
+    color: orange !important;
+  }
+}
+.star-white {
+  color: white !important;
+
+  &:hover {
+    color: gray !important;
+  }
 }

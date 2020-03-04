@@ -1,11 +1,13 @@
 <div class="card">
   <div class="card-star-n-image">
-    <!-- Make a button, if following, a click will cause gem to stop following and visa versa. -->
-    <!-- Delete shorlist model as a part of the if/else statement -->
-    <% if current_user %>
-      <i class="fa fa-star star-yellow" aria-hidden="true"></i>
+    <% if current_user&.following?(show) %>
+      <%= link_to unfollow_show_path(show) do  %>
+        <i class="fa fa-star star-yellow" aria-hidden="true"></i>
+      <% end %>
     <% else %>
-      <i class="fa fa-star star-gray" aria-hidden="true"></i>
+      <%= link_to follow_show_path(show) do  %>
+        <i class="fa fa-star star-white" aria-hidden="true"></i>
+      <% end %>
     <% end %>
     <%= image_tag(show.original_image, :alt => "Flyer image for show") %>
   </div>
@@ -15,7 +17,7 @@
     <div class="d-flex">
 
       <% dates = ["Aug "] %>
-      <% performances = Performance.where(show_id: show.id) %>
+      <% performances = show.performances %>
       <% performances.each_with_index do |performance, index| %>
         <% if index == 0 %>
           <% dates << performances.first.start.strftime("%e").to_i %>
