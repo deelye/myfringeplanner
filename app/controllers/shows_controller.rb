@@ -17,17 +17,9 @@ class ShowsController < ApplicationController
       @shows = Show.all
     end
     @performances = Performance.all
-    # @months = [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
-  end
-  # if params[:query].present?
-  #   @search_term = params[:query]
-  #   @shows = Show.
-  # else
-  # end
 
-  #     @groups = @shows.group_by { |s| s.category }
-  #   end
-  # end
+  end
+
 
   def show
     @show = Show.find(params[:id])

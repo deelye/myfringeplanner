@@ -1,12 +1,49 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: coral;
+  padding-top: 20px;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+  display: inline-block;
+}
+
+.inline div {
+  display: inline-block;
+}
+
+.div-inline input {
+  width: 400px;
+}
+
+.search-show-input {
+  width: 70%;
+}
+
+
+.form-group {
+  width: 50%;
+}
+
+.genre-style {
+  width: 20%;
+}
+
+#form-styling {
+  display: flex !important;
+    height: 38px !important;
+}
+
+.filter {
+  display: flex;
+}
+
+.submit {
+  height: 38px;
 }
