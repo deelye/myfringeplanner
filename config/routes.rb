@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'shortlists/show'
+  get 'planners/show'
+  get 'planners/edit'
+  get 'planners/create'
   devise_for :users
 
   root to: 'pages#home'
@@ -11,5 +13,7 @@ Rails.application.routes.draw do
   end
 
   resources :shortlist, only: [:show]
+
+  resources :planner, only: [:show, :edit, :create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
