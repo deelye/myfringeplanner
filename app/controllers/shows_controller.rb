@@ -16,8 +16,6 @@ class ShowsController < ApplicationController
     else
       @shows = Show.all
     end
-    @performances = Performance.all
-    # @months = [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
   end
   # if params[:query].present?
   #   @search_term = params[:query]
