@@ -5,26 +5,22 @@
   margin-left: 200px;
 }
 
-.home_h1 {
+.home-title {
   font-family: Roboto Condensed;
   font-size: 65px;
-  // line-height: 76px;
-  // display: flex;
-  // align-items: center;
   text-align: center;
   color: $blue;
 }
 
-.home_cards {
+.home-cards {
   display: flex;
-  justify-content: space-around
-  ;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: space-between;
+  grid-template-columns: 500px;
   grid-gap: 20px;
   margin-top: 10px;
 }
 
-.home_card {
+.home-card {
   display: flex;
   flex-direction: column;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
