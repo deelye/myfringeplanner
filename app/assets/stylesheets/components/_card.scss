@@ -5,7 +5,17 @@
   margin-top: 10px;
 }
 
+.hid-link {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 .card {
+  position: relative;
   display: flex;
   flex-direction: row;
   // width: 350px;
@@ -40,6 +50,7 @@
   position: relative;
 
   .fa-star {
+    z-index: 11;
     position: absolute;
     top: 5px;
     left: 3px;
