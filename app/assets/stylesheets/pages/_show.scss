@@ -11,6 +11,14 @@
   box-shadow: 3px 3px 5px grey;
 }
 
+.show-image-star-bar {
+  border-radius: 5px;
+}
+
+.show-image {
+  border-radius: 5px 5px 0px 0px;
+}
+
 .card-grid {
   display: grid;
   grid-template-rows: 250px;
@@ -20,12 +28,13 @@
 }
 
 .show-calendar {
-  grid-column: 1 / 2
+  grid-column: 1 / 2;
 }
 
 .show-bottom-details {
   grid-column: 2 / 3;
   padding: 10px;
+  border-radius: 5px;
     i {
       width: 30px;
     };
@@ -37,6 +46,7 @@
 .show-map {
   grid-column: 3 / 4;
   box-shadow: 3px 3px 5px grey;
+  border-radius: 5px;
 }
 
 .show-top-details {
@@ -45,7 +55,7 @@
 
 .show-title {
   border-bottom: 1px solid;
-  font-size: 2rem;
+  font-size: 3.1rem;
 }
 
 .show-description {
@@ -53,13 +63,14 @@
 }
 
 .show-shortlist-bar {
-  height: 40px;
-  padding: 0px 15px;
-  background-color: #4eacd9;
-  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 40px;
+  padding: 0px 15px;
+  background-color: #4eacd9;
+  border-radius: 0px 0px 5px 5px;
+  color: white;
   font-size: 1.1rem;
 }
 
