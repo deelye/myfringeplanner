@@ -22,13 +22,18 @@
 .card-grid {
   display: grid;
   grid-template-rows: 250px;
-  grid-template-columns: 250px 500px 250px;
+  grid-template-columns: 1fr 2fr 1fr;
   grid-gap: 25px;
   justify-content: space-between;
 }
 
+.simple-calendar {
+  padding: 5px;
+}
+
 .show-calendar {
   grid-column: 1 / 2;
+  border-radius: 5px;
 }
 
 .show-bottom-details {
@@ -76,6 +81,13 @@
 
 .table {
   margin: 0;
+    td {
+      padding: 4px 0px;
+    }
+}
+
+.calendar-days-header th {
+  padding: 5px 0px;
 }
 
 .show-table {
@@ -90,6 +102,7 @@
   text-align: center;
   background-color: #878888;
   font-size: 16px;
+  border-radius: 5px 5px 0px 0px;
 }
 
 .calendar-days-header {

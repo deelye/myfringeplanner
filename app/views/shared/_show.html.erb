@@ -1,11 +1,13 @@
 <div class="card">
-  <!-- Make a button, if following, a click will cause gem to stop following and visa versa. -->
-  <!-- Delete shorlist model as a part of the if/else statement -->
   <div class="card-star-n-image">
-    <% if current_user %>
-      <i class="fa fa-star star-yellow" aria-hidden="true"></i>
+    <% if current_user&.following?(show) %>
+      <%= link_to unfollow_show_path(show) do  %>
+        <i class="fa fa-star star-yellow" aria-hidden="true"></i>
+      <% end %>
     <% else %>
-      <i class="fa fa-star star-gray" aria-hidden="true"></i>
+      <%= link_to follow_show_path(show) do  %>
+        <i class="fa fa-star star-white" aria-hidden="true"></i>
+      <% end %>
     <% end %>
     <%= image_tag(show.original_image, :alt => "Flyer image for show") %>
   </div>
@@ -14,23 +16,21 @@
     <p><%= show.genre %></p>
     <div class="d-flex">
 
-      <% dates = [] %>
-      <% performances = Performance.where(show_id: show.id) %>
+      <% dates = ["Aug "] %>
+      <% performances = show.performances %>
       <% performances.each_with_index do |performance, index| %>
         <% if index == 0 %>
-          <% dates << performances.first.start.strftime("%b")  %>
-          <% dates << " " %>
           <% dates << performances.first.start.strftime("%e").to_i %>
-        <% elsif performances[index - 1].start.strftime("%e").to_i + 1 == performance.start.strftime("%e").to_i %>
-        <% elsif performances[index - 1].start.strftime("%e").to_i >= performance.start.strftime("%e").to_i %>
-          <% dates << performance.start.strftime("%b") %>
-          <% dates << " " %>
-          <% dates << performance.start.strftime("%e") %>
-        <% elsif dates[-2] == "-" %>
-          <% dates << ", "%>
-          <% dates << performance.start.strftime("%e").to_i %>
+        <% elsif performances[index - 1].start.strftime("%e").to_i + 1  == performance.start.strftime("%e").to_i %>
+          <% if performance == performances[-1] %>
+            <% dates << "-" %>
+            <% dates << performance.start.strftime("%e").to_i %>
+          <% end %>
+        <% elsif performances[index - 1].start.strftime("%e").to_i == performance.start.strftime("%e").to_i%>
         <% else %>
           <% dates << "-" %>
+          <% dates << performances[index - 1].start.strftime("%e").to_i %>
+          <% dates << ", " %>
           <% dates << performance.start.strftime("%e").to_i %>
         <% end %>
       <% end %>
@@ -43,4 +43,7 @@
       <p>£<%= performances.last.price %></p>
     </div>
   </div>
+  <%= link_to show_path(show) do %>
+    <div class="hid-link"></div>
+  <% end %>
 </div>
