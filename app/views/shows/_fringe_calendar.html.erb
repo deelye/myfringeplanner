@@ -31,7 +31,7 @@
                 <% end %>
               <% end %>
             <% else %>
-              <%= content_tag :td, class: calendar.td_classes_for(day), style: "text-decoration: line-through; color: red" do %>
+              <%= content_tag :td, class: calendar.td_classes_for(day), style: "text-decoration: line-through; color: #ea9999" do %>
                 <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(block) %>
                   <% capture_haml(day, sorted_events.fetch(day, []), &block) %>
                 <% else %>
