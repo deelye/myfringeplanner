@@ -1,2 +1,10 @@
-<h1>Shortlists#show</h1>
-<p>Find me in app/views/shortlists/show.html.erb</p>
+<div class="body-container">
+  <%= render 'shared/colorchart' %>
+
+  <div class="cards">
+    <% @follows.each do |follow| %>
+      <% show = follow.followable %>
+      <%= render 'shared/show', show: show %>
+    <% end %>
+  </div>
+</div>
