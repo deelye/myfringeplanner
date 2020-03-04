@@ -76,6 +76,13 @@
 
 .table {
   margin: 0;
+    td {
+      padding: 5px 0px;
+    }
+}
+
+.calendar-days-header th {
+  padding: 5px 0px;
 }
 
 .show-table {
