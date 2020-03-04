@@ -25,5 +25,21 @@ class Show < ApplicationRecord
        using: {
          tsearch: { prefix: true }
        }
+
+  def colour_class
+    classes = {
+      "Comedy" => "comedy-colour",
+      "Cabaret and Variety" => "cabaret-variety-colour",
+      "Dance, PhysicalTheatre and Circus" => "circus-etc-colour",
+      "Theatre" => "theatre-etc-colour",
+      "Musicals and Opera" => "theatre-etc-colour",
+      "Events" => "events-etc-colour",
+      "Exhibitions" => "events-etc-colour",
+      "Children's Shows" => "other-colour",
+      "Spoken Word" => "other-colour",
+      "Music" => "other-colour"
+    }
+    classes[self.genre]
+  end
 end
 
