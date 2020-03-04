@@ -1,10 +1,4 @@
 <div class="container">
-  <p>Filter</p>
-  <%= simple_form_for :filter, url: shows_path, method: :get, class: "form-search d-flex" do |f| %>
-    <%= f.input :show, label: false, placeholder: "Show..." %>
-    <%= f.input :genre, label: false, collection: Show::GENRES %>
-    <%= f.submit %>
-  <% end %>
   <div class="color-chart">
     <p class="color-chart-label color-all">ALL</p>
     <p class="color-chart-label color-comedy">COMEDY</p>
