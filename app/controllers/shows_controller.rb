@@ -27,15 +27,6 @@ class ShowsController < ApplicationController
     current_user.stop_following(@show)
     redirect_to shows_path
   end
-  # if params[:query].present?
-  #   @search_term = params[:query]
-  #   @shows = Show.
-  # else
-  # end
-
-  #     @groups = @shows.group_by { |s| s.category }
-  #   end
-  # end
 
   def show
 

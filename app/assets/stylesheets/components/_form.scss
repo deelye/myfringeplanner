@@ -1,0 +1,55 @@
+.form-user {
+  width: 50%;
+  justify-content: center;
+  text-align: center;
+}
+
+.form-left {
+  text-align: left;
+}
+
+.form-input {
+  color: white;
+  background-color: $pink;
+  fill: blue;
+  width: 10px;
+}
+
+.form-control {
+  color: white;
+  background-color: $pink;
+
+  &:focus {
+    color: white;
+    background-color: $pink;
+  }
+}
+
+::placeholder {
+  color: #FFF !important;
+}
+
+.btn {
+  margin-bottom: 8px;
+  width: 100%;
+  background-color: $blue;
+  color: white;
+
+  &:hover {
+    background-color: #86d1f4;
+    color: white;
+  }
+}
+
+.form-link-forgot-pw {
+  background-color: white !important;
+  border-style: solid !important;
+  border-color: $blue !important;
+  color: $blue !important;
+
+  &:hover {
+    background-color: white !important;
+    border-color: #86d1f4 !important;
+    color: #86d1f4 !important;
+  }
+}
