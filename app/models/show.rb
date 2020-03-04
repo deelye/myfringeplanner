@@ -17,6 +17,8 @@ class Show < ApplicationRecord
   has_many :performances
   validates :url, uniqueness: true
 
+  acts_as_followable
+
  include PgSearch::Model
      pg_search_scope :search,
        against: [ :title, :description ],

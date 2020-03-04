@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :shortlists
   has_many :planners
+
+  acts_as_follower
 end
