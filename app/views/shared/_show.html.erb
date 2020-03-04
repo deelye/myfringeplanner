@@ -2,10 +2,14 @@
   <!-- Make a button, if following, a click will cause gem to stop following and visa versa. -->
   <!-- Delete shorlist model as a part of the if/else statement -->
   <div class="card-star-n-image">
-    <% if current_user %>
-      <i class="fa fa-star star-yellow" aria-hidden="true"></i>
+    <% if current_user&.following?(show) %>
+      <%= link_to unfollow_show_path(show) do  %>
+        <i class="fa fa-star star-yellow" aria-hidden="true"></i>
+      <% end %>
     <% else %>
-      <i class="fa fa-star star-gray" aria-hidden="true"></i>
+      <%= link_to follow_show_path(show) do  %>
+        <i class="fa fa-star star-black" aria-hidden="true"></i>
+      <% end %>
     <% end %>
     <%= image_tag(show.original_image, :alt => "Flyer image for show") %>
   </div>
@@ -15,8 +19,8 @@
     <div class="d-flex">
 
       <% dates = [] %>
-      <% performances = Performance.where(show_id: show.id) %>
-      <% performances.each_with_index do |performance, index| %>
+      <% performances = show.performances %>
+      <% show.performances.each_with_index do |performance, index| %>
         <% if index == 0 %>
           <% dates << performances.first.start.strftime("%b")  %>
           <% dates << " " %>
@@ -44,3 +48,18 @@
     </div>
   </div>
 </div>
+
+<script style="text/javascript">
+  function follow () {
+    if (current_user.following?(show)) {
+      console.log()
+      element.classList.remove("star-yellow");
+      current_user.follow(show);
+    } else {
+      element.classList.add("star-yellow");
+      current_user.stop_following(show);
+    }
+  }
+  const element = document.getElementById("star")
+  element.addEventListener("click", follow);
+</script>
