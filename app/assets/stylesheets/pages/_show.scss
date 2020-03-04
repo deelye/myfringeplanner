@@ -4,8 +4,12 @@
   box-shadow: 3px 3px 5px grey;
 }
 
-.show-top, .show-genre-twitter {
+.show-top, .show-genre-return {
   display: flex;
+}
+
+.show-genre-return {
+  justify-content: space-between;
 }
 
 .show-image-star-bar, .show-calendar, .show-bottom-details {

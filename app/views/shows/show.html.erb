@@ -21,7 +21,12 @@
 
     <div class="show-top-details">
       <h1 class="show-title"><%= @show.title %></h1>
-      <p><%= @show.genre %></p>
+      <div class="show-genre-return">
+        <p><%= @show.genre %></p>
+        <%= link_to request.referrer do %>
+          <i class="fas fa-undo-alt"></i>
+        <% end %>
+      </div>
       <p class="show-description"><%= @show.description %></p>
     </div>
 
