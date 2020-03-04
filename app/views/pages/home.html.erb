@@ -1,2 +1,62 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container, text-center" >
+  <h1>Welcome To MyFringePlanner</h1>
+  <div class= "searchbar">
+  <%= form_tag shows_path, method: :get, class: "form-inline form-search d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: 'form-control flex-fill text-center',
+        placeholder: 'Find your favourite shows!'
+        %>
+      <%= submit_tag 'Search', class: 'btn btn-success ml-2 px-3'%>
+    <% end %>
+  </div>
+    <div>
+    <h2>How it works</h2>
+    </div>
+
+<!-- <div class="home" > -->
+
+  <div class="row home">
+    <div class="card" style="width: 27rem;">
+      <img class="card-img-top" src="https://res.cloudinary.com/dilq1zbdq/image/upload/v1583248517/festival_dude_hu6yxi.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h3 class="card-title">1 Find your favorite shows</h3>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Find them now!</a>
+      </div>
+    </div>
+
+    <div class="card" style="width: 27rem;">
+  <img class="card-img-top" src="https://res.cloudinary.com/dilq1zbdq/image/upload/v1583248517/festival_dude_hu6yxi.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h3 class="card-title">2 Add them to your shortlist</h3>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Add</a>
+
+  </div>
+</div>
+
+    <div class="card" style="width: 27rem;">
+  <img class="card-img-top" src="https://res.cloudinary.com/dilq1zbdq/image/upload/v1583248517/festival_dude_hu6yxi.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h3 class="card-title">3 Make MyFringePlanner</h3>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">MyFringePlanner</a>
+
+  </div>
+</div>
+
+    <div class="card" style="width: 27rem;">
+  <img class="card-img-top" src="https://res.cloudinary.com/dilq1zbdq/image/upload/v1583248517/festival_dude_hu6yxi.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h3 class="card-title">4 Share with your friends!</h3>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Share!</a>
+  </div>
+</div>
+</div>
+<!-- </div> -->
+
+
+
+

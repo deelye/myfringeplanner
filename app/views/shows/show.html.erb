@@ -1,35 +1,46 @@
-<div class="show-top">
-  <div>
-    <%= image_tag "#{@show.original_image}", alt: "#{@show.title}" %>
-    <div class="show-shortlist-bar">
-      <span>SHORTLIST</span><i class="fas fa-star"></i>
+<div class="container show-div">
+  <div class="show-top">
+    <div class="show-image-star-bar">
+      <%= image_tag "#{@show.original_image}", alt: "#{@show.title}", class: "show-image" %>
+      <div class="show-shortlist-bar">
+        <!-- act as follower: change shortlist text accordingly -->
+        <span>REMOVE FROM SHORTLIST</span><i class="fas fa-star show-star"></i>
+      </div>
     </div>
-  </div>
 
-  <div>
-    <h1><%= @show.title %></h1>
-    <div>
-      <span>@show.genre</span>
-      <i class="fab fa-twitter"></i>
+    <div class="show-top-details">
+      <h1 class="show-title"><%= @show.title %></h1>
+      <p><%= @show.genre %></p>
+      <p class="show-description"><%= @show.description %></p>
     </div>
-    <p>@show.description</p>
-  </div>
-</div>
 
-<div class="show-bottom">
-  <div>
-    <%= month_calendar do |date| %>
-      <%= date %>
-    <% end %>
   </div>
 
-  <div>
-    <p>Details</p>
-    <p><i class="far fa-clock"></i> TIME (LENGTH)</p>
-    <p><i class="fas fa-map-marker-alt"></i> <%= @show.venue.name %> - <%= @show.venue.space %></p>
-    <p><i class="fas fa-coins"></i>full price <%= link_to "(see Fringe for full details)", @show.website %> </p>
-    <p><i class="far fa-thumbs-up"></i> <%= @show.age_category %></p>
-    <p><i class="fas fa-exclamation-triangle"></i> <%= @show.warnings %></p>
-  </div>
+  <br><br>
 
+  <div class="show-bottom card-grid">
+    <div class="show-calendar">
+      <%= FringeCalendar.new(self, {}).render do |date| %>
+        <%= date.day %>
+      <% end %>
+    </div>
+
+    <div class="show-bottom-details">
+      <h4><u>Details</u></h4>
+      <p><i class="far fa-clock"></i><%= @show.performances.first.start.to_s(:time) %> - <%= @show.performances.first.end.to_s(:time) %></p>
+      <p><i class="fas fa-map-marker-alt"></i> <%= @show.venue.name %> - <%= @show.venue.space %></p>
+      <p><i class="fas fa-coins"></i>£<%= @show.performances.last.price %> full price <%= link_to "(see Fringe for full details)", @show.website, target: :blank %> </p>
+      <p><i class="far fa-thumbs-up"></i> <%= @show.age_category %></p>
+      <p><i class="fas fa-exclamation-triangle"></i> <%= @show.warnings %></p>
+    </div>
+
+
+    <div id="map"
+      class="show-map"
+      style="width: 250px;
+      height: 250px;"
+      data-marker="<%= @marker.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" class="show-map"></div>
+
+  </div>
 </div>

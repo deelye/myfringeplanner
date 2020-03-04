@@ -4,7 +4,6 @@ class ShowsController < ApplicationController
   # def index
   #   @shows = Show.all
   def index
-
     if params[:filter] # filter by category and title
       if params[:filter][:show].present? && params[:filter][:genre].present?
         @shows = Show.where(genre: params[:filter][:genre]).search(params[:filter][:show])
@@ -16,8 +15,9 @@ class ShowsController < ApplicationController
       end
     else
       @shows = Show.all
-
     end
+    @performances = Performance.all
+    # @months = [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
   end
   # if params[:query].present?
   #   @search_term = params[:query]
@@ -31,5 +31,10 @@ class ShowsController < ApplicationController
 
   def show
     @show = Show.find(params[:id])
+
+    @marker = {
+      lat: @show.venue.latitude,
+      lng: @show.venue.longitude,
+    }
   end
 end

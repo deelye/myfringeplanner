@@ -1,28 +1,22 @@
-
 <div class="container">
-    <p>Filter</p>
-    <%= simple_form_for :filter, url: shows_path, method: :get, class: "form-search d-flex" do |f| %>
-      <%= f.input :show, label: false, placeholder: "Show..." %>
-      <%= f.input :genre, label: false, collection: Show::GENRES %>
-      <%= f.submit %>
-    <% end %>
+  <p>Filter</p>
+  <%= simple_form_for :filter, url: shows_path, method: :get, class: "form-search d-flex" do |f| %>
+    <%= f.input :show, label: false, placeholder: "Show..." %>
+    <%= f.input :genre, label: false, collection: Show::GENRES %>
+    <%= f.submit %>
+  <% end %>
+  <div class="color-chart">
+    <p class="color-chart-label color-all">ALL</p>
+    <p class="color-chart-label color-comedy">COMEDY</p>
+    <p class="color-chart-label color-cabaret-n-variety">CABARET & VARIETY</p>
+    <p class="color-chart-label color-circus-etc">CIRCUS, DANCE & PHYSICAL THEATRE</p>
+    <p class="color-chart-label color-theatre-etc">THEATRE, MUSICALS & OPERA</p>
+    <p class="color-chart-label color-other">OTHER</p>
+  </div>
 
-
-
-
+  <div class="cards">
     <% @shows.each do |show| %>
-      <li><%= show.title %> |<%= show.genre %>| (<%= show.performances.map(&:start).join(", ") %>)</li>
+      <%= render 'shared/show', show: show %>
     <% end %>
+  </div>
 </div>
-
-
-<!-- # <div class="container">
-#   <div class="row">
-#     <div class="col-sm-8 offset-sm-2">
-#       <div id="shows">
-
-#        </div>
-#     </div>
-#   </div>
-# </div> -->
-
