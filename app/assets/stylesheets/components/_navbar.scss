@@ -1,9 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: coral;
   padding-top: 20px;
   padding-bottom: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -16,6 +16,11 @@
   display: inline-block;
 }
 
+.img {
+  width: 300px;
+
+}
+
 .inline div {
   display: inline-block;
 }
@@ -26,15 +31,18 @@
 
 .search-show-input {
   width: 70%;
+  margin-top: 100px;
 }
 
 
 .form-group {
   width: 50%;
+  margin-top: 100px;
 }
 
 .genre-style {
   width: 20%;
+  margin-top: 100px;
 }
 
 #form-styling {
@@ -48,4 +56,5 @@
 
 .submit {
   height: 38px;
+  margin-top: 100px;
 }
