@@ -4,25 +4,20 @@ class ShowsController < ApplicationController
   # def index
   #   @shows = Show.all
   def index
- # filter by category and title
-    if params[:filter][:show].present? && params[:filter][:genre].present?
-      @shows = Show.includes(:performances, :venue).where(genre: params[:filter][:genre]).search(params[:filter][:show])
-    elsif params[:filter][:show].present?
-      @shows = Show.includes(:performances, :venue).search(params[:filter][:show])
+    if params[:filter] # filter by category and title
+      if params[:filter][:show].present? && params[:filter][:genre].present?
+        @shows = Show.includes(:performances, :venue).where(genre: params[:filter][:genre]).search(params[:filter][:show])
+      elsif params[:filter][:show].present?
+        @shows = Show.includes(:performances, :venue).search(params[:filter][:show])
 
-    elsif params[:filter][:genre].present?
-      @shows = Show.includes(:performances, :venue).where(genre: params[:filter][:genre])
+      elsif params[:filter][:genre].present?
+        @shows = Show.includes(:performances, :venue).where(genre: params[:filter][:genre])
+      elsif params[:filter][:show].blank? && params[:filter][:genre].blank?
+        @shows = Show.includes(:performances, :venue).all
+      end
     else
       @shows = Show.includes(:performances, :venue).all
     end
-  end
-  
-  def show
-
-    @marker = {
-      lat: @show.venue.latitude,
-      lng: @show.venue.longitude,
-    }
   end
 
   def follow
@@ -33,6 +28,15 @@ class ShowsController < ApplicationController
   def unfollow
     current_user.stop_following(@show)
     redirect_to shows_path
+  end
+
+
+  def show
+
+    @marker = {
+      lat: @show.venue.latitude,
+      lng: @show.venue.longitude,
+    }
   end
 
   private
