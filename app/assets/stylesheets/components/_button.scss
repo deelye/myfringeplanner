@@ -4,8 +4,9 @@
   color: white;
   border-radius: 5px;
   padding: 10px 20px;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
-.button:hover {
-  text-decoration: none;
-}
