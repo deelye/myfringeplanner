@@ -8,7 +8,7 @@
   </button>
 
   <div class="rhs">
-    <div class="top">
+    <div class="top nav-link">
       <%= link_to "SHOWS", shows_path, class: "big-nav-link" %>
       <%= link_to "SHORTLIST", shortlist_path, class: "big-nav-link" %>
       <%= link_to "PLANNER", planner_path, class: "big-nav-link" %>
@@ -24,21 +24,23 @@
           <% else %>
             <li class="nav-item">
               <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            </li><li class="nav-item dropdown">
+              <%= image_tag "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </li>
           <% end %>
         </ul>
       </div>
     </div>
-    <div class="inline bottom">
+    <div class="inline bottom nav-search">
       <%= simple_form_for :filter, url: shows_path, method: :get, class: "form-search d-flex", id: "form-styling" do |f| %>
         <%= f.input :show, label: false, placeholder: "Show...", class: 'search-show-input' %>
         <%= f.input :genre, label: false, collection: Show::GENRES, prompt: "Genre", class: 'genre-style' %>
+        <%= f.input :start_date, label: false, placeholder: "Start Date", class: 'search-start-date' %>
         <%= f.submit class: "submit" %>
       <% end %>
     </div>
   </div>
-
-
-
-
 </div>
+
