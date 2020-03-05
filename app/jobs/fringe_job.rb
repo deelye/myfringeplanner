@@ -31,7 +31,7 @@ class FringeJob < ApplicationJob
       title: show['title'],
       description: show['description'],
       genre: show['genre'],
-      original_image: "https:" + show['images'].values.first['versions']['original']['url'],
+      original_image: "https:" + show['images']&.values.first['versions']['original']['url'],
       thumb_image: "https:" + show['images'].values.first['versions']['thumb-100']['url'],
       age_category: show['age_category'],
       warnings: show['warnings'],
