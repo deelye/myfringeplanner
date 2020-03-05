@@ -11,9 +11,5 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :shortlist, only: [:show]
-
-  # should remove planner resources as going through pages now?
-  resources :planner, only: [:show, :edit, :create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
