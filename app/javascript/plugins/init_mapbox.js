@@ -9,8 +9,7 @@ const initMapbox = () => {
   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
   };
 
-
-  if (mapElement) { // only build a map if there's a div#map to inject into
+  if (mapElement) {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
@@ -24,7 +23,17 @@ const initMapbox = () => {
 
     map.setZoom(14);
     map.setCenter([marker.lng, marker.lat])
-    }
+    };
+
+  // ADDED TO GET PIN POP-UP WORKING (BUT IT'S NOT)
+  const addMarkerToMap = (map, marker) => {
+    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
+
+    new mapboxgl.Marker()
+      .setLngLat([ marker.lng, marker.lat ])
+      .setPopup(popup)
+      .addTo(map);
+    };
   };
 
 export { initMapbox };
