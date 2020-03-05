@@ -9,10 +9,9 @@ const initMapbox = () => {
     map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
   };
 
-  // ADDED TO GET PIN POP-UP WORKING (BUT IT'S NOT)
   const addMarkerToMap = (map, marker) => {
     console.log("asd");
-    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
+    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
 
     new mapboxgl.Marker()
       .setLngLat([ marker.lng, marker.lat ])
