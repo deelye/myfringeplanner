@@ -17,6 +17,7 @@ class ShowsController < ApplicationController
       end
     else
       @shows = Show.includes(:performances, :venue).all
+      # @shows = Show.includes(:performances, :venue).all.geocoded ???
     end
   end
 
@@ -35,6 +36,7 @@ class ShowsController < ApplicationController
     @marker = {
       lat: @show.venue.latitude,
       lng: @show.venue.longitude,
+      infoWindow: render_to_string(partial: "info_window", locals: { show: @show })
     }
   end
 

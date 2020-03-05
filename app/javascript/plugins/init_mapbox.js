@@ -10,7 +10,7 @@ const initMapbox = () => {
   };
 
 
-  if (mapElement) { // only build a map if there's a div#map to inject into
+  if (mapElement) {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
@@ -24,7 +24,16 @@ const initMapbox = () => {
 
     map.setZoom(14);
     map.setCenter([marker.lng, marker.lat])
-    }
+    };
+
+  const addMarkerToMap = (map, marker) => {
+    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
+
+    new mapboxgl.Marker()
+      .setLngLat([ marker.lng, marker.lat ])
+      .setPopup(popup) // add this
+      .addTo(map);
+    };
   };
 
 export { initMapbox };
