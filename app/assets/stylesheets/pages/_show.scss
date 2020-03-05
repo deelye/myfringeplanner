@@ -1,7 +1,7 @@
 .show-div {
-  padding: 10px;
   width: 1170px;
-  box-shadow: 3px 3px 5px grey;
+  padding: 10px;
+  margin-bottom: 30px;
 }
 
 .show-top, .show-genre-return {
@@ -10,6 +10,7 @@
 
 .show-genre-return {
   justify-content: space-between;
+  font-size: 11px;
 }
 
 .show-image-star-bar, .show-calendar, .show-bottom-details {
@@ -68,7 +69,7 @@
 }
 
 .show-description {
-  font-size: 18 px;
+  font-size: 15px;
 }
 
 .show-shortlist-bar {
