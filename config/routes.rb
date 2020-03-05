@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   root to: 'pages#home'
+  get 'shortlist', to: 'pages#shortlist'
   resources :shows, only: [:show, :index] do
     member do
       get 'follow'
