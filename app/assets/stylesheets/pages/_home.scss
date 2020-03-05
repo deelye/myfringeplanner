@@ -1,75 +1,40 @@
 // Specific CSS for your home-page
 .searchbar {
   align-items: center;
- max-width: 70%;
-margin-left: 200px;
+  max-width: 70%;
+  margin-left: 200px;
 }
 
-.home_h1 {
-font-family: Roboto Condensed;
-font-style: normal;
-font-weight: bold;
-font-size: 65px;
-line-height: 76px;
-display: flex;
-align-items: center;
-text-align: center;
-
-color: #E75A79;
+.home-title {
+  font-family: Roboto Condensed;
+  font-size: 65px;
+  text-align: center;
+  color: $blue;
 }
 
-.home_cards {
+.home-cards {
   display: flex;
-  justify-content: space-around
-  ;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 20px;
-  margin-top: 10px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0px;
+  color: $blue;
 }
 
-.home_card {
-  display: flex;
-  flex-direction: column;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
+.home-card {
+  box-shadow: 5px 5px 20px rgb(240, 240, 240);
+  height: 280px;
+  width: 380px;
+  border-radius: 5px;
   font-size: 14px;
+  text-align: center;
+  padding: 25px;
 
-img {
-    object-fit: cover;
-    border-radius: 3px 3px 0px 0px;
+    h3 {
+      margin-top: 10px;
+    }
 }
 
-  h3 {
-    height: 40px;
-    font-weight: medium;
-    margin: 0px;
-  }
-
-  p {
-    margin: 0px;
-    font-size: 12px;
-  }
-}
-
-
-.btn-home {
-  box-shadow: -2px -6px 11px -2px #bccde0;
-  background-color:#4eadd9;
-  border:1px solid #f5f5f5;
-  display:inline-block;
-  cursor:pointer;
-  color:#ffffff;
-  font-family:Arial;
-  font-size:13px;
-  padding:9px 39px;
-  text-decoration:none;
-  text-shadow:0px 1px 0px #120f0f;
-}
-.btn-home:hover {
-  background-color:#2d96cf;
-  color:#ffffff;
-}
-.btn-home:active {
-  position:relative;
-  top:1px;
+.home-btn-begin {
+  margin-top: 30px;
+  text-align: center;
 }
