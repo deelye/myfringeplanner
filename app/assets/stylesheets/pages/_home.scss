@@ -22,8 +22,8 @@
 
 .home-card {
   box-shadow: 5px 5px 20px rgb(240, 240, 240);
-  height: 250px;
-  max-width: 375px;
+  height: 280px;
+  width: 380px;
   border-radius: 5px;
   font-size: 14px;
   text-align: center;
@@ -34,22 +34,7 @@
     }
 }
 
-.btn-home {
-  background-color: $blue;
-  display: inline-block;
-  cursor: pointer;
-  color: #ffffff;
-  font-size: 13px;
-  padding: 9px 39px;
-  text-decoration: none;
-}
-
-.btn-home:hover {
-  background-color: #2d96cf;
-  color: #ffffff;
-}
-
-.btn-home:active {
-  position: relative;
-  top: 1px;
+.home-btn-begin {
+  margin-top: 30px;
+  text-align: center;
 }
