@@ -9,7 +9,6 @@ const initMapbox = () => {
   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
   };
 
-
   if (mapElement) {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
@@ -26,12 +25,13 @@ const initMapbox = () => {
     map.setCenter([marker.lng, marker.lat])
     };
 
+  // ADDED TO GET PIN POP-UP WORKING (BUT IT'S NOT)
   const addMarkerToMap = (map, marker) => {
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
 
     new mapboxgl.Marker()
       .setLngLat([ marker.lng, marker.lat ])
-      .setPopup(popup) // add this
+      .setPopup(popup)
       .addTo(map);
     };
   };

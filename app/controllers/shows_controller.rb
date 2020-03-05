@@ -31,11 +31,11 @@ class ShowsController < ApplicationController
     redirect_to request.referrer
   end
 
-
   def show
     @marker = {
       lat: @show.venue.latitude,
       lng: @show.venue.longitude,
+      # ADDED FOLLOWING LINE TO MAKE PIN POP_UP
       infoWindow: render_to_string(partial: "info_window", locals: { show: @show })
     }
   end
