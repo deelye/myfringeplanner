@@ -23,6 +23,7 @@
 .form-control {
   color: white;
   background-color: $pink;
+  font-family: "FontAwesome";
 
   &:focus {
     color: white;
@@ -30,9 +31,18 @@
   }
 }
 
-::placeholder {
+textarea, input {
+  padding:10px;
+  font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+}
+
+input::placeholder {
   color: #FFF !important;
 }
+
 
 .btn {
   margin-bottom: 8px;
@@ -57,4 +67,7 @@
     border-color: #86d1f4 !important;
     color: #86d1f4 !important;
   }
+}
+.w100 {
+  width: 100%;
 }
