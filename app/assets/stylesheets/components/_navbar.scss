@@ -1,7 +1,5 @@
 .navbar-lewagon {
   justify-content: space-between;
-  // padding-top: 20px;
-  // padding-bottom: 20px;
   margin-bottom: 20px;
   background-size: cover;
 }
@@ -16,10 +14,20 @@
   display: inline-block;
 }
 
+
+// .navbar-avatar {
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//   &:hover {
+//     opacity: 0.7;
+//   }
+
+
+
 .logo {
   width: 250px;
-
 }
+
+
 .top {
   display: flex;
   justify-content: space-between;
@@ -34,17 +42,29 @@
 }
 
 .search-show-input {
-  width: 70%;
+  width: 115%;
+  margin-right: 20px;
+  border-radius: 5px;
 }
 
+.genre-style {
+  width: 60%;
+  margin-left: 80px;
+}
+
+.nav-search {
+
+}
 
 .form-group {
   width: 50%;
 }
 
-.genre-style {
-  width: 20%;
-  margin-top: 100px;
+.big-nav-link {
+  text-decoration: none;
+  font-size: 32px;
+  font-weight: bold;
+  color: black;
 }
 
 #form-styling {
@@ -58,4 +78,7 @@
 
 .submit {
   height: 38px;
+  color: white;
+  border-radius: 5px;
+  background-color: $blue;
 }
