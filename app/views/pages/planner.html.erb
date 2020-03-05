@@ -1,3 +1,4 @@
+<!-- Hide form if start date and end date have values -->
 <form action="">
   <label for="start-date"></label>
   <input id="start-date" class="input-field" type="text" placeholder="Start date">
@@ -5,3 +6,8 @@
   <input id="end-date" class="input-field" type="text" placeholder="End date">
   <button class="button" type="submit">Go</button>
 </form>
+<div class="day-calendar">
+  <% @planners.each do |planner| %>
+    <%= render "planner", planner: planner %>
+  <% end %>
+</div>
