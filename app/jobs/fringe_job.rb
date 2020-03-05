@@ -3,7 +3,7 @@ class FringeJob < ApplicationJob
   require "rest-client"
 
   def perform
-    url = "https://api.edinburghfestivalcity.com/events?festival=demofringe&key=#{ENV['FRINGE_KEY']}&signature=#{ENV['FRINGE_SIGNATURE']}"
+    url = "https://api.edinburghfestivalcity.com/events?festival=demofringe&key=#{ENV['FRINGE_KEY']}&signature=#{ENV['FRINGE_SIGNATURE']}&size=100"
     response = RestClient.get(url)
     shows = JSON.parse(response)
     shows.each do |show|
