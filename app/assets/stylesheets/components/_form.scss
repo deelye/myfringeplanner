@@ -4,8 +4,8 @@
   text-align: center;
 
   h3 {
-    color: gray;
     margin-bottom: 16px;
+    color: gray;
   }
 }
 
@@ -14,19 +14,19 @@
 }
 
 .form-input {
-  color: white;
   background-color: $pink;
   fill: blue;
+  color: white;
 }
 
 .form-control {
-  color: white;
   background-color: $pink;
+  color: white;
   font-family: "FontAwesome";
 
   &:focus {
-    color: white;
     background-color: $pink;
+    color: white;
   }
 }
 

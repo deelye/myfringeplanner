@@ -31,9 +31,9 @@
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     &:hover {
+      border-bottom: 2px solid $yellow;
       text-decoration: none !important;
       color: black !important;
-      border-bottom: 2px solid $yellow;
 
     }
   }
@@ -75,13 +75,13 @@
 }
 
 .submit {
-  height: 38px;
-  color: white;
-  border-radius: 5px;
   background-color: $blue;
+  height: 38px;
+  border-radius: 5px;
+  color: white;
 }
 
 #form-styling {
   display: flex !important;
-    height: 38px !important;
+  height: 38px !important;
 }
