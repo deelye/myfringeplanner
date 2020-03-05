@@ -7,4 +7,8 @@ class User < ApplicationRecord
   has_many :planners
 
   acts_as_follower
+  after_create :create_planner
+
+  private
+
 end
