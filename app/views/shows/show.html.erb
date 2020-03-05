@@ -20,9 +20,6 @@
       <h1 class="show-title"><%= @show.title %></h1>
       <div class="show-genre-return">
         <p><%= @show.genre %></p>
-        <%= link_to request.referrer do %>
-          <i class="fas fa-undo-alt"></i>
-        <% end %>
       </div>
       <p class="show-description"><%= @show.description %></p>
     </div>
@@ -38,11 +35,11 @@
       <h4><u>Details</u></h4>
       <p><i class="far fa-clock"></i><%= @show.performances.first.start.to_s(:time) %> - <%= @show.performances.first.end.to_s(:time) %></p>
       <p><i class="fas fa-map-marker-alt"></i> <%= @show.venue.name %> - <%= @show.venue.space %></p>
-      <p><i class="fas fa-coins"></i>£<%= @show.performances.last.price %> full price <%= link_to "(see Fringe for full details)", @show.website, target: :blank %> </p>
+      <p><i class="fas fa-coins"></i>£<%= @show.performances.last.price %> full price <%= link_to "(see Fringe for full details)", @show.website, target: :blank, class: "fringe-link" %> </p>
       <p><i class="far fa-thumbs-up"></i> <%= @show.age_category %></p>
       <p><i class="fas fa-exclamation-triangle"></i> <%= @show.warnings %></p>
+      <p><i class="fas fa-shopping-cart"></i><%= link_to "Buy tickets for the Fringe", @show.website, target: :blank, class: "fringe-link" %> </p>
     </div>
-
     <div id="map"
       class="show-map"
       style="width: 250px;

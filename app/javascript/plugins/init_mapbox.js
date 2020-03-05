@@ -4,10 +4,20 @@ const initMapbox = () => {
   const mapElement = document.getElementById('map');
 
   const fitMapToMarker = (map, marker) => {
-  const bounds = new mapboxgl.LngLatBounds();
-  bounds.extend([ marker.lng, marker.lat ]);
-  map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
+    const bounds = new mapboxgl.LngLatBounds();
+    bounds.extend([ marker.lng, marker.lat ]);
+    map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
   };
+
+  const addMarkerToMap = (map, marker) => {
+    console.log("asd");
+    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+
+    new mapboxgl.Marker()
+      .setLngLat([ marker.lng, marker.lat ])
+      .setPopup(popup)
+      .addTo(map);
+    };
 
   if (mapElement) {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
@@ -23,16 +33,8 @@ const initMapbox = () => {
 
     map.setZoom(14);
     map.setCenter([marker.lng, marker.lat])
-    };
-
-  // ADDED TO GET PIN POP-UP WORKING (BUT IT'S NOT)
-  const addMarkerToMap = (map, marker) => {
-    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
-
-    new mapboxgl.Marker()
-      .setLngLat([ marker.lng, marker.lat ])
-      .setPopup(popup)
-      .addTo(map);
+    fitMapToMarker(map, marker);
+    addMarkerToMap(map, marker);
     };
   };
 
