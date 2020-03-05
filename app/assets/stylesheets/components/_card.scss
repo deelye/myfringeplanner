@@ -20,7 +20,7 @@
   flex-direction: row;
   // width: 350px;
   height: 105px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+  // box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   font-size: 14px;
 
@@ -44,6 +44,30 @@
     margin: 0px;
     font-size: 12px;
   }
+}
+
+.comedy-colour {
+  box-shadow: 3px 3px 5px $comedy;
+}
+
+.cabaret-variety-colour {
+  box-shadow: 3px 3px 5px $cabaret-variety;
+}
+
+.circus-etc-colour {
+  box-shadow: 3px 3px 5px $circus-etc;
+}
+
+.theatre-etc-colour {
+  box-shadow: 3px 3px 5px $theatre-etc;
+}
+
+.events-etc-colour {
+  box-shadow: 3px 3px 5px $events-etc;
+}
+
+.other-colour {
+  box-shadow: 3px 3px 5px $other;
 }
 
 .card-star-n-image {

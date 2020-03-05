@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card <%= show.colour_class %>">
   <div class="card-star-n-image">
     <% if current_user&.following?(show) %>
       <%= link_to unfollow_show_path(show) do  %>
@@ -39,7 +39,7 @@
       <p><i class="fa fa-calendar card-dates" aria-hidden="true"></i> <%= dates.join %></p>
     </div>
     <div class="d-flex justify-content-between">
-      <p><%= truncate(show.venue.name, length: 27) %></p>
+      <p><%= truncate(show.venue.name, length: 50) %></p>
       <p>£<%= performances.last.price %></p>
     </div>
   </div>

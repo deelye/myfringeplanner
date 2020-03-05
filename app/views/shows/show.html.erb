@@ -1,7 +1,5 @@
-<div class="container show-div">
-
+<div class="container show-div <%= @show.colour_class %>">
   <div class="show-top">
-
     <div class="show-image-star-bar">
       <%= image_tag "#{@show.original_image}", alt: "#{@show.title}", class: "show-image" %>
       <div class="show-shortlist-bar">
@@ -18,7 +16,6 @@
         <% end %>
       </div>
     </div>
-
     <div class="show-top-details">
       <h1 class="show-title"><%= @show.title %></h1>
       <div class="show-genre-return">
@@ -29,18 +26,14 @@
       </div>
       <p class="show-description"><%= @show.description %></p>
     </div>
-
   </div>
-
   <br>
-
   <div class="show-bottom card-grid">
     <div class="show-calendar">
       <%= FringeCalendar.new(self, {}).render do |date| %>
         <%= date.day %>
       <% end %>
     </div>
-
     <div class="show-bottom-details">
       <h4><u>Details</u></h4>
       <p><i class="far fa-clock"></i><%= @show.performances.first.start.to_s(:time) %> - <%= @show.performances.first.end.to_s(:time) %></p>
@@ -49,8 +42,6 @@
       <p><i class="far fa-thumbs-up"></i> <%= @show.age_category %></p>
       <p><i class="fas fa-exclamation-triangle"></i> <%= @show.warnings %></p>
     </div>
-
-
     <div id="map"
       class="show-map"
       style="width: 250px;
@@ -58,6 +49,5 @@
       data-marker="<%= @marker.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" class="show-map">
     </div>
-
   </div>
 </div>
