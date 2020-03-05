@@ -2,16 +2,16 @@
   justify-content: space-between;
   margin-bottom: 20px;
   background-size: cover;
-}
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+  .navbar-collapse {
+    flex-grow: 0;
 
-}
+  }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-  display: inline-block;
+  .navbar-brand img {
+    width: 40px;
+    display: inline-block;
+  }
 }
 
 
@@ -31,13 +31,14 @@
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     &:hover {
+      border-bottom: 2px solid $yellow;
       text-decoration: none !important;
       color: black !important;
-      border-bottom: 2px solid $yellow;
 
     }
   }
 }
+
 .inline div {
   display: inline-block;
 }
@@ -69,18 +70,18 @@
   color: black;
 }
 
-#form-styling {
-  display: flex !important;
-    height: 38px !important;
-}
-
 .filter {
   display: flex;
 }
 
 .submit {
-  height: 38px;
-  color: white;
-  border-radius: 5px;
   background-color: $blue;
+  height: 38px;
+  border-radius: 5px;
+  color: white;
+}
+
+#form-styling {
+  display: flex !important;
+  height: 38px !important;
 }

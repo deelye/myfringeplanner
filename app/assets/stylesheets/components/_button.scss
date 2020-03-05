@@ -1,11 +1,12 @@
 .button {
   background-color: $blue;
   border: none;
-  color: white;
-  border-radius: 5px;
   padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
-.button:hover {
-  text-decoration: none;
-}
