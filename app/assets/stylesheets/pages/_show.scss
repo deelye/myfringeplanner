@@ -61,6 +61,16 @@ p .fringe-link:hover {
   color: $blue;
 }
 
+.gmaps-link {
+  text-decoration: none;
+  color: black;
+}
+
+.gmaps-link:hover {
+  text-decoration: none;
+  color: $blue;
+}
+
 .show-map {
   grid-column: 3 / 4;
   box-shadow: 3px 3px 5px grey;

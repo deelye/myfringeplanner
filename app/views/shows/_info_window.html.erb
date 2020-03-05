@@ -1,6 +1,5 @@
-<p><%= @show.venue.space %>,</p>
-<p><%= @show.venue.name %>,</p>
-
-<%= link_to "https://www.google.com/maps/search/#{@show.venue.postcode}", target: :blank do %>
+<%= link_to "https://www.google.com/maps/search/#{@show.venue.postcode}", target: :blank, class: "gmaps-link" do %>
+  <p><%= @show.venue.space %>,</p>
+  <p><%= @show.venue.name %>,</p>
   <p><%= @show.venue.postcode %></p>
 <% end %>
