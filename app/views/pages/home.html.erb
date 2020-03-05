@@ -17,12 +17,6 @@
     </div>
   </div>
 
-  <div class= "searchbar">
-    <%= form_tag shows_path, method: :get, class: "form-inline form-search d-flex" do %>
-    <%= text_field_tag :query,params[:query],
-    class: 'form-control flex-fill',placeholder: 'Find your favourite shows!'%>
-    <%= submit_tag 'Search', class: 'btn btn-home ml-2 px-3'%>
-    <% end %>
-  </div>
+  <div class="home-btn-begin"><%= link_to "Let's begin...", shows_path, class: "button" %></div>
 
 </div>
