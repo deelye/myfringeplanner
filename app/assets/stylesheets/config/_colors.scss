@@ -1,22 +1,43 @@
-// Define variables for your color scheme
-
-// For example:
-$blue: #4eacd9;
-$yellow: #f2c94c;
-$pink: #E75A78;
+// General Colors
+$blue: #02a7f5;
+$pink: rgb(231, 90, 120);
 $red: #FD1015;
-$orange: #E67E22;
-$green: #1EDD88;
-$gray: #0E0000;
+$gray: #555555;
 $light-gray: #F4F4F4;
 
-$comedy: $blue;
-$cabaret-variety: #f8cc98;
+// Colors for categories
+$blue-event: rgb(2, 167, 245);
+$yellow: rgb(239, 212, 4);
+$orange: rgb(230, 126, 34);
+$hot-pink: rgb(230, 0, 125);
+$green: rgb(65, 206, 144);
+$purple: rgb(190, 106, 201);
+
+// Colors for categories' shadows
+$blue-event-shadow: rgba(2, 167, 245, 0.4);
+$yellow-shadow: rgba(239, 212, 4, 0.4);
+$orange-shadow: rgba(230, 126, 34, 0.4);
+$hot-pink-shadow: rgba(230, 0, 125, 0.4);
+$green-shadow: rgba(65, 206, 144, 0.4);
+$purple-shadow: rgba(190, 106, 201, 0.4);
+
+// Colors for categories
+$comedy: $hot-pink;
+$cabaret-variety: $purple;
 // dance, physical theatre, circus
-$circus-etc: #cdccfc;
+$circus-etc: $yellow;
 // theatre; musicals & opera
-$theatre-etc: #ccecff;
+$theatre-etc: $green;
 // exhibitions; events
-$events-etc: #c7ffdb;
+$events-etc: $orange;
 // spoken word; music; childrens shows
-$other: #ea9999;
+$other: $blue-event;
+
+
+// Colors for categories' shadows
+$comedy-shadow: $hot-pink-shadow;
+$cabaret-variety-shadow: $purple-shadow;
+$circus-etc-shadow: $yellow-shadow;
+$theatre-etc-shadow: $green-shadow;
+$events-etc-shadow: $orange-shadow;
+$other-shadow: $blue-event-shadow;

@@ -4,12 +4,11 @@
   margin-bottom: 30px;
 }
 
-.show-top, .show-genre-return {
+.show-top {
   display: flex;
 }
 
 .show-genre-return {
-  justify-content: space-between;
   font-size: 11px;
 }
 
@@ -40,7 +39,7 @@
 
 .show-bottom-details {
   grid-column: 2 / 3;
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 5px;
     i {
       width: 30px;
@@ -49,8 +48,27 @@
       margin-bottom: 1rem;
     };
     p {
-      margin-bottom: 0.3rem;
+      margin-bottom: 0px;
     }
+}
+
+p .fringe-link {
+  text-decoration: none;
+  color: black;
+}
+
+p .fringe-link:hover {
+  color: $blue;
+}
+
+.gmaps-link {
+  text-decoration: none;
+  color: black;
+}
+
+.gmaps-link:hover {
+  text-decoration: none;
+  color: $blue;
 }
 
 .show-map {

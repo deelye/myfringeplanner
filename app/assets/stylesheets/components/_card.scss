@@ -5,6 +5,18 @@
   margin-top: 10px;
 }
 
+@media(max-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 850px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
 .hid-link {
   z-index: 10;
   position: absolute;
@@ -47,27 +59,27 @@
 }
 
 .comedy-colour {
-  box-shadow: 3px 3px 5px $comedy;
+  box-shadow: 2px 2px 5px $comedy-shadow;
 }
 
 .cabaret-variety-colour {
-  box-shadow: 3px 3px 5px $cabaret-variety;
+  box-shadow: 2px 2px 5px $cabaret-variety-shadow;
 }
 
 .circus-etc-colour {
-  box-shadow: 3px 3px 5px $circus-etc;
+  box-shadow: 2px 2px 5px $circus-etc-shadow;
 }
 
 .theatre-etc-colour {
-  box-shadow: 3px 3px 5px $theatre-etc;
+  box-shadow: 2px 2px 5px $theatre-etc-shadow;
 }
 
 .events-etc-colour {
-  box-shadow: 3px 3px 5px $events-etc;
+  box-shadow: 2px 2px 5px $events-etc-shadow;
 }
 
 .other-colour {
-  box-shadow: 3px 3px 5px $other;
+  box-shadow: 2px 2px 5px $other-shadow;
 }
 
 .card-star-n-image {
