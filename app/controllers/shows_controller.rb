@@ -1,10 +1,9 @@
 class ShowsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
   before_action :set_show, only: [:show, :follow, :unfollow]
-  # def index
-  #   @shows = Show.all
+
   def index
-    if params[:filter] # filter by category and title
+    if params[:filter]
       if params[:filter][:show].present? && params[:filter][:genre].present?
         @shows = Show.includes(:performances, :venue).where(genre: params[:filter][:genre]).search(params[:filter][:show])
       elsif params[:filter][:show].present?
@@ -17,7 +16,6 @@ class ShowsController < ApplicationController
       end
     else
       @shows = Show.includes(:performances, :venue).all
-      # @shows = Show.includes(:performances, :venue).all.geocoded ???
     end
   end
 
@@ -35,7 +33,6 @@ class ShowsController < ApplicationController
     @marker = {
       lat: @show.venue.latitude,
       lng: @show.venue.longitude,
-      # ADDED FOLLOWING LINE TO MAKE PIN POP_UP
       infoWindow: render_to_string(partial: "info_window", locals: { show: @show })
     }
   end
