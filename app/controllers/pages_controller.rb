@@ -7,4 +7,9 @@ class PagesController < ApplicationController
   def shortlist
     @follows = current_user.all_follows
   end
+  
+  def planner
+    @shortlists = current_user.shortlists
+    @planners = current_user.planners
+  end
 end

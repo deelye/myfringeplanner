@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  get 'planners/show'
-  get 'planners/edit'
-  get 'planners/create'
   devise_for :users
+  get 'planner', to: 'pages#planner'
 
   root to: 'pages#home'
   get 'shortlist', to: 'pages#shortlist'
