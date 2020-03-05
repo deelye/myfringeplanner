@@ -6,7 +6,7 @@ class FringeJob < ApplicationJob
     url = "https://api.edinburghfestivalcity.com/events?festival=demofringe&key=#{ENV['FRINGE_KEY']}&signature=#{ENV['FRINGE_SIGNATURE']}"
     response = RestClient.get(url)
     shows = JSON.parse(response)
-    shows.each do |show|
+    shows[1..-1].each do |show|
       @venue = Venue.find_or_create_by!(venue_hash(show))
       @show = Show.find_by_url(show['url'])
       if @show
@@ -31,7 +31,7 @@ class FringeJob < ApplicationJob
       title: show['title'],
       description: show['description'],
       genre: show['genre'],
-      original_image: "https:" + show['images'].values.first['versions']['original']['url'],
+      original_image: "https:" + show['images']&.values.first['versions']['original']['url'],
       thumb_image: "https:" + show['images'].values.first['versions']['thumb-100']['url'],
       age_category: show['age_category'],
       warnings: show['warnings'],
