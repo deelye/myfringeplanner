@@ -4,6 +4,10 @@ class PagesController < ApplicationController
   def home
   end
 
+  def shortlist
+    @follows = current_user.all_follows
+  end
+  
   def planner
     @shortlists = current_user.shortlists
     @planners = current_user.planners
