@@ -17,8 +17,8 @@
   flex-wrap:wrap;
   flex: flex-row;
   justify-content: space-between;
-  align-items: center;
   margin: 20px 0px;
+  align-items: center;
   color: $blue;
 }
 
@@ -26,10 +26,10 @@
   box-shadow: 5px 5px 20px rgb(240, 240, 240);
   height: 280px;
   width: 380px;
+  padding: 25px;
   border-radius: 5px;
   font-size: 14px;
   text-align: center;
-  padding: 25px;
 
     h3 {
       margin-top: 10px;

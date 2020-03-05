@@ -113,16 +113,16 @@ p .fringe-link:hover {
     }
 }
 
-.calendar-days-header th {
-  padding: 5px 0px;
-}
-
 .show-table {
   color: white;
+
+  td {
+    border: white solid 1px;
+  }
 }
 
-.show-table td {
-  border: white solid 1px;
+.calendar-days-header th {
+  padding: 5px 0px;
 }
 
 .calendar-heading {
@@ -134,11 +134,11 @@ p .fringe-link:hover {
 
 .calendar-days-header {
   background-color: #b3bec3;
-}
 
-.calendar-days-header th {
-  border: white solid 1px;
-  text-align: center;
+  th {
+    border: white solid 1px;
+    text-align: center;
+  }
 }
 
 .calendar-body {
