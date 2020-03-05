@@ -12,6 +12,7 @@ class Show < ApplicationRecord
     "Theatre"
     # TODO: finish the list
   ]
+
   belongs_to :venue
   has_many :shortlists
   has_many :performances
