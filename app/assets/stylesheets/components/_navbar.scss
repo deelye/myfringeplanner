@@ -25,6 +25,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  a {
+    height: 47px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    &:hover {
+      text-decoration: none !important;
+      color: black !important;
+      border-bottom: 2px solid $yellow;
+
+    }
+  }
 }
 .inline div {
   display: inline-block;
