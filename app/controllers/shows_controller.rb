@@ -4,17 +4,17 @@ class ShowsController < ApplicationController
 
   def index
     if params[:filter]
-      if params[:filter][:show].present? && params[:filter][:genre].present?
-        @shows = Show.includes(:performances, :venue).where(genre: params[:filter][:genre]).search(params[:filter][:show])
-      elsif params[:filter][:show].present?
-        @shows = Show.includes(:performances, :venue).search(params[:filter][:show])
-      elsif params[:filter][:genre].present?
-        @shows = Show.includes(:performances, :venue).where(genre: params[:filter][:genre])
-      elsif params[:filter][:show].blank? && params[:filter][:genre].blank?
-        @shows = Show.includes(:performances, :venue).all
+      @start_date = ("#{params[:filter][:start_date]}/08/2020").to_datetime
+      @end_date = ("#{params[:filter][:end_date]}/08/2020").to_datetime
+      if params[:filter][:start_date].present? && params[:filter][:end_date].present?
+        @shows = Performance.shows_between(@start_date, @end_date)
       end
-    elsif params[:category]
-      @shows = Show.includes(:performances, :venue).where(genre: params[:category])
+      if params[:filter][:genre].present?
+        @shows = @shows.select{|r| r.genre = params[:filter][:genre]}
+      end
+      if params[:filter][:show].present?
+        @shows = @shows.select{|r| r.show.genre == params[:filter][:genre]}
+      end
     else
       @shows = Show.includes(:performances, :venue).all
     end

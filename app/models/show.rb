@@ -42,5 +42,12 @@ class Show < ApplicationRecord
     }
     classes[self.genre]
   end
+
+  def dates_between(start_date, end_date)
+    @valid_shows
+    self.each do |show|
+      show.p
+    end
+  end
 end
 
