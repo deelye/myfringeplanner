@@ -8,7 +8,7 @@
 
 # require "open-uri"
 
-
+Planner.destroy_all
 Performance.destroy_all
 Show.destroy_all
 Venue.destroy_all

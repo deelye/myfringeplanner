@@ -7,9 +7,10 @@ class PagesController < ApplicationController
   def shortlist
     @follows = current_user.all_follows
   end
-  
+
   def planner
-    @shortlists = current_user.shortlists
-    @planners = current_user.planners
+    @day = "07/08/2020".to_datetime.day
+    @performances = current_user.all_follows.map{|r| r.followable.performances}.flatten.select{|r| r.start.day == @day}
+    raise
   end
 end
