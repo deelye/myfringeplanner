@@ -37,9 +37,9 @@
     </div>
     <div class="inline bottom nav-search">
       <%= simple_form_for :filter, url: shows_path, method: :get, class: "form-search d-flex", id: "form-styling" do |f| %>
-        <%= f.input :show, label: false, placeholder: "Show...", class: 'search-show-input' %>
-        <%= f.input :genre, label: false, collection: Show::GENRES, prompt: "Genre", class: 'genre-style' %>
-        <%= f.input :start_date, label: false, placeholder: "Start Date", class: 'search-start-date' %>
+        <%= f.input :show, label: false, placeholder: "Show...", input_html: {class: 'search-show-input' } %>
+        <%= f.input :genre, label: false, collection: Show::GENRES, prompt: "Genre", input_html: {class: 'genre-style' } %>
+        <%= f.input :start_date, label: false, placeholder: "Start Date", input_html: {class: 'search-start-date' } %>
         <%= f.submit "Search", class: "submit" %>
       <% end %>
     </div>
