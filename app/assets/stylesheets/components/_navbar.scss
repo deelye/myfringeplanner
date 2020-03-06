@@ -14,8 +14,6 @@
   }
 }
 
-
-
 .logo {
   width: 250px;
 }
@@ -48,14 +46,25 @@
 }
 
 .search-show-input {
-  width: 115%;
-  margin-right: 20px;
+  // width: 115%;
+  // margin-right: 20px;
   border-radius: 5px;
+  font-family: "Roboto Condensed" !important;
+  border: 0;
+}
+
+.search-start-date {
+  border-radius: 5px;
+  // margin-right: 10px;
+  font-family: "Roboto Condensed" !important;
+  border: 0;
 }
 
 .genre-style {
   width: 60%;
-  margin-left: 80px;
+  margin-left: 50px;
+  font-family: "Roboto Condensed" !important;
+  border: 0;
 }
 
 
@@ -65,9 +74,11 @@
 
 .big-nav-link {
   text-decoration: none;
-  font-size: 32px;
+  font-size: 36px;
   font-weight: bold;
   color: black;
+  letter-spacing: 2px;
+  // word-spacing: ;
 }
 
 .filter {
@@ -77,8 +88,12 @@
 .submit {
   background-color: $blue;
   height: 38px;
+  padding: 3px 15px 3px 15px !important;
   border-radius: 5px;
   color: white;
+  font-family: "Roboto Condensed" !important;
+  margin-left: 50px;
+  border: 0;
 }
 
 #form-styling {
