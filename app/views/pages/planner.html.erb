@@ -1,13 +1,17 @@
 <!-- Hide form if start date and end date have values -->
 <div class="body-container">
-
-  <form action="">
-    <label for="start-date"></label>
-    <input id="start-date" class="input-field" type="text" placeholder="Start date">
-    <label for="end-date"></label>
-    <input id="end-date" class="input-field" type="text" placeholder="End date">
-    <button class="button" type="submit">Go</button>
-  </form>
+  <div class="header-bar">
+    <form action="">
+      <label for="Day"></label>
+      <select name="day" id="day">
+        <% @collection.each do |r| %>
+          <option value="<%= r %>"><%= r %></option>
+        <% end %>
+      </select>
+      <button class="button" type="submit">Go</button>
+    </form>
+    <h3><%= @dayname %></h3>
+  </div>
   <div class="cont">
     <div class="planner">
 
@@ -30,7 +34,7 @@
 
       <div class="day-calendar">
         <% @planners.each do |planner| %>
-          <%= link_to delete_planner_path(planner), method: :delete do  %>
+          <%= link_to delete_planner_path(planner, day: params[:day]), method: :delete do  %>
             <%= render "planner", planner: planner %>
           <% end %>
         <% end %>
@@ -56,7 +60,7 @@
     </div>
     <div class="rhs">
       <% @performances.each do |perf| %>
-        <%= link_to performance_planners_path(perf ,@planner), method: :post do  %>
+        <%= link_to performance_planners_path(perf ,@planner, day: params[:day]), method: :post do  %>
           <div class="<%= perf.show.colour_class %> w250">
             <p><%= perf.show.title %></p>
             <p><%= perf.start.strftime('%H:%M') %></p>
