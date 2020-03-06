@@ -23,25 +23,55 @@
 
 .color-comedy {
   background-color: $comedy;
+  &:hover {
+    opacity: 0.8;
+    text-decoration: none;
+    color: white;
+  }
 }
 
 .color-cabaret-variety {
   background-color: $cabaret-variety;
+   &:hover {
+    opacity: 0.8;
+    text-decoration: none;
+    color: white;
+  }
 }
 
 .color-circus-etc {
   background-color: $circus-etc;
+   &:hover {
+    opacity: 0.8;
+    text-decoration: none;
+    color: white;
+  }
 }
 
 .color-theatre-etc {
   background-color: $theatre-etc;
+   &:hover {
+    opacity: 0.8;
+    text-decoration: none;
+    color: white;
+  }
 }
 
 .color-events-etc {
   background-color: $events-etc;
+   &:hover {
+    opacity: 0.8;
+    text-decoration: none;
+    color: white;
+  }
 }
 
 .color-other {
   background-color: $other;
+   &:hover {
+    opacity: 0.8;
+    text-decoration: none;
+    color: white;
+  }
 }
 
