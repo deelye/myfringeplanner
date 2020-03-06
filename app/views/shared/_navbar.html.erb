@@ -40,7 +40,7 @@
         <%= f.input :show, label: false, placeholder: "Show...", class: 'search-show-input' %>
         <%= f.input :genre, label: false, collection: Show::GENRES, prompt: "Genre", class: 'genre-style' %>
         <%= f.input :start_date, label: false, placeholder: "Start Date", class: 'search-start-date' %>
-        <%= f.submit class: "submit" %>
+        <%= f.submit "Search", class: "submit" %>
       <% end %>
     </div>
   </div>
