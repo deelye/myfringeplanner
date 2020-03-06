@@ -1,10 +1,32 @@
 .day-calendar {
-  height: 600px;
-  background-color: gray;
+  height: 1300px;
+  background-color: rgb(240, 240, 240);
   width: 300px;
   position: relative;
 }
 
+.planner {
+  display: flex;
+  margin: 20px 0px;
+}
+
+.planner-times {
+  height: 1300px;
+  background-color: white;
+  width: 50px;
+
+  p {
+    height: 100px;
+    text-align: center;
+    margin: 0px;
+  }
+}
+
 .plan {
   position: absolute;
+
+  p {
+    margin: 0px;
+    padding-left: 5px;
+  }
 }
