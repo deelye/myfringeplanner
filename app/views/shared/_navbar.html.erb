@@ -1,11 +1,13 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="background-image: url(<%= image_path 'nav-back.png' %>);">
-  <%= link_to "#" do %>
+  <%= link_to shows_path do %>
     <%= image_tag "logo.png", class: 'logo'%>
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
+
 
   <div class="rhs">
     <div class="top nav-link">
@@ -35,10 +37,10 @@
     </div>
     <div class="inline bottom nav-search">
       <%= simple_form_for :filter, url: shows_path, method: :get, class: "form-search d-flex", id: "form-styling" do |f| %>
-        <%= f.input :show, label: false, placeholder: "Show...", class: 'search-show-input' %>
-        <%= f.input :genre, label: false, collection: Show::GENRES, prompt: "Genre", class: 'genre-style' %>
-        <%= f.input :start_date, label: false, placeholder: "Start Date", class: 'search-start-date' %>
-        <%= f.submit class: "submit" %>
+        <%= f.input :show, label: false, placeholder: "Show...", input_html: {class: 'search-show-input' } %>
+        <%= f.input :genre, label: false, collection: Show::GENRES, prompt: "Genre", input_html: {class: 'genre-style' } %>
+        <%= f.input :start_date, label: false, placeholder: "Start Date", input_html: {class: 'search-start-date' } %>
+        <%= f.submit "Search", class: "submit" %>
       <% end %>
     </div>
   </div>

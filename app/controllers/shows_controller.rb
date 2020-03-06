@@ -8,12 +8,13 @@ class ShowsController < ApplicationController
         @shows = Show.includes(:performances, :venue).where(genre: params[:filter][:genre]).search(params[:filter][:show])
       elsif params[:filter][:show].present?
         @shows = Show.includes(:performances, :venue).search(params[:filter][:show])
-
       elsif params[:filter][:genre].present?
         @shows = Show.includes(:performances, :venue).where(genre: params[:filter][:genre])
       elsif params[:filter][:show].blank? && params[:filter][:genre].blank?
         @shows = Show.includes(:performances, :venue).all
       end
+    elsif params[:category]
+      @shows = Show.includes(:performances, :venue).where(genre: params[:category])
     else
       @shows = Show.includes(:performances, :venue).all
     end

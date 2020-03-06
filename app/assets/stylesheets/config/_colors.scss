@@ -13,14 +13,6 @@ $hot-pink: rgb(230, 0, 125);
 $green: rgb(65, 206, 144);
 $purple: rgb(190, 106, 201);
 
-// Colors for categories' shadows
-$blue-event-shadow: rgba(2, 167, 245, 0.4);
-$yellow-shadow: rgba(239, 212, 4, 0.4);
-$orange-shadow: rgba(230, 126, 34, 0.4);
-$hot-pink-shadow: rgba(230, 0, 125, 0.4);
-$green-shadow: rgba(65, 206, 144, 0.4);
-$purple-shadow: rgba(190, 106, 201, 0.4);
-
 // Colors for categories
 $comedy: $hot-pink;
 $cabaret-variety: $purple;
@@ -33,6 +25,13 @@ $events-etc: $orange;
 // spoken word; music; childrens shows
 $other: $blue-event;
 
+// Colors for categories' shadows
+$blue-event-shadow: rgba(2, 167, 245, 0.4);
+$yellow-shadow: rgba(239, 212, 4, 0.4);
+$orange-shadow: rgba(230, 126, 34, 0.4);
+$hot-pink-shadow: rgba(230, 0, 125, 0.4);
+$green-shadow: rgba(65, 206, 144, 0.4);
+$purple-shadow: rgba(190, 106, 201, 0.4);
 
 // Colors for categories' shadows
 $comedy-shadow: $hot-pink-shadow;

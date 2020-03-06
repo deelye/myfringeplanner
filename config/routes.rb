@@ -18,5 +18,4 @@ Rails.application.routes.draw do
     resources :planners, only: [:create]
   end
   delete '/planners/:id', to: 'planners#destroy', as: :delete_planner
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
