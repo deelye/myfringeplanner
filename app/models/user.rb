@@ -5,6 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :shortlists
   has_many :planners
+  has_many :shows, through: :shortlists
+  has_many :performances, through: :shows
+  has_many :planned_performances, through: :planners, source: :performance
 
   acts_as_follower
 end

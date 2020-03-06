@@ -1,13 +1,71 @@
 <!-- Hide form if start date and end date have values -->
-<form action="">
-  <label for="start-date"></label>
-  <input id="start-date" class="input-field" type="text" placeholder="Start date">
-  <label for="end-date"></label>
-  <input id="end-date" class="input-field" type="text" placeholder="End date">
-  <button class="button" type="submit">Go</button>
-</form>
-<div class="day-calendar">
-  <% @planners.each do |planner| %>
-    <%= render "planner", planner: planner %>
-  <% end %>
+<div class="body-container">
+
+  <form action="">
+    <label for="start-date"></label>
+    <input id="start-date" class="input-field" type="text" placeholder="Start date">
+    <label for="end-date"></label>
+    <input id="end-date" class="input-field" type="text" placeholder="End date">
+    <button class="button" type="submit">Go</button>
+  </form>
+  <div class="cont">
+    <div class="planner">
+
+      <div class="planner-times">
+        <p>10:00</p>
+        <p>11:00</p>
+        <p>12:00</p>
+        <p>13:00</p>
+        <p>14:00</p>
+        <p>15:00</p>
+        <p>16:00</p>
+        <p>17:00</p>
+        <p>18:00</p>
+        <p>19:00</p>
+        <p>20:00</p>
+        <p>21:00</p>
+        <p>22:00</p>
+        <p>23:00</p>
+      </div>
+
+      <div class="day-calendar">
+        <% @planners.each do |planner| %>
+          <%= link_to delete_planner_path(planner), method: :delete do  %>
+            <%= render "planner", planner: planner %>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="planner-times">
+        <p>10:00</p>
+        <p>11:00</p>
+        <p>12:00</p>
+        <p>13:00</p>
+        <p>14:00</p>
+        <p>15:00</p>
+        <p>16:00</p>
+        <p>17:00</p>
+        <p>18:00</p>
+        <p>19:00</p>
+        <p>20:00</p>
+        <p>21:00</p>
+        <p>22:00</p>
+        <p>23:00</p>
+      </div>
+
+    </div>
+    <div class="rhs">
+      <% @performances.each do |perf| %>
+        <%= link_to performance_planners_path(perf ,@planner), method: :post do  %>
+          <div class="<%= perf.show.colour_class %> w250">
+            <p><%= perf.show.title %></p>
+            <p><%= perf.start.strftime('%H:%M') %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div>
+
+
 </div>

@@ -3,22 +3,25 @@ class FringeJob < ApplicationJob
   require "rest-client"
 
   def perform
-    url = "https://api.edinburghfestivalcity.com/events?festival=demofringe&key=#{ENV['FRINGE_KEY']}&signature=#{ENV['FRINGE_SIGNATURE']}&size=100"
-    response = RestClient.get(url)
-    shows = JSON.parse(response)
-    shows[1..-1].each do |show|
-      @venue = Venue.find_or_create_by!(venue_hash(show))
-      @show = Show.find_by_url(show['url'])
-      if @show
-        @show.venue = @venue
-        @show.update!(show_params(show))
-        puts "UPDATED"
-      else
-        @show = Show.new(show_params(show))
-        @show.venue = @venue
-        @show.save!
-        show['performances'].each do |perf|
-          performance = Performance.find_or_create_by(performance_hash(perf, @show))
+    values = [0,100,200,300]
+    values.each do |v|
+      url = "https://api.edinburghfestivalcity.com/events?festival=demofringe&key=#{ENV['FRINGE_KEY']}&signature=#{ENV['FRINGE_SIGNATURE']}&size=100&from=#{v}"
+      response = RestClient.get(url)
+      shows = JSON.parse(response)
+      shows.each do |show|
+        @venue = Venue.find_or_create_by!(venue_hash(show))
+        @show = Show.find_by_url(show['url'])
+        if @show
+          @show.venue = @venue
+          @show.update!(show_params(show))
+          puts "UPDATED"
+        else
+          @show = Show.new(show_params(show))
+          @show.venue = @venue
+          @show.save!
+          show['performances'].each do |perf|
+            performance = Performance.find_or_create_by(performance_hash(perf, @show))
+          end
         end
       end
     end
@@ -31,8 +34,6 @@ class FringeJob < ApplicationJob
       title: show['title'],
       description: show['description'],
       genre: show['genre'],
-      original_image: "https:" + show['images']&.values.first['versions']['original']['url'],
-      thumb_image: "https:" + show['images'].values.first['versions']['thumb-100']['url'],
       age_category: show['age_category'],
       warnings: show['warnings'],
       website: show['website'],
@@ -40,6 +41,14 @@ class FringeJob < ApplicationJob
       updated: show['updated'].to_datetime,
       twitter: show['twitter']
     }
+    if show['images'].is_a?(Hash)
+      show_hash[:original_image] = "https:" + show['images'].values.first['versions']['original']['url']
+      show_hash[:thumb_image] = "https:" + show['images'].values.first['versions']['thumb-100']['url']
+    else
+      show_hash[:original_image] = 'logo.png'
+      show_hash[:thumb_image] = 'logo.png'
+    end
+    show_hash
   end
 
   def venue_hash(show)
