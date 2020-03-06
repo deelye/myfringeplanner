@@ -4,53 +4,59 @@ class ShowsController < ApplicationController
 
   def index
     if params[:filter]
-      @start_date = (2020, 8, params[:filter][:start_date]).to_datetime
-      @end_date = (2020, 8, params[:filter][:end_date]).to_datetime
+      @start_date = ("#{params[:filter][:start_date]}/08/2020").to_datetime
+      @end_date = ("#{params[:filter][:end_date]}/08/2020").to_datetime
 
-      # If all search parameters are defined
-      if params[:filter][:start_date].present? && params[:filter][:end_date].present? && params[:filter][:show].present? && params[:filter][:genre].present?
-        @shows = Performance.dates_between(@start_date, @end_date).map(&:show).uniq.includes(:performances, :venue).where(genre: params[:filter][:genre]).search(params[:filter][:show])
-        puts "found the first"
-      # Else if only dates and name are defined
-      elsif params[:filter][:start_date].present? && params[:filter][:end_date].present? && params[:filter][:show].present?
-        @shows = Performance.dates_between(@start_date, @end_date).map(&:show).uniq.includes(:performances, :venue).search(params[:filter][:show])
-        puts "found the second"
-      # Else if only dates and genre are defined
-      elsif params[:filter][:start_date].present? && params[:filter][:end_date].present? && params[:filter][:genre].present?
-        @shows = Performance.dates_between(@start_date, @end_date).map(&:show).uniq.includes(:performances, :venue).where(genre: params[:filter][:genre])
-      # Else if only dates are defined
+      # # If all search parameters are defined
+      # if params[:filter][:start_date].present? && params[:filter][:end_date].present? && params[:filter][:show].present? && params[:filter][:genre].present?
+      #   @shows = Performance.shows_between(@start_date, @end_date).map(&:show).uniq.includes(:performances, :venue).where(genre: params[:filter][:genre]).search(params[:filter][:show])
+      #   puts "found the first"
+      # # Else if only dates and name are defined
+      # elsif params[:filter][:start_date].present? && params[:filter][:end_date].present? && params[:filter][:show].present?
+      #   @shows = Performance.shows_between(@start_date, @end_date).map(&:show).uniq.includes(:performances, :venue).search(params[:filter][:show])
+      #   puts "found the second"
+      # # Else if only dates and genre are defined
+      # elsif params[:filter][:start_date].present? && params[:filter][:end_date].present? && params[:filter][:genre].present?
+      #   @shows = Performance.shows_between(@start_date, @end_date).map(&:show).uniq.includes(:performances, :venue).where(genre: params[:filter][:genre])
+      # # Else if only dates are defined
       if params[:filter][:start_date].present? && params[:filter][:end_date].present?
-        @shows = Performance.dates_between(@start_date, @end_date).map(&:show).uniq.includes(:performances, :venue)
+        @shows = Performance.shows_between(@start_date, @end_date)
 
-      # Else if start date, genre, and name are defined
-      elsif params[:filter][:start_date].present? && params[:filter][:show].present? && params[:filter][:genre].present?
-        @shows = Performance.dates_between(@start_date, DateTime.new(2020, 8, 31)).map(&:show).uniq.includes(:performances, :venue).where(genre: params[:filter][:genre]).search(params[:filter][:show])
-      # Else if start date and name are defined
-      elsif params[:filter][:start_date].present? && params[:filter][:show].present?
-        @shows = Performance.dates_between(@start_date, DateTime.new(2020, 8, 31)).map(&:show).uniq.includes(:performances, :venue).search(params[:filter][:show])
-      # Else if start date and genre are defined
-      elsif params[:filter][:start_date].present? && params[:filter][:genre].present?
-        @shows = Performance.dates_between(@start_date, DateTime.new(2020, 8, 31)).map(&:show).uniq.includes(:performances, :venue).where(genre: params[:filter][:genre])
+      # # Else if start date, genre, and name are defined
+      # elsif params[:filter][:start_date].present? && params[:filter][:show].present? && params[:filter][:genre].present?
+      #   @shows = Performance.shows_between(@start_date, DateTime.new(2020, 8, 31)).map(&:show).uniq.includes(:performances, :venue).where(genre: params[:filter][:genre]).search(params[:filter][:show])
+      # # Else if start date and name are defined
+      # elsif params[:filter][:start_date].present? && params[:filter][:show].present?
+      #   @shows = Performance.shows_between(@start_date, DateTime.new(2020, 8, 31)).map(&:show).uniq.includes(:performances, :venue).search(params[:filter][:show])
+      # # Else if start date and genre are defined
+      # elsif params[:filter][:start_date].present? && params[:filter][:genre].present?
+      #   @shows = Performance.shows_between(@start_date, DateTime.new(2020, 8, 31)).map(&:show).uniq.includes(:performances, :venue).where(genre: params[:filter][:genre])
 
-      # Else if end date, genre, and name are defined
-      elsif params[:filter][:end_date].present? && params[:filter][:show].present? && params[:filter][:genre].present?
-        @shows = Performance.dates_between(DateTime.new(2020, 8, 1), @end_date).map(&:show).uniq.includes(:performances, :venue).where(genre: params[:filter][:genre]).search(params[:filter][:show])
-      # Else if end date and name are defined
-      elsif params[:filter][:end_date].present? && params[:filter][:show].present?
-        @shows = Performance.dates_between(DateTime.new(2020, 8, 1), @end_date).map(&:show).uniq.includes(:performances, :venue).search(params[:filter][:show])
+      # # Else if end date, genre, and name are defined
+      # elsif params[:filter][:end_date].present? && params[:filter][:show].present? && params[:filter][:genre].present?
+      #   @shows = Performance.shows_between(DateTime.new(2020, 8, 1), @end_date).map(&:show).uniq.includes(:performances, :venue).where(genre: params[:filter][:genre]).search(params[:filter][:show])
+      # # Else if end date and name are defined
+      # elsif params[:filter][:end_date].present? && params[:filter][:show].present?
+      #   @shows = Performance.shows_between(DateTime.new(2020, 8, 1), @end_date).map(&:show).uniq.includes(:performances, :venue).search(params[:filter][:show])
       # Else if end date and genre are defined
-      elsif params[:filter][:end_date].present? && params[:filter][:genre].present?
-        @shows = Performance.dates_between(DateTime.new(2020, 8, 1), @end_date).map(&:show).uniq.includes(:performances, :venue).where(genre: params[:filter][:genre])
+      # elsif params[:filter][:end_date].present? && params[:filter][:genre].present?
+      #   @shows = Performance.shows_between(DateTime.new(2020, 8, 1), @end_date).map(&:show).uniq.includes(:performances, :venue).where(genre: params[:filter][:genre])
 
-      # Else if no dates are defined
-      elsif params[:filter][:show].present? && params[:filter][:genre].present?
-        @shows = Show.includes(:performances, :venue).where(genre: params[:filter][:genre]).search(params[:filter][:show])
-      elsif params[:filter][:show].present?
-        @shows = Show.includes(:performances, :venue).search(params[:filter][:show])
-      elsif params[:filter][:genre].present?
-        @shows = Show.includes(:performances, :venue).where(genre: params[:filter][:genre])
-      elsif params[:filter][:show].blank? && params[:filter][:genre].blank?
-         @shows = Show.includes(:performances, :venue).all
+      # # Else if no dates are defined
+      # elsif params[:filter][:show].present? && params[:filter][:genre].present?
+      #   @shows = Show.includes(:performances, :venue).where(genre: params[:filter][:genre]).search(params[:filter][:show])
+      # elsif params[:filter][:show].present?
+      #   @shows = Show.includes(:performances, :venue).search(params[:filter][:show])
+      # elsif params[:filter][:genre].present?
+      #   @shows = Show.includes(:performances, :venue).where(genre: params[:filter][:genre])
+      # elsif params[:filter][:show].blank? && params[:filter][:genre].blank?
+      #    @shows = Show.includes(:performances, :venue).all
+      end
+      if params[:filter][:genre].present?
+        @shows = @shows.select{|r| r.genre = params[:filter][:genre]}
+      end
+      if params[:filter][:show].present?
+        @shows = @shows.select{|r| r.show.genre == params[:filter][:genre]}
       end
     else
       @shows = Show.includes(:performances, :venue).all

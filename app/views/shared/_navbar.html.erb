@@ -42,7 +42,7 @@
         <%= f.input :show, label: false, placeholder: "Show...", class: 'search-show-input' %>
         <%= f.input :genre, label: false, collection: Show::GENRES, prompt: "Genre", class: 'genre-style' %>
         <%= f.input :start_date, as: :select, collection: 1..31,
-                                 label: "August 2020:", placeholder: "Start Date",
+                                 label: false, placeholder: "Start Date",
                                  class: 'search-start-date' %>
         <%= f.input :end_date, as: :select, collection: 1..31, label: false,
                                placeholder: "End Date", class: 'search-end-date' %>
