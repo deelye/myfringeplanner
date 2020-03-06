@@ -10,7 +10,9 @@ class PagesController < ApplicationController
 
   def planner
     @day = "07/08/2020".to_datetime.day
-    @performances = current_user.all_follows.map{|r| r.followable.performances}.flatten.select{|r| r.start.day == @day}
-    raise
+    @planners = current_user.planners
+    @raw_performances = current_user.all_follows.map{|r| r.followable.performances}.flatten.select{|r| r.start.day == @day}
+    @booked_performance = current_user.planned_performances.select{|r| r.start.day == @day}
+    @performances = @raw_performances - @booked_performance
   end
 end

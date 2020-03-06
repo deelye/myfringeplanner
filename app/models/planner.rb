@@ -11,9 +11,4 @@ class Planner < ApplicationRecord
     self.duration = ((dur_in_5 / 168) * 100).round(2).to_s + "%"
     self.top = ((top_in_5 / 168) * 100).round(2).to_s + "%"
   end
-
-  def time_top
-
-  end
-
 end
