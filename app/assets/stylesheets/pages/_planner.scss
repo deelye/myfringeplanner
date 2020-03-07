@@ -128,3 +128,22 @@
   grid-gap: 10px;
   margin-top: 10px;
 }
+
+.card-title-add {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.planner-adder {
+  z-index: 11;
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  color: $blue;
+
+  &:hover {
+    color: black;
+  }
+}
+
