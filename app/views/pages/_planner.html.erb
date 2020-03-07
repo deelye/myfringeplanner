@@ -2,5 +2,9 @@
   <p><%= truncate(planner.performance.show.title, length: 45) %></p>
   <p><%= planner.performance.show.venue.space %></p>
   <p><%= planner.performance.show.venue.name %></p>
+
+  <%= link_to delete_planner_path(planner, day: params[:day]), method: :delete do  %>
+    <i class="far fa-window-close"></i>
+  <% end %>
   <!-- <p><%= planner.performance.start.strftime("%H:%M") %></p> -->
 </div>
