@@ -1,8 +1,7 @@
 <!-- Hide form if start date and end date have values -->
 <div class="body-container">
-  <h1>FRINGE <%= Time.now.year %></h1>
 
-  <div class="header-bar">
+  <div class="planner-search-bar">
     <form>
       <select name="day" id="day" class="input-field">
         <% @collection.each do |day| %>
@@ -13,11 +12,14 @@
     </form>
   </div>
 
+  <h1 class="planner-header">FRINGE <%= Time.now.year %></h1>
+
+  <div class="planner-date"><h3><%= @dayname %></h3></div>
+
   <div class="container-planner">
 
     <div class="planner">
       <div class="planner-times">
-        <!-- <h3></h3> -->
         <p>10:00</p>
         <p>11:00</p>
         <p>12:00</p>
@@ -32,18 +34,15 @@
         <p>21:00</p>
         <p>22:00</p>
         <p>23:00</p>
-        <!-- <h3></h3> -->
       </div>
 
       <div class="day-calendar">
-        <!-- <h3></h3> -->
         <% @planners.each do |planner| %>
           <%= render "planner", planner: planner %>
         <% end %>
       </div>
 
       <div class="planner-times">
-        <!-- <h3></h3> -->
         <p>10:00</p>
         <p>11:00</p>
         <p>12:00</p>
@@ -62,7 +61,6 @@
     </div>
 
     <div class="planner-shortlist">
-      <h3><%= @dayname %></h3>
       <% @performances.each do |performance| %>
         <%= link_to performance_planners_path(performance ,@planner, day: params[:day]), method: :post do  %>
           <div class="w250">
