@@ -2,6 +2,7 @@
   width: 1170px;
   padding: 10px;
   margin-bottom: 30px;
+  background-color: white;
 }
 
 .show-top {
@@ -55,11 +56,11 @@
 
 p .fringe-link {
   text-decoration: none;
-  color: black;
+  color: $blue;
 }
 
 p .fringe-link:hover {
-  color: $blue;
+  color: black;
 }
 
 .gmaps-link {
