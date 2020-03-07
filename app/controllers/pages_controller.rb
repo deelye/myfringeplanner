@@ -23,5 +23,6 @@ class PagesController < ApplicationController
     @raw_performances = current_user.all_follows.map { |show| show.followable.performances }.flatten.select { |performance| performance.start.day == @day }
     @booked_performance = current_user.planned_performances.select { |performance| performance.start.day == @day }
     @performances = @raw_performances - @booked_performance
+    @performances.sort_by! { |performance| performance.start }
   end
 end
