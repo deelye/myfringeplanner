@@ -2,6 +2,7 @@
   width: 1170px;
   padding: 10px;
   margin-bottom: 30px;
+  background-color: white;
 }
 
 .show-top {
@@ -13,7 +14,7 @@
 }
 
 .show-image-star-bar, .show-calendar, .show-bottom-details {
-  box-shadow: 1px 1px 2px grey;
+  box-shadow: 1px 1px 2px gray;
 }
 
 .show-image-star-bar {
@@ -55,11 +56,11 @@
 
 p .fringe-link {
   text-decoration: none;
-  color: black;
+  color: $blue;
 }
 
 p .fringe-link:hover {
-  color: $blue;
+  color: black;
 }
 
 .gmaps-link {
@@ -74,7 +75,7 @@ p .fringe-link:hover {
 
 .show-map {
   grid-column: 3 / 4;
-  box-shadow: 1px 1px 2px grey;
+  box-shadow: 1px 1px 2px gray;
   border-radius: 5px;
 }
 
