@@ -55,21 +55,21 @@
 }
 
 .planner-times {
-  height: 1400px;
+  height: 1470px;
   width: 50px;
   background-color: white;
   color: black;
   border: solid 1px black;
 
   p {
-    height: 100px;
+    height: 105px;
     text-align: center;
     margin: 0px;
   }
 }
 
 .day-calendar {
-  height: 1400px;
+  height: 1470px;
   width: 350px;
   background-color: white;
   position: relative;
@@ -126,29 +126,61 @@
 }
 
 .planner-cards {
-  flex-grow: 1;
+  // flex-grow: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
   margin-top: 10px;
 }
 
-.card-title-add {
+.planner-card {
+  position: relative;
+    display: flex;
+    flex-direction: row;
+    border-radius: 3px;
+    font-size: 14px;
+
+    img {
+      width: 100px;
+      object-fit: cover;
+      border-radius: 5px 0px 0px 5px;
+    }
+
+    h6 {
+      margin: 0px;
+      font-weight: bold;
+    }
+
+    p {
+      margin: 0px;
+      font-size: 12px;
+      padding-left: 0px;
+    }
+}
+
+.card-title-add, .card-title-remove {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
 }
 
-.planner-adder {
+.planner-adder, .planner-remover {
   z-index: 11;
   position: absolute;
   top: 8px;
-  right: 10px;
-  color: $blue;
+  color: black;
 
   &:hover {
-    color: black;
+    color: $blue;
   }
+}
+
+.planner-adder {
+  right: 10px;
+}
+
+.planner-remover {
+  right: 3px;
 }
 
 .planner-footer {
