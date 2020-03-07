@@ -1,29 +1,33 @@
-.day-calendar {
-  height: 1400px;
-  background-color: rgb(240, 240, 240);
-  width: 300px;
-  position: relative;
-}
 .header-bar {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
+.container-planner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.day-calendar {
+  height: 1400px;
+  background-color: rgb(240, 240, 240);
+  width: 300px;
+  position: relative;
+}
+
 .planner {
   display: flex;
   margin: 20px 0px;
 }
+
 #day {
   height: 44px;
   width: 120px;
   background-color: $pink;
   color: white;
-}
-.cont {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
 }
 
 .w250 {
