@@ -1,4 +1,4 @@
-<div class="card <%= show.colour_class %>">
+ <div class="card <%= show.colour_class %>">
   <div class="card-star-n-image">
     <% if current_user&.following?(show) %>
       <%= link_to unfollow_show_path(show) do  %>
