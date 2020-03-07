@@ -6,10 +6,17 @@
 }
 
 #day {
-  height: 44px;
+  height: 30px;
   width: 175px;
   background-color: $pink;
   color: white;
+  margin-right: 5px;
+}
+
+.planner-btn {
+  height: 30px;
+  width: 35px;
+  padding: 0px
 }
 
 .planner-header {
