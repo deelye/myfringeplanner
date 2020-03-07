@@ -11,16 +11,30 @@
   justify-content: space-between;
 }
 
-.day-calendar {
-  height: 1400px;
-  background-color: rgb(240, 240, 240);
-  width: 300px;
-  position: relative;
-}
-
 .planner {
   display: flex;
   margin: 20px 0px;
+}
+
+.planner-times {
+  height: 1400px;
+  width: 50px;
+  background-color: white;
+  color: black;
+  border: solid 1px black;
+
+  p {
+    height: 100px;
+    text-align: center;
+    margin: 0px;
+  }
+}
+
+.day-calendar {
+  height: 1400px;
+  background-color: white;
+  width: 300px;
+  position: relative;
 }
 
 #day {
@@ -42,18 +56,6 @@
       text-decoration: none !important;
     }
     transform: scale(1.05);
-  }
-}
-
-.planner-times {
-  height: 1400px;
-  background-color: white;
-  width: 50px;
-
-  p {
-    height: 100px;
-    text-align: center;
-    margin: 0px;
   }
 }
 
