@@ -49,5 +49,13 @@ class Show < ApplicationRecord
       show.p
     end
   end
+
+  def times
+    # self.performances.each do |performance|
+    #   @times = performance.start
+    # end
+    self.performances.map { |performance| performance.start.strftime("%R") }.uniq
+
+  end
 end
 
