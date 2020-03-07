@@ -1,4 +1,10 @@
 // Specific CSS for your home-page
+
+.homepage {
+  background-image: url(fringe-festival-bw.jpg);
+  background-size: 100vw;
+}
+
 .searchbar {
   align-items: center;
   max-width: 70%;
@@ -6,7 +12,8 @@
 }
 
 .home-title {
-  font-family: Roboto Condensed;
+  // font-family: Roboto Condensed;
+  font-family: 'Nanum Gothic Coding', monospace;
   font-size: 65px;
   text-align: center;
   color: $blue;
