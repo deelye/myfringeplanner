@@ -8,11 +8,11 @@
           <option value="<%= day %>"><%= day %></option>
         <% end %>
       </select>
-      <button class="button planner-btn" type="submit">Go</button>
+      <button class="button planner-btn" type="submit">Plan</button>
     </form>
   </div>
 
-  <div style="display: flex;">
+  <div class="planner-container">
     <div>
       <h1 class="planner-header">FRINGE <%= Time.now.year %></h1>
       <div class="planner-date"><h3><%= @dayname %></h3></div>
@@ -64,7 +64,7 @@
 
     <div class="planner-shortlist">
       <h1 class="planner-header">SHORTLIST</h1>
-<!--       <h1 class="planner-header">SHORTLIST</h1>
+<!--
       <% @performances.each do |performance| %>
         <%= link_to performance_planners_path(performance ,@planner, day: params[:day]), method: :post do  %>
           <div class="w250">
