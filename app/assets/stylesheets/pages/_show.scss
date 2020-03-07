@@ -85,7 +85,14 @@ p .fringe-link:hover {
 
 .show-title {
   border-bottom: 1px solid;
+  text-decoration: none;
   font-size: 3.1rem;
+  color: black;
+}
+
+.show-title:hover {
+  text-decoration: none;
+  color: $blue;
 }
 
 .show-description {

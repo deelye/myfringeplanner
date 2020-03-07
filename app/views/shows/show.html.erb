@@ -17,7 +17,7 @@
       </div>
     </div>
     <div class="show-top-details">
-      <h1 class="show-title"><%= @show.title %></h1>
+      <%= link_to "#{@show.title}", @show.website, target: :blank, class: "show-title" %>
       <div class="show-genre-return">
         <p><%= @show.genre %></p>
       </div>
