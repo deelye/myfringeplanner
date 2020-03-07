@@ -64,6 +64,7 @@
 
     <div class="planner-shortlist">
       <h1 class="planner-header">SHORTLIST</h1>
+<!--       <h1 class="planner-header">SHORTLIST</h1>
       <% @performances.each do |performance| %>
         <%= link_to performance_planners_path(performance ,@planner, day: params[:day]), method: :post do  %>
           <div class="w250">
@@ -72,7 +73,7 @@
           </div>
         <% end %>
       <% end %>
-
+ -->
       <div class="planner-cards">
         <% @performances.each do |performance| %>
           <div class="card <%= performance.show.colour_class %>">

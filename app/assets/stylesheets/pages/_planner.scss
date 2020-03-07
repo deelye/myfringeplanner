@@ -118,11 +118,12 @@
 }
 
 .planner-shortlist {
-  flex-grow: 1;
+  // flex-grow: 1;
   padding-left: 100px
 }
 
 .planner-cards {
+  flex-grow: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
