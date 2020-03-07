@@ -13,10 +13,10 @@ class PagesController < ApplicationController
 
     if params[:day].present?
       @day = params[:day].to_datetime.day
-      @dayname = params[:day].to_datetime.strftime('%A %d %^B')
+      @dayname = params[:day].to_datetime.strftime('%A %d %B')
     else
       @day = 1
-      @dayname = ("01/08/#{Time.now.year}").to_datetime.strftime('%A %d %^B')
+      @dayname = ("01/08/#{Time.now.year}").to_datetime.strftime('%A %d %B')
     end
 
     @planners = current_user.planners

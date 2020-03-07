@@ -63,11 +63,11 @@
 
     <div class="planner-shortlist">
       <h3><%= @dayname %></h3>
-      <% @performances.each do |perf| %>
-        <%= link_to performance_planners_path(perf ,@planner, day: params[:day]), method: :post do  %>
-          <div class="<%= perf.show.colour_class %> w250">
-            <p><%= perf.show.title %></p>
-            <p><%= perf.start.strftime('%H:%M') %></p>
+      <% @performances.each do |performance| %>
+        <%= link_to performance_planners_path(performance ,@planner, day: params[:day]), method: :post do  %>
+          <div class="w250">
+            <p><%= performance.show.title %></p>
+            <p><%= performance.start.strftime('%H:%M') %></p>
           </div>
         <% end %>
       <% end %>
