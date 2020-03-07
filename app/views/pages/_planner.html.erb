@@ -12,7 +12,7 @@
 
 <div class="planner-card">
   <%= image_tag(planner.performance.show.original_image, :alt => "Flyer image for show", height: planner.duration.to_f/100*1470) %>
-  <div class="card-info">
+  <div class="planner-card-info">
     <div class="card-title-remove">
       <h6><%= truncate(planner.performance.show.title, length: 30) %></h6>
       <%= link_to delete_planner_path(planner, day: params[:day]), method: :delete do  %>
