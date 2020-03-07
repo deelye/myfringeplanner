@@ -5,18 +5,19 @@
   <div class="header-bar">
     <form>
       <select name="day" id="day" class="input-field">
-        <% @collection.each do |r| %>
-          <option value="<%= r %>"><%= r %></option>
+        <% @collection.each do |day| %>
+          <option value="<%= day %>"><%= day %></option>
         <% end %>
       </select>
       <button class="button" type="submit">Go</button>
     </form>
-    <h3><%= @dayname %></h3>
   </div>
 
   <div class="container-planner">
+
     <div class="planner">
       <div class="planner-times">
+        <!-- <h3></h3> -->
         <p>10:00</p>
         <p>11:00</p>
         <p>12:00</p>
@@ -31,9 +32,11 @@
         <p>21:00</p>
         <p>22:00</p>
         <p>23:00</p>
+        <!-- <h3></h3> -->
       </div>
 
       <div class="day-calendar">
+        <!-- <h3></h3> -->
         <% @planners.each do |planner| %>
           <%= link_to delete_planner_path(planner, day: params[:day]), method: :delete do  %>
             <%= render "planner", planner: planner %>
@@ -42,6 +45,7 @@
       </div>
 
       <div class="planner-times">
+        <!-- <h3></h3> -->
         <p>10:00</p>
         <p>11:00</p>
         <p>12:00</p>
@@ -57,9 +61,10 @@
         <p>22:00</p>
         <p>23:00</p>
       </div>
-
     </div>
-    <div class="rhs">
+
+    <div class="planner-shortlist">
+      <h3><%= @dayname %></h3>
       <% @performances.each do |perf| %>
         <%= link_to performance_planners_path(perf ,@planner, day: params[:day]), method: :post do  %>
           <div class="<%= perf.show.colour_class %> w250">
@@ -71,6 +76,4 @@
     </div>
 
   </div>
-
-
 </div>
