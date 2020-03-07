@@ -3,7 +3,7 @@ class FringeJob < ApplicationJob
   require "rest-client"
 
   def perform
-    values = [0,100,200,300]
+    values = [0,100,200,300, 400]
     values.each do |v|
       url = "https://api.edinburghfestivalcity.com/events?festival=demofringe&key=#{ENV['FRINGE_KEY']}&signature=#{ENV['FRINGE_SIGNATURE']}&size=100&from=#{v}"
       response = RestClient.get(url)
@@ -14,7 +14,6 @@ class FringeJob < ApplicationJob
         if @show
           @show.venue = @venue
           @show.update!(show_params(show))
-          puts "UPDATED"
         else
           @show = Show.new(show_params(show))
           @show.venue = @venue
