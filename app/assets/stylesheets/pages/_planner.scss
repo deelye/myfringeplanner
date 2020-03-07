@@ -5,6 +5,13 @@
   align-items: center;
 }
 
+#day {
+  height: 44px;
+  width: 120px;
+  background-color: $pink;
+  color: white;
+}
+
 .container-planner {
   display: flex;
   align-items: flex-start;
@@ -37,12 +44,6 @@
   position: relative;
 }
 
-#day {
-  height: 44px;
-  width: 120px;
-  background-color: $pink;
-  color: white;
-}
 
 .w250 {
   width: 300px;
