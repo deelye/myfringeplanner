@@ -33,8 +33,7 @@
     </div>
     <div class="show-bottom-details">
       <h4><u>Details</u></h4>
-      <p><%= @show.times %></p>
-      <p><i class="far fa-clock"></i><%= @show.performances.first.start.to_s(:time) %> - <%= @show.performances.first.end.to_s(:time) %></p>
+      <p><i class="far fa-clock"></i><%= @show.times %></p>
       <p><i class="fas fa-map-marker-alt"></i> <%= @show.venue.name %> - <%= @show.venue.space %></p>
       <p><i class="fas fa-coins"></i>£<%= @show.performances.last.price %> full price (see <%= link_to "Fringe", @show.website, target: :blank, class: "fringe-link" %> for more details) </p>
       <p><i class="far fa-thumbs-up"></i> <%= @show.age_category %></p>
