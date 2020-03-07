@@ -5,7 +5,6 @@
 
   .navbar-collapse {
     flex-grow: 0;
-
   }
 
   .navbar-brand img {
@@ -17,7 +16,6 @@
 .logo {
   width: 250px;
 }
-
 
 .top {
   display: flex;
@@ -75,24 +73,22 @@
 .big-nav-link {
   text-decoration: none;
   font-size: 36px;
-  font-weight: bold;
   color: black;
   letter-spacing: 2px;
-  // word-spacing: ;
 }
 
 .filter {
   display: flex;
 }
 
-.submit {
+.search-submit {
   background-color: $blue;
   height: 38px;
   padding: 3px 15px 3px 15px !important;
   border-radius: 5px;
   color: white;
   font-family: "Roboto Condensed" !important;
-  margin-left: 50px;
+  margin-left: 15px;
   border: 0;
 }
 
