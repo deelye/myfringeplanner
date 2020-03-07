@@ -1,10 +1,13 @@
 <div class="plan <%= planner.performance.show.colour_class %>" style="top: <%= planner.top %>; height: <%= planner.duration %>; width: 100%">
-  <p><%= truncate(planner.performance.show.title, length: 45) %></p>
+  <div class="planner-performance">
+    <p><%= truncate(planner.performance.show.title, length: 35) %> (<%= planner.performance.start.strftime("%H:%M") %>)</p>
+    <%= link_to delete_planner_path(planner, day: params[:day]), method: :delete do  %>
+      <i class="far fa-window-close"></i>
+    <% end %>
+  </div>
+
   <p><%= planner.performance.show.venue.space %></p>
   <p><%= planner.performance.show.venue.name %></p>
 
-  <%= link_to delete_planner_path(planner, day: params[:day]), method: :delete do  %>
-    <i class="far fa-window-close"></i>
-  <% end %>
   <!-- <p><%= planner.performance.start.strftime("%H:%M") %></p> -->
 </div>
