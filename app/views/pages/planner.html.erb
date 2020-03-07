@@ -17,7 +17,7 @@
 
     <div class="planner">
       <div class="planner-times">
-        <!-- <h3></h3> -->
+        <h3></h3>
         <p>10:00</p>
         <p>11:00</p>
         <p>12:00</p>
@@ -36,7 +36,7 @@
       </div>
 
       <div class="day-calendar">
-        <!-- <h3></h3> -->
+        <h3></h3>
         <% @planners.each do |planner| %>
           <%= link_to delete_planner_path(planner, day: params[:day]), method: :delete do  %>
             <%= render "planner", planner: planner %>
@@ -45,7 +45,7 @@
       </div>
 
       <div class="planner-times">
-        <!-- <h3></h3> -->
+        <h3></h3>
         <p>10:00</p>
         <p>11:00</p>
         <p>12:00</p>
