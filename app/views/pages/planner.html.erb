@@ -1,8 +1,7 @@
 <!-- Hide form if start date and end date have values -->
 <div class="body-container">
   <div class="header-bar">
-    <form action="">
-      <label for="Day"></label>
+    <form>
       <select name="day" id="day" class="input-field">
         <% @collection.each do |r| %>
           <option value="<%= r %>"><%= r %></option>
