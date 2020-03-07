@@ -3,7 +3,7 @@
   <div class="header-bar">
     <form action="">
       <label for="Day"></label>
-      <select name="day" id="day">
+      <select name="day" id="day" class="input-field">
         <% @collection.each do |r| %>
           <option value="<%= r %>"><%= r %></option>
         <% end %>

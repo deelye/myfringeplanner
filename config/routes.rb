@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'planner', to: 'pages#planner'
 
   root to: 'pages#home'
   get 'shortlist', to: 'pages#shortlist'
+  get 'planner', to: 'pages#planner'
+
   resources :shows, only: [:show, :index] do
     member do
       get 'follow'
