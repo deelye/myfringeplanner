@@ -86,6 +86,10 @@
   border-radius: 0px 0px 5px 5px;
 }
 
+.planner-shortlist {
+  padding-left: 50px
+}
+
 .planner-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -119,13 +123,6 @@
 
 
 
-
-.header-bar {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 
 .plan {
