@@ -1,16 +1,14 @@
 <div class="plan <%= planner.performance.show.colour_class %>" style="top: <%= planner.top %>; height: <%= planner.duration %>; width: 100%">
-  <!-- <p><%= truncate(planner.performance.show.title, length: 45) %></p>
-  <p><%= planner.performance.start.strftime("%H:%M") %></p> -->
-
   <div class="planner-card">
     <%= image_tag(planner.performance.show.original_image, :alt => "Flyer image for show", height: planner.duration.to_f/100*1470) %>
     <div class="planner-card-info">
       <div class="card-title-remove">
         <h6><%= truncate(planner.performance.show.title, length: 30) %></h6>
-        <%= link_to delete_planner_path(planner, day: params[:day]), method: :delete do  %>
-          <i class="far fa-hand-point-right planner-remover"></i>
-        <% end %>
       </div>
+
+      <%= link_to delete_planner_path(planner, day: params[:day]), method: :delete do  %>
+        <i class="far fa-hand-point-right planner-remover"></i>
+      <% end %>
 
       <div>
         <p><%= planner.performance.show.genre %></p>

@@ -168,11 +168,19 @@
   justify-content: space-between;
 }
 
-.card-title-add, .card-title-remove {
+.card-title-add {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
 }
 
+.card-title-remove {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
 
+  h6 {
+    color: black;
+  }
+}
 
