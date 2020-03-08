@@ -65,5 +65,10 @@ class Show < ApplicationRecord
   def starts
     @starts = self.performances.map { |performance| performance.start.strftime("%R") }.uniq.join(", ")
   end
+
+  def duration
+    @diff = self.performances.first.end - self.performances.first.start
+    Time.at(@diff.to_i.abs).utc.strftime "%kh %Mmins"
+  end
 end
 
