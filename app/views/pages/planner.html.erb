@@ -33,9 +33,13 @@
       </div>
 
       <div class="day-calendar">
-        <% @planners.each do |planner| %>
-          <%= link_to delete_planner_path(planner, day: params[:day]), method: :delete do  %>
-            <%= render "planner", planner: planner %>
+        <% if @planners != false %>
+          <% @planners.each do |planner| %>
+            <% if planner != false %>
+              <%= link_to delete_planner_path(id: planner.id, day: params[:day]), method: :delete do  %>
+                <%= render "planner", planner: planner %>
+              <% end %>
+            <% end %>
           <% end %>
         <% end %>
       </div>
