@@ -51,7 +51,6 @@ class Show < ApplicationRecord
   end
 
   def times
-    # self.performances.map { |performance| performance.start.strftime("%R") }.uniq
     @starts = self.performances.map { |performance| performance.start.strftime("%R") }.uniq
     @ends = self.performances.map { |performance| performance.end.strftime("%R") }.uniq
 
