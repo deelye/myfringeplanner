@@ -2,6 +2,7 @@
   <%= render 'shared/colorchart' %>
 
   <div class="cards">
+    <% @shows = @shows.sort_by { |show| show.title.capitalize } %>
     <% @shows.each do |show| %>
       <%= render 'shared/show', show: show %>
     <% end %>
