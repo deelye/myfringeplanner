@@ -1,5 +1,6 @@
 <div class="card">
   <div class="card-star-n-image">
+    <i class="fa fa-circle card-color-circle <%= show.colour_class %>" aria-hidden="true"></i>
     <% if current_user&.following?(show) %>
       <%= link_to unfollow_show_path(show) do  %>
         <i class="fa fa-star star-yellow" aria-hidden="true"></i>
@@ -11,7 +12,7 @@
     <% end %>
     <%= image_tag(show.original_image, :alt => "Flyer image for show") %>
   </div>
-  <div class="card-info card-border <%= show.colour_class %>">
+  <div class="card-info">
     <h6><%= truncate(show.title, length: 45) %></h6>
     <p><%= show.genre %></p>
     <div class="d-flex">

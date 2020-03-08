@@ -91,36 +91,47 @@
   margin-left: 10px;
 }
 
-.card-border {
-  border-left: 8px solid;
+// .card-border {
+//   border-right: 8px solid;
 
+// }
+
+.card-color-circle {
+  position: absolute;
+  top: 5px;
+  right: -295px;
+  width: 15px;
+  height: 15px;
+  display: block;
+  border-radius: 50%;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
 }
 
 .card-border-comedy {
-  border-left-color: $comedy;
+  color: $comedy;
 }
 
 .card-border-cabaret-variety {
-  border-left-color: $cabaret-variety;
+  color: $cabaret-variety;
 
 }
 
 .card-border-circus-etc {
-  border-left-color: $circus-etc;
+  color: $circus-etc;
 
 }
 
 .card-border-theatre-etc {
-  border-left-color: $theatre-etc;
+  color: $theatre-etc;
 
 }
 
 .card-border-events-etc {
-  border-left-color: $events-etc;
+  color: $events-etc;
 
 }
 
 .card-border-other {
-  border-left-color: $other;
+  color: $other;
 
 }
