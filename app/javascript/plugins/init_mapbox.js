@@ -10,7 +10,6 @@ const initMapbox = () => {
   };
 
   const addMarkerToMap = (map, marker) => {
-    console.log("asd");
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
 
     new mapboxgl.Marker()

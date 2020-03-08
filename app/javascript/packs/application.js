@@ -28,3 +28,9 @@ import { initMapbox } from '../plugins/init_mapbox';
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
 })
+
+import { initMapboxPlanner } from '../plugins/init_mapbox_planner';
+
+document.addEventListener('turbolinks:load', () => {
+  initMapboxPlanner();
+})

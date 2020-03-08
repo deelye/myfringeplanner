@@ -76,21 +76,20 @@
         <% end %>
       </div>
 
-
-
       <div>
-        <% if @planners != false %>
-          <% @bookings = [] %>
-          <% @planners.each do |planner| %>
-            <% if planner != false %>
-              <% @bookings << planner %>
-            <% end %>
-          <% end %>
-        <% end %>
+
+        <h1 class="planner-header">Venues</h1>
+
+        <div id="planner-map"
+          class="planner-map"
+          style="width: 500px;
+          height: 500px;"
+          data-marker="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" class="planner-map">
+        </div>
+
       </div>
+
     </div>
-
   </div>
-
-
 </div>
