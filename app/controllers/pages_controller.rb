@@ -13,7 +13,7 @@ class PagesController < ApplicationController
     if params[:day].present?
       @date = params[:day].to_datetime
       @day = params[:day].to_datetime.day
-      @dayname = params[:day].to_datetime.strftime('%a-%d-%m')
+      @dayname = params[:day].to_datetime.strftime('%A %e %B')
     else
       @day = 1
       @dayname = ("01/08/2020").to_datetime.strftime('%a-%d-%m')
