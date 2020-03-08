@@ -55,19 +55,15 @@
     p {
       margin-bottom: 0px;
     }
-
-    a:hover {
-      color: $pink;
-    }
 }
 
 p .fringe-link {
   text-decoration: none;
   color: $blue;
-}
 
-p .fringe-link:hover {
-  color: black;
+  &:hover {
+    color: $pink;
+  }
 }
 
 .gmaps-link {
