@@ -18,6 +18,7 @@
   .form-control {
     background-color: $off-white;
     margin: 5px;
+    width: fit-content;
   }
 
   textarea, input {
@@ -26,7 +27,6 @@
   }
 
   input::placeholder {
-    color: $gray !important;
     font-family: 'Roboto', Veranda, sans-serif;
   }
 }
