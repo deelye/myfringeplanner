@@ -61,5 +61,9 @@ class Show < ApplicationRecord
 
     @times.join(", ")
   end
+
+  def starts
+    @starts = self.performances.map { |performance| performance.start.strftime("%R") }.uniq.join(", ")
+  end
 end
 
