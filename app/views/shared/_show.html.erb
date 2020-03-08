@@ -1,4 +1,4 @@
-<div class="card <%= show.colour_class %>">
+<div class="card">
   <div class="card-star-n-image">
     <% if current_user&.following?(show) %>
       <%= link_to unfollow_show_path(show) do  %>
@@ -11,7 +11,7 @@
     <% end %>
     <%= image_tag(show.original_image, :alt => "Flyer image for show") %>
   </div>
-  <div class="card-info">
+  <div class="card-info card-border <%= show.colour_class %>">
     <h6><%= truncate(show.title, length: 45) %></h6>
     <p><%= show.genre %></p>
     <div class="d-flex">

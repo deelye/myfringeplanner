@@ -1,9 +1,21 @@
+.day-calendar {
+  height: 1400px;
+  background-color: rgb(240, 240, 240);
+  width: 300px;
+  position: relative;
+}
+
 .planner-search-bar {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
+// .planner {
+//   display: flex;
+//   margin: 20px 0px;
+// }
 
 #day {
   height: 35px;
@@ -18,7 +30,7 @@
   width: 45px;
   padding: 0px
 }
-
+  
 .planner-container {
   display: flex;
 }
@@ -120,8 +132,8 @@
 .plan {
   position: absolute;
   background-color: white;
-  border: solid 1px;
   border-radius: 5px;
+  
   p {
     margin: 0px;
     padding-left: 5px;
