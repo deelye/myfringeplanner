@@ -67,15 +67,16 @@
       <div class="planner-footer"></div>
     </div>
 
-    <div class="rhs">
-      <% @performances.each do |perf| %>
-        <%= link_to performance_planners_path(perf ,@planner, day: params[:day]), method: :post do  %>
-          <div class="<%= perf.show.colour_class %> w250">
-            <p><%= perf.show.title %></p>
-            <p><%= perf.start.strftime('%H:%M') %></p>
-          </div>
+    <div class="planner-shortlist">
+      <h1 class="planner-header">SHORTLIST</h1>
+
+      <div class="planner-cards">
+        <% @performances.each do |performance| %>
+          <%= render 'pages/planner_shortlist', performance: performance %>
         <% end %>
-      <% end %>
+      </div>
+
+
     </div>
 
   </div>

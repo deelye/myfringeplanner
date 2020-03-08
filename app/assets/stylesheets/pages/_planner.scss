@@ -86,6 +86,33 @@
   border-radius: 0px 0px 5px 5px;
 }
 
+.planner-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  margin-top: 10px;
+}
+
+.planner-adder, .planner-remover {
+  z-index: 11;
+  position: absolute;
+  top: 8px;
+  color: black;
+
+  &:hover {
+    color: $blue;
+  }
+}
+
+.planner-adder {
+  right: 10px;
+}
+
+.planner-remover {
+  right: 3px;
+}
+
+
 
 
 
@@ -100,20 +127,6 @@
   align-items: center;
 }
 
-.w250 {
-  width: 300px;
-  padding: 10px;
-  p {
-    margin: 4px;
-  }
-  transition: 0.5s;
-  &:hover {
-    a {
-      text-decoration: none !important;
-    }
-    transform: scale(1.05);
-  }
-}
 
 .plan {
   position: absolute;

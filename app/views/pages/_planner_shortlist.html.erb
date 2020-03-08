@@ -1,0 +1,54 @@
+<div class="card <%= performance.show.colour_class %>">
+  <div class="card-star-n-image">
+    <% if current_user&.following?(performance.show) %>
+      <%= link_to unfollow_show_path(performance.show) do  %>
+        <i class="fa fa-star star-yellow" aria-hidden="true"></i>
+      <% end %>
+    <% else %>
+      <%= link_to follow_show_path(performance.show) do  %>
+        <i class="fa fa-star star-white" aria-hidden="true"></i>
+      <% end %>
+    <% end %>
+    <%= image_tag(performance.show.original_image, :alt => "Flyer image for show") %>
+  </div>
+  <div class="card-info">
+    <div class="card-title-add">
+      <h6><%= truncate(performance.show.title, length: 45) %></h6>
+      <%= link_to performance_planners_path(performance ,@planner, day: params[:day]), method: :post do  %>
+        <i class="far fa-hand-point-left planner-adder"></i>
+      <% end %>
+    </div>
+    <p><%= performance.show.genre %></p>
+    <div class="d-flex">
+
+      <% dates = ["Aug "] %>
+      <% performances = performance.show.performances %>
+      <% performances.each_with_index do |performance, index| %>
+        <% if index == 0 %>
+          <% dates << performances.first.start.strftime("%e").to_i %>
+        <% elsif performances[index - 1].start.strftime("%e").to_i + 1  == performance.start.strftime("%e").to_i %>
+          <% if performance == performances[-1] %>
+            <% dates << "-" %>
+            <% dates << performance.start.strftime("%e").to_i %>
+          <% end %>
+        <% elsif performances[index - 1].start.strftime("%e").to_i == performance.start.strftime("%e").to_i%>
+        <% else %>
+          <% dates << "-" %>
+          <% dates << performances[index - 1].start.strftime("%e").to_i %>
+          <% dates << ", " %>
+          <% dates << performance.start.strftime("%e").to_i %>
+        <% end %>
+      <% end %>
+
+      <p><i class="fas fa-clock" aria-hidden="true"></i> <%= performances.first.start.strftime("%H:%M") %></p>
+      <p><i class="fa fa-calendar card-dates" aria-hidden="true"></i> <%= truncate(dates.join, length: 35) %></p>
+    </div>
+    <div class="d-flex justify-content-between">
+      <p><%= truncate(performance.show.venue.name, length: 50) %></p>
+      <p>£<%= performances.last.price %></p>
+    </div>
+  </div>
+  <%= link_to show_path(performance.show) do %>
+    <div class="hid-link"></div>
+  <% end %>
+</div>
