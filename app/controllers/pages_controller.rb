@@ -9,7 +9,7 @@ class PagesController < ApplicationController
   end
 
   def planner
-    @collection = ("01/08/2020".to_datetime.."31/08/2020".to_datetime).map { |r| r.to_date.strftime("%A %e %B") }
+    @collection = ("01/08/2020".to_datetime.."31/08/2020".to_datetime).map { |date| date.to_date.strftime("%A %e %B") }
     if params[:day].present?
       @date = params[:day].to_datetime
       @day = params[:day].to_datetime.day
@@ -18,9 +18,9 @@ class PagesController < ApplicationController
       @day = 1
       @dayname = ("01/08/2020").to_datetime.strftime('%a-%d-%m')
     end
-    @planners = current_user.planners.map{ |r| r.day == @date ? r : false}
-    @raw_performances = current_user.all_follows.map{|r| r.followable.performances}.flatten.select{|r| r.start.day == @day}
-    @booked_performance = current_user.planned_performances.select{|r| r.start.day == @day}
+    @planners = current_user.planners.map{ |planner| planner.day == @date ? planner : false}
+    @raw_performances = current_user.all_follows.map{|performance| performance.followable.performances}.flatten.select { |performance| performance.start.day == @day }
+    @booked_performance = current_user.planned_performances.select { |performance| performance.start.day == @day }
     @performances = @raw_performances - @booked_performance
     @performances.sort_by! { |performance| performance.start }
   end
