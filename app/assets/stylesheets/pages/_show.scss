@@ -12,6 +12,7 @@
 }
 
 .show-genre-return {
+  padding-top: 3px;
   font-size: 11px;
 }
 
@@ -85,8 +86,11 @@ p .fringe-link:hover {
   padding: 0px 20px;
 }
 
+.show-title-div {
+  border-bottom: solid 1px;
+}
+
 .show-title {
-  border-bottom: 1px solid;
   text-decoration: none;
   font-size: 3.1rem;
   color: black;
@@ -121,6 +125,7 @@ p .fringe-link:hover {
   margin: 0;
     td {
       padding: 4px 0px;
+      vertical-align: center;
     }
 }
 
@@ -137,9 +142,10 @@ p .fringe-link:hover {
 }
 
 .calendar-heading {
+  height: 48px;
   text-align: center;
   background-color: #878888;
-  font-size: 16px;
+  font-size: 20px;
   border-radius: 5px 5px 0px 0px;
 }
 
