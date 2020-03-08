@@ -4,41 +4,25 @@ $light-blue: #B7DFF3;
 $off-white: #DEEFF8;
 $pink: #FA457A;
 $red: #FD1015;
+$yellow: #F9F001;
 $gray: #444;
 $light-gray: #F4F4F4;
 
 // Colors for categories
-$blue-event: rgb(2, 167, 245);
-$yellow: #F9F001;
-$orange: rgb(230, 126, 34);
+$yellow-event: #f7e202;
+$orange: #EF9240;
 $hot-pink: rgb(230, 0, 125);
-$green: rgb(65, 206, 144);
-$purple: rgb(190, 106, 201);
+$green: #44B735;
+$purple: #8D58CE;
 
 // Colors for categories
 $comedy: $hot-pink;
-$cabaret-variety: $purple;
+$cabaret-variety: $orange;
 // dance, physical theatre, circus
-$circus-etc: $yellow;
+$circus-etc: $yellow-event;
 // theatre; musicals & opera
 $theatre-etc: $green;
 // exhibitions; events
-$events-etc: $orange;
+$events-etc: $blue;
 // spoken word; music; childrens shows
-$other: $blue-event;
-
-// Colors for categories' shadows
-$blue-event-shadow: rgba(2, 167, 245, 0.4);
-$yellow-shadow: rgba(239, 212, 4, 0.4);
-$orange-shadow: rgba(230, 126, 34, 0.4);
-$hot-pink-shadow: rgba(230, 0, 125, 0.4);
-$green-shadow: rgba(65, 206, 144, 0.4);
-$purple-shadow: rgba(190, 106, 201, 0.4);
-
-// Colors for categories' shadows
-$comedy-shadow: $hot-pink-shadow;
-$cabaret-variety-shadow: $purple-shadow;
-$circus-etc-shadow: $yellow-shadow;
-$theatre-etc-shadow: $green-shadow;
-$events-etc-shadow: $orange-shadow;
-$other-shadow: $blue-event-shadow;
+$other: $purple;

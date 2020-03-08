@@ -29,16 +29,16 @@ class Show < ApplicationRecord
 
   def colour_class
     classes = {
-      "Comedy" => "comedy-shadow",
-      "Cabaret and Variety" => "cabaret-variety-shadow",
-      "Dance, PhysicalTheatre and Circus" => "circus-etc-shadow",
-      "Theatre" => "theatre-etc-shadow",
-      "Musicals and Opera" => "theatre-etc-shadow",
-      "Events" => "events-etc-shadow",
-      "Exhibitions" => "events-etc-shadow",
-      "Children's Shows" => "other-shadow",
-      "Spoken Word" => "other-shadow",
-      "Music" => "other-shadow"
+      "Comedy" => "card-border-comedy",
+      "Cabaret and Variety" => "card-border-cabaret-variety",
+      "Dance, PhysicalTheatre and Circus" => "card-border-circus-etc",
+      "Theatre" => "card-border-theatre-etc",
+      "Musicals and Opera" => "card-border-theatre-etc",
+      "Events" => "card-border-events-etc",
+      "Exhibitions" => "card-border-events-etc",
+      "Children's Shows" => "card-border-other",
+      "Spoken Word" => "card-border-other",
+      "Music" => "card-border-other"
     }
     classes[self.genre]
   end
