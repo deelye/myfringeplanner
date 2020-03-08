@@ -69,6 +69,17 @@ class Show < ApplicationRecord
   def duration
     @diff = self.performances.first.end - self.performances.first.start
     Time.at(@diff.to_i.abs).utc.strftime "%kh %Mmins"
+
+    h = Time.at(@diff.to_i.abs).utc.strftime "%k"
+    m = Time.at(@diff.to_i.abs).utc.strftime "%M"
+
+    if h == " 0"
+      return "#{m}mins"
+    elsif m == "00"
+      return "#{h.strip}h"
+    else
+      return "#{h.strip}h #{m}mins"
+    end
   end
 end
 
