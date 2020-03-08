@@ -1,72 +1,82 @@
 <!-- Hide form if start date and end date have values -->
 <div class="body-container">
-  <div class="header-bar">
-    <form action="">
-      <label for="Day"></label>
-      <select name="day" id="day">
-        <% @collection.each do |r| %>
-          <option value="<%= r %>"><%= r %></option>
+  <div class="planner-search-bar">
+    <form>
+      <select name="day" id="day" class="input-field">
+        <% @collection.each do |day| %>
+          <option value="<%= day %>"><%= day %></option>
         <% end %>
       </select>
-      <button class="button" type="submit">Go</button>
+      <button class="button planner-btn" type="submit">Plan</button>
     </form>
-    <h3><%= @dayname %></h3>
   </div>
-  <div class="cont">
-    <div class="planner">
 
-      <div class="planner-times">
-        <p>10:00</p>
-        <p>11:00</p>
-        <p>12:00</p>
-        <p>13:00</p>
-        <p>14:00</p>
-        <p>15:00</p>
-        <p>16:00</p>
-        <p>17:00</p>
-        <p>18:00</p>
-        <p>19:00</p>
-        <p>20:00</p>
-        <p>21:00</p>
-        <p>22:00</p>
-        <p>23:00</p>
-      </div>
-
-      <div class="day-calendar">
-        <% @planners.each do |planner| %>
-          <%= link_to delete_planner_path(planner, day: params[:day]), method: :delete do  %>
-            <%= render "planner", planner: planner %>
-          <% end %>
-        <% end %>
-      </div>
-
-      <div class="planner-times">
-        <p>10:00</p>
-        <p>11:00</p>
-        <p>12:00</p>
-        <p>13:00</p>
-        <p>14:00</p>
-        <p>15:00</p>
-        <p>16:00</p>
-        <p>17:00</p>
-        <p>18:00</p>
-        <p>19:00</p>
-        <p>20:00</p>
-        <p>21:00</p>
-        <p>22:00</p>
-        <p>23:00</p>
-      </div>
-
-    </div>
-    <div class="rhs">
-      <% @performances.each do |perf| %>
-        <%= link_to performance_planners_path(perf ,@planner, day: params[:day]), method: :post do  %>
-          <div class="<%= perf.show.colour_class %> w250">
-            <p><%= perf.show.title %></p>
-            <p><%= perf.start.strftime('%H:%M') %></p>
+  <div class="planner-container">
+    <div>
+      <h1 class="planner-header">MY FRINGE <%= Time.now.year %></h1>
+      <div class="planner-date"><h3><%= @dayname %></h3></div>
+      <div class="planner-day">
+        <div class="planner">
+          <div class="planner-times">
+            <p>10:00</p>
+            <p>11:00</p>
+            <p>12:00</p>
+            <p>13:00</p>
+            <p>14:00</p>
+            <p>15:00</p>
+            <p>16:00</p>
+            <p>17:00</p>
+            <p>18:00</p>
+            <p>19:00</p>
+            <p>20:00</p>
+            <p>21:00</p>
+            <p>22:00</p>
+            <p>23:00</p>
           </div>
+
+          <div class="day-calendar">
+            <% if @planners != false %>
+              <% @planners.each do |planner| %>
+                <% if planner != false %>
+                  <%= link_to delete_planner_path(id: planner.id, day: params[:day]), method: :delete do  %>
+                    <%= render "planner", planner: planner %>
+                  <% end %>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
+
+          <div class="planner-times">
+            <p>10:00</p>
+            <p>11:00</p>
+            <p>12:00</p>
+            <p>13:00</p>
+            <p>14:00</p>
+            <p>15:00</p>
+            <p>16:00</p>
+            <p>17:00</p>
+            <p>18:00</p>
+            <p>19:00</p>
+            <p>20:00</p>
+            <p>21:00</p>
+            <p>22:00</p>
+            <p>23:00</p>
+          </div>
+        </div>
+      </div>
+      <div class="planner-footer"></div>
+    </div>
+
+    <div class="planner-shortlist">
+      <h1 class="planner-header">SHORTLIST</h1>
+
+      <div class="planner-cards">
+        <% @performances.each do |performance| %>
+          <%= render 'pages/planner_shortlist', performance: performance %>
         <% end %>
-      <% end %>
+      </div>
+
+
     </div>
 
   </div>

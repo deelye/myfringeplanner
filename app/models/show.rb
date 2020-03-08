@@ -49,5 +49,37 @@ class Show < ApplicationRecord
       show.p
     end
   end
+
+  def times
+    @starts = self.performances.map { |performance| performance.start.strftime("%R") }.uniq
+    @ends = self.performances.map { |performance| performance.end.strftime("%R") }.uniq
+
+    @times = []
+    @starts.each_with_index do |start, index|
+      @times << @starts[index] + " - " + @ends[index]
+    end
+
+    @times.join(", ")
+  end
+
+  def starts
+    @starts = self.performances.map { |performance| performance.start.strftime("%R") }.uniq.join(", ")
+  end
+
+  def duration
+    @diff = self.performances.first.end - self.performances.first.start
+    Time.at(@diff.to_i.abs).utc.strftime "%kh %Mmins"
+
+    h = Time.at(@diff.to_i.abs).utc.strftime "%k"
+    m = Time.at(@diff.to_i.abs).utc.strftime "%M"
+
+    if h == " 0"
+      return "#{m}mins"
+    elsif m == "00"
+      return "#{h.strip}h"
+    else
+      return "#{h.strip}h #{m}mins"
+    end
+  end
 end
 
