@@ -31,7 +31,7 @@ const initMapbox = () => {
       .addTo(map);
 
     map.setZoom(14);
-    map.setCenter([marker.lng, marker.lat])
+    map.setCenter([marker.lng, marker.lat]);
     fitMapToMarker(map, marker);
     addMarkerToMap(map, marker);
     };

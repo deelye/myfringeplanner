@@ -40,7 +40,6 @@ class PagesController < ApplicationController
       {
         lat: booking.performance.show.venue.longitude,
         lng: booking.performance.show.venue.latitude
-        # infoWindow: render_to_string(partial: "info_window", locals: { show: @show })
       }
     end
   end
