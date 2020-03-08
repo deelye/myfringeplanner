@@ -19,7 +19,7 @@
     </div>
     <div class="show-top-details">
       <div class="show-title-div">
-        <%= link_to "#{@show.title}", @show.website, target: :blank, class: "show-title" %>
+        <%= link_to truncate("#{@show.title}", length: 70), @show.website, target: :blank, class: "show-title" %>
       </div>
       <div class="show-genre-return">
         <p><%= @show.genre %></p>
@@ -36,7 +36,7 @@
     </div>
     <div class="show-bottom-details">
       <h4><u>Details</u></h4>
-      <p><i class="far fa-clock"></i><%= @show.times %></p>
+      <p><i class="far fa-clock"></i><%= @show.times %> (<%= @show.duration %>)</p>
       <p><i class="fas fa-map-marker-alt"></i> <%= @show.venue.name %> - <%= @show.venue.space %></p>
 
       <% if @show.performances.last.price == 0 %>
