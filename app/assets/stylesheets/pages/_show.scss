@@ -8,8 +8,12 @@
   // background-size: cover;
 }
 
-.show-top {
-  display: flex;
+.show-top-card-grid {
+  display: grid;
+  grid-template-rows: 290px;
+  grid-template-columns: 250px 1fr;
+  grid-gap: 25px;
+  padding: 10px;
 }
 
 .show-genre-return {
@@ -29,12 +33,12 @@
   border-radius: 5px 5px 0px 0px;
 }
 
-.card-grid {
+.show-bottom-card-grid {
   display: grid;
   grid-template-rows: 250px;
   grid-template-columns: 250px 2fr 250px;
   grid-gap: 25px;
-  justify-content: space-between;
+  padding: 10px;
 }
 
 .show-calendar {
@@ -85,6 +89,7 @@ p .fringe-link:hover {
 
 .show-top-details {
   padding: 0px 20px;
+  box-shadow: 1px 1px 2px gray;
 }
 
 .show-title-div {

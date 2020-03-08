@@ -1,5 +1,6 @@
 <div class="container show-div <%= @show.colour_class %>">
-  <div class="show-top">
+
+  <div class="show-top-card-grid">
     <div class="show-image-star-bar">
       <%= image_tag "#{@show.original_image}", alt: "#{@show.title}", class: "show-image" %>
       <div class="show-shortlist-bar">
@@ -26,8 +27,8 @@
       <p class="show-description"><%= @show.description %></p>
     </div>
   </div>
-  <br>
-  <div class="show-bottom card-grid">
+
+  <div class="show-bottom-card-grid">
     <div class="show-calendar">
       <%= FringeCalendar.new(self, {}).render do |date| %>
         <%= date.day %>
