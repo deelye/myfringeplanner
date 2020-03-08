@@ -1,3 +1,24 @@
+.planner-search-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#day {
+  height: 35px;
+  width: 175px;
+  background-color: $pink;
+  color: white;
+  margin-right: 5px;
+}
+
+.planner-btn {
+  height: 35px;
+  width: 45px;
+  padding: 0px
+}
+
 .day-calendar {
   height: 1400px;
   background-color: rgb(240, 240, 240);
@@ -14,12 +35,7 @@
   display: flex;
   margin: 20px 0px;
 }
-#day {
-  height: 44px;
-  width: 120px;
-  background-color: $pink;
-  color: white;
-}
+
 .cont {
   display: flex;
   align-items: flex-start;

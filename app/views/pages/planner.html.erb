@@ -1,17 +1,16 @@
 <!-- Hide form if start date and end date have values -->
 <div class="body-container">
-  <div class="header-bar">
-    <form action="">
-      <label for="Day"></label>
-      <select name="day" id="day">
-        <% @collection.each do |r| %>
-          <option value="<%= r %>"><%= r %></option>
+  <div class="planner-search-bar">
+    <form>
+      <select name="day" id="day" class="input-field">
+        <% @collection.each do |day| %>
+          <option value="<%= day %>"><%= day %></option>
         <% end %>
       </select>
-      <button class="button" type="submit">Go</button>
+      <button class="button planner-btn" type="submit">Go</button>
     </form>
-    <h3><%= @dayname %></h3>
   </div>
+
   <div class="cont">
     <div class="planner">
 
