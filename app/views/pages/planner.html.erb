@@ -71,6 +71,22 @@
           </div>
         <% end %>
       <% end %>
+
+      <div>
+
+        <% if @planners != false %>
+          <% @bookings = [] %>
+          <% @planners.each do |planner| %>
+            <% if planner != false %>
+              <% @bookings << planner %>
+            <% end %>
+          <% end %>
+        <% end %>
+
+
+
+      </div>
+
     </div>
 
   </div>
