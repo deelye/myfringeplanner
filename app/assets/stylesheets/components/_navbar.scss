@@ -17,7 +17,7 @@
 
   .form-control {
     background-color: $off-white;
-    margin: 5px;
+    margin-left: 8px;
     width: fit-content;
   }
 
@@ -27,6 +27,7 @@
   }
 
   input::placeholder {
+    color: $gray;
     font-family: 'Roboto', Veranda, sans-serif;
   }
 }
@@ -61,8 +62,6 @@
     }
   }
 }
-
-
 
 // .inline div {
 //   display: inline-block;
@@ -114,12 +113,12 @@
 .submit {
   background-color: $blue;
   height: 38px;
+  margin-left: 10px;
   padding: 3px 15px 3px 15px !important;
   border-radius: 5px;
-  color: white;
-  font-family: "Roboto Condensed" !important;
-  margin-left: 50px;
   border: 0;
+  color: white !important;
+  font-family: "Roboto Condensed" !important;
 }
 
 .dropdown-menu {
