@@ -32,9 +32,15 @@
   flex-direction: row;
   // width: 350px;
   height: 105px;
-  // box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
-  border-radius: 3px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
   font-size: 14px;
+  border-radius: 5px;
+  border-style: none;
+
+  &:hover {
+    //rgb of $blue
+    box-shadow: 0px 0px 10px rgba(78, 172, 217, 1);
+  }
 
   img {
     // width: 1fr;
@@ -56,30 +62,6 @@
     margin: 0px;
     font-size: 12px;
   }
-}
-
-.comedy-shadow {
-  box-shadow: 2px 2px 5px $comedy-shadow;
-}
-
-.cabaret-variety-shadow {
-  box-shadow: 2px 2px 5px $cabaret-variety-shadow;
-}
-
-.circus-etc-shadow {
-  box-shadow: 2px 2px 5px $circus-etc-shadow;
-}
-
-.theatre-etc-shadow {
-  box-shadow: 2px 2px 5px $theatre-etc-shadow;
-}
-
-.events-etc-shadow {
-  box-shadow: 2px 2px 5px $events-etc-shadow;
-}
-
-.other-shadow {
-  box-shadow: 2px 2px 5px $other-shadow;
 }
 
 .card-star-n-image {
@@ -107,4 +89,43 @@
 
 .card-dates {
   margin-left: 10px;
+}
+
+// .card-border {
+//   border-right: 8px solid;
+
+// }
+
+.card-border {
+  border-right: 8px solid;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.card-border-comedy {
+  border-right-color: $comedy;
+}
+
+.card-border-cabaret-variety {
+  border-right-color: $cabaret-variety;
+
+}
+
+.card-border-circus-etc {
+  border-right-color: $circus-etc;
+
+}
+
+.card-border-theatre-etc {
+  border-right-color: $theatre-etc;
+
+}
+
+.card-border-events-etc {
+  border-right-color: $events-etc;
+
+}
+
+.card-border-other {
+  border-right-color: $other;
+
 }

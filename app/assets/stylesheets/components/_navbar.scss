@@ -1,7 +1,9 @@
 .navbar-lewagon {
+  z-index: 1;
   justify-content: space-between;
-  margin-bottom: 20px;
+  background-color: $light-blue;
   background-size: cover;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
 
   .navbar-collapse {
     flex-grow: 0;
@@ -9,8 +11,24 @@
   }
 
   .navbar-brand img {
-    width: 40px;
-    display: inline-block;
+    width: 20%;
+    // display: inline-block;
+  }
+
+  .form-control {
+    background-color: $off-white;
+    margin-left: 8px;
+    width: fit-content;
+  }
+
+  textarea, input {
+    color: $gray;
+    font-family: 'Roboto', Verdana, sans-serif;
+  }
+
+  input::placeholder {
+    color: $gray;
+    font-family: 'Roboto', Veranda, sans-serif;
   }
 }
 
@@ -20,52 +38,60 @@
 
 
 .top {
+  margin: 5px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-end;
+
   a {
-    height: 47px;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+    height: 50px;
+    margin-right: 16px;
+    // box-sizing: border-box;
+    // -moz-box-sizing: border-box;
+    // -webkit-box-sizing: border-box;
+
     &:hover {
-      border-bottom: 2px solid $yellow;
+      border-bottom: 4px solid $yellow;
       text-decoration: none !important;
       color: black !important;
 
     }
+
+    &:active {
+      // TO DO: Make links active when you're on their page
+      border-bottom: 4px solid $yellow;
+    }
   }
 }
 
-.inline div {
-  display: inline-block;
-}
+// .inline div {
+//   display: inline-block;
+// }
 
-.div-inline input {
-  width: 400px;
-}
+// .div-inline input {
+//   width: 400px;
+// }
 
-.search-show-input {
-  // width: 115%;
-  // margin-right: 20px;
-  border-radius: 5px;
-  font-family: "Roboto Condensed" !important;
-  border: 0;
-}
+// .search-show-input {
+//   // width: 115%;
+//   // margin-right: 20px;
+//   border-radius: 5px;
+//   font-family: "Roboto Condensed" !important;
+//   border: 0;
+// }
 
-.search-start-date {
-  border-radius: 5px;
-  // margin-right: 10px;
-  font-family: "Roboto Condensed" !important;
-  border: 0;
-}
+// .search-start-date {
+//   border-radius: 5px;
+//   // margin-right: 10px;
+//   font-family: "Roboto Condensed" !important;
+//   border: 0;
+// }
 
-.genre-style {
-  width: 60%;
-  margin-left: 50px;
-  font-family: "Roboto Condensed" !important;
-  border: 0;
-}
+// .genre-style {
+//   width: 60%;
+//   margin-left: 50px;
+//   font-family: "Roboto Condensed" !important;
+//   border: 0;
+// }
 
 
 .form-group {
@@ -74,11 +100,10 @@
 
 .big-nav-link {
   text-decoration: none;
-  font-size: 36px;
+  font-size: 32px;
   font-weight: bold;
   color: black;
-  letter-spacing: 2px;
-  // word-spacing: ;
+  letter-spacing: 1px;
 }
 
 .filter {
@@ -88,12 +113,23 @@
 .submit {
   background-color: $blue;
   height: 38px;
+  margin-left: 10px;
   padding: 3px 15px 3px 15px !important;
   border-radius: 5px;
-  color: white;
-  font-family: "Roboto Condensed" !important;
-  margin-left: 50px;
   border: 0;
+  color: white !important;
+  font-family: "Roboto Condensed" !important;
+}
+
+.dropdown-menu {
+  background-color: $off-white;
+  border: none;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-item:hover{
+  background-color: $light-blue;
+  border-bottom: none !important;
 }
 
 #form-styling {
