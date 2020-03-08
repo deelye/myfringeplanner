@@ -13,7 +13,7 @@
   </div>
   <div class="card-info">
     <div class="card-title-add">
-      <h6><%= truncate(performance.show.title, length: 45) %></h6>
+      <h6><%= truncate(performance.show.title, length: 35) %></h6>
     </div>
 
     <%= link_to performance_planners_path(performance ,@planner, day: params[:day]), method: :post do  %>
