@@ -1,6 +1,5 @@
 .navbar-lewagon {
   justify-content: space-between;
-  margin-bottom: 20px;
   background-color: $light-blue;
   background-size: cover;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
@@ -22,22 +21,32 @@
 
 
 .top {
+  margin: 5px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-end;
+
   a {
-    height: 47px;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+    height: 50px;
+    margin-right: 16px;
+    // box-sizing: border-box;
+    // -moz-box-sizing: border-box;
+    // -webkit-box-sizing: border-box;
+
     &:hover {
-      border-bottom: 2px solid $yellow;
+      border-bottom: 4px solid $yellow;
       text-decoration: none !important;
       color: black !important;
 
     }
+
+    &:active {
+      // TO DO: Make links active when you're on their page
+      border-bottom: 4px solid $yellow;
+    }
   }
 }
+
+
 
 .inline div {
   display: inline-block;
@@ -76,11 +85,10 @@
 
 .big-nav-link {
   text-decoration: none;
-  font-size: 36px;
+  font-size: 32px;
   font-weight: bold;
   color: black;
-  letter-spacing: 2px;
-  // word-spacing: ;
+  letter-spacing: 1px;
 }
 
 .filter {
