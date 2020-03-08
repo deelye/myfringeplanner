@@ -116,20 +116,63 @@
   right: 3px;
 }
 
-
-
-
-
-
-
-
-
-
 .plan {
   position: absolute;
   background-color: white;
+  border: solid 1px;
+  border-radius: 5px;
   p {
     margin: 0px;
     padding-left: 5px;
   }
+
+  i {
+    padding-right: 5px;
+    color: black;
+  }
 }
+
+.planner-card {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  border-radius: 3px;
+  font-size: 14px;
+
+  img {
+    width: 100px;
+    object-fit: cover;
+    border-radius: 5px 0px 0px 5px;
+  }
+
+  h6 {
+    margin: 0px;
+    font-weight: bold;
+  }
+
+  p {
+    margin: 0px;
+    font-size: 12px;
+    padding-left: 0px;
+  }
+}
+
+.planner-card-info {
+  width: 90%;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title-add, .card-title-remove {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+
+
