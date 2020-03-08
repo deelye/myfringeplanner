@@ -11,12 +11,23 @@
   }
 
   .navbar-brand img {
-    width: 40px;
-    display: inline-block;
+    width: 20%;
+    // display: inline-block;
   }
 
   .form-control {
     background-color: $off-white;
+    margin: 5px;
+  }
+
+  textarea, input {
+    color: $gray;
+    font-family: 'Roboto', Verdana, sans-serif;
+  }
+
+  input::placeholder {
+    color: $gray !important;
+    font-family: 'Roboto', Veranda, sans-serif;
   }
 }
 
@@ -53,35 +64,35 @@
 
 
 
-.inline div {
-  display: inline-block;
-}
+// .inline div {
+//   display: inline-block;
+// }
 
-.div-inline input {
-  width: 400px;
-}
+// .div-inline input {
+//   width: 400px;
+// }
 
-.search-show-input {
-  // width: 115%;
-  // margin-right: 20px;
-  border-radius: 5px;
-  font-family: "Roboto Condensed" !important;
-  border: 0;
-}
+// .search-show-input {
+//   // width: 115%;
+//   // margin-right: 20px;
+//   border-radius: 5px;
+//   font-family: "Roboto Condensed" !important;
+//   border: 0;
+// }
 
-.search-start-date {
-  border-radius: 5px;
-  // margin-right: 10px;
-  font-family: "Roboto Condensed" !important;
-  border: 0;
-}
+// .search-start-date {
+//   border-radius: 5px;
+//   // margin-right: 10px;
+//   font-family: "Roboto Condensed" !important;
+//   border: 0;
+// }
 
-.genre-style {
-  width: 60%;
-  margin-left: 50px;
-  font-family: "Roboto Condensed" !important;
-  border: 0;
-}
+// .genre-style {
+//   width: 60%;
+//   margin-left: 50px;
+//   font-family: "Roboto Condensed" !important;
+//   border: 0;
+// }
 
 
 .form-group {
