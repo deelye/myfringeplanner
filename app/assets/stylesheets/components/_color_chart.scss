@@ -1,6 +1,6 @@
 .color-chart {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   margin-bottom: 20px;
 
   p {
@@ -9,8 +9,9 @@
 }
 
 .color-chart-label {
-  width: 200px;
+  // width: 200px;
   height: 21px;
+  margin: 5px;
   padding-top: 4px;
   padding-bottom: 3px;
   border-radius: 5px;
@@ -76,8 +77,13 @@
 }
 
 @media(max-width: 1200px) {
-  grid-template-columns: 1fr 1fr;
+  .color-chart {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 @media(max-width: 850px) {
+  .color-chart {
+    grid-template-columns: 1fr 1fr;
+  }
 }
