@@ -11,16 +11,16 @@ const initMapboxPlanner = () => {
 
   const addMarkersToMap = (map, markers) => {
     markers.forEach((marker) => {
-      const popup = new mapboxgl.Popup().setHTML(marker.plannerInfoWindow); // add this
+      const popup = new mapboxgl.Popup().setHTML(marker.plannerInfoWindow);
 
       new mapboxgl.Marker()
         .setLngLat([ marker.lng, marker.lat ])
-        .setPopup(popup) // add this
+        .setPopup(popup)
         .addTo(map);
     });
   };
 
-  if (mapElement) { // only build a map if there's a div#map to inject into
+  if (mapElement) {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'planner-map',
