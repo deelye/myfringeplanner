@@ -49,5 +49,18 @@ class Show < ApplicationRecord
       show.p
     end
   end
+
+  def times
+    # self.performances.map { |performance| performance.start.strftime("%R") }.uniq
+    @starts = self.performances.map { |performance| performance.start.strftime("%R") }.uniq
+    @ends = self.performances.map { |performance| performance.end.strftime("%R") }.uniq
+
+    @times = []
+    @starts.each_with_index do |start, index|
+      @times << @starts[index] + " - " + @ends[index]
+    end
+
+    @times.join(", ")
+  end
 end
 
