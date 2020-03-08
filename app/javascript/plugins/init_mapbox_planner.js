@@ -9,6 +9,17 @@ const initMapboxPlanner = () => {
     map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
   };
 
+  const addMarkersToMap = (map, markers) => {
+    markers.forEach((marker) => {
+      const popup = new mapboxgl.Popup().setHTML(marker.plannerInfoWindow); // add this
+
+      new mapboxgl.Marker()
+        .setLngLat([ marker.lng, marker.lat ])
+        .setPopup(popup) // add this
+        .addTo(map);
+    });
+  };
+
   if (mapElement) { // only build a map if there's a div#map to inject into
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
@@ -24,6 +35,7 @@ const initMapboxPlanner = () => {
     });
 
     fitMapToMarkers(map, markers);
+    addMarkersToMap(map, markers);
   }
 };
 

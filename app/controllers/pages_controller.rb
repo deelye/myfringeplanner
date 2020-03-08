@@ -39,7 +39,8 @@ class PagesController < ApplicationController
     @markers = @bookings.map do |booking|
       {
         lat: booking.performance.show.venue.latitude,
-        lng: booking.performance.show.venue.longitude
+        lng: booking.performance.show.venue.longitude,
+        plannerInfoWindow: render_to_string(partial: "planner_info_window", locals: { booking: booking })
       }
     end
   end
