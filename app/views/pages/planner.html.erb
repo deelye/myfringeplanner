@@ -77,17 +77,14 @@
       </div>
 
       <div>
-
         <h1 class="planner-header">Planned Venues</h1>
-
         <div id="planner-map"
-          style="width: 100%; height: 500px;"
+          class="planner-map"
+          style="width: 100%; height: 300px;"
           data-markers="<%= @markers.to_json %>"
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
-
       </div>
-
     </div>
   </div>
 </div>
