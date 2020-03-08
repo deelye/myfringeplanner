@@ -17,7 +17,6 @@
       <h1 class="planner-header">MY FRINGE <%= Time.now.year %></h1>
       <div class="planner-date"><h3><%= @dayname %></h3></div>
       <div class="container-planner">
-
         <div class="planner">
           <div class="planner-times">
             <p>10:00</p>
@@ -35,13 +34,17 @@
             <p>22:00</p>
             <p>23:00</p>
           </div>
-
           <div class="day-calendar">
-            <% @planners.each do |planner| %>
-              <%= render "planner", planner: planner %>
+            <% if @planners != false %>
+              <% @planners.each do |planner| %>
+                <% if planner != false %>
+                  <%= link_to delete_planner_path(id: planner.id, day: params[:day]), method: :delete do  %>
+                    <%= render "planner", planner: planner %>
+                  <% end %>
+                <% end %>
+              <% end %>
             <% end %>
           </div>
-
           <div class="planner-times">
             <p>10:00</p>
             <p>11:00</p>

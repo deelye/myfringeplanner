@@ -8,7 +8,7 @@ class PlannersController < ApplicationController
   def create
     @day = params[:day]
     @performance = Performance.find(params[:performance_id])
-    @planner = Planner.create!(user: current_user, performance: @performance)
+    @planner = Planner.create!(user: current_user, performance: @performance, day: @day)
     redirect_to planner_path(day: @day)
   end
 
