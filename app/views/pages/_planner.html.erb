@@ -1,4 +1,4 @@
 <div class="plan <%= planner.performance.show.colour_class %>" style="top: <%= planner.top %>; height: <%= planner.duration %>; width: 100%">
   <p><%= truncate(planner.performance.show.title, length: 45) %></p>
-  <!-- <p><%= planner.performance.start.strftime("%H:%M") %></p> -->
+  <p><%= planner.performance.start.strftime("%H:%M") %></p>
 </div>
