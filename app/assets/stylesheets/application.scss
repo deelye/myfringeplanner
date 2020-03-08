@@ -17,10 +17,12 @@
 @import "components/star";
 
 .body-container {
+  margin-top: 30px;
   padding-left: 60px;
   padding-right: 60px;
 }
 
 body {
   background-color: $off-white;
+  align-items: center;
 }
