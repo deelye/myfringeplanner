@@ -14,7 +14,7 @@
 }
 
 .show-image-star-bar, .show-calendar, .show-bottom-details {
-  box-shadow: 1px 1px 2px gray;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.20);
 }
 
 .show-image-star-bar {
@@ -98,7 +98,7 @@ p .fringe-link:hover {
   align-items: center;
   height: 40px;
   padding: 0px 15px;
-  background-color: #4eacd9;
+  background-color: $blue;
   border-radius: 0px 0px 5px 5px;
   color: white;
   font-size: 1.1rem;
@@ -129,13 +129,13 @@ p .fringe-link:hover {
 
 .calendar-heading {
   text-align: center;
-  background-color: #878888;
+  background-color: $medium-gray;
   font-size: 16px;
   border-radius: 5px 5px 0px 0px;
 }
 
 .calendar-days-header {
-  background-color: #b3bec3;
+  background-color: $light-gray;
 
   th {
     border: white solid 1px;
@@ -145,5 +145,5 @@ p .fringe-link:hover {
 
 .calendar-body {
   text-align: center;
-  background-color: #efefef;
+  background-color: $off-white;
 }
