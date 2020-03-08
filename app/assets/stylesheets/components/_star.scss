@@ -1,8 +1,8 @@
 .star-yellow {
-  color: yellow !important;
+  color: $yellow !important;
 
   &:hover {
-    color: orange !important;
+    color: $pink !important;
   }
 }
 
@@ -10,6 +10,6 @@
   color: white !important;
 
   &:hover {
-    color: gray !important;
+    color: $pink !important;
   }
 }
