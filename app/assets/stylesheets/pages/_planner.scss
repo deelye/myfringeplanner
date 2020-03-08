@@ -4,22 +4,26 @@
   width: 300px;
   position: relative;
 }
+
 .header-bar {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .planner {
   display: flex;
   margin: 20px 0px;
 }
+
 #day {
   height: 44px;
   width: 120px;
   background-color: $pink;
   color: white;
 }
+
 .cont {
   display: flex;
   align-items: flex-start;
@@ -56,6 +60,7 @@
 .plan {
   position: absolute;
   background-color: white;
+
   p {
     margin: 0px;
     padding-left: 5px;
