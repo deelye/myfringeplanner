@@ -38,8 +38,8 @@ class PagesController < ApplicationController
 
     @markers = @bookings.map do |booking|
       {
-        lat: booking.performance.show.venue.longitude,
-        lng: booking.performance.show.venue.latitude
+        lat: booking.performance.show.venue.latitude,
+        lng: booking.performance.show.venue.longitude
       }
     end
   end

@@ -20,6 +20,7 @@ const initMapbox = () => {
 
   if (mapElement) {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v10'
@@ -30,9 +31,10 @@ const initMapbox = () => {
       .setLngLat([ marker.lng, marker.lat ])
       .addTo(map);
 
+    fitMapToMarker(map, marker);
+
     map.setZoom(14);
     map.setCenter([marker.lng, marker.lat]);
-    fitMapToMarker(map, marker);
     addMarkerToMap(map, marker);
     };
   };
