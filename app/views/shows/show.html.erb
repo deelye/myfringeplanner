@@ -19,7 +19,7 @@
     </div>
     <div class="show-top-details">
       <div class="show-title-div">
-        <%= link_to "#{@show.title}", @show.website, target: :blank, class: "show-title" %>
+        <%= link_to truncate("#{@show.title}", length: 70), @show.website, target: :blank, class: "show-title" %>
       </div>
       <div class="show-genre-return">
         <p><%= @show.genre %></p>
