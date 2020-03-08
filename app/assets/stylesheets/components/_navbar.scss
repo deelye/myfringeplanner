@@ -106,6 +106,17 @@
   border: 0;
 }
 
+.dropdown-menu {
+  background-color: $off-white;
+  border: none;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-item:hover{
+  background-color: $light-blue;
+  border-bottom: none !important;
+}
+
 #form-styling {
   display: flex !important;
   height: 38px !important;
