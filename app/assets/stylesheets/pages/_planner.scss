@@ -23,7 +23,11 @@
 .planner-btn {
   height: 35px;
   width: 45px;
-  padding: 0px
+  padding: 0px;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .planner-container {
