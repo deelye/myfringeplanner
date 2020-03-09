@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 40px;
-  margin-top: 45px;
   padding: 10px 40px;
   // border-top: 1px solid #eaeaea;
   color: $medium-gray;
@@ -26,7 +25,6 @@
     margin: 14px 0px;
   }
 }
-
 
 .footer-social-icons {
   display: flex;
