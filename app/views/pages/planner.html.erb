@@ -70,7 +70,9 @@
     <div class="planner-shortlist">
       <h1 class="planner-header">SHORTLIST</h1>
       <div>
-        <% if @performances == [] %>
+        <% if params[:day] == "Choose date..." || !params[:day].present? %>
+          <p>Choose a date to start planning!</p>
+        <% elsif @performances == [] %>
           <p>Looks like you need to add shows to your shortlist!</p>
         <% else %>
           <div class="planner-cards">

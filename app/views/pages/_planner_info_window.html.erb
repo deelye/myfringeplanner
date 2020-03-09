@@ -1,5 +1,7 @@
-<h6><%= booking.performance.show.title %></h6>
-<p><%= booking.performance.start.strftime("%H:%M") %> - <%= booking.performance.end.strftime("%H:%M") %></p>
-<p><%= booking.performance.show.venue.space %></p>
-<p><%= booking.performance.show.venue.name %></p>
-<p><%= booking.performance.show.venue.postcode %></p>
+<%= link_to "https://www.google.com/maps/search/#{booking.performance.show.venue.postcode}", target: :blank, class: "gmaps-link" do %>
+  <h6><%= booking.performance.show.title %></h6>
+  <p><%= booking.performance.start.strftime("%H:%M") %> - <%= booking.performance.end.strftime("%H:%M") %></p>
+  <p><%= booking.performance.show.venue.space %></p>
+  <p><%= booking.performance.show.venue.name %></p>
+  <p><%= booking.performance.show.venue.postcode %></p>
+<% end %>
