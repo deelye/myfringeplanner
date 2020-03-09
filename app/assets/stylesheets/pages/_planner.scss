@@ -12,11 +12,6 @@
   align-items: center;
 }
 
-// .planner {
-//   display: flex;
-//   margin: 20px 0px;
-// }
-
 #day {
   height: 35px;
   width: 175px;
@@ -30,13 +25,13 @@
   width: 45px;
   padding: 0px
 }
-  
+
 .planner-container {
   display: flex;
 }
 
 .planner-header {
-  margin: 15px 0px;
+  margin: 35px 0px 20px 0px;
 }
 
 .planner-date {
@@ -114,10 +109,10 @@
   z-index: 11;
   position: absolute;
   top: 8px;
-  color: black;
+  color: $blue !important;
 
   &:hover {
-    color: $blue;
+    color: $pink !important;
   }
 }
 
@@ -133,7 +128,7 @@
   position: absolute;
   background-color: white;
   border-radius: 5px;
-  
+
   p {
     margin: 0px;
     padding-left: 5px;
@@ -197,3 +192,7 @@
   }
 }
 
+.planner-map {
+  box-shadow: 1px 1px 2px gray;
+  border-radius: 5px;
+}

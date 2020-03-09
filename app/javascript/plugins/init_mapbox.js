@@ -10,7 +10,6 @@ const initMapbox = () => {
   };
 
   const addMarkerToMap = (map, marker) => {
-    console.log("asd");
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
 
     new mapboxgl.Marker()
@@ -21,6 +20,7 @@ const initMapbox = () => {
 
   if (mapElement) {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v10'
@@ -31,9 +31,10 @@ const initMapbox = () => {
       .setLngLat([ marker.lng, marker.lat ])
       .addTo(map);
 
-    map.setZoom(14);
-    map.setCenter([marker.lng, marker.lat])
     fitMapToMarker(map, marker);
+
+    map.setZoom(14);
+    map.setCenter([marker.lng, marker.lat]);
     addMarkerToMap(map, marker);
     };
   };
