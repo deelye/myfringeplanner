@@ -20,22 +20,11 @@ class PagesController < ApplicationController
       @dayname = "Choose date..."
     end
 
-    @planners = current_user.planners.map{ |planner| planner.day == @date ? planner : false}
-    @raw_performances = current_user.all_follows.map{|performance| performance.followable.performances}.flatten.select { |performance| performance.start.day == @day }
-    @booked_performance = current_user.planned_performances.select { |performance| performance.start.day == @day }
-    @performances = @raw_performances - @booked_performance
+    @planners = current_user.planners.map { |planner| planner.day == @date ? planner : false}.reject { |r| r == false }
+    @performances = current_user.shortlist_events.select{ |performance| performance.start.day == @day }
     @performances.sort_by! { |performance| performance.start }
 
-    if @planners != false
-      @bookings = []
-      @planners.each do |planner|
-        if planner != false
-          @bookings << planner
-        end
-      end
-    end
-
-    @markers = @bookings.map do |booking|
+    @markers = @planners.map do |booking|
       {
         lat: booking.performance.show.venue.latitude,
         lng: booking.performance.show.venue.longitude,
@@ -43,6 +32,10 @@ class PagesController < ApplicationController
       }
     end
 
+    # respond_to do |format|
+    #   format.html
+    #   format.js
+    # end
 
   end
 end

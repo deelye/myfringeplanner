@@ -47,5 +47,11 @@ document.addEventListener('turbolinks:load', () => {
 import { initMapboxPlanner } from '../plugins/init_mapbox_planner';
 document.addEventListener('turbolinks:load', () => {
   initMapboxPlanner();
-})
+});
 
+// import { setPlanner } from '../components/planner';
+
+// document.addEventListener('turbolinks:load', () => {
+//   // Call your JS functions here
+//   setPlanner();
+// });

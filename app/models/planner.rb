@@ -12,6 +12,14 @@ class Planner < ApplicationRecord
     self.top = ((top_in_5 / 168) * 100).round(2).to_s + "%"
   end
 
+  def planner_clash(planners, planner)
+    planners.each do |p|
+      if (planner.performance.start > p.performance.start && planner.performance.start < p.performance.end) || (planner.performance.end > p.performance.start && planner.performance.end < p.performance.end)
+        return "planner-clash"
+      end
+    end
+  end
+
   def walk_top
     end_of_planner = (performance.end - (performance.end.beginning_of_day + (3600 * 10))) / 300
     ((end_of_planner / 168) * 100).round(2).to_s + "%"
