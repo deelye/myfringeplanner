@@ -1,15 +1,10 @@
 <div class="plan" style="top: <%= planner.top %>; height: <%= planner.duration %>; width: 100%">
-  <div class="planner-card card">
+  <div class="planner-card card card-hover-out <%= planner.planner_clash(@planners, planner) %>">
     <%= image_tag(planner.performance.show.original_image, :alt => "Flyer image for show", height: planner.duration.to_f/100*1470) %>
-    <div class="planner-card-info card-border <%= planner.performance.show.colour_class %> <%= planner.planner_clash(@planners, planner) %>">
+    <div class="planner-card-info card-border <%= planner.performance.show.colour_class %> ">
       <div class="card-title-remove">
         <h6><%= truncate(planner.performance.show.title, length: 30) %></h6>
       </div>
-
-      <%= link_to delete_planner_path(planner, day: params[:day]), method: :delete do  %>
-        <i class="far fa-hand-point-right planner-remover"></i>
-      <% end %>
-
       <div>
         <p><%= planner.performance.show.genre %></p>
         <div class="d-flex">
@@ -40,11 +35,8 @@
           <p>£<%= performances.last.price %></p>
         </div>
       </div>
-
     </div>
-    <%= link_to show_path(planner.performance.show) do %>
-      <div class="hid-link"></div>
-    <% end %>
+
   </div>
 </div>
 

@@ -169,6 +169,20 @@
   background-color: #ea9999;
 }
 
+.card-hover-in:hover, .card-hover-out:hover {
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 75%;
+}
+
+.card-hover-in:hover {
+  background-image: url(hand-point-left-regular.svg);
+}
+
+.card-hover-out:hover {
+  background-image: url(hand-point-right-regular.svg);
+}
+
 .planner-card-info {
   width: 90%;
   padding-left: 10px;
