@@ -40,8 +40,8 @@
                 <% if planner != false %>
                   <%= link_to delete_planner_path(id: planner.id, day: params[:day]), method: :delete do  %>
                     <%= render "planner", planner: planner %>
-                    <%= render "walk_time", planner: planner, index: index %>
                   <% end %>
+                  <%= render "walk_time", planner: planner, index: index %>
                 <% end %>
               <% end %>
             <% end %>

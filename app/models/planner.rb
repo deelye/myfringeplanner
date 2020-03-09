@@ -18,6 +18,11 @@ class Planner < ApplicationRecord
   end
 
   def walk_duration(journey_info)
-    (((journey_info["routes"].first["duration"] / 300) /168) * 100).round(2).to_s + "%"
+    num = (((journey_info["routes"].first["duration"] / 300) /168) * 100).round(2)
+    if num > 1.5
+      num.to_s + "%"
+    else
+      1.5.to_s + "%"
+    end
   end
 end

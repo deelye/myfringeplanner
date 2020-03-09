@@ -7,7 +7,7 @@
   <% response = RestClient.get "https://api.mapbox.com/directions/v5/mapbox/walking/#{venue.longitude},#{venue.latitude};#{next_venue.longitude},#{next_venue.latitude}?geometries=geojson&access_token=#{ENV['MAPBOX_API_KEY']}" %>
   <% journey_info = JSON.parse(response) %>
   <!-- Display time of journey if directed here from planner.html, but full map if from walking_route.html -->
-  <div class="card walk_notification" style="top: <%= planner.walk_top %>; height: <%= planner.walk_duration(journey_info) %>; width: 100%">
+  <div class="planner-card walk-notif" style="top: <%= planner.walk_top %>; height: <%= planner.walk_duration(journey_info) %>; width: 100%">
     <i class="fa fa-street-view " aria-hidden="true"> <%= (journey_info["routes"].first["duration"] / 60).ceil %> minute walk</i>
   </div>
 <% end %>
