@@ -31,6 +31,7 @@ class PagesController < ApplicationController
       @planners.each do |planner|
         if planner != false
           @bookings << planner
+
         end
       end
     end
@@ -42,5 +43,6 @@ class PagesController < ApplicationController
         plannerInfoWindow: render_to_string(partial: "planner_info_window", locals: { booking: booking })
       }
     end
+
   end
 end
