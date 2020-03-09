@@ -1,7 +1,7 @@
 <div class="plan" style="top: <%= planner.top %>; height: <%= planner.duration %>; width: 100%">
   <div class="planner-card card">
     <%= image_tag(planner.performance.show.original_image, :alt => "Flyer image for show", height: planner.duration.to_f/100*1470) %>
-    <div class="planner-card-info card-border <%= planner.performance.show.colour_class %>">
+    <div class="planner-card-info card-border <%= planner.performance.show.colour_class %> <%= planner.planner_clash(@planners, planner) %>">
       <div class="card-title-remove">
         <h6><%= truncate(planner.performance.show.title, length: 30) %></h6>
       </div>

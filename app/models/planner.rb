@@ -11,4 +11,12 @@ class Planner < ApplicationRecord
     self.duration = ((dur_in_5 / 168) * 100).round(2).to_s + "%"
     self.top = ((top_in_5 / 168) * 100).round(2).to_s + "%"
   end
+
+  def planner_clash(planners, planner)
+    planners.each do |p|
+      if (planner.performance.start > p.performance.start && planner.performance.start < p.performance.end) || (planner.performance.end > p.performance.start && planner.performance.end < p.performance.end)
+        return "planner-clash"
+      end
+    end
+  end
 end
