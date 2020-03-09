@@ -22,12 +22,12 @@
 
   textarea, input {
     color: $gray;
-    font-family: 'Roboto', Verdana, sans-serif;
+    // font-family: 'Roboto Condensed', Verdana, sans-serif;
   }
 
   input::placeholder {
     color: $gray;
-    font-family: 'Roboto', Veranda, sans-serif;
+    // font-family: 'Roboto Condensed', Veranda, sans-serif;
   }
 }
 
@@ -42,14 +42,13 @@
   justify-content: flex-end;
 
   a {
-    height: 50px;
     margin-right: 16px;
     // box-sizing: border-box;
     // -moz-box-sizing: border-box;
     // -webkit-box-sizing: border-box;
 
     &:hover {
-      border-bottom: 4px solid $yellow;
+      border-bottom: 4px solid $pink;
       text-decoration: none !important;
       color: black !important;
 
@@ -62,13 +61,19 @@
   }
 }
 
-// .inline div {
-//   display: inline-block;
-// }
+.big-nav-link {
+  height: 50px;
+  text-decoration: none;
+  font-size: 32px;
+  font-weight: bold;
+  color: black;
+  letter-spacing: 1px;
+}
 
-// .div-inline input {
-//   width: 400px;
-// }
+.active-nav {
+  border-bottom: 4px solid $yellow;
+}
+
 
 .search-show-input {
   width: 115%;
@@ -78,15 +83,8 @@
   border: 0;
 }
 
-// .search-start-date {
-//   border-radius: 5px;
-//   // margin-right: 10px;
-//   font-family: "Roboto Condensed" !important;
-//   border: 0;
-// }
-
 .genre-style {
-  width: 0%;
+  width: 30%;
   // margin-left: 50px;
   font-family: "Roboto Condensed" !important;
   border: 0;
@@ -97,14 +95,6 @@
 
 .form-group {
   width: 50%;
-}
-
-.big-nav-link {
-  text-decoration: none;
-  font-size: 32px;
-  font-weight: bold;
-  color: black;
-  letter-spacing: 1px;
 }
 
 .filter {
