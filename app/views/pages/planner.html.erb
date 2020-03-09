@@ -75,19 +75,12 @@
         <% elsif @performances == [] %>
           <p>Looks like you need to add shows to your shortlist!</p>
         <% else %>
-
-
           <div class="planner-cards">
             <% @performances.each do |performance| %>
-                <%= render 'pages/planner_shortlist', performance: performance %>
-
+              <%= render 'pages/planner_shortlist', performance: performance %>
             <% end %>
           </div>
-
-
-
-
-          <% if @bookings != [] %>
+          <% if @planners != [] %>
             <h1 class="planner-header">Planned Venues</h1>
             <div id="planner-map"
               class="planner-map"
