@@ -13,7 +13,7 @@
 
   <div class="planner-container">
     <div>
-      <h1 class="planner-header">MY FRINGE <!--  Time.now.year --></h1>
+      <h1 class="planner-header">MY FRINGE <%= Time.now.year %></h1>
       <div class="planner-date"><h3><%= @dayname %></h3></div>
       <div class="planner-day">
         <div class="planner">
@@ -39,9 +39,9 @@
               <% @planners.delete_if{ |planner| planner == false } %>
               <% @planners.sort_by! { |planner| planner.performance.start } %>
               <% @planners.each_with_index do |planner, index| %>
-                <%= link_to delete_planner_path(id: planner.id, day: params[:day]), method: :delete do  %>
-                  <%= render "planner", planner: planner %>
-                <% end %>
+                  <%= link_to delete_planner_path(id: planner.id, day: params[:day]), method: :delete do  %>
+                    <%= render "planner", planner: planner %>
+                  <% end %>
                 <%= render "walk_time", planner: planner, index: index %>
               <% end %>
             <% end %>
