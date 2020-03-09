@@ -10,21 +10,18 @@
 
 .color-chart-label {
   // width: 200px;
-  height: 21px;
+  height: 32px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
   margin: 5px;
-  padding-top: 4px;
-  padding-bottom: 3px;
+  padding-top: 5px;
+  padding-bottom: 4px;
   border-radius: 5px;
-  color: white;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 12px;
-  align-items: center;
   text-align: center;
-}
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+  color: white;
 
-.color-comedy {
-  background-color: $comedy;
   &:hover {
     opacity: 0.8;
     text-decoration: none;
@@ -32,49 +29,28 @@
   }
 }
 
+.color-comedy {
+  background-color: $comedy;
+}
+
 .color-cabaret-variety {
   background-color: $cabaret-variety;
-   &:hover {
-    opacity: 0.8;
-    text-decoration: none;
-    color: white;
-  }
 }
 
 .color-circus-etc {
   background-color: $circus-etc;
-   &:hover {
-    opacity: 0.8;
-    text-decoration: none;
-    color: white;
-  }
 }
 
 .color-theatre-etc {
   background-color: $theatre-etc;
-   &:hover {
-    opacity: 0.8;
-    text-decoration: none;
-    color: white;
-  }
 }
 
 .color-events-etc {
   background-color: $events-etc;
-   &:hover {
-    opacity: 0.8;
-    text-decoration: none;
-    color: white;
-  }
 }
 
 .color-other {
   background-color: $other;
-   &:hover {
-    opacity: 0.8;
-    text-decoration: none;
-    color: white;
-  }
 }
 
 @media(max-width: 1200px) {
