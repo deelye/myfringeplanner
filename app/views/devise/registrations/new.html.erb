@@ -1,32 +1,30 @@
 <div class="container body-container form-user">
   <h3>Sign Up</h3>
 
-  <div class="form-left">
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= f.error_notification %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
 
-      <div class="form-inputs">
-        <div class="form-group w100 email required user_email">
-          <input class="form-control string email required form-control string email required special w100" autocomplete="email" autofocus="autofocus" required="required" aria-required="true" placeholder="&#xf0e0;  Email" type="email" value="" name="user[email]" id="user_email">
-        </div>
-        <div class="form-group w100 string required user_first_name">
-          <input class="form-control string required form-control string first_name required special w100" autocomplete="first_name" autofocus="autofocus" required="required" aria-required="true" placeholder="&#xf007;  First Name" type="text" name="user[first_name]" id="user_first_name">
-        </div>
-        <div class="form-group w100 string required user_last_name">
-          <input class="form-control string required form-control string last_name required special w100" autocomplete="last_name" autofocus="autofocus" required="required" aria-required="true" placeholder="&#xf007;  Last Name" type="text" name="user[last_name]" id="user_last_name">
-        </div>
-        <div class="form-group w100 password required user_password">
-          <input class="form-control password required form-control string password required special w100" autocomplete="password" autofocus="autofocus" required="required" aria-required="true" placeholder="&#xf023;  Password" type="password" name="user[password]" id="user_password">
-        </div>
-        <div class="form-group w100 password required user_password_confirmation">
-          <input class="form-control password required form-control string password_confirmation required special w100" autocomplete="password_confirmation" autofocus="autofocus" required="required" aria-required="true" placeholder="&#xf023;  Confirm Password" type="password" name="user[password_confirmation]" id="user_password_confirmation">
-        </div>
+    <div class="form-inputs">
+      <div class="form-group w100 email required user_email">
+        <input class="form-control string email required form-control string email required special w100" autocomplete="email" autofocus="autofocus" required="required" aria-required="true" placeholder="&#xf0e0;  Email" type="email" value="" name="user[email]" id="user_email">
       </div>
-      <div class="form-actions">
-        <%= f.button :submit, "Continue" %>
+      <div class="form-group w100 string required user_first_name">
+        <input class="form-control string required form-control string first_name required special w100" autocomplete="first_name" autofocus="autofocus" required="required" aria-required="true" placeholder="&#xf007;  First Name" type="text" name="user[first_name]" id="user_first_name">
       </div>
-    <% end %>
+      <div class="form-group w100 string required user_last_name">
+        <input class="form-control string required form-control string last_name required special w100" autocomplete="last_name" autofocus="autofocus" required="required" aria-required="true" placeholder="&#xf007;  Last Name" type="text" name="user[last_name]" id="user_last_name">
+      </div>
+      <div class="form-group w100 password required user_password">
+        <input class="form-control password required form-control string password required special w100" autocomplete="password" autofocus="autofocus" required="required" aria-required="true" placeholder="&#xf023;  Password" type="password" name="user[password]" id="user_password">
+      </div>
+      <div class="form-group w100 password required user_password_confirmation">
+        <input class="form-control password required form-control string password_confirmation required special w100" autocomplete="password_confirmation" autofocus="autofocus" required="required" aria-required="true" placeholder="&#xf023;  Confirm Password" type="password" name="user[password_confirmation]" id="user_password_confirmation">
+      </div>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, "Continue" %>
+    </div>
+  <% end %>
 
-  <%= render "devise/shared/links" %>
-  </div>
+<%= render "devise/shared/links" %>
 </div>
