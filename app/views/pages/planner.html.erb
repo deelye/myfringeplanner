@@ -77,13 +77,9 @@
         <% else %>
           <div class="planner-cards">
             <% @performances.each do |performance| %>
-
-              <% if performance.show.booked == false %> <!-- NEW CODE -->
-                <%= render 'pages/planner_shortlist', performance: performance %>
-              <% end %>
+              <%= render 'pages/planner_shortlist', performance: performance %>
             <% end %>
           </div>
-
 
           <% if @bookings != [] %>
             <h1 class="planner-header">Planned Venues</h1>

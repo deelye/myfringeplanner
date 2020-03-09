@@ -31,7 +31,6 @@ class PagesController < ApplicationController
       @planners.each do |planner|
         if planner != false
           @bookings << planner
-
         end
       end
     end
