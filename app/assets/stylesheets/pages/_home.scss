@@ -30,7 +30,6 @@
 }
 
 .home-card {
-  box-shadow: 5px 5px 20px rgb(240, 240, 240);
   height: 280px;
   width: 380px;
   padding: 25px;
@@ -38,7 +37,7 @@
   font-size: 14px;
   text-align: center;
   padding: 25px;
-  background-color: rgb(250,250,250);
+  background-color: rgb(230,230,230);
 
     h3 {
       margin-top: 10px;
@@ -49,6 +48,11 @@
       height: 200px;
       border-radius: 5px;
     }
+}
+
+.home-icon {
+  color: white;
+  font-size: 35px;
 }
 
 .home-btn-begin {
