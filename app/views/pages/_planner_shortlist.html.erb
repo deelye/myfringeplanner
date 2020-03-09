@@ -11,20 +11,13 @@
     <% end %>
     <%= image_tag(performance.show.original_image, :alt => "Flyer image for show") %>
   </div>
-
   <div class="card-info card-border <%= performance.show.colour_class %> <%= performance.shortlist_clash(@planners, performance) %>">
-
     <div class="card-title-add">
-      <h6><%= truncate(performance.show.title, length: 35) %></h6>
+        <h6><%= truncate(performance.show.title, length: 35) %></h6>
     </div>
-
-    <%= link_to performance_planners_path(performance ,@planner, day: params[:day]), method: :post do  %>
-      <i class="far fa-hand-point-left planner-adder"></i>
-    <% end %>
 
     <p><%= performance.show.genre %></p>
     <div class="d-flex">
-
       <% dates = ["Aug "] %>
       <% performances = performance.show.performances %>
       <% performances.each_with_index do |performance, index| %>
@@ -53,4 +46,7 @@
     </div>
   </div>
 
+  <%= link_to performance_planners_path(performance ,@planner, day: params[:day]), method: :post do  %>
+    <div class="hid-link"></div>
+  <% end %>
 </div>

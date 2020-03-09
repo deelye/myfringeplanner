@@ -78,7 +78,9 @@
 
           <div class="planner-cards">
             <% @performances.each do |performance| %>
-              <%= render 'pages/planner_shortlist', performance: performance %>
+
+                <%= render 'pages/planner_shortlist', performance: performance %>
+
             <% end %>
           </div>
           <% if @planners != [] %>
