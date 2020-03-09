@@ -8,6 +8,6 @@ class User < ApplicationRecord
   has_many :shows, through: :shortlists
   has_many :performances, through: :shows
   has_many :planned_performances, through: :planners, source: :performance
-
+  has_one_attached :photo
   acts_as_follower
 end

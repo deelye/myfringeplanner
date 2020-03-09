@@ -21,6 +21,18 @@
         <div class="form-group w100 password required user_password_confirmation">
           <input class="form-control password required form-control string password_confirmation required special w100" autocomplete="password_confirmation" autofocus="autofocus" required="required" aria-required="true" placeholder="&#xf023;  Confirm Password" type="password" name="user[password_confirmation]" id="user_password_confirmation">
         </div>
+        <!-- <form class="md-form">
+          <div class="file-field">
+            <div class="btn btn-primary btn-sm float-left">
+              <span>Choose file</span>
+              <input type="file">
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text" placeholder="Upload your picture">
+            </div>
+          </div>
+        </form> -->
+        <%= f.input :photo, as: :file %>
       </div>
       <div class="form-actions">
         <%= f.button :submit, "Continue" %>
