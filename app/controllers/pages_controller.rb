@@ -20,10 +20,9 @@ class PagesController < ApplicationController
       @dayname = "Choose date..."
     end
 
-    @planners = current_user.planners.map{ |planner| planner.day == @date ? planner : false}.reject{|r| r == false}
+    @planners = current_user.planners.map { |planner| planner.day == @date ? planner : false}.reject { |r| r == false }
     @performances = current_user.shortlist_events.select{ |performance| performance.start.day == @day }
     @performances.sort_by! { |performance| performance.start }
-
 
     @markers = @planners.map do |booking|
       {
