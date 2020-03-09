@@ -33,7 +33,7 @@
 
 textarea, input {
   padding:10px;
-  font-family: FontAwesome, "Roboto", Verdana, sans-serif !important;
+  font-family: FontAwesome, "Roboto Condensed", Verdana, sans-serif !important;
   font-style: normal;
   font-weight: normal;
   text-decoration: inherit;
@@ -41,7 +41,7 @@ textarea, input {
 
 input::placeholder {
   color: $gray !important;
-  font-family: FontAwesome, "Roboto", Verdana, sans-serif;
+  font-family: FontAwesome, "Roboto Condensed", Verdana, sans-serif;
 }
 
 
