@@ -26,7 +26,10 @@
             <% dates << "-" %>
             <% dates << performance.start.strftime("%e").to_i %>
           <% end %>
-        <% elsif performances[index - 1].start.strftime("%e").to_i == performance.start.strftime("%e").to_i%>
+        <% elsif performances[index - 1].start.strftime("%e").to_i == performance.start.strftime("%e").to_i %>
+        <% elsif dates.last == performances[index - 1].start.strftime("%e").to_i %>
+          <% dates << ", " %>
+          <% dates << performance.start.strftime("%e").to_i %>
         <% else %>
           <% dates << "-" %>
           <% dates << performances[index - 1].start.strftime("%e").to_i %>
