@@ -1,7 +1,7 @@
 <div class="color-chart">
   <%= link_to "COMEDY" , shows_path(category: "Comedy"), class: "color-chart-label color-comedy" %>
   <%= link_to "CABARET & VARIETY" , shows_path(category: "Cabaret and Variety" ), class: "color-chart-label color-cabaret-variety" %>
-  <%= link_to "CIRCUS & PHYSICAL THEATRE" , shows_path(category: "Dance, Physical Theatre and Circusy" ), class: "color-chart-label color-circus-etc" %>
+  <%= link_to "CIRCUS & PHYSICAL THEATRE" , shows_path(category: "Dance" || "Physical Theatre" || "Circus" ), class: "color-chart-label color-circus-etc" %>
   <%= link_to "THEATRE, MUSICALS & OPERA" , shows_path(category: "Musicals and Opera" || "Theater" || "Music"), class: "color-chart-label color-theatre-etc" %>
   <%= link_to "EVENTS & EXHIBITIONS" , shows_path(category: "Events" || "Excibitions" ), class: "color-chart-label color-events-etc" %>
   <%= link_to "OTHER" , shows_path(category: "Children's Shows" || "Spoken Word" ), class: "color-chart-label color-other" %>

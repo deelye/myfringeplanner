@@ -18,6 +18,9 @@ class ShowsController < ApplicationController
       end
     else
       @shows = Show.includes(:performances, :venue).all
+      if params[:category].present?
+        @shows = @shows.select{|r| r.genre == params[:category]}
+      end
     end
   end
 
