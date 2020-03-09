@@ -36,10 +36,11 @@
 
           <div class="day-calendar">
             <% if @planners != false %>
-              <% @planners.each do |planner| %>
+              <% @planners.each_with_index do |planner, index| %>
                 <% if planner != false %>
                   <%= link_to delete_planner_path(id: planner.id, day: params[:day]), method: :delete do  %>
                     <%= render "planner", planner: planner %>
+                    <% render "walk_time", planner: planner, index: index %>
                   <% end %>
                 <% end %>
               <% end %>
