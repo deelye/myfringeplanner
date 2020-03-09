@@ -42,5 +42,7 @@ class PagesController < ApplicationController
         plannerInfoWindow: render_to_string(partial: "planner_info_window", locals: { booking: booking })
       }
     end
+
+
   end
 end
