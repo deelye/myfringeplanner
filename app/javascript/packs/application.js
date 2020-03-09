@@ -24,13 +24,20 @@ require("channels")
 import "bootstrap";
 
 // Show page map
-import { initMapbox } from '../plugins/init_mapbox';
-document.addEventListener('turbolinks:load', () => {
-  initMapbox();
-});
+// import { initMapbox } from '../plugins/init_mapbox';
+// document.addEventListener('turbolinks:load', () => {
+//   initMapbox();
+// });
 
-// Planner page map
-import { initMapboxPlanner } from '../plugins/init_mapbox_planner';
+// // Planner page map
+// import { initMapboxPlanner } from '../plugins/init_mapbox_planner';
+// document.addEventListener('turbolinks:load', () => {
+//   initMapboxPlanner();
+// });
+
+import { setPlanner } from '../components/planner';
+
 document.addEventListener('turbolinks:load', () => {
-  initMapboxPlanner();
-})
+  // Call your JS functions here
+  setPlanner();
+});

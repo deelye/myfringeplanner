@@ -4,7 +4,7 @@
     <form>
       <select name="day" id="day" class="input-field">
         <% @collection.each do |day| %>
-          <option value="<%= day %>"><%= day %></option>
+          <option id="select-date" value="<%= day %>"><%= day %></option>
         <% end %>
       </select>
       <button class="button planner-btn" type="submit">Plan</button>
