@@ -15,15 +15,17 @@
 #day {
   height: 35px;
   width: 175px;
-  background-color: $pink;
-  color: white;
   margin-right: 5px;
 }
 
 .planner-btn {
   height: 35px;
   width: 45px;
-  padding: 0px
+  padding: 0px;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .planner-container {
@@ -211,7 +213,7 @@
 }
 
 .planner-map {
-  box-shadow: 1px 1px 2px gray;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
 }
 
