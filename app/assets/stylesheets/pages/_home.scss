@@ -6,14 +6,16 @@
 }
 
 .home-page {
-  background-image: url();
+  background-image: url(fringe-festival-image.jpg);
+  background-size: 100vw;
+  padding: 0px 60px;
 }
 
 .home-title {
   font-family: Roboto Condensed;
   font-size: 65px;
   text-align: center;
-  color: $blue;
+  color: white;
 }
 
 .home-cards {
