@@ -1,7 +1,7 @@
 <!-- Hide form if start date and end date have values -->
 <div class="body-container">
   <div class="planner-search-bar">
-    <form>
+    <form id="date-form">
       <select name="day" id="day" class="input-field">
         <% @collection.each do |day| %>
           <option id="select-date" value="<%= day %>"><%= day %></option>
