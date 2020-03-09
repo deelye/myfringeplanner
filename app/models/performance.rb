@@ -12,4 +12,14 @@ class Performance < ApplicationRecord
 
     "#{@start} - #{@end}"
   end
+
+  def clash(performances, planners)
+    performances.each do |performance|
+      planners.each do |planner|
+        if (performance.start > planner.performance.start && performance.start < planner.performance.end) || (performance.end > planner.performance.start && performance.end < planner.performance.start)
+          return "planner-clash"
+        end
+      end
+    end
+  end
 end

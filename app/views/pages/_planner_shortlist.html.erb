@@ -11,7 +11,9 @@
     <% end %>
     <%= image_tag(performance.show.original_image, :alt => "Flyer image for show") %>
   </div>
-  <div class="card-info card-border <%= performance.show.colour_class %>">
+
+  <div class="card-info card-border <%= performance.show.colour_class %> <%= performance.clash(@performances, @planners) %>">
+
     <div class="card-title-add">
       <h6><%= truncate(performance.show.title, length: 35) %></h6>
     </div>
