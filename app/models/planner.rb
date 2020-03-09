@@ -12,7 +12,12 @@ class Planner < ApplicationRecord
     self.top = ((top_in_5 / 168) * 100).round(2).to_s + "%"
   end
 
-  def venue
-    performance.show.venue
+  def walk_top
+    end_of_planner = (performance.end - (performance.end.beginning_of_day + (3600 * 10))) / 300
+    ((end_of_planner / 168) * 100).round(2).to_s + "%"
+  end
+
+  def walk_duration(journey_info)
+    (((journey_info["routes"].first["duration"] / 300) /168) * 100).round(2).to_s + "%"
   end
 end
