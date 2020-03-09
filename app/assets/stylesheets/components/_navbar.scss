@@ -12,7 +12,6 @@
 
   .navbar-brand img {
     width: 20%;
-    // display: inline-block;
   }
 
   .form-control {
@@ -71,13 +70,13 @@
 //   width: 400px;
 // }
 
-// .search-show-input {
-//   // width: 115%;
-//   // margin-right: 20px;
-//   border-radius: 5px;
-//   font-family: "Roboto Condensed" !important;
-//   border: 0;
-// }
+.search-show-input {
+  width: 115%;
+  // margin-right: 20px;
+  border-radius: 5px;
+  font-family: "Roboto Condensed" !important;
+  border: 0;
+}
 
 // .search-start-date {
 //   border-radius: 5px;
@@ -86,12 +85,14 @@
 //   border: 0;
 // }
 
-// .genre-style {
-//   width: 60%;
-//   margin-left: 50px;
-//   font-family: "Roboto Condensed" !important;
-//   border: 0;
-// }
+.genre-style {
+  width: 0%;
+  // margin-left: 50px;
+  font-family: "Roboto Condensed" !important;
+  border: 0;
+  border-radius: 5px;
+
+}
 
 
 .form-group {
