@@ -27,7 +27,21 @@ import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+
+  const navLinks = document.querySelectorAll(".big-nav-link")
+
+  navLinks.forEach(link => {
+
+    const href = window.location.pathname;
+    const strippedHref = link.href.split('/').slice(-1)[0];
+
+    if (window.location.pathname === `/${strippedHref}`) {
+      link.classList.add('active-nav');
+    }
+  })
 });
+
+
 
 // Planner page map
 import { initMapboxPlanner } from '../plugins/init_mapbox_planner';

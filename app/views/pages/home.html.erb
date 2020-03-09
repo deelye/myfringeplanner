@@ -18,6 +18,13 @@
     </div>
   </div>
 
-  <div class="home-btn-begin"><%= link_to "Start searching...", shows_path, class: "button" %></div>
-
+  <div class="home-btn-begin">
+    <%= link_to shows_path, class: "button" do %>
+      Start Planning
+      <i class="fas fa-search"></i>
+      <% end %>
+  </div>
 </div>
+
+
+
