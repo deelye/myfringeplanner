@@ -18,6 +18,19 @@ class ShowsController < ApplicationController
       end
     else
       @shows = Show.includes(:performances, :venue).all
+      if params[:category].present?
+        @shows = @shows.select do |r|
+          if params[:category] == "Comedy" || params[:category] == "Cabaret and Variety" || params[:category] == "Dance Physical Theatre and Circus"
+            r.genre == params[:category]
+          elsif params[:category] == "Musicals and Opera"
+            r.genre == params[:category] || r.genre == "Theatre"
+          elsif params[:category] == "Events"
+            r.genre == params[:category] || r.genre == "Exhibitions"
+          elsif params[:category] == "Children's Shows"
+            r.genre == params[:category] || r.genre == "Spoken Word" || r.genre == "Music"
+          end
+        end
+      end
     end
   end
 
