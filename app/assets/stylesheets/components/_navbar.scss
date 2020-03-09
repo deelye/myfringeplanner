@@ -110,6 +110,10 @@
   border: 0;
   color: white !important;
   font-family: "Roboto Condensed" !important;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .dropdown-menu {
