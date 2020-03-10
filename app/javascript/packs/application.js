@@ -41,17 +41,12 @@ document.addEventListener('turbolinks:load', () => {
   })
 });
 
-
-
 // Planner page map
 import { initMapboxPlanner } from '../plugins/init_mapbox_planner';
 document.addEventListener('turbolinks:load', () => {
   initMapboxPlanner();
 });
 
-// import { setPlanner } from '../components/planner';
-
-// document.addEventListener('turbolinks:load', () => {
-//   // Call your JS functions here
-//   setPlanner();
-// });
+// Select date in planner
+import { plannerDate } from '../components/plannerdate.js';
+  plannerDate();
