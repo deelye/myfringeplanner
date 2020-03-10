@@ -8,6 +8,7 @@
   <% journey_info = JSON.parse(response) %>
   <!-- Display time of journey if directed here from planner.html, but full map if from walking_route.html -->
   <div class="planner-card walk-notif" style=" height: <%= planner.walk_duration(journey_info) %>; width: 100%">
-    <i class="fa fa-street-view " aria-hidden="true"> <%= (journey_info["routes"].first["duration"] / 60).ceil %> minute walk to <%= next_venue.name %></i>
+    <i class="fa fa-street-view " aria-hidden="true"></i>
+    <p> <%= (journey_info["routes"].first["duration"] / 60).ceil %> minute walk to <%= next_venue.name %></p>
   </div>
 <% end %>
