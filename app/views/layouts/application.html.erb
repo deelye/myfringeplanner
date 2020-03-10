@@ -32,9 +32,7 @@
   </head>
 
   <body>
-    <% unless controller_name == "pages" %>
-      <%= render 'shared/navbar' %>
-    <% end %>
+    <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
       <div class="min-height">
         <%= yield %>
