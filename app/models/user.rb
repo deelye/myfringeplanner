@@ -7,6 +7,9 @@ class User < ApplicationRecord
   has_many :planners
   has_many :performances, through: :shows
   has_many :planned_performances, through: :planners, source: :performance
+  has_one_attached :photo
+  acts_as_follower
+  # validates :photo, presence: true
   has_many :booked_shows, through: :planned_performances, source: :show
 
   acts_as_follower

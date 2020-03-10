@@ -31,11 +31,6 @@ class PagesController < ApplicationController
         plannerInfoWindow: render_to_string(partial: "planner_info_window", locals: { booking: booking })
       }
     end
-
-    # respond_to do |format|
-    #   format.html
-    #   format.js
-    # end
-
   end
+
 end
