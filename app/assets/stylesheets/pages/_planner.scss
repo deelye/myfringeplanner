@@ -199,6 +199,14 @@
   background-color: #ea9999;
 }
 
+#planner-add-cal {
+  font-size: 20px;
+
+  &:hover {
+    color: $pink;
+  }
+}
+
 .card-hover-in:hover, .card-hover-out:hover {
   background-position: center;
   background-repeat: no-repeat;

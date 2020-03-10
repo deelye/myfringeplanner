@@ -10,7 +10,6 @@ class Show < ApplicationRecord
     "Musicals and Opera",
     "Spoken Word",
     "Theatre"
-    # TODO: finish the list
   ]
 
   belongs_to :venue
