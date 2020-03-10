@@ -67,7 +67,12 @@
 
   <div class="planner-container">
     <div>
-      <h1 class="planner-header">MY FRINGE <%= Time.now.year %></h1>
+      <h1 class="planner-header">
+        MY FRINGE
+        <%= link_to planners_path do  %>
+          <i class="fa fa-calendar-plus" aria-hidden="true" id="planner-add-cal"></i>
+        <% end %>
+      </h1>
       <div class="planner-date"><h3><%= @dayname %></h3></div>
       <div class="planner-day">
         <div class="planner">
@@ -94,7 +99,10 @@
               <% @planners.sort_by! { |planner| planner.performance.start } %>
               <% @planners.each_with_index do |planner, index| %>
                   <%= link_to delete_planner_path(id: planner.id, day: params[:day]), method: :delete do  %>
-                    <%= render "planner", planner: planner, index: index%>
+                    <div style="top: <%= planner.top %>; height: <%= planner.duration %>; width: 100%">
+                    <%= render "planner", planner: planner %>
+                    <%= render "walk_time", planner: planner, index: index %>
+                    </div>
                   <% end %>
               <% end %>
             <% end %>

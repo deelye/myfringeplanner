@@ -29,6 +29,7 @@
     height: 25px;
     box-shadow: 0px 0px 0px transparent;
     text-shadow: 0px 0px 0px transparent;
+    text-shadow: 0px 0px 0px transparent;
     border: 0px solid transparent;
     padding: 0px;
     text-align: center;
@@ -212,6 +213,14 @@
 
 .planner-clash, .clash {
   background-color: #ea9999;
+}
+
+#planner-add-cal {
+  font-size: 20px;
+
+  &:hover {
+    color: $pink;
+  }
 }
 
 .card-hover-in:hover, .card-hover-out:hover {

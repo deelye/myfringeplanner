@@ -33,4 +33,8 @@ class Planner < ApplicationRecord
       25.to_s + "px"
     end
   end
+
+  def date
+    self.performance.start
+  end
 end
