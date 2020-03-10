@@ -31,9 +31,13 @@
   }
 }
 
+.form-check {
+  margin-left: 5px;
+}
+
 textarea, input {
   padding:10px;
-  font-family: FontAwesome, "Roboto", Verdana, sans-serif !important;
+  font-family: FontAwesome, "Roboto Condensed", Verdana, sans-serif !important;
   font-style: normal;
   font-weight: normal;
   text-decoration: inherit;
@@ -41,7 +45,7 @@ textarea, input {
 
 input::placeholder {
   color: $gray !important;
-  font-family: FontAwesome, "Roboto", Verdana, sans-serif;
+  font-family: FontAwesome, "Roboto Condensed", Verdana, sans-serif;
 }
 
 
@@ -52,7 +56,7 @@ input::placeholder {
   color: white;
 
   &:hover {
-    background-color: #86d1f4;
+    opacity: 0.8;
     color: white;
   }
 }
@@ -65,9 +69,14 @@ input::placeholder {
 
   &:hover {
     background-color: white !important;
-    border-color: #86d1f4 !important;
-    color: #86d1f4 !important;
+    border-color: $pink !important;
+    color: $pink !important;
   }
+}
+
+.form-sign-up:hover {
+  color: $pink;
+  text-decoration: none;
 }
 
 .w100 {

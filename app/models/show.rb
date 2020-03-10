@@ -3,7 +3,7 @@ class Show < ApplicationRecord
     "Cabaret and Variety",
     "Children's Shows",
     "Comedy",
-    "Dance, Physical Theatre and Circus",
+    "Dance Physical Theatre and Circus",
     "Events",
     "Exhibitions",
     "Music",
@@ -31,7 +31,7 @@ class Show < ApplicationRecord
     classes = {
       "Comedy" => "card-border-comedy",
       "Cabaret and Variety" => "card-border-cabaret-variety",
-      "Dance, PhysicalTheatre and Circus" => "card-border-circus-etc",
+      "Dance Physical Theatre and Circus" => "card-border-circus-etc",
       "Theatre" => "card-border-theatre-etc",
       "Musicals and Opera" => "card-border-theatre-etc",
       "Events" => "card-border-events-etc",

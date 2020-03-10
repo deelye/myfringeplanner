@@ -1,23 +1,29 @@
-<!-- TO DO: MAKE IMAGES WORK ON HEROKU -->
-<div class="body-container" >
+<div class="home-page" >
   <h1 class= "home-title">Welcome To MyFringePlanner</h1>
   <div class="home-cards">
     <div class="home-card ">
       <%= image_tag "home-card-browse.png", height: 200, alt: "alttext" %>
-      <h3>1. Find your favourite shows</h3>
+      <h3>Find your favourite shows</h3>
     </div>
-
+    <div><i class="fas fa-arrow-right home-icon"></i></div>
     <div class="home-card">
       <%= image_tag "home-card-select.png", height: 200, alt: "alttext" %>
-      <h3>2. Add them to your shortlist</h3>
+      <h3>Add them to your shortlist</h3>
     </div>
-
+    <div><i class="fas fa-arrow-right home-icon"></i></div>
     <div class="home-card">
       <%= image_tag "home-card-calendar.png", height: 200, alt: "alttext" %>
-      <h3>3. Make MyFringePlanner</h3>
+      <h3>Make MyFringePlanner</h3>
     </div>
   </div>
 
-  <div class="home-btn-begin"><%= link_to "Start searching...", shows_path, class: "button" %></div>
-
+  <div class="home-btn-begin">
+    <%= link_to shows_path, class: "button" do %>
+      Start Planning
+      <i class="fas fa-search"></i>
+      <% end %>
+  </div>
 </div>
+
+
+

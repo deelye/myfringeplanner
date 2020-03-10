@@ -5,10 +5,21 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :shortlists
   has_many :planners
-  has_many :shows, through: :shortlists
   has_many :performances, through: :shows
   has_many :planned_performances, through: :planners, source: :performance
   has_one_attached :photo
   acts_as_follower
   # validates :photo, presence: true
+  has_many :booked_shows, through: :planned_performances, source: :show
+
+  acts_as_follower
+
+  def shows
+    follows.map{|f| f.followable}
+  end
+
+  def shortlist_events
+    a = shows - booked_shows
+    a.map{|r| r.performances}.flatten
+  end
 end
