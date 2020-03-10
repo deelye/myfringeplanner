@@ -20,17 +20,17 @@ class Planner < ApplicationRecord
     end
   end
 
-  def walk_top
-    end_of_planner = (performance.end - (performance.end.beginning_of_day + (3600 * 10))) / 300
-    ((end_of_planner / 168) * 100).round(2).to_s + "%"
-  end
+  # def walk_top
+  #   end_of_planner = (performance.end - (performance.end.beginning_of_day + (3600 * 10))) / 300
+  #   ((end_of_planner / 168) * 100).round(2).to_s + "%"
+  # end
 
   def walk_duration(journey_info)
-    num = (((journey_info["routes"].first["duration"] / 300) /168) * 100).round(2)
-    if num > 1.5
-      num.to_s + "%"
+    num = (journey_info["routes"].first["duration"] / 12).ceil
+    if num > 25
+      num.to_s + "px"
     else
-      1.5.to_s + "%"
+      25.to_s + "px"
     end
   end
 end
