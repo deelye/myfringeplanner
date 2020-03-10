@@ -16,6 +16,11 @@ class ShowsController < ApplicationController
       if params[:filter][:show].present?
         @shows = @shows.select{|r| r.title.downcase.match?(params[:filter][:show].downcase)}
       end
+
+      if @shows.first.nil?
+        @shows = Show.all
+        flash[:notice] = "No results found"
+      end
     else
       @shows = Show.includes(:performances, :venue).all
       if params[:category].present?

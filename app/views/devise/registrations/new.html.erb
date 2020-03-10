@@ -3,42 +3,6 @@
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
-
-      <div class="form-inputs">
-      <%= f.input :first_name,
-                          required: true,
-                          autofocus: true,
-                          placeholder: "Leo",
-                          input_html: { autocomplete: "first_name" }%>
-              <%= f.input :last_name,
-                          required: true,
-                          autofocus: true,
-                          placeholder: "Dicaprio",
-                          input_html: { autocomplete: "last_name" }%>
-              <%= f.input :email,
-                          required: true,
-                          autofocus: true,
-                          placeholder: "bob@gmail.com",
-                          input_html: { autocomplete: "email" }%>
-              <%= f.input :password,
-                          required: true,
-                          placeholder: "••••••",
-                          hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                          input_html: { autocomplete: "new-password" } %>
-              <%= f.input :password_confirmation,
-                          required: true,
-                          placeholder: "••••••",
-                          input_html: { autocomplete: "new-password" } %>
-
-              <%= f.input :photo, as: :file %>
-
-
-     <div class="form-actions">
-        <%= f.button :submit, "Continue" %>
-      </div>
-
-
-<!--
       <div class="form-inputs">
         <div class="form-group w100 email required user_email">
           <input class="form-control string email required form-control string email required special w100" autocomplete="email" autofocus="autofocus" required="required" aria-required="true" placeholder="&#xf0e0;  Email" type="email" value="" name="user[email]" id="user_email">
@@ -54,20 +18,11 @@
         </div>
         <div class="form-group w100 password required user_password_confirmation">
           <input class="form-control password required form-control string password_confirmation required special w100" autocomplete="password_confirmation" autofocus="autofocus" required="required" aria-required="true" placeholder="&#xf023;  Confirm Password" type="password" name="user[password_confirmation]" id="user_password_confirmation">
-        </div> -->
-        <!-- <form class="md-form">
-          <div class="file-field">
-            <div class="btn btn-primary btn-sm float-left">
-              <span>Choose file</span>
-              <input type="file">
-            </div>
-            <div class="file-path-wrapper">
-              <input class="file-path validate" type="text" placeholder="Upload your picture">
-            </div>
-          </div>
-        </form> -->
-        <%#= f.input :photo, as: :file %>
-      <!-- </div> -->
+        </div>
+     <div class="form-actions">
+        <%= f.button :submit, "Continue" %>
+      </div>
+
   <% end %>
 <%= render "devise/shared/links" %>
 </div>
