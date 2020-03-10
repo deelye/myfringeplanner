@@ -99,9 +99,8 @@
               <% @planners.sort_by! { |planner| planner.performance.start } %>
               <% @planners.each_with_index do |planner, index| %>
                   <%= link_to delete_planner_path(id: planner.id, day: params[:day]), method: :delete do  %>
-                    <%= render "planner", planner: planner %>
+                    <%= render "planner", planner: planner, index: index%>
                   <% end %>
-                <%= render "walk_time", planner: planner, index: index %>
               <% end %>
             <% end %>
           </div>
