@@ -1,0 +1,18 @@
+.planner-index-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify: space-between;
+
+  h5 {
+    margin-left: 5px;
+  }
+
+  .plan {
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+}
+
+.planner-index-column {
+  padding: 15px;
+}
