@@ -1,7 +1,7 @@
 <div class="body-container">
   <div class="d-flex justify-content-between">
     <h3>MY FRINGE: AUGUST 2020</h3>
-    <%= link_to 'EXPORT CALENDAR', '#', class: "btn-pink" %>
+    <%= link_to 'EXPORT CALENDAR', class: "btn-pink", "https://www.googleapis.com/calendar/v3/calendars", method: :post %>
   </div>
   <div class="planner-index-container">
     <% @planners.each_with_index do |planner, index| %>
