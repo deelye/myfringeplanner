@@ -9,9 +9,6 @@ class PagesController < ApplicationController
   end
 
   def planner
-    @collection = ["Choose date..."]
-    ("01/08/2020".to_datetime.."31/08/2020".to_datetime).map { |date| @collection << date.to_date.strftime("%A %e %B") }
-
     if params[:day].present? && params[:day] != "Choose date..."
       @date = params[:day].to_datetime
       @day = params[:day].to_datetime.day

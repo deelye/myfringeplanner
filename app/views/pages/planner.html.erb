@@ -1,74 +1,69 @@
 <!-- Hide form if start date and end date have values -->
 <div class="body-container">
   <div class="planner-search-bar">
-    <form id="date-form">
-      <select name="day" id="day" class="input-field">
-        <% @collection.each do |day| %>
-          <option id="select-date" value="<%= day %>"><%= day %></option>
-        <% end %>
-      </select>
+    <form id="date-form" hidden>
+      <input class="cal-date" name="day" type="text" value="">
       <button class="button planner-btn" type=>Plan</button>
     </form>
   </div>
 
   <br>
 
-  <div class="calendar-grid">
-    <div class="calendar-grid-header">AUGUST <%= Time.now.year %></div>
-    <div><span>F</span></div>
-    <div><span>S</span></div>
-    <div><span>S</span></div>
-    <div><span>M</span></div>
-    <div><span>T</span></div>
-    <div><span>W</span></div>
-    <div><span>T</span></div>
-    <div><span>F</span></div>
-    <div><span>S</span></div>
-    <div><span>S</span></div>
-    <div><span>M</span></div>
-    <div><span>T</span></div>
-    <div><span>W</span></div>
-    <div><span>T</span></div>
-    <div><span>F</span></div>
-    <div><span>S</span></div>
-    <div><span>S</span></div>
-    <div><span>M</span></div>
-    <div><span>T</span></div>
-    <div><span>W</span></div>
-    <div><span>T</span></div>
-    <div><span>F</span></div>
-    <div><span>S</span></div>
-    <div><span>S</span></div>
-    <div><span>M</span></div>
-    <a href="#" class="cal-btn" disabled>7</a>
-    <a href="#" class="cal-btn" disabled>8</a>
-    <a href="#" class="cal-btn" disabled>9</a>
-    <a class="cal-btn">10</a>
-    <a class="cal-btn">11</a>
-    <a class="cal-btn">12</a>
-    <a class="cal-btn">13</a>
-    <a class="cal-btn">14</a>
-    <a class="cal-btn">15</a>
-    <a class="cal-btn">16</a>
-    <a class="cal-btn">17</a>
-    <a class="cal-btn">18</a>
-    <a class="cal-btn">19</a>
-    <a class="cal-btn">20</a>
-    <a class="cal-btn">21</a>
-    <a class="cal-btn">22</a>
-    <a class="cal-btn">23</a>
-    <a class="cal-btn">24</a>
-    <a class="cal-btn">25</a>
-    <a class="cal-btn">26</a>
-    <a class="cal-btn">27</a>
-    <a class="cal-btn">28</a>
-    <a class="cal-btn">29</a>
-    <a class="cal-btn">30</a>
-    <a class="cal-btn">31</a>
+  <div><h3 class="cal-grid-title">AUGUST <%= Time.now.year %></h3></div>
+  <div class="cal-grid-days">
+    <p>F</p>
+    <p>S</p>
+    <p>S</p>
+    <p>M</p>
+    <p>T</p>
+    <p>W</p>
+    <p>T</p>
+    <p>F</p>
+    <p>S</p>
+    <p>S</p>
+    <p>M</p>
+    <p>T</p>
+    <p>W</p>
+    <p>T</p>
+    <p>F</p>
+    <p>S</p>
+    <p>S</p>
+    <p>M</p>
+    <p>T</p>
+    <p>W</p>
+    <p>T</p>
+    <p>F</p>
+    <p>S</p>
+    <p>S</p>
+    <p>M</p>
   </div>
-
-  <br>
-
+  <div class="cal-grid-dates">
+    <button class="cal-grid-date" style="border-radius: 0px 0px 0px 5px">7</button>
+    <button class="cal-grid-date">8</button>
+    <button class="cal-grid-date">9</button>
+    <button class="cal-grid-date">10</button>
+    <button class="cal-grid-date">11</button>
+    <button class="cal-grid-date">12</button>
+    <button class="cal-grid-date">13</button>
+    <button class="cal-grid-date">14</button>
+    <button class="cal-grid-date">15</button>
+    <button class="cal-grid-date">16</button>
+    <button class="cal-grid-date">17</button>
+    <button class="cal-grid-date">18</button>
+    <button class="cal-grid-date">19</button>
+    <button class="cal-grid-date">20</button>
+    <button class="cal-grid-date">21</button>
+    <button class="cal-grid-date">22</button>
+    <button class="cal-grid-date">23</button>
+    <button class="cal-grid-date">24</button>
+    <button class="cal-grid-date">25</button>
+    <button class="cal-grid-date">26</button>
+    <button class="cal-grid-date">27</button>
+    <button class="cal-grid-date">28</button>
+    <button class="cal-grid-date">29</button>
+    <button class="cal-grid-date">30</button>
+    <button class="cal-grid-date" style="border-radius: 0px 0px 5px 0px">31</button>
+  </div>
 
   <div class="planner-container">
     <div>
@@ -131,9 +126,8 @@
       <div>
         <% if params[:day] == "Choose date..." || !params[:day].present? %>
           <p>Choose a date to start planning!</p>
-        <% elsif @performances == [] && @planners != [] %>
+        <% elsif @planners != [] && @performances == [] %>
           <p>Find more shows to add to your shortlist!</p>
-          <br>
           <h1 class="planner-header">PLANNED VENUES</h1>
           <div id="planner-map"
             class="planner-map"
@@ -141,10 +135,9 @@
             data-markers="<%= @markers.to_json %>"
             data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
           </div>
-        <% elsif @performances == [] %>
+        <% elsif @planners == [] && @performances == [] %>
           <p>Looks like you need to add shows to your shortlist!</p>
         <% end %>
-
         <div class="planner-cards">
           <% @performances.each do |performance| %>
               <%= render 'pages/planner_shortlist', performance: performance %>
@@ -155,11 +148,4 @@
   </div>
 </div>
 
-<!-- <script style="text/javascript">
-  const calendarButtons = document.querySelector(".cal-btn");
 
-  calendarButtons.addEventListener("click", (event) => {
-
-  })
-</script>
- -->
