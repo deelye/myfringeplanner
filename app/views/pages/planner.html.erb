@@ -127,9 +127,8 @@
       <div>
         <% if params[:day] == "Choose date..." || !params[:day].present? %>
           <p>Choose a date to start planning!</p>
-        <% elsif @performances == [] && @planners != [] %>
+        <% elsif @planners != [] && @performances == [] %>
           <p>Find more shows to add to your shortlist!</p>
-          <br>
           <h1 class="planner-header">PLANNED VENUES</h1>
           <div id="planner-map"
             class="planner-map"
@@ -137,10 +136,9 @@
             data-markers="<%= @markers.to_json %>"
             data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
           </div>
-        <% elsif @performances == [] %>
+        <% elsif @planners == [] && @performances == [] %>
           <p>Looks like you need to add shows to your shortlist!</p>
         <% end %>
-
         <div class="planner-cards">
           <% @performances.each do |performance| %>
               <%= render 'pages/planner_shortlist', performance: performance %>
