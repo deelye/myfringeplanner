@@ -44,9 +44,9 @@
 
   a {
     margin-right: 16px;
-    // box-sizing: border-box;
-    // -moz-box-sizing: border-box;
-    // -webkit-box-sizing: border-box;
+    line-height: 55px;
+    transform: translateY(-4px);
+
 
     &:hover {
       border-bottom: 4px solid $pink;
