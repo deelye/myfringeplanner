@@ -1,12 +1,13 @@
 <!-- Hide form if start date and end date have values -->
 <div class="body-container">
   <div class="planner-search-bar">
-    <form id="date-form">
-      <select name="day" id="day" class="input-field">
+    <form id="date-form" hidden>
+      <!-- <select name="day" id="day" class="input-field">
         <% @collection.each do |day| %>
           <option id="select-date" value="<%= day %>"><%= day %></option>
         <% end %>
-      </select>
+      </select> -->
+      <input class="cal-date" name="day" type="text" value="hello">
       <button class="button planner-btn" type=>Plan</button>
     </form>
   </div>
@@ -71,13 +72,37 @@
   </div>
 
 <script type="text/javascript">
-  const selectDate = document.getElementById("select-date")
+  let calDate = document.querySelector(".cal-date")
+
   const calBtns = document.querySelectorAll(".cal-grid-date")
+
   calBtns.forEach((btn) => {
     btn.addEventListener("click", (event) => {
-      console.log(btn.innerText);
+      let date = (btn.innerText + " August 2020");
+      calDate.value = date;
+      document.getElementById("date-form").submit();
     });
   });
+
+  // const calBtns = document.querySelectorAll(".cal-grid-date")
+
+  // calBtns.forEach((btn) => {
+  //   btn.addEventListener('click', (e) => {
+  //     event.preventDefault();
+  //     const date = btn.innerText + " August 2020";
+  //     console.log(date)
+
+
+      // Rodrigo's JS
+      // fetch('https://api.github.com/orgs/lewagon/repos')
+      //   .then(response => response.json())
+      //   .then((data) => {
+          // Do something with the response
+        // });
+
+  //   })
+  // })
+
 </script>
 
 
