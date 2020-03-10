@@ -2,12 +2,18 @@
     <div class="plan planner-card card-hover-out <%= planner.planner_clash(@planners, planner) %>">
   <% else %>
     <div class="plan planner-card <%= planner.planner_clash(@planners, planner) %>">
+    <div title="Add to Calendar" class="addeventatc planner-index-calendar">
+        <span class="start">03/24/2020 08:00 AM</span>
+        <span class="end">03/24/2020 10:00 AM</span>
+        <span class="timezone">America/Los_Angeles</span>
+        <span class="title">Summary of the event</span>
+        <span class="description">Description of the event</span>
+        <span class="location">Location of the event</span>
+    </div>
   <% end %>
     <%= image_tag(planner.performance.show.original_image, :alt => "Flyer image for show", height: planner.duration.to_f/100*1470) %>
     <div class="planner-card-info card-border <%= planner.performance.show.colour_class %> ">
-      <!-- <div class="card-title-remove"> -->
       <h6><%= truncate(planner.performance.show.title, length: 30) %></h6>
-      <!-- </div> -->
       <div>
         <p><%= planner.performance.show.genre %></p>
         <div class="d-flex">
