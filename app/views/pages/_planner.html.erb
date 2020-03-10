@@ -17,30 +17,7 @@
       <div>
         <p><%= planner.performance.show.genre %></p>
         <div class="d-flex">
-          <% dates = ["Aug "] %>
-      <% performances = planner.performance.show.performances %>
-      <% performances.each_with_index do |performance, index| %>
-        <% if index == 0 %>
-          <% dates << performances.first.start.strftime("%e").to_i %>
-        <% elsif performances[index - 1].start.strftime("%e").to_i + 1  == performance.start.strftime("%e").to_i %>
-          <% if performance == performances[-1] %>
-            <% dates << "-" %>
-            <% dates << performance.start.strftime("%e").to_i %>
-          <% end %>
-        <% elsif performances[index - 1].start.strftime("%e").to_i == performance.start.strftime("%e").to_i%>
-        <% elsif dates.last == performances[index - 1].start.strftime("%e").to_i %>
-          <% dates << ", " %>
-          <% dates << performance.start.strftime("%e").to_i %>
-        <% else %>
-          <% dates << "-" %>
-          <% dates << performances[index - 1].start.strftime("%e").to_i %>
-          <% dates << ", " %>
-          <% dates << performance.start.strftime("%e").to_i %>
-        <% end %>
-      <% end %>
-
       <p><i class="fas fa-clock" aria-hidden="true"></i> <%= planner.performance.time %></p>
-      <p><i class="fa fa-calendar card-dates" aria-hidden="true"></i> <%= truncate(dates.join, length: 35) %></p>
     </div>
         <div class="d-flex justify-content-between">
           <p><i class="fas fa-map-marker-alt"></i> <%= truncate(planner.performance.show.venue.name, length: 50) %></p>
