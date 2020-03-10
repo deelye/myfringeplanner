@@ -1,9 +1,11 @@
 .calendar-grid {
   display: grid;
-  grid-template-rows: 50px 50px 50px;
-  grid-template-columns: repeat(25, 50px);
+  grid-template-rows: 45px 45px 45px;
+  grid-template-columns: repeat(25, 45px);
   text-align: center;
   align-items: center;
+  border: solid 1px;
+  background-color: white;
 }
 
 .calendar-grid-header {
@@ -219,22 +221,6 @@
   flex-direction: column;
   justify-content: space-between;
 }
-
-// .card-title-add {
-//   display: flex;
-//   align-items: flex-start;
-//   justify-content: space-between;
-// }
-
-// .card-title-remove {
-//   display: flex;
-//   align-items: flex-start;
-//   justify-content: space-between;
-
-//   h6 {
-//     color: black;
-//   }
-// }
 
 .planner-map {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
