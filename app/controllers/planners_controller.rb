@@ -1,4 +1,8 @@
 class PlannersController < ApplicationController
+  def index
+    @planners = Planner.all.sort_by { |planner| planner.performance.start }
+  end
+
   def show
   end
 

@@ -29,6 +29,7 @@
     height: 25px;
     box-shadow: 0px 0px 0px transparent;
     text-shadow: 0px 0px 0px transparent;
+    text-shadow: 0px 0px 0px transparent;
     border: 0px solid transparent;
     padding: 0px;
     text-align: center;
@@ -42,11 +43,12 @@
 }
 
 .day-calendar {
-  height: 1470px;
+  height: 1462px;
   width: 350px;
+  margin-top: 8px;
   background-color: white;
   position: relative;
-  border-top: solid 1px;
+  // border-top: solid 1px;
   border-bottom: solid 1px;
 }
 
@@ -88,9 +90,7 @@
   color: white;
   text-align: center;
   padding: 5px;
-  border-top: solid 1px black;
-  border-right: solid 1px black;
-  border-left: solid 1px black;
+  border: solid 1px black;
   border-radius: 5px 5px 0px 0px;
 
   h3 {
@@ -102,6 +102,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  background-color: white;
 }
 
 .planner {
@@ -113,7 +114,10 @@
   width: 50px;
   background-color: white;
   color: black;
-  border: solid 1px black;
+  // border: solid 1px black;
+  border-right: solid 1px black;
+  border-left: solid 1px black;
+  border-bottom: solid 1px black;
 
   p {
     height: 105px;
@@ -209,6 +213,14 @@
 
 .planner-clash, .clash {
   background-color: #ea9999;
+}
+
+#planner-add-cal {
+  font-size: 20px;
+
+  &:hover {
+    color: $pink;
+  }
 }
 
 .card-hover-in:hover, .card-hover-out:hover {

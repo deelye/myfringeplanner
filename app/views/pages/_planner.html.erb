@@ -1,5 +1,4 @@
-<div class="plan" style="top: <%= planner.top %>; height: <%= planner.duration %>; width: 100%">
-  <div class="planner-card card-hover-out <%= planner.planner_clash(@planners, planner) %>">
+  <div class="plan planner-card card-hover-out <%= planner.planner_clash(@planners, planner) %>">
     <%= image_tag(planner.performance.show.original_image, :alt => "Flyer image for show", height: planner.duration.to_f/100*1470) %>
     <div class="planner-card-info card-border <%= planner.performance.show.colour_class %> ">
       <!-- <div class="card-title-remove"> -->
@@ -9,35 +8,36 @@
         <p><%= planner.performance.show.genre %></p>
         <div class="d-flex">
           <% dates = ["Aug "] %>
-          <% performances = planner.performance.show.performances %>
-          <% performances.each_with_index do |performance, index| %>
-            <% if index == 0 %>
-              <% dates << performances.first.start.strftime("%e").to_i %>
-            <% elsif performances[index - 1].start.strftime("%e").to_i + 1  == performance.start.strftime("%e").to_i %>
-              <% if performance == performances[-1] %>
-                <% dates << "-" %>
-                <% dates << performance.start.strftime("%e").to_i %>
-              <% end %>
-            <% elsif performances[index - 1].start.strftime("%e").to_i == performance.start.strftime("%e").to_i%>
-            <% else %>
-              <% dates << "-" %>
-              <% dates << performances[index - 1].start.strftime("%e").to_i %>
-              <% dates << ", " %>
-              <% dates << performance.start.strftime("%e").to_i %>
-            <% end %>
+      <% performances = planner.performance.show.performances %>
+      <% performances.each_with_index do |performance, index| %>
+        <% if index == 0 %>
+          <% dates << performances.first.start.strftime("%e").to_i %>
+        <% elsif performances[index - 1].start.strftime("%e").to_i + 1  == performance.start.strftime("%e").to_i %>
+          <% if performance == performances[-1] %>
+            <% dates << "-" %>
+            <% dates << performance.start.strftime("%e").to_i %>
           <% end %>
+        <% elsif performances[index - 1].start.strftime("%e").to_i == performance.start.strftime("%e").to_i%>
+        <% elsif dates.last == performances[index - 1].start.strftime("%e").to_i %>
+          <% dates << ", " %>
+          <% dates << performance.start.strftime("%e").to_i %>
+        <% else %>
+          <% dates << "-" %>
+          <% dates << performances[index - 1].start.strftime("%e").to_i %>
+          <% dates << ", " %>
+          <% dates << performance.start.strftime("%e").to_i %>
+        <% end %>
+      <% end %>
 
-          <p><i class="fas fa-clock" aria-hidden="true"></i> <%= planner.performance.time %></p>
-          <p><i class="fa fa-calendar card-dates" aria-hidden="true"></i> <%= truncate(dates.join, length: 35) %></p>
-        </div>
+      <p><i class="fas fa-clock" aria-hidden="true"></i> <%= planner.performance.time %></p>
+      <p><i class="fa fa-calendar card-dates" aria-hidden="true"></i> <%= truncate(dates.join, length: 35) %></p>
+    </div>
         <div class="d-flex justify-content-between">
           <p><i class="fas fa-map-marker-alt"></i> <%= truncate(planner.performance.show.venue.name, length: 50) %></p>
-          <p>£<%= performances.last.price %></p>
+          <p>£<%= planner.performance.price %></p>
         </div>
       </div>
     </div>
 
   </div>
-  <%= render "walk_time", planner: planner, index: index %>
-</div>
 

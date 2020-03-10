@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   resources :performances, only: [:index] do
     resources :planners, only: [:create]
   end
+  get '/planners', to: 'planners#index'
   delete '/planners/:id', to: 'planners#destroy', as: :delete_planner
 end
