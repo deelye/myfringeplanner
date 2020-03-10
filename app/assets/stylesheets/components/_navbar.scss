@@ -1,7 +1,6 @@
 .navbar-lewagon {
   z-index: 1;
   justify-content: space-between;
-  background-color: $light-blue;
   background-size: cover;
     // background:
     //   linear-gradient(180deg, rgba(59, 160, 206,0) 20%, rgba(59, 160, 206,.1) 20%, rgba(59, 160, 206,.1) 40%, rgba(59, 160, 206,.2) 40%, rgba(59, 160, 206,.2) 60%, rgba(59, 160, 206,.4) 60%, rgba(59, 160, 206,.4) 80%, rgba(59, 160, 206,.5) 80%),
@@ -18,8 +17,8 @@
 
   .navbar-collapse {
     flex-grow: 0;
-
   }
+
 
   .navbar-brand img {
     width: 20%;
@@ -55,9 +54,9 @@
 
   a {
     margin-right: 16px;
-    // box-sizing: border-box;
-    // -moz-box-sizing: border-box;
-    // -webkit-box-sizing: border-box;
+    line-height: 55px;
+    transform: translateY(-4px);
+
 
     &:hover {
       border-bottom: 4px solid $pink;
@@ -101,7 +100,6 @@
   font-family: "Roboto Condensed" !important;
   border: 0;
   border-radius: 5px;
-
 }
 
 
@@ -143,3 +141,11 @@
   display: flex !important;
   height: 38px !important;
 }
+
+ .background-blue {
+     background-color: $light-blue;
+  }
+
+   .background-transparent{
+     background: transparent;
+  }

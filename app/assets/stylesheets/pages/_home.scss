@@ -6,9 +6,18 @@
 }
 
 .home-page {
-  background-image: url(fringe-festival-image.jpg);
-  background-size: 100vw;
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(fringe-festival-image.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 93vh;
   padding: 0px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h1 {
+    // color: $blue;
+  }
 }
 
 .home-title {
@@ -30,13 +39,13 @@
 }
 
 .home-card {
-  height: 280px;
-  width: 380px;
+  height: 268px;
+  width: 360px;
   padding: 25px;
   border-radius: 5px;
   font-size: 14px;
   text-align: center;
-  padding: 25px;
+  padding: 16px;
   background-color: rgb(230,230,230);
 
     h3 {
@@ -44,7 +53,7 @@
     }
 
     img {
-      width: 330px;
+      width: 315px;
       height: 200px;
       border-radius: 5px;
     }
@@ -57,7 +66,7 @@
 
 .home-btn-begin {
   padding: 40px 0px;
-  // padding-bottom: 30px;
+  padding-bottom: 30px;
   text-align: center;
 
   .fa-search {
