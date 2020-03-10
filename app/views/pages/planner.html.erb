@@ -2,18 +2,12 @@
 <div class="body-container">
   <div class="planner-search-bar">
     <form id="date-form" hidden>
-      <!-- <select name="day" id="day" class="input-field">
-        <% @collection.each do |day| %>
-          <option id="select-date" value="<%= day %>"><%= day %></option>
-        <% end %>
-      </select> -->
-      <input class="cal-date" name="day" type="text" value="hello">
+      <input class="cal-date" name="day" type="text" value="">
       <button class="button planner-btn" type=>Plan</button>
     </form>
   </div>
 
   <br>
-
 
   <div><h3 class="cal-grid-title">AUGUST <%= Time.now.year %></h3></div>
   <div class="cal-grid-days">
@@ -70,44 +64,6 @@
     <button class="cal-grid-date">30</button>
     <button class="cal-grid-date" style="border-radius: 0px 0px 5px 0px">31</button>
   </div>
-
-<script type="text/javascript">
-  let calDate = document.querySelector(".cal-date")
-
-  const calBtns = document.querySelectorAll(".cal-grid-date")
-
-  calBtns.forEach((btn) => {
-    btn.addEventListener("click", (event) => {
-      let date = (btn.innerText + " August 2020");
-      calDate.value = date;
-      document.getElementById("date-form").submit();
-    });
-  });
-
-  // const calBtns = document.querySelectorAll(".cal-grid-date")
-
-  // calBtns.forEach((btn) => {
-  //   btn.addEventListener('click', (e) => {
-  //     event.preventDefault();
-  //     const date = btn.innerText + " August 2020";
-  //     console.log(date)
-
-
-      // Rodrigo's JS
-      // fetch('https://api.github.com/orgs/lewagon/repos')
-      //   .then(response => response.json())
-      //   .then((data) => {
-          // Do something with the response
-        // });
-
-  //   })
-  // })
-
-</script>
-
-
-<br><br>
-
 
   <div class="planner-container">
     <div>

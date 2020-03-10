@@ -31,16 +31,14 @@
     border: 0px solid transparent;
     padding: 0px;
     text-align: center;
-  }
 
-  button:hover {
-    color: $pink;
+    &:focus {outline:0;}
+
+    &:hover {
+      color: $pink;
+    }
   }
 }
-
-
-
-
 
 .day-calendar {
   height: 1470px;
