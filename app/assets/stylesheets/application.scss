@@ -23,6 +23,50 @@
 }
 
 body {
-  background-color: $off-white;
+  // background-color: $off-white;
   align-items: center;
+  $size: 10px;
+  $holeSize: 40%;
+  $reflective: hsla(0, 0%, 100%, .1);
+  background:
+    radial-gradient(rgb(232, 244, 249) $holeSize, transparent 0) 0 0,
+    radial-gradient(rgb(232, 244, 249) $holeSize, transparent 0) ($size / 2) ($size / 2),
+    radial-gradient($reflective $holeSize, transparent 20%) 0 1px,
+    radial-gradient($reflective $holeSize, transparent 20%) ($size / 2) ($size / 2 + 1px);
+  background-color: $off-white;
+  background-size: $size $size;
+  background-clip: content-box;
+
+  // $deepColor: rgba(78, 172, 217, .1);
+  // $stripColor: rgba(255, 255, 255, .1);
+  // $argyleSize: 500px;
+  // background-color: white;
+  // background-image:
+  //   repeating-linear-gradient(120deg,
+  //     $stripColor,
+  //     $stripColor 1px,
+  //     transparent 1px,
+  //     transparent ($argyleSize / 2)
+  //   ),
+  //   repeating-linear-gradient(60deg,
+  //     $stripColor,
+  //     $stripColor 1px,
+  //     transparent 1px,
+  //     transparent ($argyleSize / 2)
+  //   ),
+  //   linear-gradient(60deg,
+  //     $deepColor 25%,
+  //     transparent 25%,
+  //     transparent 75%,
+  //     $deepColor 75%,
+  //     $deepColor
+  //   ),
+  //   linear-gradient(120deg,
+  //     $deepColor 25%,
+  //     transparent 25%,
+  //     transparent 75%,
+  //     $deepColor 75%,
+  //     $deepColor
+  //   );
+  // background-size: ($argyleSize / sqrt(3)) $argyleSize;
 }
