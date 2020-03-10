@@ -1,5 +1,8 @@
 <div class="body-container">
-  <h3 class="planner-header">MY FRINGE: AUGUST 2020</h3>
+  <div class="d-flex justify-content-between">
+    <h3>MY FRINGE: AUGUST 2020</h3>
+    <%= link_to 'EXPORT CALENDAR', '#', class: "btn-pink" %>
+  </div>
   <div class="planner-index-container">
     <% @planners.each_with_index do |planner, index| %>
       <% if index == 0 || planner.date.day != @planners[index - 1].date.day %>
