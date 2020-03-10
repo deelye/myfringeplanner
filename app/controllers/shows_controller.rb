@@ -8,7 +8,17 @@ class ShowsController < ApplicationController
       @start_date = ("#{params[:filter][:start_date]}/08/2020").to_datetime
       @end_date = ("#{params[:filter][:end_date]}/08/2020").to_datetime
       if params[:filter][:start_date].present? && params[:filter][:end_date].present?
-        @shows = Performance.shows_between(@start_date, @end_date)
+        if @start_date == @end_date
+          @shows = Performance.shows_on(@start_date)
+        elsif @start_date > @end_date
+          @shows = Show.all
+          flash[:notice] = "Uh Oh! Did you flip your dates? Please make sure your start date is selected before your end date."
+        else
+          @shows = Performance.shows_between(@start_date, @end_date)
+        end
+      elsif params[:filter][:start_date].present? || params[:filter][:end_date].present?
+        @start_date.nil? ? date = @end_date : date = @start_date
+        @shows = Performance.shows_on(date)
       end
       if params[:filter][:genre].present?
         @shows = @shows.select{|r| r.genre == params[:filter][:genre]}
@@ -16,7 +26,6 @@ class ShowsController < ApplicationController
       if params[:filter][:show].present?
         @shows = @shows.select{|r| r.title.downcase.match?(params[:filter][:show].downcase)}
       end
-
       if @shows.first.nil?
         @shows = Show.all
         flash[:notice] = "No results found"
