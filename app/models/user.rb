@@ -10,4 +10,5 @@ class User < ApplicationRecord
   has_many :planned_performances, through: :planners, source: :performance
   has_one_attached :photo
   acts_as_follower
+  # validates :photo, presence: true
 end
