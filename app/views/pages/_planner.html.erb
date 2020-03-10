@@ -1,4 +1,8 @@
-  <div class="plan planner-card card-hover-out <%= planner.planner_clash(@planners, planner) %>">
+  <% if @hand %>
+    <div class="plan planner-card card-hover-out <%= planner.planner_clash(@planners, planner) %>">
+  <% else %>
+    <div class="plan planner-card <%= planner.planner_clash(@planners, planner) %>">
+  <% end %>
     <%= image_tag(planner.performance.show.original_image, :alt => "Flyer image for show", height: planner.duration.to_f/100*1470) %>
     <div class="planner-card-info card-border <%= planner.performance.show.colour_class %> ">
       <!-- <div class="card-title-remove"> -->

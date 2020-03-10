@@ -1,7 +1,10 @@
+
 <div class="body-container">
   <div class="d-flex justify-content-between">
     <h3>MY FRINGE: AUGUST 2020</h3>
-    <%= link_to 'EXPORT CALENDAR', class: "btn-pink", "https://www.googleapis.com/calendar/v3/calendars", method: :post %>
+    <!-- PROBLEM: I don't know the person's calendar ID, google email, or google password -->
+    <!-- QUESTION: Should I first create a new calendar? -->
+    <%= link_to 'EXPORT CALENDAR', '#', class: "btn-pink"%>
   </div>
   <div class="planner-index-container">
     <% @planners.each_with_index do |planner, index| %>
@@ -18,3 +21,12 @@
 </div>
 
 
+<div title="Add to Calendar" class="addeventatc">
+    <p></p>
+    <span class="start">03/24/2020 08:00 AM</span>
+    <span class="end">03/24/2020 10:00 AM</span>
+    <span class="timezone">America/Los_Angeles</span>
+    <span class="title">Summary of the event</span>
+    <span class="description">Description of the event</span>
+    <span class="location">Location of the event</span>
+</div>

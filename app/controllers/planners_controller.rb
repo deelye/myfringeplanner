@@ -1,5 +1,6 @@
 class PlannersController < ApplicationController
   def index
+    @hand = false
     @planners = Planner.all.sort_by { |planner| planner.performance.start }
   end
 

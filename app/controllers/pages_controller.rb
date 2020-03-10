@@ -9,6 +9,7 @@ class PagesController < ApplicationController
   end
 
   def planner
+    @hand = true
     if params[:day].present? && params[:day] != "Choose date..."
       @date = params[:day].to_datetime
       @day = params[:day].to_datetime.day
