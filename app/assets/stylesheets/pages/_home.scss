@@ -6,9 +6,18 @@
 }
 
 .home-page {
-  background-image: url(fringe-festival-image.jpg);
-  background-size: 100vw;
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(fringe-festival-image.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 93vh;
   padding: 0px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h1 {
+    // color: $blue;
+  }
 }
 
 .home-title {
