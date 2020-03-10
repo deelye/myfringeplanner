@@ -11,3 +11,11 @@
   }
 }
 
+.btn-pink {
+    text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    color: $pink;
+  }
+}
+
