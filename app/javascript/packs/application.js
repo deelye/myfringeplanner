@@ -28,6 +28,8 @@ import { plannerDate } from '../components/plannerdate.js';
 
 // Show page map
 initMapbox();
+
+// Sets active class on the navbar links
 const navLinks = document.querySelectorAll(".big-nav-link")
 navLinks.forEach(link => {
   const href = window.location.pathname;
@@ -36,8 +38,21 @@ navLinks.forEach(link => {
     link.classList.add('active-nav');
   }
 })
+
+  console.log(window);
+// Sets the active class on the planner page date links
+const dateLinks = document.querySelectorAll(".cal-grid-date")
+dateLinks.forEach(link => {
+  const queryParam = window.location.search
+  const data = link.dataset.day;
+  if (queryParam.includes(data)) {
+    link.classList.add('cal-date-active');
+  }
+})
+
 // Planner page map
 initMapboxPlanner();
+
 // Select date in planner
 plannerDate();
 
