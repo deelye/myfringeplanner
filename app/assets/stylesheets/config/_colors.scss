@@ -12,24 +12,18 @@ $light-gray: #BBB;
 // Colors for categories
 $yellow-event: #f7e202;
 $orange: #EF9240;
-$pink-event: rgb(230, 0, 125);
+$hot-pink: rgb(230, 0, 125);
 $green: #44B735;
 $purple: #8D58CE;
 
-$light-yellow-event: #f2e021;
-$light-orange: #FFAD23;
-$light-pink-event: #f579a1;
-$light-green: #AAD955;
-$light-purple: #7856A7;
-
 // Colors for categories
-$comedy: $light-pink-event;
-$cabaret-variety: $light-orange;
+$comedy: $hot-pink;
+$cabaret-variety: $orange;
 // dance, physical theatre, circus
-$circus-etc: $light-yellow-event;
+$circus-etc: $yellow-event;
 // theatre; musicals & opera
-$theatre-etc: $light-green;
+$theatre-etc: $green;
 // exhibitions; events
 $events-etc: $blue;
 // spoken word; music; childrens shows
-$other: $light-purple;
+$other: $purple;

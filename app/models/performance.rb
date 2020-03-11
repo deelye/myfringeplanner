@@ -7,8 +7,8 @@ class Performance < ApplicationRecord
   end
 
   def self.shows_on(start_date)
-    # TO DO: Should be written as SQL query instead of straight Ruby.
-    all.select {|p| p.start.day == start_date.day }.map(&:show).uniq
+    # EROR: ActiveRecord::StatementInvalid: PG::UndefinedFunction: ERROR:  operator does not exist: timestamp without time zone == unknown
+    includes(:show).joins(:show).where("start.day == ?", start_date.day).map(&:show).uniq
   end
 
   def time
