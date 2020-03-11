@@ -34,7 +34,14 @@
     padding: 0px;
     text-align: center;
 
-    &:focus {outline:0;}
+    &:focus {
+      outline:0;
+    }
+
+    &:active {
+      border: 2px solid $blue;
+      border-radius: 2px;
+    }
 
     &:hover {
       color: $pink;
