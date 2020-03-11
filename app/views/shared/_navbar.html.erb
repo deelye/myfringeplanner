@@ -27,7 +27,7 @@
             <%= link_to "My Fringe", planners_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           <% else %>
-            <%= link_to "Log in/Sign up", new_user_session_path, class: "dropdown-item" %>
+            <%= link_to "Log in", new_user_session_path, class: "dropdown-item" %>
           <% end %>
         </div>
       </li>

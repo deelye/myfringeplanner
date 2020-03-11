@@ -34,7 +34,15 @@
     padding: 0px;
     text-align: center;
 
-    &:focus {outline:0;}
+    &.cal-date-active {
+      background-color: white;
+      border: 2px solid $blue;
+      border-radius: 40%;
+    }
+
+    &:focus {
+      outline:0;
+    }
 
     &:hover {
       color: $pink;
