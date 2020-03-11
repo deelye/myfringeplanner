@@ -30,7 +30,6 @@
   position: relative;
   display: flex;
   flex-direction: row;
-  // width: 350px;
   height: 105px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
   font-size: 14px;
@@ -38,13 +37,10 @@
   border-style: none;
 
   &:hover {
-    //rgb of $blue
     box-shadow: 0px 0px 10px rgba(78, 172, 217, 1);
   }
 
   img {
-    // width: 1fr;
-    // height: 1fr;
     width: 100px;
     height: 105px;
     object-fit: cover;
@@ -52,7 +48,6 @@
   }
 
   h6 {
-    // width: 230px;
     height: 40px;
     font-weight: bold;
     margin: 0px;
@@ -65,7 +60,12 @@
 }
 
 .card-star-n-image {
+  // z-index: -5;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   .fa-star {
     z-index: 11;
@@ -90,11 +90,6 @@
 .card-dates {
   margin-left: 10px;
 }
-
-// .card-border {
-//   border-right: 8px solid;
-
-// }
 
 .card-border {
   border-right: 8px solid;

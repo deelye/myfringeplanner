@@ -49,5 +49,4 @@ class Planner < ApplicationRecord
     return JSON.parse(response)
   end
 
-
 end

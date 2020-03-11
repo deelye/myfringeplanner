@@ -21,9 +21,9 @@
   text-align: center;
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
   color: white;
-
+  // border-style:solid;
+  font-weight: bold;
   &:hover {
-    opacity: 0.8;
     text-decoration: none;
     color: white;
   }
@@ -31,26 +31,44 @@
 
 .color-comedy {
   background-color: $comedy;
+  &:hover{
+    background-color:#f97fc1;
+  }
 }
 
 .color-cabaret-variety {
   background-color: $cabaret-variety;
+  &:hover{
+    background-color:#f3ae72;
+  }
 }
 
 .color-circus-etc {
   background-color: $circus-etc;
+  &:hover{
+    background-color:#f7ea61;
+  }
 }
 
 .color-theatre-etc {
   background-color: $theatre-etc;
+  &:hover{
+    background-color:#6ecc62;
+  }
 }
 
 .color-events-etc {
   background-color: $events-etc;
+  &:hover{
+    background-color:#7abcdc;
+  }
 }
 
 .color-other {
   background-color: $other;
+  &:hover{
+    background-color:#b291da;
+  }
 }
 
 @media(max-width: 1200px) {
