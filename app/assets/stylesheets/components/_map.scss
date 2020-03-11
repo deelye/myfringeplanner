@@ -10,3 +10,9 @@
     margin: 0px;
   }
 }
+
+.mapboxgl-marker {
+  svg g {
+    fill: $blue;
+  }
+}
