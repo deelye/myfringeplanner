@@ -48,7 +48,6 @@
   margin-top: 8px;
   background-color: white;
   position: relative;
-  // border-top: solid 1px;
   border-bottom: solid 1px;
 }
 
@@ -85,7 +84,7 @@
 }
 
 .planner-date {
-  width: 450px;
+  width: 401px;
   background-color: $blue;
   color: white;
   text-align: center;
@@ -103,6 +102,7 @@
   align-items: flex-start;
   justify-content: space-between;
   background-color: white;
+  border-right: solid 1px;
 }
 
 .planner {
@@ -127,7 +127,7 @@
 
 .planner-footer {
   height: 25px;
-  width: 450px;
+  width: 401px;
   background-color: $blue;
   border-right: solid 1px black;
   border-left: solid 1px black;
