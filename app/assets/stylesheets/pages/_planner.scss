@@ -237,7 +237,6 @@
 }
 
 .card-arrow {
-  // display: none;
   opacity: 0;
   transition: 0.3s;
   position: absolute;
@@ -251,18 +250,7 @@
   opacity: 1;
 }
 
-// .card-right-arrow {
-//   opacity: 0;
-//   transition: 0.3s;
-//   position: absolute;
-//   z-index: 99;
-//   width: 100px !important;
-//   height: auto !important;
-//   left: auto !important;
-// }
-
 .card:hover .card-arrow {
-  // display: inline;
   opacity: 1;
 }
 
