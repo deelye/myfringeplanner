@@ -3,12 +3,8 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 40px;
   padding: 10px 40px;
-  color: $medium-gray;
   font-size: 14px;
   background-color: #cee9f5;
-  a {
-    color: $blue;
-  }
 
   a:hover {
     color: $dark-blue;
@@ -20,9 +16,12 @@
   float: left;
   font-size: 14px;
 
+  a {
+    color: white;
+  }
+
   p {
     margin: 14px 0px;
-    color: #cee9f5;
 
     &:hover {
     color: $dark-blue;
@@ -38,6 +37,7 @@
 
   a {
     padding: 0px 5px;
+    color: white;
   }
 }
 
@@ -46,6 +46,10 @@
   display: flex;
   float: right;
   margin: 14px 0px;
+
+  a {
+    color: white;
+  }
 
   &a:hover {
     color: $dark-blue;
