@@ -25,6 +25,8 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
   border: none;
   font-family: "FontAwesome";
+  padding: 0.2rem 0.5rem;
+  height: calc(0.75rem + 0.75rem + 2px) !important;
 
   &:focus {
     border: none;
@@ -81,4 +83,8 @@ input::placeholder {
 
 .w100 {
   width: 100% !important;
+}
+
+.filter-wrapper {
+  padding: 5px;
 }
