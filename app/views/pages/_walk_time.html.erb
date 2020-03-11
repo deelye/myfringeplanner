@@ -1,6 +1,6 @@
 <% if @planners[index + 1] != nil %>
   <% journey_info =  planner.calc_distance(@planners, index) %>
-  <% if @planners[index + 1].performance.start > planner.walk_end(journey_info) %>
+  <% if @planners[index + 1].performance.start < planner.walk_end(journey_info) %>
     <div class="planner-card walk-notif walk-red" style=" height: <%= planner.walk_duration(journey_info) %>; width: 100%">
   <% else %>
     <div class="planner-card walk-notif" style=" height: <%= planner.walk_duration(journey_info) %>; width: 100%">
