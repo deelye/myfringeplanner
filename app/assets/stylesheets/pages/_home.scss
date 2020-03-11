@@ -1,81 +1,90 @@
-// Specific CSS for your home-page
-.searchbar {
-  align-items: center;
-  max-width: 70%;
-  margin-left: 200px;
-}
-
 .home-page {
-  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(https://res.cloudinary.com/dilq1zbdq/image/upload/v1583852869/landing_sg0jud.jpg);
+  background-color: white;
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
-  height: 93vh;
-  padding: 0px 60px;
+  padding: 30px 30px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+}
 
-  h1 {
-    // color: $blue;
-  }
+.home-page-w-img {
+  margin-top: -136px;
+  background-image: url("landing-back");
+  height: 100vh !important;
+}
+
+.home-work-div {
+  padding-top: 80px;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-btn-sign-up:hover {
+  text-decoration: none;
+  color: $pink;
 }
 
 .home-title {
-  padding: 30px 0px 20px 0px;
-  font-family: 'Nanum Gothic Coding', monospace;
-  font-size: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
   text-align: center;
-  color: white;
-  text-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
+}
+
+.home-special-font {
+  color: $blue;
 }
 
 .home-cards {
+  margin: 25px;
   display: flex;
-  // flex-wrap:wrap;
-  // flex: flex-row;
   justify-content: space-between;
-  // margin: 20px 0px;
   align-items: center;
   color: $blue;
 }
 
 .home-card {
-  height: 268px;
+  height: 230px;
   width: 360px;
-  padding: 25px;
+  padding: 20px;
   border-radius: 5px;
   font-size: 14px;
   text-align: center;
-  padding: 16px;
-  background-color: rgb(230,230,230);
+  color: black;
 
-    h3 {
-      margin-top: 10px;
-    }
+  h3 {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    img {
-      width: 315px;
-      height: 200px;
-      border-radius: 5px;
-    }
+  p {
+    margin: 10px;
+    text-align: left;
+  }
+}
+
+.home-num {
+  margin: 10px;
+  width: 1.75em;
+  height: 1.75em;
+  border-radius: 50%;
+  background-color: rgba(250, 69, 122, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $pink !important;
 }
 
 .home-icon {
   color: white;
   font-size: 50px;
-}
-
-.home-btn-begin {
-  padding: 40px 0px;
-  padding-bottom: 30px;
-  text-align: center;
-
-  .fa-search {
-    margin-left: 2px;
-    font-size: 14px
-  }
-}
-
-.min-height {
-  min-height: calc(100vh - 300px)
 }
