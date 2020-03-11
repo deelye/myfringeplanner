@@ -49,4 +49,8 @@ class Planner < ApplicationRecord
     return JSON.parse(response)
   end
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 937fe819fecb5c077f90ac02278dca2ff79ad7f0
 end
