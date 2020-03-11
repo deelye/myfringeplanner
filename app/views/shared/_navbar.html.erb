@@ -36,17 +36,17 @@
     <div class="filter-wrapper">
       <% @collection = [] %>
       <% ("2020/08/01".to_date.."2020/08/31".to_date).each do |date| %>
-      <% @collection << date.strftime("%A %B %e") %>
+        <% @collection << date.strftime("%A %B %e") %>
       <% end %>
       <%= simple_form_for :filter, url: shows_path, method: :get, class: "form-search d-flex", id: "form-styling" do |f| %>
         <%= f.input :show, label: false, placeholder: "Find Shows", input_html: {class: 'search-show-input' } %>
         <%= f.input :genre, label: false, collection: Show::GENRES, prompt: "Genre", input_html: {class: 'genre-style' } %>
         <%#= f.input :start_date, as: :date, year: Date.today.year, month: 08, order: [:month, :day], prompt: "Start", class: 'search-start-date'] %>
         <%= f.input :start_date, as: :select, collection: @collection,
-                                 label: false, prompt: "Start",
+                                 label: false, prompt: "First Day",
                                  class: 'search-start-date' %>
         <%= f.input :end_date, as: :select, collection: @collection, label: false,
-                               prompt: "End", input_html: { class: 'search-end-date' } %>
+                               prompt: "Last Day", input_html: { class: 'search-end-date' } %>
         <%= f.submit value: "Search", class: "submit" %>
       <% end %>
     </div>
