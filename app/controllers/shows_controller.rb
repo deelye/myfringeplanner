@@ -5,8 +5,8 @@ class ShowsController < ApplicationController
   def index
     if params[:filter]
       @shows = Show.all
-      @start_date = ("#{params[:filter][:start_date]}/08/2020").to_datetime
-      @end_date = ("#{params[:filter][:end_date]}/08/2020").to_datetime
+      @start_date = params[:filter][:start_date].to_datetime
+      @end_date = params[:filter][:end_date].to_datetime
       if params[:filter][:start_date].present? && params[:filter][:end_date].present?
         if @start_date == @end_date
           @shows = Performance.shows_on(@start_date)
