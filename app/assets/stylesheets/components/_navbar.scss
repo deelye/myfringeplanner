@@ -122,15 +122,16 @@
   .form-group {
     margin-bottom: 0;
     border-right: 1px solid $blue;
+    font-family: Roboto Condensed;
   }
 
   .form-control {
     box-shadow: none !important;
     border-radius: 0;
-    margin-left: 0;
     background-color: #f2f9fc;
     margin-left: 8px;
     width: fit-content;
+    font-family: Roboto Condensed;
   }
 
   .filter_end_date {

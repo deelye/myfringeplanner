@@ -16,11 +16,13 @@
 @import "pages/home";
 @import "components/star";
 @import "pages/planner_index";
+@import "pages/shortlist";
 
 .body-container {
   margin-top: 30px;
   padding-left: 60px;
   padding-right: 60px;
+  padding-bottom: 50px;
 }
 
 body {
