@@ -10,8 +10,19 @@
     <h1>Create your
       <span class="home-special-font"> Fringe Festival </span>
       <br> planner in minutes.</h1>
-    <!-- TO DO: Insert Search Bar -->
   </div>
+    <div class="filter-wrapper">
+      <%= simple_form_for :filter, url: shows_path, method: :get, class: "form-search d-flex", id: "form-styling" do |f| %>
+        <%= f.input :show, label: false, placeholder: "Find Shows", input_html: {class: 'search-show-input' } %>
+        <%= f.input :genre, label: false, collection: Show::GENRES, prompt: "Genre", input_html: {class: 'genre-style' } %>
+        <%= f.input :start_date, as: :select, collection: 1..31,
+                                 label: false, prompt: "Start",
+                                 class: 'search-start-date' %>
+        <%= f.input :end_date, as: :select, collection: 1..31, label: false,
+                               prompt: "End", input_html: { class: 'search-end-date' } %>
+        <%= f.submit value: "Search", class: "submit" %>
+      <% end %>
+    </div>
 </div>
 <div class="home-page home-work-div">
   <h1>How does it <span class="home-special-font">work</span>?</h1>
