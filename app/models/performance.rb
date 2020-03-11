@@ -6,6 +6,11 @@ class Performance < ApplicationRecord
     includes(:show).joins(:show).where("start >= ? and start <= ?", start_date, end_date ).map(&:show).uniq
   end
 
+  def self.shows_on(start_date)
+    # EROR: ActiveRecord::StatementInvalid: PG::UndefinedFunction: ERROR:  operator does not exist: timestamp without time zone == unknown
+    includes(:show).joins(:show).where("start.day == ?", start_date.day).map(&:show).uniq
+  end
+
   def time
     @start = self.start.strftime("%R")
     @end = self.end.strftime("%R")
