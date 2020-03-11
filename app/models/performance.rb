@@ -8,7 +8,7 @@ class Performance < ApplicationRecord
 
   def self.shows_on(start_date)
     # EROR: ActiveRecord::StatementInvalid: PG::UndefinedFunction: ERROR:  operator does not exist: timestamp without time zone == unknown
-    includes(:show).joins(:show).where("start.day == ?", start_date.day).map(&:show).uniq
+    all.select {|p| p.start.day == start_date.day }.map(&:show).uniq
   end
 
   def time
