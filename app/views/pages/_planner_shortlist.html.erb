@@ -12,7 +12,7 @@
     <%= image_tag(performance.show.original_image, class: "card-show-image", :alt => "Flyer image for show") %>
     <%= image_tag "arrow-left.png", class: "card-arrow" %>
   </div>
-  <div class="card-info card-border <%= performance.show.colour_class %> ">
+  <div class="card-info card-border <%= performance.show.colour_class %>">
     <h6><%= truncate(performance.show.title, length: 35) %></h6>
     <p><%= performance.show.genre %></p>
     <div class="d-flex">
