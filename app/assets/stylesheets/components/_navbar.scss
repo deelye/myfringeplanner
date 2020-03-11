@@ -1,5 +1,5 @@
 .navbar-lewagon {
-  z-index: 1;
+  z-index: 15;
   justify-content: space-between;
   background-size: cover;
     // background:
@@ -17,11 +17,23 @@
   position: fixed;
   top: 0;
   width: 100%;
+  position: sticky;
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
 
   .navbar-collapse {
     flex-grow: 0;
   }
 
+  .navbar {
+    z-index: 12 !important;
+  }
 
   .navbar-brand img {
     width: 20%;
