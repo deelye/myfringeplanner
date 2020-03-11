@@ -1,18 +1,23 @@
 .home-page {
-  margin-top: -136px;
   background-color: white;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 80vh;
   padding: 30px 30px;
   display: flex;
   flex-direction: column;
 }
 
 .home-page-w-img {
+  margin-top: -136px;
   background-image: url("landing-back");
-  height: 120vh !important;
+  height: 100vh !important;
+}
+
+.home-work-div {
+  padding-top: 80px;
+  justify-content: center;
+  align-items: center;
 }
 
 .home-nav {
@@ -38,6 +43,7 @@
 }
 
 .home-cards {
+  margin: 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,9 +51,9 @@
 }
 
 .home-card {
-  height: 268px;
+  height: 230px;
   width: 360px;
-  padding: 25px;
+  padding: 20px;
   border-radius: 5px;
   font-size: 14px;
   text-align: center;
