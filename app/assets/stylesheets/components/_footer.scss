@@ -3,7 +3,6 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 40px;
   padding: 10px 40px;
-  // border-top: 1px solid #eaeaea;
   color: $medium-gray;
   font-size: 14px;
   background-color: #cee9f5;
@@ -12,7 +11,7 @@
   }
 
   a:hover {
-    color: $pink;
+    color: $dark-blue;
     text-decoration: none;
   }
 }
@@ -24,9 +23,9 @@
   p {
     margin: 14px 0px;
     color: #cee9f5;
-    &:hover {
-    color: $pink;
 
+    &:hover {
+    color: $dark-blue;
     }
   }
 }
@@ -47,9 +46,8 @@
   display: flex;
   float: right;
   margin: 14px 0px;
-  list-style: none;
-}
 
-.footer-links li a {
-  margin-left: 10px;
+  &a:hover {
+    color: $dark-blue;
+  }
 }
