@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   get 'planner', to: 'pages#planner'
 
   root to: 'pages#home'
+  get 'contact', to: 'pages#contact'
+  get 'about', to: 'pages#about'
+
   get 'shortlist', to: 'pages#shortlist'
   resources :shows, only: [:show, :index] do
     member do

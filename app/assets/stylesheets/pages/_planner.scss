@@ -9,9 +9,9 @@
 
 .cal-grid-days {
   display: flex;
+  background-color: white;
 
   p {
-    background-color: white;
     margin: 0px;
     width: 50px;
     height: 25px;
@@ -23,21 +23,23 @@
 .cal-grid-dates {
   display: flex;
   border-radius: 0px 0px 5px 5px;
+  background-color: white;
 
   button {
     width: 50px;
     height: 25px;
-    box-shadow: 0px 0px 0px transparent;
-    text-shadow: 0px 0px 0px transparent;
-    text-shadow: 0px 0px 0px transparent;
     border: 0px solid transparent;
     padding: 0px;
     text-align: center;
 
     &.cal-date-active {
-      background-color: white;
-      border: 2px solid $blue;
-      border-radius: 40%;
+      background-color: $blue;
+      color: white;
+
+      &:hover {
+        background-color: $pink;
+        color: white;
+      }
     }
 
     &:focus {
@@ -56,7 +58,7 @@
   margin-top: 8px;
   background-color: white;
   position: relative;
-  border-bottom: solid 1px;
+  // border-bottom: solid 1px;
 }
 
 
@@ -91,13 +93,19 @@
   margin: 35px 0px 20px 0px;
 }
 
+.my-shadow {
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+}
+
 .planner-date {
+  z-index: 1;
   width: 401px;
   background-color: $blue;
   color: white;
   text-align: center;
   padding: 5px;
-  border: solid 1px black;
+  // border: solid 1px black;
   border-radius: 5px 5px 0px 0px;
 
   h3 {
@@ -110,7 +118,7 @@
   align-items: flex-start;
   justify-content: space-between;
   background-color: white;
-  border-right: solid 1px;
+  // border-right: solid 1px;
 }
 
 .planner {
@@ -122,9 +130,9 @@
   width: 50px;
   background-color: white;
   color: black;
-  border-right: solid 1px black;
-  border-left: solid 1px black;
-  border-bottom: solid 1px black;
+  border-right: dashed 1px $blue;
+  // border-left: solid 1px black;
+  // border-bottom: solid 1px black;
 
   p {
     height: 105px;
@@ -137,9 +145,9 @@
   height: 25px;
   width: 401px;
   background-color: $blue;
-  border-right: solid 1px black;
-  border-left: solid 1px black;
-  border-bottom: solid 1px black;
+  // border-right: solid 1px black;
+  // border-left: solid 1px black;
+  // border-bottom: solid 1px black;
   border-radius: 0px 0px 5px 5px;
 }
 
@@ -156,7 +164,6 @@
 }
 
 .planner-adder, .planner-remover {
-  z-index: 11;
   position: absolute;
   top: 8px;
   color: $blue !important;

@@ -1,6 +1,6 @@
 <footer class="footer">
   <div class="footer-signature">
-    <p><%= link_to "MyFringePlanner", shows_path %></p>
+    <%= link_to "My Fringe Planner", shows_path %>
   </div>
 
   <div class="footer-social-icons">
@@ -10,6 +10,8 @@
   </div>
 
   <div>
-    <p class="footer-links"><a href="http://lewagon.com/">Le Wagon</a></p>
+    <%= link_to "Le Wagon", "http://lewagon.com", class: "footer-links" %>
+    <%#= link_to "Contact", contact_path, class: "footer-links" %>
+    <%= link_to "About", about_path, class: "footer-links" %>
   </div>
 </footer>

@@ -15,17 +15,10 @@
 .footer-signature {
   float: left;
   font-size: 14px;
+  margin: 14px 0px;
 
-  a {
-    color: white;
-  }
-
-  p {
-    margin: 14px 0px;
-
-    &:hover {
+  &:hover {
     color: $dark-blue;
-    }
   }
 }
 
@@ -45,7 +38,7 @@
 .footer-links {
   display: flex;
   float: right;
-  margin: 14px 0px;
+  margin: 14px 5px;
 
   a {
     color: white;
