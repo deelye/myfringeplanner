@@ -182,6 +182,10 @@
   }
 }
 
+.planner-card-show-image {
+  position: relative;
+}
+
 .planner-card {
   position: relative;
   display: flex;
@@ -191,6 +195,12 @@
   font-size: 14px;
   color: black;
   line-height: 100%;
+
+  .card-arrow {
+    left: 50% !important;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 
   img {
     width: 100px;
@@ -236,6 +246,20 @@
   height: auto !important;
   left: auto !important;
 }
+
+.planner-card:hover .card-arrow {
+  opacity: 1;
+}
+
+// .card-right-arrow {
+//   opacity: 0;
+//   transition: 0.3s;
+//   position: absolute;
+//   z-index: 99;
+//   width: 100px !important;
+//   height: auto !important;
+//   left: auto !important;
+// }
 
 .card:hover .card-arrow {
   // display: inline;

@@ -1,7 +1,4 @@
-<div class="card card-hover-in <%= performance.shortlist_clash(@planners, performance) %>">
-  <!-- <div class="planner-arrow">
-    <%= image_tag "arrow-left.png", class: "card-arrow" %>
-  </div> -->
+<div class="card <%= performance.shortlist_clash(@planners, performance) %>">
   <div class="card-star-n-image">
     <% if current_user&.following?(performance.show) %>
       <%= link_to unfollow_show_path(performance.show) do  %>
