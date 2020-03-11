@@ -34,7 +34,20 @@ class Planner < ApplicationRecord
     end
   end
 
+  def walk_end(journey_info)
+    self.performance.end + journey_info["routes"].first["duration"]
+  end
+
   def date
     self.performance.start
   end
+
+  def calc_distance(planners, index)
+    venue = self.performance.show.venue
+    next_venue = planners[index + 1].performance.show.venue
+    response = RestClient.get "https://api.mapbox.com/directions/v5/mapbox/walking/#{venue.longitude},#{venue.latitude};#{next_venue.longitude},#{next_venue.latitude}?geometries=geojson&access_token=#{ENV['MAPBOX_API_KEY']}"
+    return JSON.parse(response)
+  end
+
+
 end

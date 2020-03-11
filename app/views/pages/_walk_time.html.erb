@@ -1,14 +1,11 @@
 <% if @planners[index + 1] != nil %>
-  <!-- If there's another planner on the same day, get location of current planner's show venue -->
-  <% venue = planner.performance.show.venue %>
-  <!-- Get the location of the next venue on the same day-->
-  <% next_venue = @planners[index + 1].performance.show.venue %>
-  <!-- Get instructions for how to get from point A to point B as an array of Hashes-->
-  <% response = RestClient.get "https://api.mapbox.com/directions/v5/mapbox/walking/#{venue.longitude},#{venue.latitude};#{next_venue.longitude},#{next_venue.latitude}?geometries=geojson&access_token=#{ENV['MAPBOX_API_KEY']}" %>
-  <% journey_info = JSON.parse(response) %>
-  <!-- Display time of journey if directed here from planner.html, but full map if from walking_route.html -->
-  <div class="planner-card walk-notif" style=" height: <%= planner.walk_duration(journey_info) %>; width: 100%">
+  <% journey_info =  planner.calc_distance(@planners, index) %>
+  <% if @planners[index + 1].performance.start > planner.walk_end(journey_info) %>
+    <div class="planner-card walk-notif walk-red" style=" height: <%= planner.walk_duration(journey_info) %>; width: 100%">
+  <% else %>
+    <div class="planner-card walk-notif" style=" height: <%= planner.walk_duration(journey_info) %>; width: 100%">
+  <% end %>
     <img src="https://img.icons8.com/android/24/000000/walking.png">
-    <p><%= (journey_info["routes"].first["duration"] / 60).ceil %> minute walk to <%= next_venue.name %></p>
+    <p><%= (journey_info["routes"].first["duration"] / 60).ceil %> minute walk to <%= @planners[ index + 1 ].performance.show.venue.name %></p>
   </div>
 <% end %>
