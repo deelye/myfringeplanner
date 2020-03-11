@@ -9,9 +9,9 @@
 
 .cal-grid-days {
   display: flex;
+  background-color: white;
 
   p {
-    background-color: white;
     margin: 0px;
     width: 50px;
     height: 25px;
@@ -23,6 +23,7 @@
 .cal-grid-dates {
   display: flex;
   border-radius: 0px 0px 5px 5px;
+  background-color: white;
 
   button {
     width: 50px;
@@ -35,9 +36,13 @@
     text-align: center;
 
     &.cal-date-active {
-      background-color: white;
-      border: 2px solid $blue;
-      border-radius: 40%;
+      background-color: $blue;
+      color: white;
+
+      &:hover {
+        background-color: $pink;
+        color: white;
+      }
     }
 
     &:focus {
