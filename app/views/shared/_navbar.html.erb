@@ -31,15 +31,15 @@
       </li>
       </div>
     </div>
-    <div class="inline-bottom">
+    <div class="filter-wrapper">
       <%= simple_form_for :filter, url: shows_path, method: :get, class: "form-search d-flex", id: "form-styling" do |f| %>
         <%= f.input :show, label: false, placeholder: "Find Shows", input_html: {class: 'search-show-input' } %>
         <%= f.input :genre, label: false, collection: Show::GENRES, prompt: "Genre", input_html: {class: 'genre-style' } %>
         <%= f.input :start_date, as: :select, collection: 1..31,
-                                 label: false, placeholder: "Start Date",
+                                 label: false, prompt: "Start",
                                  class: 'search-start-date' %>
         <%= f.input :end_date, as: :select, collection: 1..31, label: false,
-                               placeholder: "End Date", class: 'search-end-date' %>
+                               prompt: "End", input_html: { class: 'search-end-date' } %>
         <%= f.submit value: "Search", class: "submit" %>
       <% end %>
     </div>
