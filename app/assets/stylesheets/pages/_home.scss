@@ -1,8 +1,9 @@
 .home-page {
-  // background-image: ;
+  background-image: url("landing-back");
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
-  height: 93vh;
+  height: 100vh;
   padding: 0px 60px;
   display: flex;
   flex-direction: column;
