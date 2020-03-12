@@ -47,7 +47,7 @@
                                  class: 'search-start-date' %>
         <%= f.input :end_date, as: :select, collection: @collection, label: false,
                                prompt: "Last Day", input_html: { class: 'search-end-date' } %>
-        <%= f.submit value: "Search", class: "submit" %>
+        <%= f.submit value: "Search", class: "submit", data: {disable_with: 'Search'} %>
       <% end %>
     </div>
   </div>
