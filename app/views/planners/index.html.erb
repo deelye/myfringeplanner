@@ -8,6 +8,7 @@
   <% if @planners.first.nil? %>
     <p>Hmmm... we don't see any shows in your planner. Head over to your <%= link_to "planner page", planner_path, class: "btn-pink" %> to add items from your shortlist into your Fringe Planner.</p>
   <% else %>
+    <p>Click a calendar icon to export each Fringe event to your personal calendar. </p>
     <div class="planner-index-container">
       <% @planners.each_with_index do |planner, index| %>
         <% if planner.user == current_user %>
