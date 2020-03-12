@@ -1,5 +1,8 @@
 #navbarDropdown {
-  color: white;
+  color: $dark-blue;
+  &:hover {
+    color: white;
+  }
 }
 
 .navbar-lewagon {
@@ -21,6 +24,7 @@
   -webkit-box-pack: justify;
   justify-content: space-between;
   padding: 0.5rem 1rem;
+
 
   .navbar-collapse {
     flex-grow: 0;
@@ -191,5 +195,5 @@
 .greeting {
   margin-top: 1rem;
   margin-right: 8px;
-  color: white;
+  color: $dark-blue;
 }
