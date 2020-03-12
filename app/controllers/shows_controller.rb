@@ -24,7 +24,8 @@ class ShowsController < ApplicationController
         @shows = @shows.select{|r| r.genre == params[:filter][:genre]}
       end
       if params[:filter][:show].present?
-        @shows = @shows.select{|r| r.title.downcase.match?(params[:filter][:show].downcase)}
+        # @shows = @shows.select{|r| r.title.downcase.match?(params[:filter][:show].downcase)}
+        @shows = Show.search(params[:filter][:show])
       end
       if @shows.first.nil?
         @shows = Show.all
