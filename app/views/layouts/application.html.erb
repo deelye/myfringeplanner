@@ -30,8 +30,7 @@
     <%= favicon_link_tag %>
   </head>
 
-  <body class="<%= controller_name %> <%= action_name %>">
-
+  <body class="controller-<%= controller_name %> action-<%= action_name %>">
     <% if !current_page?(root_path) %>
       <%= render 'shared/navbar' %>
     <% end %>
