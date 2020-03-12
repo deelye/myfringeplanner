@@ -10,7 +10,9 @@
       <% end %>
     <% end %>
     <%= image_tag(performance.show.original_image, class: "card-show-image", :alt => "Flyer image for show") %>
-    <%= image_tag "arrow-left.png", class: "card-arrow" %>
+    <%#= link_to performance_planners_path(performance ,@planner, day: params[:day]), method: :post do  %>
+      <%= image_tag "arrow-left.png", class: "card-arrow" %>
+    <%# end %>
   </div>
   <div class="card-info card-border <%= performance.show.colour_class %>">
     <h6><%= truncate(performance.show.title, length: 35) %></h6>
@@ -47,7 +49,7 @@
     </div>
   </div>
 
-  <%= link_to performance_planners_path(performance ,@planner, day: params[:day]), method: :post do  %>
+  <%= link_to performance_planners_path(performance ,@planner, day: params[:day]), class: "planner-in-link", method: :post do  %>
     <div class="hid-link"></div>
   <% end %>
 </div>

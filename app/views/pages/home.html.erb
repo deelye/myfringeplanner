@@ -1,6 +1,6 @@
 <div class="home-page home-page-w-img" >
   <div class="home-nav">
-    <%= image_tag "logov1.png", alt: "myfringeplanner logo" %>
+    <%= image_tag "logov1.png", alt: "myfringeplanner logo"%>
     <div>
       <%= link_to "Sign up", new_user_registration_path, class: "home-btn-sign-up" %>
       <%= link_to "Log in", new_user_session_path, class: "button" %>
@@ -24,7 +24,7 @@
                                class: 'search-start-date' %>
       <%= f.input :end_date, as: :select, collection: @collection, label: false,
                              prompt: "Last Day", input_html: { class: 'search-end-date' } %>
-      <%= f.submit value: "Search", class: "submit" %>
+      <%= f.submit value: "Search", class: "submit", data: {disable_with: 'Search'} %>
     <% end %>
   </div>
 

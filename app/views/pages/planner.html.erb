@@ -1,4 +1,3 @@
-<!-- Hide form if start date and end date have values -->
 <div class="body-container">
   <div class="planner-search-bar">
     <form id="date-form" hidden>
@@ -73,6 +72,9 @@
           <i class="fa fa-calendar-plus" aria-hidden="true" id="planner-add-cal"></i>
         <% end %>
       </h1>
+      <% if @planners != [] %>
+        <p>Click on a planned show to remove it from the planner.</p>
+      <% end %>
       <div class="my-shadow">
         <div class="planner-date"><h3><%= @dayname %></h3></div>
         <div class="planner-day">
@@ -108,23 +110,6 @@
                 <% end %>
               <% end %>
             </div>
-
-    <!--         <div class="planner-times">
-              <p>10:00</p>
-              <p>11:00</p>
-              <p>12:00</p>
-              <p>13:00</p>
-              <p>14:00</p>
-              <p>15:00</p>
-              <p>16:00</p>
-              <p>17:00</p>
-              <p>18:00</p>
-              <p>19:00</p>
-              <p>20:00</p>
-              <p>21:00</p>
-              <p>22:00</p>
-              <p>23:00</p>
-            </div> -->
           </div>
         </div>
         <div class="planner-footer"></div>
@@ -139,6 +124,7 @@
         <% elsif @shortlist == [] %>
           <p>Looks like you need shows for your shortlist!</p>
         <% else %>
+          <p>Click on a shortlisted show to add it to the planner.</p>
           <div class="planner-cards">
             <% @performances.each do |performance| %>
                 <%= render 'pages/planner_shortlist', performance: performance %>
