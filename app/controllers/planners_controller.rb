@@ -23,8 +23,4 @@ class PlannersController < ApplicationController
     @planner.destroy
     redirect_to planner_path(day: @day)
   end
-
-  private
-
-
 end
