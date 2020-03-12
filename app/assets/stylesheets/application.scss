@@ -28,22 +28,21 @@
 body {
   // background-color: $off-white;
   // padding-top: 136px;
-  background-image: url(show-page-background);
-  background-size: contain;
-  // background-size: cover;
+  // background-image: url(show-page-background);
+  // background-size: contain;
 
-  // align-items: center;
-  // $size: 10px;
-  // $holeSize: 40%;
-  // $reflective: hsla(0, 0%, 100%, .1);
-  // background:
-  //   radial-gradient(rgb(232, 244, 249) $holeSize, transparent 0) 0 0,
-  //   radial-gradient(rgb(232, 244, 249) $holeSize, transparent 0) ($size / 2) ($size / 2),
-  //   radial-gradient($reflective $holeSize, transparent 20%) 0 1px,
-  //   radial-gradient($reflective $holeSize, transparent 20%) ($size / 2) ($size / 2 + 1px);
-  // background-color: $off-white;
-  // background-size: $size $size;
-  // background-clip: content-box;
+  align-items: center;
+  $size: 10px;
+  $holeSize: 40%;
+  $reflective: hsla(0, 0%, 100%, .1);
+  background:
+    radial-gradient(rgb(232, 244, 249) $holeSize, transparent 0) 0 0,
+    radial-gradient(rgb(232, 244, 249) $holeSize, transparent 0) ($size / 2) ($size / 2),
+    radial-gradient($reflective $holeSize, transparent 20%) 0 1px,
+    radial-gradient($reflective $holeSize, transparent 20%) ($size / 2) ($size / 2 + 1px);
+  background-color: $off-white;
+  background-size: $size $size;
+  background-clip: content-box;
 }
 
 .min-height {
