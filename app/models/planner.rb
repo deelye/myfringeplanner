@@ -28,7 +28,7 @@ class Planner < ApplicationRecord
   def walk_duration(journey_info)
     num = (journey_info["routes"].first["duration"] / 12).ceil
     if num > 25
-      num.to_s + "px"
+      (num / 2).to_s + "px"
     else
       25.to_s + "px"
     end
