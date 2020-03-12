@@ -55,6 +55,11 @@ class ShowsController < ApplicationController
 
   def unfollow
     current_user.stop_following(@show)
+    @planners = []
+    @planners << Planner.all.select {|planner| planner.performance.show == @show }
+    if !@planners.flatten.first.nil?
+      @planners.each { |planner| planner.first.delete }
+    end
     redirect_to request.referrer
   end
 
