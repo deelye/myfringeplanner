@@ -1,5 +1,8 @@
 #navbarDropdown {
-  color: white;
+  color: $dark-blue;
+  &:hover {
+    color: white;
+  }
 }
 
 .navbar-lewagon {
