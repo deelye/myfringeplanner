@@ -18,7 +18,7 @@
   margin: 14px 0px;
 
   a {
-    color: white;
+    color: $blue;
   }
 
   &:hover {
@@ -34,7 +34,7 @@
 
   a {
     padding: 0px 5px;
-    color: white;
+    color: $blue;
   }
 }
 
@@ -43,7 +43,7 @@
   display: flex;
   float: right;
   margin: 14px 5px;
-  color: white;
+  color: $blue;
 
   &a:hover {
     color: $dark-blue;
