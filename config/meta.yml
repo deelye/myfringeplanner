@@ -1,4 +1,4 @@
 meta_product_name: "My Fringe Planner"
 meta_title: "My Fringe Planner - Easy Organization."
 meta_description: "Easily organize your Fringe experience. Scroll, select, and export the shows you want to see this year."
-meta_image: "meta-img.jpg" # should exist in `app/assets/images/`
+meta_image: "meta-img.png" # should exist in `app/assets/images/`
