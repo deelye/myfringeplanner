@@ -1,10 +1,11 @@
 .alert {
   position: relative;
   z-index: 1000;
-  background-color: $blue;
-  color:white;
+  background-color: rgba(249, 240, 1, 0.5);
+  color:grey;
   text-align: center;
   border-color: transparent;
   font-weight:bold;
   margin: -4px;
+  font-size: 20px;
 }
