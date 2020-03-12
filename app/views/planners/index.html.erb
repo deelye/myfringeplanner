@@ -1,15 +1,15 @@
 <div class="body-container">
-  <div class="d-flex justify-content-between">
-    <h3>MY FRINGE: AUGUST 2020</h3>
+  <h1>MY FRINGE <%= Time.now.year %></h1>
+  <!-- <div class="d-flex justify-content-between"> -->
     <!-- PROBLEM: I don't know the person's calendar ID, google email, or google password -->
     <!-- QUESTION: Should I first create a new calendar? -->
     <%#= link_to 'EXPORT CALENDAR', '#', class: "btn-pink"%>
-  </div>
+  <!-- </div> -->
   <div class="planner-index-container">
     <% @planners.each_with_index do |planner, index| %>
       <% if index == 0 || planner.date.day != @planners[index - 1].date.day %>
         <div class="planner-index-column">
-        <h5><%= planner.date.strftime('%a %e')%></h5>
+        <h5><%= planner.date.strftime('%A %e %B')%></h5>
       <% end %>
       <%= render 'pages/planner', planner: planner %>
       <%#= render "walk_time", planner: planner, index: index %>
