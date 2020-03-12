@@ -8,7 +8,7 @@
   flex-direction: column;
 
   img {
-    width: 150px;
+    width: 200px;
   }
 
   .filter-wrapper {
@@ -17,7 +17,6 @@
 }
 
 .home-page-w-img {
-  // background-color: red;
   background-image: asset_url("landing-back.jpg");
   height: 100vh !important;
 }
@@ -97,5 +96,4 @@
   color: white;
   font-size: 50px;
 }
-
 
