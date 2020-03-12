@@ -93,6 +93,15 @@
   margin: 35px 0px 20px 0px;
 }
 
+.planner-in-link {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 .my-shadow {
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
@@ -255,7 +264,7 @@
   opacity: 0;
   transition: 0.3s;
   position: absolute;
-  z-index: 99;
+  z-index: 1;
   width: 100px !important;
   height: auto !important;
   left: auto !important;
