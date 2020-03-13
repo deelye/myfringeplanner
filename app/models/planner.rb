@@ -20,6 +20,7 @@ class Planner < ApplicationRecord
     end
   end
 
+
   # def walk_top
   #   end_of_planner = (performance.end - (performance.end.beginning_of_day + (3600 * 10))) / 300
   #   ((end_of_planner / 168) * 100).round(2).to_s + "%"

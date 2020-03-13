@@ -3,7 +3,9 @@ class PlannersController < ApplicationController
     @hand = false
     # @planners = Planner.all.where(current_user == user_id)
     # @planners.sort_by { |planner| planner.performance.start }
-    @planners = Planner.all.sort_by { |planner| planner.performance.start }
+    @planners = Planner.where(user: current_user).sort_by { |planner| planner.performance.start }
+    # @planners = Planner.all.sort_by { |planner| planner.performance.start }
+    # @days = current_user.my_days
   end
 
   def show
