@@ -1,6 +1,8 @@
 class PlannersController < ApplicationController
   def index
     @hand = false
+    # @planners = Planner.all.where(current_user == user_id)
+    # @planners.sort_by { |planner| planner.performance.start }
     @planners = Planner.all.sort_by { |planner| planner.performance.start }
   end
 
