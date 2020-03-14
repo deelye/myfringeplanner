@@ -21,12 +21,12 @@ class User < ApplicationRecord
     a.map{|r| r.performances}.flatten
   end
 
-  # def my_days
-  #   planners = self.planners
-  #   days = []
-  #   planners.each do |plan|
-  #     days << plan.day
-  #   end
-  #   days.uniq
-  # end
+  def my_days
+    planners = self.planners
+    days = []
+    planners.each do |plan|
+      days << plan.day
+    end
+    days.uniq
+  end
 end
