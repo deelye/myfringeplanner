@@ -1,9 +1,6 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
-  def home
-  end
-
   def shortlist
     @follows = current_user.all_follows
   end
@@ -13,13 +10,13 @@ class PagesController < ApplicationController
     if params[:day].present? && params[:day] != "Choose date..."
       @date = params[:day].to_datetime
       @day = params[:day].to_datetime.day
-      @dayname = params[:day].to_datetime.strftime('%A %e %B')
+      @dayname = @date.strftime('%A %e %B')
     else
       @dayname = "Choose date..."
     end
 
-    @planners = current_user.planners.map { |planner| planner.day == @date ? planner : false}.reject { |r| r == false }
-    @performances = current_user.shortlist_events.select{ |performance| performance.start.day == @day }
+    @planners = current_user.planners.map { |planner| planner.day == @date ? planner : false }.reject { |performance| performance == false }
+    @performances = current_user.shortlist_events.select { |performance| performance.start.day == @day }
     @performances.sort_by! { |performance| performance.start }
 
     @markers = @planners.map do |booking|
