@@ -20,13 +20,4 @@ class User < ApplicationRecord
     a = shows - booked_shows
     a.map{|r| r.performances}.flatten
   end
-
-  # def my_days
-  #   planners = self.planners
-  #   days = []
-  #   planners.each do |plan|
-  #     days << plan.day
-  #   end
-  #   days.uniq
-  # end
 end
