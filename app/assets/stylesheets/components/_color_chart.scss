@@ -8,69 +8,6 @@
   }
 }
 
-.color-chart-label {
-  // width: 200px;
-  height: 32px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
-  margin: 5px;
-  padding-top: 10px;
-  // padding-bottom: 4px;
-  border-radius: 5px;
-  font-size: 15px;
-  line-height: 12px;
-  text-align: center;
-  text-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
-  color: white;
-  // border-style:solid;
-  font-weight: bold;
-  &:hover {
-    text-decoration: none;
-    color: white;
-  }
-}
-
-.color-comedy {
-  background-color: $comedy;
-  &:hover{
-    background-color:#f97fc1;
-  }
-}
-
-.color-cabaret-variety {
-  background-color: $cabaret-variety;
-  &:hover{
-    background-color:#f3ae72;
-  }
-}
-
-.color-circus-etc {
-  background-color: $circus-etc;
-  &:hover{
-    background-color:#f7ea61;
-  }
-}
-
-.color-theatre-etc {
-  background-color: $theatre-etc;
-  &:hover{
-    background-color:#6ecc62;
-  }
-}
-
-.color-events-etc {
-  background-color: $events-etc;
-  &:hover{
-    background-color:#7abcdc;
-  }
-}
-
-.color-other {
-  background-color: $other;
-  &:hover{
-    background-color:#b291da;
-  }
-}
-
 @media(max-width: 1200px) {
   .color-chart {
     grid-template-columns: 1fr 1fr 1fr;
@@ -80,5 +17,75 @@
 @media(max-width: 850px) {
   .color-chart {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+.color-chart-label {
+  height: 32px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  margin: 5px;
+  padding-top: 10px;
+  line-height: 12px;
+  text-align: center;
+  font-size: 15px;
+  color: white;
+
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.color-comedy {
+  background-color: $comedy;
+
+  &:hover{
+    // background-color: #f97fc1;
+    background-color: #ffa8c6;
+  }
+}
+
+.color-cabaret-variety {
+  background-color: $cabaret-variety;
+
+  &:hover{
+    // background-color: #f3ae72;
+    background-color: #ffcf83;
+  }
+}
+
+.color-circus-etc {
+  background-color: $circus-etc;
+
+  &:hover{
+    // background-color: #f7ea61;
+    background-color: #fff48a;
+  }
+}
+
+.color-theatre-etc {
+  background-color: $theatre-etc;
+
+  &:hover{
+    // background-color: #6ecc62;
+    background-color: #cdf08e;
+  }
+}
+
+.color-events-etc {
+  background-color: $events-etc;
+
+  &:hover{
+    // background-color: #7abcdc;
+    background-color: #8ed0f0;
+  }
+}
+
+.color-other {
+  background-color: $other;
+
+  &:hover{
+    background-color: #b291da;
   }
 }
