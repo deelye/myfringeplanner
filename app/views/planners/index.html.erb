@@ -1,41 +1,6 @@
 <div class="body-container">
   <h1>MY FRINGE <%= Time.now.year %></h1>
   <% if current_user.planners.first.nil? %>
-    <!-- add similar link to other pages -->
-    <p>Hmmm... we don't see any shows in your planner. Head over to your <%= link_to "planner page", planner_path, class: "btn-pink" %> to add items from your shortlist into your Fringe Planner.</p>
-  <% else %>
-    <p>Click a calendar icon to export each Fringe event to your personal calendar. </p>
-    <!-- iterate over unique days of planners -->
-    <% current_user.my_days.each do |day| %>
-      <!-- print date -->
-      <%= day.strftime('%A %e %B') %>
-      <!-- open new div -->
-      <div class="planner-index-container">
-        <!-- iterate over unique days of planners -->
-        <% @planners.each do |planner| %>
-          <% if planner.day == day %>
-          <!-- render card -->
-            <div class="planner-index-column">
-              <%= render 'pages/planner', planner: planner %>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-      <!-- close div -->
-
-    <% end %>
-
-
-
-  <% end %>
-
-
-</div>
-
-
-<div class="body-container">
-  <h1>MY FRINGE <%= Time.now.year %></h1>
-  <% if current_user.planners.first.nil? %>
     <p>Hmmm... we don't see any shows in your planner. Head over to your <%= link_to "planner page", planner_path, class: "btn-pink" %> to add items from your shortlist into your Fringe Planner.</p>
   <% else %>
     <p>Click a calendar icon to export each Fringe event to your personal calendar. </p>
@@ -53,3 +18,31 @@
     </div>
   <% end %>
 </div>
+
+<!-- <div class="body-container"> -->
+  <!-- <h1>MY FRINGE <%= Time.now.year %></h1> -->
+  <%# if current_user.planners.first.nil? %>
+    <!-- add similar link to other pages -->
+    <!-- <p>Hmmm... we don't see any shows in your planner. Head over to your <%= link_to "planner page", planner_path, class: "btn-pink" %> to add items from your shortlist into your Fringe Planner.</p> -->
+  <%# else %>
+    <!-- <p>Click a calendar icon to export each Fringe event to your personal calendar. </p> -->
+    <!-- iterate over unique days of planners -->
+    <%# current_user.my_days.each do |day| %>
+      <!-- print date -->
+      <%#= day.strftime('%A %e %B') %>
+      <!-- open new div -->
+      <!-- <div class="planner-index-container"> -->
+        <!-- iterate over unique days of planners -->
+        <%# @planners.each do |planner| %>
+          <%# if planner.day == day %>
+          <!-- render card -->
+            <!-- <div class="planner-index-column"> -->
+              <%#= render 'pages/planner', planner: planner %>
+            <!-- </div> -->
+          <%# end %>
+        <%# end %>
+      <!-- </div> -->
+      <!-- close div -->
+    <%# end %>
+  <%# end %>
+<!-- </div> -->
