@@ -39,7 +39,6 @@ navLinks.forEach(link => {
   }
 })
 
-  console.log(window);
 // Sets the active class on the planner page date links
 const dateLinks = document.querySelectorAll(".cal-grid-date")
 dateLinks.forEach(link => {
