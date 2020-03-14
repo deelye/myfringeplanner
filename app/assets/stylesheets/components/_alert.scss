@@ -1,10 +1,10 @@
 .alert {
+  background-color: rgba(249, 240, 1, 0.5);
   position: relative;
   z-index: 11;
-  background-color: rgba(249, 240, 1, 0.5);
   color: white;
   text-align: center;
-  border-color: transparent;
+  border: none;
   margin: -4px;
   font-size: 20px;
 }
