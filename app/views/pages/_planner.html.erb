@@ -6,14 +6,14 @@
       <%= image_tag "arrow-right.png", class: "card-arrow" %>
     <% else %>
       <div title="Add to Calendar" class="addeventatc">
-          <span class="start"><%= planner.date %></span>
-          <span class="end"><%= planner.performance.end %></span>
-          <span class="timezone">United Kingdom</span>
-          <span class="title"><%= planner.performance.show.title %></span>
-          <span class="description"><%= planner.performance.show.description %></span>
-          <span class="location">
-            <%= planner.performance.show.venue.name %>, <%= planner.performance.show.venue.address %>, <%= planner.performance.show.venue.postcode %>
-          </span>
+        <span class="start"><%= planner.date %></span>
+        <span class="end"><%= planner.performance.end %></span>
+        <span class="timezone">United Kingdom</span>
+        <span class="title"><%= planner.performance.show.title %></span>
+        <span class="description"><%= planner.performance.show.description %></span>
+        <span class="location">
+          <%= planner.performance.show.venue.name %>, <%= planner.performance.show.venue.address %>, <%= planner.performance.show.venue.postcode %>
+        </span>
       </div>
     <% end %>
   </div>
