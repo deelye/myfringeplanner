@@ -4,8 +4,8 @@ class FringeJob < ApplicationJob
 
   def perform
     values = [0,100,200,300]
-    values.each do |v|
-      url = "https://api.edinburghfestivalcity.com/events?festival=demofringe&key=#{ENV['FRINGE_KEY']}&signature=#{ENV['FRINGE_SIGNATURE']}&size=100&from=#{v}"
+    values.each do |value|
+      url = "https://api.edinburghfestivalcity.com/events?festival=demofringe&key=#{ENV['FRINGE_KEY']}&signature=#{ENV['FRINGE_SIGNATURE']}&size=100&from=#{value}"
       response = RestClient.get(url)
       shows = JSON.parse(response)
       shows.each do |show|
@@ -14,13 +14,12 @@ class FringeJob < ApplicationJob
         if @show
           @show.venue = @venue
           @show.update!(show_params(show))
-          puts "UPDATED"
         else
           @show = Show.new(show_params(show))
           @show.venue = @venue
           @show.save!
-          show['performances'].each do |perf|
-            performance = Performance.find_or_create_by(performance_hash(perf, @show))
+          show['performances'].each do |performance|
+            performance = Performance.find_or_create_by(performance_hash(performance, @show))
           end
         end
       end
