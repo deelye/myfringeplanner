@@ -1,32 +1,22 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
+
   has_many :shortlists
   has_many :planners
   has_many :performances, through: :shows
   has_many :planned_performances, through: :planners, source: :performance
-  acts_as_follower
   has_many :booked_shows, through: :planned_performances, source: :show
 
   acts_as_follower
 
   def shows
-    follows.map{|f| f.followable}
+    follows.map{ |follow| folow.followable }
   end
 
   def shortlist_events
     a = shows - booked_shows
-    a.map{|r| r.performances}.flatten
+    a.map { |show| show.performances }.flatten
   end
-
-  # def my_days
-  #   planners = self.planners
-  #   days = []
-  #   planners.each do |plan|
-  #     days << plan.day
-  #   end
-  #   days.uniq
-  # end
 end
