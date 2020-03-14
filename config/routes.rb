@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
+  get 'planner', to: 'pages#planner'
 
   root to: 'pages#home'
+  get 'contact', to: 'pages#contact'
+  get 'about', to: 'pages#about'
 
+  get 'shortlist', to: 'pages#shortlist'
   resources :shows, only: [:show, :index] do
     member do
       get 'follow'
@@ -10,18 +14,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :shortlist, only: [:show]
+
+  # should remove planner resources as going through pages now?
   resources :performances, only: [:index] do
     resources :planners, only: [:create]
   end
-
-  resources :shortlist, only: [:show]
-
-  get 'shortlist', to: 'pages#shortlist'
-  get 'planner', to: 'pages#planner'
   get '/planners', to: 'planners#index'
-
-  get 'contact', to: 'pages#contact'
-  get 'about', to: 'pages#about'
-
   delete '/planners/:id', to: 'planners#destroy', as: :delete_planner
 end
