@@ -25,10 +25,11 @@ class ShowsController < ApplicationController
       if params[:filter][:genre].present?
         @shows = @shows.select {|show| show.genre == params[:filter][:genre] }
       end
+
       if params[:filter][:show].present?
-        # @shows = @shows.select{|r| r.title.downcase.match?(params[:filter][:show].downcase)}
         @shows = Show.search(params[:filter][:show])
       end
+
       if @shows.first.nil?
         @shows = Show.all
         flash[:notice] = "No results found"
@@ -36,15 +37,15 @@ class ShowsController < ApplicationController
     else
       @shows = Show.includes(:performances, :venue).all
       if params[:category].present?
-        @shows = @shows.select do |r|
+        @shows = @shows.select do |show|
           if params[:category] == "Comedy" || params[:category] == "Cabaret and Variety" || params[:category] == "Dance Physical Theatre and Circus"
-            r.genre == params[:category]
+            show.genre == params[:category]
           elsif params[:category] == "Musicals and Opera"
-            r.genre == params[:category] || r.genre == "Theatre"
+            show.genre == params[:category] || show.genre == "Theatre"
           elsif params[:category] == "Events"
-            r.genre == params[:category] || r.genre == "Exhibitions"
+            show.genre == params[:category] || show.genre == "Exhibitions"
           elsif params[:category] == "Children's Shows"
-            r.genre == params[:category] || r.genre == "Spoken Word" || r.genre == "Music"
+            show.genre == params[:category] || show.genre == "Spoken Word" || show.genre == "Music"
           end
         end
       end
@@ -59,7 +60,8 @@ class ShowsController < ApplicationController
   def unfollow
     current_user.stop_following(@show)
     @planners = []
-    @planners << Planner.all.select {|planner| planner.performance.show == @show }
+    @planners << Planner.all.select { |planner| planner.performance.show == @show }
+
     if !@planners.flatten.first.nil?
       @planners.each { |planner| planner.first.delete }
     end
