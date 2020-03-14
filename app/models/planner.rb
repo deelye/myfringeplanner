@@ -1,8 +1,7 @@
 class Planner < ApplicationRecord
   belongs_to :user
   belongs_to :performance
-  has_many :arriving_transitions, class_name: "Transition", foreign_key: :planner_to_id
-  has_many :departing_transitions, class_name: 'Transition', foreign_key: :planner_from_id
+
   before_save :set_top_and_duration
 
   def set_top_and_duration
@@ -19,12 +18,6 @@ class Planner < ApplicationRecord
       end
     end
   end
-
-
-  # def walk_top
-  #   end_of_planner = (performance.end - (performance.end.beginning_of_day + (3600 * 10))) / 300
-  #   ((end_of_planner / 168) * 100).round(2).to_s + "%"
-  # end
 
   def walk_duration(journey_info)
     num = (journey_info["routes"].first["duration"] / 12).ceil
