@@ -13,13 +13,15 @@ class Show < ApplicationRecord
   ]
 
   belongs_to :venue
+
   has_many :shortlists
   has_many :performances
+
   validates :url, uniqueness: true
 
   acts_as_followable
 
- include PgSearch::Model
+  include PgSearch::Model
      pg_search_scope :search,
        against: [ :title, :description ],
        using: {
