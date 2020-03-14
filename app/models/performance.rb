@@ -7,8 +7,7 @@ class Performance < ApplicationRecord
   end
 
   def self.shows_on(start_date)
-    # TO DO: Should be written as SQL query instead of straight Ruby.
-    all.select {|p| p.start.day == start_date.day }.map(&:show).uniq
+    all.select { |p| p.start.day == start_date.day }.map(&:show).uniq
   end
 
   def time
