@@ -13,7 +13,7 @@ class ShowsController < ApplicationController
           @shows = Performance.shows_on(@start_date)
         elsif @start_date > @end_date
           @shows = Show.all
-          flash[:notice] = "Uh Oh! Did you flip your dates? Please make sure your start date comes before your end date."
+          flash[:notice] = "Uh oh! Please make sure your start date comes before your end date!"
         else
           @shows = Performance.shows_between(@start_date, @end_date)
         end
@@ -32,7 +32,7 @@ class ShowsController < ApplicationController
 
       if @shows.first.nil?
         @shows = Show.all
-        flash[:notice] = "No results found"
+        flash[:notice] = "Sorry, no results found."
       end
     else
       @shows = Show.includes(:performances, :venue).all
@@ -61,10 +61,8 @@ class ShowsController < ApplicationController
     current_user.stop_following(@show)
     @planners = []
     @planners << Planner.all.select { |planner| planner.performance.show == @show }
+    @planners.each { |planner| planner.first.delete } if !@planners.flatten.first.nil?
 
-    if !@planners.flatten.first.nil?
-      @planners.each { |planner| planner.first.delete }
-    end
     redirect_to request.referrer
   end
 
