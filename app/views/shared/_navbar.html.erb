@@ -7,7 +7,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="rhs">
+  <div>
     <div class="top">
       <%= link_to "SHOWS", shows_path, class: "big-nav-link" %>
       <%= link_to "SHORTLIST", shortlist_path, class: "big-nav-link" %>
@@ -35,7 +35,7 @@
     </div>
     <div class="filter-wrapper">
       <% @collection = [] %>
-      <% ("2020/08/01".to_date.."2020/08/31".to_date).each do |date| %>
+      <% ("#{Time.now.year}/08/01".to_date.."#{Time.now.year}/08/31".to_date).each do |date| %>
         <% @collection << date.strftime("%A %B %e") %>
       <% end %>
       <%= simple_form_for :filter, url: shows_path, method: :get, class: "form-search d-flex", id: "form-styling" do |f| %>
