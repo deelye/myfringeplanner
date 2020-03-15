@@ -1,0 +1,9 @@
+.planners-planner-link {
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    text-decoration: none;
+    color: $blue;
+  }
+}
