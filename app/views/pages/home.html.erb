@@ -18,10 +18,10 @@
       <%= f.input :show, label: false, placeholder: "Show/Performer", input_html: {class: 'search-show-input' } %>
       <%= f.input :genre, label: false, collection: Show::GENRES, prompt: "Category", input_html: {class: 'genre-style' } %>
       <%= f.input :start_date, as: :select, collection: @collection,
-                               label: false, prompt: "First Day",
+                               label: false, prompt: "From Date",
                                class: 'search-start-date' %>
       <%= f.input :end_date, as: :select, collection: @collection, label: false,
-                             prompt: "Last Day", input_html: { class: 'search-end-date' } %>
+                             prompt: "To Date", input_html: { class: 'search-end-date' } %>
       <%= f.submit value: "Search", class: "submit", data: {disable_with: 'Search'} %>
     <% end %>
   </div>
