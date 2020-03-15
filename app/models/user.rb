@@ -12,7 +12,7 @@ class User < ApplicationRecord
   acts_as_follower
 
   def shows
-    follows.map{ |follow| folow.followable }
+    follows.map{ |follow| follow.followable }
   end
 
   def shortlist_events
