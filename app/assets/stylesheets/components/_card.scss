@@ -18,24 +18,15 @@
   margin-bottom:10px ;
 }
 
-.hid-link {
-  z-index: 10;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
 .card {
   position: relative;
   display: flex;
   flex-direction: row;
   height: 105px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
-  font-size: 14px;
-  border-radius: 5px;
   border-style: none;
+  border-radius: 5px;
+  font-size: 14px;
 
   &:hover {
     box-shadow: 0px 0px 10px rgba(78, 172, 217, 1);
@@ -118,4 +109,13 @@
 
 .card-border-other {
   border-right-color: $other;
+}
+
+.hid-link {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }

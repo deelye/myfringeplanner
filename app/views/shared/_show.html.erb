@@ -9,13 +9,12 @@
         <i class="fa fa-star star-white" aria-hidden="true"></i>
       <% end %>
     <% end %>
-    <%= image_tag(show.original_image, :alt => "Flyer image for show") %>
+    <%= image_tag(show.original_image, :alt => "#{show.artist}") %>
   </div>
   <div class="card-info card-border <%= show.colour_class %>">
     <h6><%= truncate(show.title, length: 45) %></h6>
     <p><%= show.genre %></p>
     <div class="d-flex">
-
       <% dates = ["Aug "] %>
       <% performances = show.performances %>
       <% performances.each_with_index do |performance, index| %>
