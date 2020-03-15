@@ -8,9 +8,9 @@
       <% @planners.each_with_index do |planner, index| %>
         <% if @planners.first == planner || planner.date.day != @planners[index - 1].date.day %>
           <div class="planner-index-column">
-
+            <%= link_to "/planner?day=#{planner.date.strftime('%A')}+#{planner.date.strftime('%e')}+#{planner.date.strftime('%B')}" do %>
               <h5><%= planner.date.strftime('%A %e %B')%></h5>
-
+            <% end %>
         <% end %>
             <%= render 'pages/planner', planner: planner %>
         <% if @planners[index + 1].nil? || planner.date.day != @planners[index + 1].date.day %>
