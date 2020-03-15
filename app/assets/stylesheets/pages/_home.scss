@@ -16,6 +16,11 @@
   }
 }
 
+.home-page-w-img {
+  background-image: asset_url("home-page-background.jpg");
+  height: 100vh !important;
+}
+
 .home-nav {
   display: flex;
   justify-content: space-between;
@@ -34,11 +39,6 @@
   padding-top: 80px;
   justify-content: center;
   align-items: center;
-}
-
-.home-page-w-img {
-  background-image: asset_url("landing-back.jpg");
-  height: 100vh !important;
 }
 
 .home-btn-sign-up:hover {
