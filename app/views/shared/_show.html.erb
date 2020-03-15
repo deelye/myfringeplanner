@@ -12,7 +12,7 @@
     <%= image_tag(show.original_image, :alt => "#{show.artist}") %>
   </div>
   <div class="card-info card-border <%= show.colour_class %>">
-    <h6><%= truncate(show.title, length: 45) %></h6>
+    <h6><%= truncate(show.title, length: 75) %></h6>
     <p><%= show.genre %></p>
     <div class="d-flex">
       <% dates = ["Aug "] %>
