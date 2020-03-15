@@ -50,6 +50,49 @@
   color: $blue;
 }
 
+.arrow {
+  text-align: center;
+  position: absolute;
+  bottom: 24px;
+  left: 0;
+  width: 100%;
+}
+
+.more-arrows {
+  width: 75px;
+  height: 65px;
+
+  polygon {
+    fill: #FFF;
+    transition: all .2s ease-out;
+
+    &.arrow-top {
+      transform: translateY(18px);
+      opacity: 0.5
+    }
+
+    &.arrow-middle {
+      opacity: 0.75;
+    }
+
+    &.arrow-bottom {
+      transform: translateY(-18px);
+    }
+  }
+
+  &:hover {
+    polygon {
+      &.arrow-top {
+        transform: translateY(0);
+      }
+
+      &.arrow-bottom {
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
 .home-cards {
   margin: 25px;
   display: flex;
@@ -61,8 +104,8 @@
 .home-card {
   height: 230px;
   width: 360px;
-  padding: 20px;
   border-radius: 5px;
+  padding: 20px;
   font-size: 14px;
   text-align: center;
   color: black;
@@ -81,56 +124,13 @@
 }
 
 .home-num {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 10px;
   width: 1.75em;
   height: 1.75em;
   border-radius: 50%;
   background-color: rgba(250, 69, 122, 0.3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: $pink !important;
-}
-
-.arrow {
-  text-align: center;
-  position: absolute;
-  bottom: 24px;
-  left: 0;
-  width: 100%;
-}
-
-#more-arrows {
-  width: 75px;
-  height: 65px;
-
-  polygon {
-    fill: #FFF;
-    transition: all .2s ease-out;
-
-    &.arrow-bottom {
-      transform: translateY(-18px);
-    }
-
-    &.arrow-top {
-      transform: translateY(18px);
-      opacity: 0.5
-    }
-
-    &.arrow-middle {
-      opacity: 0.75;
-    }
-  }
-
-  &:hover {
-    polygon {
-      &.arrow-bottom {
-        transform: translateY(0);
-      }
-
-      &.arrow-top {
-        transform: translateY(0);
-      }
-    }
-  }
 }
