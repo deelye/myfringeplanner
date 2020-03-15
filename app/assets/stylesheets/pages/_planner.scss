@@ -224,6 +224,10 @@
   color: black;
   line-height: 100%;
 
+  i {
+    color: $blue;
+  }
+
   .card-arrow {
     left: 50% !important;
     top: 50%;
