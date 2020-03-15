@@ -37,11 +37,11 @@
         <% end %>
       <% end %>
 
-      <p><i class="fas fa-clock" aria-hidden="true"></i> <%= truncate(show.starts, length: 10) %> (<%= show.duration %>) </p>
-      <p><i class="fa fa-calendar card-dates" aria-hidden="true"></i> <%= truncate(dates.join, length: 30) %></p>
+      <p><i class="fas fa-clock fa-fw" aria-hidden="true"></i> <%= truncate(show.starts, length: 10) %> (<%= show.duration %>) </p>
+      <p><i class="fa fa-calendar fa-fw card-dates" aria-hidden="true"></i> <%= truncate(dates.join, length: 30) %></p>
     </div>
     <div class="d-flex justify-content-between">
-      <p><i class="fas fa-map-marker-alt"></i> <%= truncate(show.venue.name, length: 45) %></p>
+      <p><i class="fas fa-map-marker-alt fa-fw"></i> <%= truncate(show.venue.name, length: 45) %></p>
       <p>£<%= performances.last.price %></p>
     </div>
   </div>
