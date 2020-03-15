@@ -7,9 +7,7 @@
     </div>
   </div>
   <div class="home-title">
-    <h1>Create your
-      <span class="home-special-font"> Fringe Festival </span>
-      <br> planner in minutes.</h1>
+    <h1>Plan your <span class="home-special-font">Fringe</span> in minutes...</h1>
   </div>
   <div class="filter-wrapper">
     <% @collection = [] %>
@@ -17,8 +15,8 @@
       <% @collection << date.strftime("%A %B %e") %>
     <% end %>
     <%= simple_form_for :filter, url: shows_path, method: :get, class: "form-search d-flex", id: "form-styling" do |f| %>
-      <%= f.input :show, label: false, placeholder: "Find Shows", input_html: {class: 'search-show-input' } %>
-      <%= f.input :genre, label: false, collection: Show::GENRES, prompt: "Genre", input_html: {class: 'genre-style' } %>
+      <%= f.input :show, label: false, placeholder: "Show/Performer", input_html: {class: 'search-show-input' } %>
+      <%= f.input :genre, label: false, collection: Show::GENRES, prompt: "Category", input_html: {class: 'genre-style' } %>
       <%= f.input :start_date, as: :select, collection: @collection,
                                label: false, prompt: "First Day",
                                class: 'search-start-date' %>

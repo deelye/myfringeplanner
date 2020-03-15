@@ -1,11 +1,11 @@
 .home-page {
-  background-color: white;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  padding: 30px 30px;
   display: flex;
   flex-direction: column;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: white;
+  padding: 30px 30px;
 
   img {
     width: 250px;
@@ -16,9 +16,18 @@
   }
 }
 
-.home-page-w-img {
-  background-image: asset_url("landing-back.jpg");
-  height: 100vh !important;
+.home-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 125px;
+  height: 20vh;
+  text-align: center;
 }
 
 .home-work-div {
@@ -27,23 +36,14 @@
   align-items: center;
 }
 
-.home-nav {
-  display: flex;
-  justify-content: space-between;
+.home-page-w-img {
+  background-image: asset_url("landing-back.jpg");
+  height: 100vh !important;
 }
 
 .home-btn-sign-up:hover {
   text-decoration: none;
   color: $dark-blue;
-}
-
-.home-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 20vh;
-  text-align: center;
-  margin-top: 150px;
 }
 
 .home-special-font {
