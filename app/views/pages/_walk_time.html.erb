@@ -5,7 +5,6 @@
   <% else %>
     <div class="planner-card walk-notif" style=" height: <%= planner.walk_duration(journey_info) %>; width: 100%">
   <% end %>
-    <img src="https://img.icons8.com/android/24/000000/walking.png">
-    <p><%= (journey_info["routes"].first["duration"] / 60).ceil %> minute walk to <%= @planners[ index + 1 ].performance.show.venue.name %></p>
+    <p><i class="fas fa-walking fa-fw"></i><%= (journey_info["routes"].first["duration"] / 60).ceil %> minute walk to <%= @planners[ index + 1 ].performance.show.venue.name %></p>
   </div>
 <% end %>
