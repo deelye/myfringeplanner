@@ -7,3 +7,10 @@
     color: $blue;
   }
 }
+
+.planners-shows-link {
+  &:hover {
+    text-decoration: none;
+    color: $dark-blue;
+  }
+}
