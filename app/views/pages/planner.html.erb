@@ -126,13 +126,15 @@
       <div>
         <% if !params[:day].present? %>
           <p>Choose a date to start planning!</p>
+        <% elsif @performances == [] %>
+          <p>Looks like you need shows for your shortlist!</p>
         <% elsif @shortlist == [] %>
           <p>Looks like you need shows for your shortlist!</p>
         <% else %>
           <p>Click on a shortlisted show to add it to the planner.</p>
           <div class="planner-cards">
             <% @performances.each do |performance| %>
-                <%= render 'pages/planner_shortlist', performance: performance %>
+              <%= render 'pages/planner_shortlist', performance: performance %>
             <% end %>
           </div>
         <% end %>
