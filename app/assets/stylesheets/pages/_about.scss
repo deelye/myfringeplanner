@@ -1,27 +1,20 @@
-.about-profile-parent {
-  // padding: ;
+.about-story {
+  display: flex;
+
 }
 
 .about-profile {
   display: flex;
-  width: 680px;
-
-  .about-text {
-    // padding-top: 30px;
-  }
 
   img {
     width: 120px;
     height: 100%;
-    margin: 15px;
-    margin-top: 0px;
+    margin: 0px 15px 15px 15px;
     border-radius: 50%;
-
   }
 }
 
 .about-story-pic {
   height: 100%;
   width: 400px;
-  // margin-left: 30px;
 }
