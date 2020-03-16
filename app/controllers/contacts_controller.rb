@@ -10,7 +10,7 @@ class ContactsController < ApplicationController
       flash.now[:error] = nil
       redirect_to shows_path, notice: 'Message sent successfully'
     else
-      flash.now[:error] = 'Cannot send message'
+      flash.now[:error] = 'Please fill in all fields before sending message'
       render :new
     end
   end

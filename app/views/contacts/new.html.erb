@@ -5,7 +5,7 @@
 
     <%= simple_form_for @contact do |f| %>
       <% if flash[:error].present? %>
-          <p> flash[:error]</p>
+        <p><%= flash[:error] %></p>
       <% end %>
 
       <div>
