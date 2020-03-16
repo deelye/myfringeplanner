@@ -3,6 +3,15 @@
 
 }
 
+.about-story-story {
+  padding-right: 60px;
+}
+
+.about-story-pic {
+  height: 100%;
+  width: 45vw;
+}
+
 .about-profile {
   display: flex;
 
@@ -12,9 +21,4 @@
     margin: 0px 15px 15px 15px;
     border-radius: 50%;
   }
-}
-
-.about-story-pic {
-  height: 100%;
-  width: 400px;
 }
