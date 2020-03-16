@@ -126,6 +126,8 @@
       <div>
         <% if !params[:day].present? %>
           <p>Choose a date to start planning!</p>
+        <% elsif @performances == [] %>
+          <p>Looks like you need shows for your shortlist!</p>
         <% elsif @shortlist == [] %>
           <p>Looks like you need shows for your shortlist!</p>
         <% else %>
