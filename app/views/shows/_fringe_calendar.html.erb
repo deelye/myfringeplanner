@@ -23,7 +23,7 @@
           <% week.each do |day| %>
             <!-- NOT DRY!!! -->
             <% if days.include?(day.day) %>
-              <%= content_tag :td, class: calendar.td_classes_for(day), style: "background-color: #4eacd9;" do %>
+              <%= content_tag :td, class: calendar.td_classes_for(day), class: "calendar-show-day" do %>
                 <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(block) %>
                   <% capture_haml(day, sorted_events.fetch(day, []), &block) %>
                 <% else %>
@@ -31,7 +31,7 @@
                 <% end %>
               <% end %>
             <% else %>
-              <%= content_tag :td, class: calendar.td_classes_for(day), style: "text-decoration: line-through; color: #ea9999" do %>
+              <%= content_tag :td, class: calendar.td_classes_for(day), class: "calendar-no-show-day" do %>
                 <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(block) %>
                   <% capture_haml(day, sorted_events.fetch(day, []), &block) %>
                 <% else %>
