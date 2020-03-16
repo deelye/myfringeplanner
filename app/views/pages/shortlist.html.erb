@@ -2,7 +2,7 @@
   <%= render 'shared/colorchart' %>
 
   <% if @follows == [] %>
-    <p class="shortlist-empty-message">Looks like you need shows for your shortlist!</p>
+    <p class="shortlist-empty-message">Check out the <%= link_to "listings", shows_path, class: "planners-shows-link" %> to find shows for your shortlist!</p>
   <% end %>
 
   <div class="cards">
