@@ -177,3 +177,12 @@ p .fringe-link {
   text-align: center;
   background-color: $off-white;
 }
+
+.calendar-show-day {
+  background-color: $blue;
+}
+
+.calendar-no-show-day {
+  color: $light-red;
+  text-decoration: line-through;
+}
