@@ -1,0 +1,24 @@
+.contact-us-form {
+  display: inline-block;
+  width: 40vw;
+  padding: 15px;
+  border-radius: 5px;
+  background-image: asset_url(show-page-background);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  label {
+    margin: 8px 0px;
+  }
+
+  .contact-us-input {
+    width: 100%;
+    border-radius: 5px;
+    // border-color: $light-gray;
+    border: solid 1px $light-gray;
+  }
+
+  .contact-us-btn {
+    margin: 8px 0px 0px;
+  }
+}

@@ -1,0 +1,28 @@
+<div class="body-container">
+  <h1>Contact Us</h1>
+
+  <div class="contact-us-form">
+
+    <%= simple_form_for @contact do |f| %>
+      <% if flash[:error].present? %>
+          <p> flash[:error]</p>
+      <% end %>
+
+      <div>
+        <%= f.label :name %></br>
+        <%= f.text_field  :name, required: true, class: "contact-us-input" %></br>
+
+        <%= f.label :email %></br>
+        <%= f.text_field :email, required: true, class: "contact-us-input" %></br>
+
+        <%= f.label :message %></br>
+        <%= f.text_area :message, rows: 8, cols: 40, required: true, class: "contact-us-input"%></br>
+
+        <%= f.button :submit, 'Send Message', class: "button contact-us-btn" %>
+      </div>
+
+    <% end %>
+
+
+  </div>
+</div>

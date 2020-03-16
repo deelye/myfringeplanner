@@ -30,16 +30,17 @@ gem 'rest-client'
 gem 'simple_calendar', '~> 2.0'
 gem 'geocoder'
 gem 'cloudinary', '~> 1.12.0'
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 # Sets up all the relationships for user sessions
 gem 'devise'
-
-
+# Le Wagon boilerplate bundle
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
+# Form for 'Contact us'
+gem 'mail_form'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'

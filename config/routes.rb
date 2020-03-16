@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'contacts/new'
   devise_for :users
 
   root to: 'pages#home'
@@ -22,6 +23,8 @@ Rails.application.routes.draw do
   get 'planners', to: 'planners#index'
   delete 'planners/:id', to: 'planners#destroy', as: :delete_planner
 
-  get 'contact', to: 'pages#contact'
+  get 'contacts', to: 'contacts#new'
+  resources :contacts, only: [:new, :create]
+
   get 'about', to: 'pages#about'
 end
