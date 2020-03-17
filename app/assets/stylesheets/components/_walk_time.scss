@@ -1,3 +1,9 @@
+.walk-transition {
+  position: absolute;
+  width: 100%;
+  pointer-events: none;
+}
+
 .walk-notif {
   z-index: 2;
   background-color: $light-blue;
