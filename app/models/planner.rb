@@ -6,9 +6,14 @@ class Planner < ApplicationRecord
 
   def set_top_and_duration
     dur_in_5 = (self.performance.end - self.performance.start) / 300
-    top_in_5 = (self.performance.start - (self.performance.start.beginning_of_day + (3600 * 10))) / 300
-    self.duration = ((dur_in_5 / 168) * 100).round(2).to_s + "%"
-    self.top = ((top_in_5 / 168) * 100).round(2).to_s + "%"
+
+    #                      10:00                         00:00                        1hr   10am
+    # top_in_5 = (self.performance.start - (self.performance.start.beginning_of_day + (3600 * 10))) / 300
+    top_in_5 = (self.performance.start - @planner_start) / 300
+
+    # it's not recognising height_intervals or hard-coded values??? keeps taking 168???
+    self.duration = ((dur_in_5 / @height_intervals) * 100).round(2).to_s + "%"
+    self.top = ((top_in_5 / @height_intervals) * 100).round(2).to_s + "%"
   end
 
 

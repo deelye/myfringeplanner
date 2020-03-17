@@ -105,6 +105,7 @@
 
                   <%= link_to delete_planner_path(id: planner.id, day: params[:day]), method: :delete do  %>
                     <div class="plan" style="top: <%= planner.top %>; height: <%= planner.duration %>; width: 100%">
+                    <% raise %>
                       <%= render "planner", planner: planner %>
                     </div>
                     <div class="walk-transition" style="top: <%= (planner.top.to_f + planner.duration.to_f).to_s + '%' %>;">
