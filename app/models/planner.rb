@@ -11,6 +11,14 @@ class Planner < ApplicationRecord
     self.top = ((top_in_5 / 168) * 100).round(2).to_s + "%"
   end
 
+
+  # def set_top_and_duration
+  #   dur_in_5 = (self.performance.end - self.performance.start) / 300
+  #   top_in_5 = (self.performance.start - (self.performance.start.beginning_of_day + (3600 * 10))) / 300
+  #   self.duration = ((dur_in_5 / 168) * 100).round(2).to_s + "%"
+  #   self.top = ((top_in_5 / 168) * 100).round(2).to_s + "%"
+  # end
+
   def planner_clash(planners, planner)
     planners.each do |p|
       if (planner.performance.start > p.performance.start && planner.performance.start < p.performance.end) || (planner.performance.end > p.performance.start && planner.performance.end < p.performance.end)
@@ -42,5 +50,4 @@ class Planner < ApplicationRecord
     response = RestClient.get "https://api.mapbox.com/directions/v5/mapbox/walking/#{venue.longitude},#{venue.latitude};#{next_venue.longitude},#{next_venue.latitude}?geometries=geojson&access_token=#{ENV['MAPBOX_API_KEY']}"
     return JSON.parse(response)
   end
-
 end

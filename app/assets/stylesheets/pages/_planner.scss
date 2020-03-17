@@ -57,9 +57,9 @@
 }
 
 .day-calendar {
-  height: 1462px;
+  // height: 1462px;
   width: 350px;
-  margin-top: 8px;
+  // margin-top: 8px;
   background-color: white;
   position: relative;
 }
@@ -70,12 +70,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-#day {
-  height: 35px;
-  width: 175px;
-  margin-right: 5px;
 }
 
 .planner-btn {
@@ -136,7 +130,7 @@
 }
 
 .planner-times {
-  height: 1470px;
+  // height: 1470px;
   width: 50px;
   border-right: dashed 1px $blue;
   background-color: white;
