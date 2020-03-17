@@ -130,7 +130,7 @@
         <% elsif @performances == [] || @shortlist == [] %>
           <p>Check out the <%= link_to "listings", shows_path, class: "planners-shows-link" %> to find shows for your shortlist!</p>
         <% else %>
-          <p>Click on a shortlisted show to add it to the planner.</p>
+          <p>Click on a shortlisted show to add it to the planner. (Beware clashes and insufficient transfer times highlighted in red!)</p>
           <div class="planner-cards">
             <% @performances.each do |performance| %>
               <%= render 'pages/planner_shortlist', performance: performance %>
