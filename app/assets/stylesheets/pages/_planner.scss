@@ -2,8 +2,8 @@
   margin: 0px;
   padding: 10px;
   border-radius: 5px 5px 0px 0px;
-  text-align: center;
   background-color: $blue;
+  text-align: center;
   color: white;
 }
 
@@ -62,7 +62,6 @@
   margin-top: 8px;
   background-color: white;
   position: relative;
-  // border-bottom: solid 1px;
 }
 
 
@@ -114,12 +113,11 @@
 .planner-date {
   z-index: 1;
   width: 401px;
-  background-color: $blue;
-  color: white;
-  text-align: center;
   padding: 5px;
-  // border: solid 1px black;
   border-radius: 5px 5px 0px 0px;
+  background-color: $blue;
+  text-align: center;
+  color: white;
 
   h3 {
     margin: 0px;
@@ -131,7 +129,6 @@
   align-items: flex-start;
   justify-content: space-between;
   background-color: white;
-  // border-right: solid 1px;
 }
 
 .planner {
@@ -141,39 +138,34 @@
 .planner-times {
   height: 1470px;
   width: 50px;
+  border-right: dashed 1px $blue;
   background-color: white;
   color: black;
-  border-right: dashed 1px $blue;
-  // border-left: solid 1px black;
-  // border-bottom: solid 1px black;
 
   p {
     height: 105px;
-    text-align: center;
     margin: 0px;
+    text-align: center;
   }
 }
 
 .planner-footer {
   height: 25px;
   width: 401px;
-  background-color: $blue;
-  // border-right: solid 1px black;
-  // border-left: solid 1px black;
-  // border-bottom: solid 1px black;
   border-radius: 0px 0px 5px 5px;
+  background-color: $blue;
 }
 
 .planner-shortlist {
-  padding-left: 50px;
   flex-grow: 1;
+  padding-left: 50px;
 }
 
 .planner-cards {
+  margin-top: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
-  margin-top: 10px;
 }
 
 .planner-adder, .planner-remover {
@@ -196,8 +188,8 @@
 
 .plan {
   position: absolute;
-  background-color: white;
   border-radius: 5px;
+  background-color: white;
 
   p {
     margin: 0px;
