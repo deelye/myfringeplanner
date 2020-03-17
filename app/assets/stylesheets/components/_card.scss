@@ -30,6 +30,8 @@
 
   &:hover {
     box-shadow: 0px 0px 10px rgba(78, 172, 217, 1);
+    transform: scale(1.03);
+    transition: 0.3s;
   }
 
   img {
