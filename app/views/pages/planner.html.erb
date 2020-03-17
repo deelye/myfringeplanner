@@ -95,7 +95,6 @@
               <p>22:00</p>
               <p>23:00</p>
             </div>
-
             <div class="day-calendar">
               <% if @planners != false %>
                 <% @planners.delete_if{ |planner| planner == false } %>
@@ -103,8 +102,10 @@
                 <% @planners.each_with_index do |planner, index| %>
                   <%= link_to delete_planner_path(id: planner.id, day: params[:day]), method: :delete do  %>
                     <div class="plan" style="top: <%= planner.top %>; height: <%= planner.duration %>; width: 100%">
-                    <%= render "planner", planner: planner %>
-                    <%= render "walk_time", planner: planner, index: index %>
+                      <%= render "planner", planner: planner %>
+                    </div>
+                    <div class="walk-transition" style="top: <%= (planner.top.to_f + planner.duration.to_f).to_s + '%' %>;">
+                      <%= render "walk_time", planner: planner, index: index %>
                     </div>
                   <% end %>
                 <% end %>
