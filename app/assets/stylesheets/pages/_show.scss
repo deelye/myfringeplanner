@@ -1,188 +1,240 @@
-.show-div {
-  width: 1170px;
-  margin-bottom: 30px;
-  padding: 15px;
+.show-container {
+  position: relative;
+  width: 80vw;
+  height: 732px;
+  margin: 50px 0px;
   border-radius: 5px;
-  background-image: asset_url(show-page-background);
+  background-image: asset_url(cork-board);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.show-top-card-grid {
-  display: grid;
-  grid-template-rows: 290px;
-  grid-template-columns: 250px 1fr;
-  grid-gap: 25px;
-  padding: 10px;
-}
-
-.show-genre-return {
-  padding-top: 3px;
-  font-size: 11px;
-
-  p {
-    margin-bottom: 5px;
-  }
-}
-
-.show-image-star-bar, .show-calendar, .show-map {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.20);
-}
-
-.show-image-star-bar {
-  border-radius: 5px;
-}
-
-.show-image {
-  border-radius: 5px 5px 0px 0px;
-}
-
-.show-bottom-card-grid {
-  display: grid;
-  grid-template-rows: 250px;
-  grid-template-columns: 250px 2fr 250px;
-  grid-gap: 25px;
-  padding: 10px;
-}
-
-.show-calendar {
-  grid-column: 1 / 2;
-  border-radius: 5px;
-}
-
-.show-bottom-details {
-  grid-column: 2 / 3;
-  padding: 10px 20px;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.05);
-  background-color: white;
-
-  i {
-    width: 30px;
-    color: $blue;
-  }
-
-  h4 {
-    margin-bottom: 1rem;
-  }
-
-  p {
-    margin-bottom: 0px;
-  }
-}
-
-p .fringe-link {
-  text-decoration: none;
-  color: $blue;
+.polaroid {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 7%;
+  top: 10%;
+  width: 30%;
+  background: #fff;
+  padding: 1rem 1rem 0rem 1rem;
+  box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,0.2);
+  transform: scale(0.8, 0.8) rotate(-6deg);
 
   &:hover {
-    color: $pink;
+    transform: scale(1, 1) rotate(0deg);
+    transition: 0.5s;
+  }
+
+  img {
+  width: 100%;
+  height: auto;
+  filter: grayscale(50%);
+  }
+
+  img:hover {
+    filter: none;
+    transition: 0.5s;
+  }
+
+  h3 {
+    margin: 0px;
+    padding: 15px 0px;
+    color: $gray;
   }
 }
 
-.gmaps-link {
-  text-decoration: none;
-  color: black;
-}
 
-.gmaps-link:hover {
-  text-decoration: none;
-  color: $blue;
-}
 
-.show-map {
-  grid-column: 3 / 4;
-  border-radius: 5px;
-}
 
-.show-top-details {
-  padding: 0px 20px;
-}
 
-.show-title-div {
-  border-bottom: solid 1px;
-}
 
-.show-title {
-  text-decoration: none;
-  font-size: 3.1rem;
-  color: black;
-}
 
-.show-title:hover {
-  text-decoration: none;
-  color: $blue;
-}
+// .show-div {
+//   width: 1170px;
+//   margin-bottom: 30px;
+//   padding: 15px;
+//   border-radius: 5px;
+//   background-image: asset_url(show-page-background);
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// }
 
-.show-description {
-  font-size: 15px;
-}
+// .show-top-card-grid {
+//   display: grid;
+//   grid-template-rows: 290px;
+//   grid-template-columns: 250px 1fr;
+//   grid-gap: 25px;
+//   padding: 10px;
+// }
 
-.show-shortlist-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 40px;
-  padding: 0px 15px;
-  background-color: $blue;
-  border-radius: 0px 0px 5px 5px;
-  color: white;
-  font-size: 1.1rem;
+// .show-genre-return {
+//   padding-top: 3px;
+//   font-size: 11px;
 
-  a {
-    text-decoration: none;
-    color: white;
-  }
-}
+//   p {
+//     margin-bottom: 5px;
+//   }
+// }
 
-.table {
-  margin: 0;
+// .show-image-star-bar, .show-calendar, .show-map {
+//   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.20);
+// }
 
-  td {
-    padding: 4px 0px;
-    vertical-align: middle;
-  }
-}
+// .show-image-star-bar {
+//   border-radius: 5px;
+// }
 
-.show-table {
-  color: white;
+// .show-image {
+//   border-radius: 5px 5px 0px 0px;
+// }
 
-  td {
-    border: white solid 1px;
-  }
-}
+// .show-bottom-card-grid {
+//   display: grid;
+//   grid-template-rows: 250px;
+//   grid-template-columns: 250px 2fr 250px;
+//   grid-gap: 25px;
+//   padding: 10px;
+// }
 
-.calendar-days-header th {
-  padding: 5px 0px;
-}
+// .show-calendar {
+//   grid-column: 1 / 2;
+//   border-radius: 5px;
+// }
 
-.calendar-heading {
-  height: 48px;
-  text-align: center;
-  background-color: $medium-gray;
-  font-size: 20px;
-  border-radius: 5px 5px 0px 0px;
-}
+// .show-bottom-details {
+//   grid-column: 2 / 3;
+//   padding: 10px 20px;
+//   border-radius: 5px;
+//   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.05);
+//   background-color: white;
 
-.calendar-days-header {
-  background-color: $light-gray;
+//   i {
+//     width: 30px;
+//     color: $blue;
+//   }
 
-  th {
-    border: white solid 1px;
-    text-align: center;
-  }
-}
+//   h4 {
+//     margin-bottom: 1rem;
+//   }
 
-.calendar-body {
-  text-align: center;
-  background-color: $off-white;
-}
+//   p {
+//     margin-bottom: 0px;
+//   }
+// }
 
-.calendar-show-day {
-  background-color: $blue;
-}
+// p .fringe-link {
+//   text-decoration: none;
+//   color: $blue;
 
-.calendar-no-show-day {
-  color: $light-red;
-  text-decoration: line-through;
-}
+//   &:hover {
+//     color: $pink;
+//   }
+// }
+
+// .gmaps-link {
+//   text-decoration: none;
+//   color: black;
+// }
+
+// .gmaps-link:hover {
+//   text-decoration: none;
+//   color: $blue;
+// }
+
+// .show-map {
+//   grid-column: 3 / 4;
+//   border-radius: 5px;
+// }
+
+// .show-top-details {
+//   padding: 0px 20px;
+// }
+
+// .show-title-div {
+//   border-bottom: solid 1px;
+// }
+
+// .show-title {
+//   text-decoration: none;
+//   font-size: 3.1rem;
+//   color: black;
+// }
+
+// .show-title:hover {
+//   text-decoration: none;
+//   color: $blue;
+// }
+
+// .show-description {
+//   font-size: 15px;
+// }
+
+// .show-shortlist-bar {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   height: 40px;
+//   padding: 0px 15px;
+//   background-color: $blue;
+//   border-radius: 0px 0px 5px 5px;
+//   color: white;
+//   font-size: 1.1rem;
+
+//   a {
+//     text-decoration: none;
+//     color: white;
+//   }
+// }
+
+// .table {
+//   margin: 0;
+
+//   td {
+//     padding: 4px 0px;
+//     vertical-align: middle;
+//   }
+// }
+
+// .show-table {
+//   color: white;
+
+//   td {
+//     border: white solid 1px;
+//   }
+// }
+
+// .calendar-days-header th {
+//   padding: 5px 0px;
+// }
+
+// .calendar-heading {
+//   height: 48px;
+//   text-align: center;
+//   background-color: $medium-gray;
+//   font-size: 20px;
+//   border-radius: 5px 5px 0px 0px;
+// }
+
+// .calendar-days-header {
+//   background-color: $light-gray;
+
+//   th {
+//     border: white solid 1px;
+//     text-align: center;
+//   }
+// }
+
+// .calendar-body {
+//   text-align: center;
+//   background-color: $off-white;
+// }
+
+// .calendar-show-day {
+//   background-color: $blue;
+// }
+
+// .calendar-no-show-day {
+//   color: $light-red;
+//   text-decoration: line-through;
+// }
