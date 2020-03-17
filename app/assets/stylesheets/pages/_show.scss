@@ -19,7 +19,7 @@
   background: #fff;
   padding: 1rem 1rem 0rem 1rem;
   box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,0.2);
-  transform: scale(0.8, 0.8) rotate(-6deg);
+  transform: scale(0.9, 0.9) rotate(-6deg);
 
   &:hover {
     transform: scale(1, 1) rotate(0deg);
@@ -44,6 +44,68 @@
   }
 }
 
+.show-calendar {
+  grid-column: 1 / 2;
+  border-radius: 5px;
+  box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,0.2);
+}
+
+.show-table {
+  position: absolute;
+  bottom: 70px;
+  right: 100px;
+  transform: rotate(5deg);
+  width: 25%;
+  margin: 0;
+  background-color: white;
+  color: white;
+
+  td {
+    border: white solid 1px;
+    padding: 4px 0px;
+    vertical-align: middle;
+  }
+
+  &:hover {
+    transform: rotate(0deg);
+    transition: 0.5s;
+  }
+}
+
+.calendar-heading {
+  height: 48px;
+  text-align: center;
+  background-color: $medium-gray;
+  font-size: 20px;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.calendar-days-header {
+  background-color: $light-gray;
+
+  th {
+    border: white solid 1px;
+    text-align: center;
+  }
+}
+
+.calendar-days-header th {
+  padding: 5px 0px;
+}
+
+.calendar-body {
+  text-align: center;
+  background-color: $off-white;
+}
+
+.calendar-show-day {
+  background-color: $blue;
+}
+
+.calendar-no-show-day {
+  color: $light-red;
+  text-decoration: line-through;
+}
 
 
 

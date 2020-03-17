@@ -8,6 +8,11 @@
       </div>
     <% end %>
 
+    <div class="show-calendar">
+      <%= FringeCalendar.new(self, {}).render do |date| %>
+        <%= date.day %>
+      <% end %>
+    </div>
 
 
   </div>
