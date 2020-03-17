@@ -168,23 +168,23 @@
   grid-gap: 10px;
 }
 
-.planner-adder, .planner-remover {
-  position: absolute;
-  top: 8px;
-  color: $blue !important;
+// .planner-adder, .planner-remover {
+//   position: absolute;
+//   top: 8px;
+//   color: $blue !important;
 
-  &:hover {
-    color: $pink !important;
-  }
-}
+//   &:hover {
+//     color: $pink !important;
+//   }
+// }
 
-.planner-adder {
-  right: 10px;
-}
+// .planner-adder {
+//   right: 10px;
+// }
 
-.planner-remover {
-  right: 3px;
-}
+// .planner-remover {
+//   right: 3px;
+// }
 
 .plan {
   position: absolute;
@@ -244,11 +244,19 @@
   }
 }
 
+.plan .planner-card {
+  &:hover {
+    box-shadow: 0px 0px 10px rgba(78, 172, 217, 1);
+    transform: scale(1.03);
+    transition: 0.3s;
+  }
+}
+
 .planner-clash, .clash {
   background-color: $light-red;
 }
 
-#planner-add-cal {
+.planner-add-cal {
   font-size: 20px;
 
   &:hover {

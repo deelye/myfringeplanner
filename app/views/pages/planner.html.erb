@@ -69,7 +69,7 @@
       <h1 class="planner-header">
         MY FRINGE
         <%= link_to planners_path do  %>
-          <i class="fa fa-calendar-plus" aria-hidden="true" id="planner-add-cal"></i>
+          <i class="fa fa-calendar-plus planner-add-cal" aria-hidden="true"></i>
         <% end %>
       </h1>
       <% if @planners != [] %>
@@ -120,7 +120,7 @@
       <h1 class="planner-header">
         SHORTLIST
         <%= link_to shortlist_path do  %>
-          <i class="fas fa-list" aria-hidden="true" id="planner-add-cal"></i>
+          <i class="fas fa-list planner-add-cal" aria-hidden="true"></i>
         <% end %>
       </h1>
       <div>
