@@ -7,12 +7,13 @@ class PagesController < ApplicationController
 
   def planner
     @hand = true
-    if params[:day].present? && params[:day] != "Choose date..."
+    # if params[:day].present? && params[:day] != "Choose date..."
+    if params[:day].present?
       @date = params[:day].to_datetime
       @day = params[:day].to_datetime.day
       @dayname = @date.strftime('%A %e %B')
     else
-      @dayname = "Choose date..."
+      @dayname = "Choose date from above..."
     end
 
     @planners = current_user.planners.map { |planner| planner.day == @date ? planner : false }.reject { |performance| performance == false }
