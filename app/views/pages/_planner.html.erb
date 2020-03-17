@@ -1,9 +1,10 @@
 <div class="plan planner-card <%= planner.planner_clash(@planners, planner) %>">
   <div class="planner-card-show-image">
-    <%= image_tag(planner.performance.show.original_image, :alt => "#{planner.performance.show.artist}", height: planner.duration.to_f/100*1470) %>
     <% if @hand %>
+      <%= image_tag(planner.performance.show.original_image, :alt => "#{planner.performance.show.artist}", height: planner.duration.to_f/100*1470) %>
       <%= image_tag "arrow-right.png", class: "card-arrow" %>
     <% else %>
+      <%= image_tag(planner.performance.show.original_image, :alt => "#{planner.performance.show.artist}") %>
       <div title="Add to Calendar" class="addeventatc">
         <span class="start"><%= planner.date %></span>
         <span class="end"><%= planner.performance.end %></span>
