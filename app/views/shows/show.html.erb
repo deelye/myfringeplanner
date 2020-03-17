@@ -4,11 +4,12 @@
     <%= link_to "#{@show.website}", target: :blank do %>
       <div class="polaroid">
         <%= image_tag "#{@show.original_image}", alt: "#{@show.artist}" %>
-        <h3><%= @show.artist %></h3>
+        <h3><%= @show.times %> (<%= @show.duration %>)</h3>
+
       </div>
     <% end %>
 
-    <div class="show-calendar">
+    <div>
       <%= FringeCalendar.new(self, {}).render do |date| %>
         <%= date.day %>
       <% end %>
@@ -16,6 +17,15 @@
 
     <div class="show-header">
       <span class="show-title"><%= @show.title %> (<%= @show.genre %>)</span>
+    </div>
+
+    <div class="show-map">
+      <div id="map"
+        style="width: 350px;
+        height: 190px;"
+        data-marker="<%= @marker.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
     </div>
 
   </div>

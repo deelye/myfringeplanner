@@ -44,12 +44,6 @@
   }
 }
 
-.show-calendar {
-  grid-column: 1 / 2;
-  border-radius: 5px;
-  box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,0.2);
-}
-
 .show-table {
   position: absolute;
   bottom: 10%;
@@ -108,7 +102,7 @@
   top: 5%;
   transform: rotate(12deg);
   width: 750px;
-  height: 280px;
+  height: 340px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -127,6 +121,13 @@
   }
 }
 
+.show-map {
+  position: absolute;
+  bottom: 7%;
+  left: 30%;
+  box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,0.2);
+  transform: rotate(2deg);
+}
 
 
 
