@@ -129,7 +129,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  height: 600px;
+  height: calc(100vh - 230px);
   overflow-y: auto;
   background-color: white;
 }
