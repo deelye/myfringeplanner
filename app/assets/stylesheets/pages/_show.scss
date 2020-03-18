@@ -41,6 +41,7 @@
     margin: 0px;
     padding: 15px 0px;
     color: $gray;
+    text-align: center;
   }
 }
 
@@ -101,18 +102,18 @@
   right: 0%;
   top: 5%;
   transform: rotate(12deg);
+  background-image: asset_url(ripped-paper);
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 750px;
   height: 340px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-image: asset_url(ripped-paper);
-  background-repeat: no-repeat;
-  background-size: cover;
 
   .show-title {
     width: 70%;
-    margin: 50px 140px 0px;
+    margin: 33px 140px 0px;
     font-size: 2.5rem;
   }
 
@@ -123,12 +124,54 @@
 
 .show-map {
   position: absolute;
-  bottom: 7%;
+  bottom: 8%;
   left: 30%;
   box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,0.2);
-  transform: rotate(2deg);
+  transform: rotate(3deg);
 }
 
+.show-post-it {
+  position: absolute;
+  bottom: 8%;
+  left: 7%;
+  transform: rotate(-3deg);
+  background-image: asset_url(post-it);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+
+  &:hover {
+    transform: rotate(3deg);
+    transition: 0.5s;
+  }
+
+  .show-post-it-note {
+    width: 180px;
+    transform: rotate(-3deg);
+    padding: 50px 0px 0px 30px;
+  }
+
+  .fringe-link {
+  text-decoration: none;
+  color: $blue;
+
+    &:hover {
+      color: $dark-blue;
+    }
+  }
+}
+
+.show-description {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotate(2deg);
+  background-image: asset_url(note-paper);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 250px;
+}
 
 
 // .show-div {
