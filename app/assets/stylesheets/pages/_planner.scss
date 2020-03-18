@@ -239,6 +239,10 @@
 
 .planner-clash, .clash {
   background-color: $light-red;
+
+  i {
+    color: $gray;
+  }
 }
 
 .planner-add-cal {
