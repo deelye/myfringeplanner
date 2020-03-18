@@ -13,7 +13,8 @@ class Planner < ApplicationRecord
 
   def planner_clash(planners, planner)
     planners.each do |p|
-      if (planner.performance.start > p.performance.start && planner.performance.start < p.performance.end) || (planner.performance.end > p.performance.start && planner.performance.end < p.performance.end)
+      if (planner.performance.start >= p.performance.start && planner.performance.start <= p.performance.end && planner != p) ||
+        (planner.performance.end >= p.performance.start && planner.performance.end <= p.performance.end && planner != p)
         return "planner-clash"
       end
     end
