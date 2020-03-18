@@ -1,58 +1,51 @@
-<div class="container mt-5 show-div">
-  <div class="show-top-card-grid">
-    <div class="show-image-star-bar">
-      <%= image_tag "#{@show.original_image}", alt: "#{@show.title}", class: "show-image" %>
-      <div class="show-shortlist-bar">
-        <% if current_user&.following?(@show) %>
-          <span>REMOVE FROM SHORTLIST</span>
-          <%= link_to unfollow_show_path(@show) do %>
-            <i class="fa fa-star star-yellow" aria-hidden="true"></i>
-          <% end %>
-        <% else %>
-          <span>ADD TO SHORTLIST</span>
-          <%= link_to follow_show_path(@show) do %>
-            <i class="fa fa-star star-white" aria-hidden="true"></i>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-    <div class="show-top-details">
-      <div class="show-title-div">
-        <%= link_to truncate("#{@show.title}", length: 70), @show.website, target: :blank, class: "show-title" %>
-      </div>
-      <div class="show-genre-return">
-        <p><%= @show.genre %></p>
-      </div>
-      <p class="show-description"><%= @show.description %></p>
-    </div>
-  </div>
+<div class="container">
+  <div class="show-container">
 
-  <div class="show-bottom-card-grid">
-    <div class="show-calendar">
+    <%= link_to "#{@show.website}", target: :blank do %>
+      <div class="polaroid">
+        <%= image_tag "#{@show.original_image}", alt: "#{@show.artist}" %>
+        <h3><%= @show.times %> (<%= @show.duration %>)</h3>
+
+      </div>
+    <% end %>
+
+    <div>
       <%= FringeCalendar.new(self, {}).render do |date| %>
         <%= date.day %>
       <% end %>
     </div>
-    <div class="show-bottom-details">
-      <h4><u>Details</u></h4>
-      <p><i class="far fa-clock fa-fw"></i> <%= @show.times %> (<%= @show.duration %>)</p>
-      <p><i class="fas fa-map-marker-alt fa-fw"></i> <%= @show.venue.name %> - <%= @show.venue.space %></p>
 
-      <% if @show.performances.last.price == 0 %>
-        <p><i class="fas fa-coins fa-fw"></i> FREE (visit <%= link_to "Fringe", @show.website, target: :blank, class: "fringe-link" %> for more details) </p>
-      <% else %>
-        <p><i class="fas fa-coins fa-fw"></i> £<%= @show.performances.last.price %> full price (visit <%= link_to "Fringe", @show.website, target: :blank, class: "fringe-link" %> for more details) </p>
-      <% end %>
-      <p><i class="far fa-thumbs-up fa-fw"></i> <%= @show.age_category %></p>
-      <p><i class="fas fa-exclamation-triangle fa-fw"></i> <%= @show.warnings %></p>
-      <p><i class="fas fa-shopping-cart fa-fw"></i> Check <%= link_to "Fringe", @show.website, target: :blank, class: "fringe-link" %> for availability</p>
+    <div class="show-header">
+      <span class="show-title"><%= @show.title %> (<%= @show.genre %>)</span>
     </div>
-    <div id="map"
-      class="show-map"
-      style="width: 250px;
-      height: 250px;"
-      data-marker="<%= @marker.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" class="show-map">
+
+    <div class="show-map">
+      <div id="map"
+        style="width: 350px;
+        height: 220px;"
+        data-marker="<%= @marker.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
     </div>
+
+    <div class="show-description">
+      <!-- <p><%= @show.description %></p> -->
+    </div>
+
+    <div class="show-post-it">
+      <div class="show-post-it-note">
+        <% if @show.performances.last.price == 0 %>
+          <span>FREE! </span>
+        <% else %>
+          <span>£<%= @show.performances.last.price %> full price </span>
+        <% end %>
+        <span>(check <%= link_to "Fringe", @show.website, target: :blank, class: "fringe-link" %> for more details and availability)</span>
+      </div>
+    </div>
+
   </div>
 </div>
+
+
+
+
