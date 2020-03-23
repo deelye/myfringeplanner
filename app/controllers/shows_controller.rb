@@ -5,21 +5,27 @@ class ShowsController < ApplicationController
   def index
     if params[:filter]
       @shows = Show.all
-      @start_date = params[:filter][:start_date].to_datetime
-      @end_date = params[:filter][:end_date].to_datetime
+      @search_start_date = params[:filter][:start_date].to_datetime
+      @search_end_date = params[:filter][:end_date].to_datetime
 
-      if params[:filter][:start_date].present? && params[:filter][:end_date].present?
-        if @start_date == @end_date
-          @shows = Performance.shows_on(@start_date)
-        elsif @start_date > @end_date
+      if @search_start_date.present? && @search_end_date.present?
+        @fringe_start_date = (params[:filter][:start_date] + " 6:00").to_datetime
+        @fringe_end_date = ("#{@search_end_date.day + 1} Aug 2020 5:59").to_datetime
+        if @search_start_date > @search_end_date
           @shows = Show.all
           flash[:notice] = "Uh oh! Please make sure your start date comes before your end date!"
         else
-          @shows = Performance.shows_between(@start_date, @end_date)
+          @shows = Performance.shows_between(@fringe_start_date, @fringe_end_date)
         end
-      elsif params[:filter][:start_date].present? || params[:filter][:end_date].present?
-        @start_date.nil? ? date = @end_date : date = @start_date
-        @shows = Performance.shows_on(date)
+      elsif @search_start_date.present? || @search_end_date.present?
+        if @search_start_date.nil?
+          @fringe_start_date = (params[:filter][:end_date] + " 6:00").to_datetime
+          @fringe_end_date = ("#{@search_end_date.day + 1} Aug 2020 5:59").to_datetime
+        else
+          @fringe_start_date = (params[:filter][:start_date] + " 6:00").to_datetime
+          @fringe_end_date = ("#{@search_start_date.day + 1} Aug 2020 5:59").to_datetime
+        end
+        @shows = Performance.shows_between(@fringe_start_date, @fringe_end_date)
       end
 
       if params[:filter][:genre].present?
