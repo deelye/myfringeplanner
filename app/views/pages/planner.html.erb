@@ -171,6 +171,7 @@
     localStorage['scroll'] = window.scrollY;
   });
 
+  // prevents background scrolling once planner scroll overflows above or below
   var scrollable = document.querySelector('.planner-day');
 
   scrollable.addEventListener('wheel', function(event) {
@@ -184,5 +185,6 @@
     else if (visibleHeight + scrollTop === contentHeight && deltaY > 0)
       event.preventDefault();
   });
+
 </script>
 
