@@ -5,10 +5,10 @@ class Planner < ApplicationRecord
   before_save :set_top_and_duration
 
   def set_top_and_duration
-    dur_in_5 = (self.performance.end - self.performance.start) / 300
-    top_in_5 = (self.performance.start - (self.performance.start.beginning_of_day + (3600 * 10))) / 300
-    self.duration = ((dur_in_5 / 168) * 100).round(2).to_s + "%"
-    self.top = ((top_in_5 / 168) * 100).round(2).to_s + "%"
+    dur_in_5 = (self.performance.end - self.performance.start) / 300 # how many 5min slots i.e. 1hr = 12 slots
+    top_in_5 = (self.performance.start - (self.performance.start.beginning_of_day + (3600 * 6))) / 300 # how many 5min slots between Start and 10am
+    self.duration = ((dur_in_5 / 288) * 100).round(2).to_s + "%" # 168 slots from 10am-11pm; what percentage taken by show
+    self.top = ((top_in_5 / 288) * 100).round(2).to_s + "%" # what percentage off the top show starts
   end
 
   def planner_clash(planners, planner)
