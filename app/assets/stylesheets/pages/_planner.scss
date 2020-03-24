@@ -57,7 +57,7 @@
 }
 
 .day-calendar {
-  height: 1462px;
+  height: 2432px;
   width: 350px;
   margin-top: 8px;
   background-color: white;
@@ -139,14 +139,13 @@
 }
 
 .planner-times {
-  height: 1470px;
   width: 50px;
   border-right: dashed 1px $blue;
   background-color: white;
   color: black;
 
   p {
-    height: 105px;
+    height: 102px;
     margin: 0px;
     text-align: center;
   }
@@ -213,6 +212,7 @@
 
   img {
     width: 100px;
+    height: 100%;
     object-fit: cover;
     border-radius: 5px 0px 0px 5px;
   }
