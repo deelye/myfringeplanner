@@ -1,4 +1,4 @@
-<div class="planner-card <%= planner.planner_clash(@planners, planner) %>">
+<div class="plan planner-card <%= planner.planner_clash(@planners, planner) %>">
   <div class="planner-card-show-image">
     <% if @hand %>
       <%= image_tag(planner.performance.show.original_image, :alt => "#{planner.performance.show.artist}", height: planner.duration.to_f/100*1470) %>
