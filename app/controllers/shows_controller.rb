@@ -8,6 +8,7 @@ class ShowsController < ApplicationController
         if params[:filter][:start_date].present? && params[:filter][:end_date].present? && params[:filter][:start_date].to_datetime > params[:filter][:end_date].to_datetime
           flash[:notice] = "Uh oh! Please make sure your start date comes before the end date!"
         else
+          # should start time actually be midnight as early morning shows on X actually play on X+1 and need to be included in X results?
           @fringe_start_date = params[:filter][:start_date].present? ? params[:filter][:start_date].to_datetime + 0.25 : params[:filter][:end_date].to_datetime + 0.25
           @fringe_end_date = params[:filter][:end_date].present? ? (params[:filter][:end_date] + " 05:59").to_datetime + 1 : (params[:filter][:start_date] + " 05:59").to_datetime + 1
           @shows = Performance.shows_between(@fringe_start_date, @fringe_end_date)
