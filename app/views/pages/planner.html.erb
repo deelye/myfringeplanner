@@ -170,5 +170,19 @@
   window.addEventListener('scroll', () => {
     localStorage['scroll'] = window.scrollY;
   });
+
+  var scrollable = document.querySelector('.planner-day');
+
+  scrollable.addEventListener('wheel', function(event) {
+    var deltaY = event.deltaY;
+    var contentHeight = scrollable.scrollHeight;
+    var visibleHeight = scrollable.offsetHeight;
+    var scrollTop = scrollable.scrollTop;
+
+    if (scrollTop === 0 && deltaY < 0)
+      event.preventDefault();
+    else if (visibleHeight + scrollTop === contentHeight && deltaY > 0)
+      event.preventDefault();
+  });
 </script>
 
