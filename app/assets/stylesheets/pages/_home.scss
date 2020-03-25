@@ -52,6 +52,10 @@
 
 .home-special-font {
   color: $blue;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .arrow {
