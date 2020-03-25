@@ -172,8 +172,7 @@
     localStorage['scroll'] = window.scrollY;
   });
 
-  var scrollable = document.querySelector('.planner-day');
-  $("scrollable").scrollTop(800);
+  $("div.planner-day").scrollTop(800);
 
   scrollable.addEventListener('wheel', function(event) {
     var deltaY = event.deltaY;
