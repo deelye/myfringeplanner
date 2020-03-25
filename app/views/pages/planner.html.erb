@@ -164,7 +164,6 @@
 </div>
 
 <script type="text/javascript">
-
   if (localStorage['scroll']) {
     window.scroll({ top: localStorage['scroll'] })
   }
@@ -172,8 +171,9 @@
     localStorage['scroll'] = window.scrollY;
   });
 
-  $("div.planner-day").scrollTop(800);
+  // $("div.planner-day").scrollTop(800);
 
+  var scrollable = document.querySelector(".planner-day");
   scrollable.addEventListener('wheel', function(event) {
     var deltaY = event.deltaY;
     var contentHeight = scrollable.scrollHeight;
@@ -185,6 +185,16 @@
     else if (visibleHeight + scrollTop === contentHeight && deltaY > 0)
       event.preventDefault();
   });
+
+  scrollable.addEventListener('scroll',function() {
+    //When scroll change, you save it on localStorage.
+    localStorage.setItem('scrollPosition',scrollable.scrollTop);
+  },false);
+
+  window.addEventListener('load',function() {
+    if(localStorage.getItem('scrollPosition') !== null)
+      $("div.planner-day").scrollTop(localStorage.getItem('scrollPosition'));
+  },false);
 
 
 </script>
