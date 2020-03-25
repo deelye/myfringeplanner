@@ -142,7 +142,7 @@
   width: 50px;
   border-right: dashed 1px $blue;
   background-color: white;
-  color: black;
+  color: $gray;
 
   p {
     height: 102px;
@@ -182,7 +182,7 @@
 
   i {
     padding-right: 5px;
-    color: black;
+    color: $gray;
   }
 }
 
@@ -197,7 +197,7 @@
   border-radius: 3px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
   font-size: 14px;
-  color: black;
+  color: $gray;
   line-height: 100%;
 
   i {

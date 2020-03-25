@@ -82,7 +82,7 @@ p .fringe-link {
 
 .gmaps-link {
   text-decoration: none;
-  color: black;
+  color: $gray;
 }
 
 .gmaps-link:hover {
@@ -106,7 +106,7 @@ p .fringe-link {
 .show-title {
   text-decoration: none;
   font-size: 3.1rem;
-  color: black;
+  color: $gray;
 }
 
 .show-title:hover {
