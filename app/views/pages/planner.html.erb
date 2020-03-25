@@ -163,7 +163,7 @@
   </div>
 </div>
 
-<script>
+<script type="text/javascript">
 
   if (localStorage['scroll']) {
     window.scroll({ top: localStorage['scroll'] })
@@ -173,6 +173,7 @@
   });
 
   var scrollable = document.querySelector('.planner-day');
+  $("scrollable").scrollTop(800);
 
   scrollable.addEventListener('wheel', function(event) {
     var deltaY = event.deltaY;
@@ -186,5 +187,5 @@
       event.preventDefault();
   });
 
-</script>
 
+</script>
