@@ -164,6 +164,7 @@
 </div>
 
 <script>
+
   if (localStorage['scroll']) {
     window.scroll({ top: localStorage['scroll'] })
   }
@@ -171,7 +172,6 @@
     localStorage['scroll'] = window.scrollY;
   });
 
-  // prevents background scrolling once planner scroll overflows above or below
   var scrollable = document.querySelector('.planner-day');
 
   scrollable.addEventListener('wheel', function(event) {
