@@ -6,9 +6,9 @@ class Planner < ApplicationRecord
 
   def set_top_and_duration
     dur_in_5 = (self.performance.end - self.performance.start) / 300
-    top_in_5 = (self.performance.start - (self.performance.start.beginning_of_day + (3600 * 10))) / 300
-    self.duration = ((dur_in_5 / 168) * 100).round(2).to_s + "%"
-    self.top = ((top_in_5 / 168) * 100).round(2).to_s + "%"
+    top_in_5 = (self.performance.start - (self.performance.start.beginning_of_day + (3600 * 6))) / 300
+    self.duration = ((dur_in_5 / 288) * 100).round(2).to_s + "%"
+    self.top = ((top_in_5 / 288) * 100).round(2).to_s + "%"
   end
 
   def planner_clash(planners, planner)
