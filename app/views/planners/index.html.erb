@@ -4,19 +4,25 @@
     <p>Hmmm... we don't see any shows in your planner. Head over to your <%= link_to "planner page", planner_path, class: "btn-pink" %> to add items from your shortlist into your Fringe Planner.</p>
   <% else %>
     <p>Click a calendar icon to export the Fringe event to your personal calendar. </p>
+
+
+
     <div class="planner-index-container">
       <% @planners.each_with_index do |planner, index| %>
-        <% if @planners.first == planner || planner.date.day != @planners[index - 1].date.day %>
+        <% if @planners.first == planner ||
+              (planner.performance.start > planner.day.to_datetime + 0.25 && @planners[index-1].performance.start < planner.day.to_datetime + 0.25) %>
           <div class="planner-index-column">
-            <%= link_to "#{planner.date.strftime('%A %e %B')}", "/planner?day=#{planner.date.strftime('%A')}+#{planner.date.strftime('%e')}+#{planner.date.strftime('%B')}", class: "planners-planner-link" %>
-              <!-- <h5><%= planner.date.strftime('%A %e %B')%></h5> -->
-            <%# end %>
+            <%= link_to "#{planner.day.strftime('%A %e %B')}", "/planner?day=#{planner.day.strftime('%A')}+#{planner.day.strftime('%e')}+#{planner.day.strftime('%B')}", class: "planners-planner-link" %>
         <% end %>
             <%= render 'pages/planner', planner: planner %>
-        <% if @planners[index + 1].nil? || planner.date.day != @planners[index + 1].date.day %>
+        <% if @planners[index + 1].nil? ||
+              (planner.performance.start < planner.day.to_datetime + 1.25 && @planners[index+1].performance.start > planner.day.to_datetime + 1.25) %>
           </div>
         <% end %>
       <% end %>
     </div>
+
+
+
   <% end %>
 </div>
