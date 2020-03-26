@@ -44,8 +44,8 @@ class FringeJob < ApplicationJob
       show_hash[:original_image] = "https:" + show['images'].values.first['versions']['original']['url']
       show_hash[:thumb_image] = "https:" + show['images'].values.first['versions']['thumb-100']['url']
     else
-      show_hash[:original_image] = 'my-fringe-planner-logo.png'
-      show_hash[:thumb_image] = 'my-fringe-planner-logo.png'
+      show_hash[:original_image] = 'logo.png'
+      show_hash[:thumb_image] = 'logo.png'
     end
     show_hash
   end
