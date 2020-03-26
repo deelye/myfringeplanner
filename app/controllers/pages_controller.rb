@@ -16,7 +16,14 @@ class PagesController < ApplicationController
     end
 
     @planners = current_user.planners.map { |planner| planner.day == @date ? planner : false }.reject { |performance| performance == false }
-    @performances = current_user.shortlist_events.select { |performance| performance.start.day == @day }
+    if @date.nil?
+      @performances = current_user.shortlist_events.select { |performance| performance.start.day == @day }
+    else
+      @performances = current_user.shortlist_events.select do |performance|
+        performance.start >= @date + 0.25 && performance.start < @date + 1.25
+      end
+    end
+
     @performances.sort_by! { |performance| performance.start }
 
     @markers = @planners.map do |booking|

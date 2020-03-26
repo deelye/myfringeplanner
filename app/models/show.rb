@@ -82,5 +82,33 @@ class Show < ApplicationRecord
       return "#{h.strip}h #{m}min"
     end
   end
+
+  def dates
+    dates = self.performances.map do |performance|
+      if performance.start.to_datetime < performance.start.to_datetime.beginning_of_day + 0.25
+      performance.start.day - 1
+      else
+        performance.start.day
+      end
+    end.uniq
+
+    condensed_dates = "Aug "
+    dates.each_with_index do |date, index|
+      if index == dates.count - 1
+        condensed_dates += date.to_s
+      elsif date != dates[index - 1] + 1 && date == dates[index + 1] - 1
+        condensed_dates += date.to_s + '-'
+      elsif date != dates[index - 1] + 1 && date != dates[index + 1] - 1 ||
+            date == dates[index - 1] + 1 && date != dates[index + 1] - 1
+        condensed_dates += date.to_s + ', '
+      end
+    end
+
+    return condensed_dates
+  end
+
+  def time_warning
+    return "NOTE: Late night performance - For the purposes of listings, each day begins at 5am e.g. a performance listed as 2am Monday refers to a performance starting in the early hours of Tuesday morning."
+  end
 end
 
