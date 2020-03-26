@@ -43,7 +43,7 @@ class FringeJob < ApplicationJob
     if show['images'].is_a?(Hash)
       show_hash[:original_image] = "https:" + show['images'].values.first['versions']['original']['url']
       show_hash[:thumb_image] = "https:" + show['images'].values.first['versions']['thumb-100']['url']
-    else
+    elsif show['images'] == []
       show_hash[:original_image] = 'logo.png'
       show_hash[:thumb_image] = 'logo.png'
     end
