@@ -84,7 +84,14 @@ class Show < ApplicationRecord
   end
 
   def dates
-    dates = self.performances.map { |performance| performance.start.day }.uniq
+    dates = self.performances.map do |performance|
+      if performance.start.to_datetime < performance.start.to_datetime.beginning_of_day + 0.25
+      performance.start.day - 1
+      else
+        performance.start.day
+      end
+    end.uniq
+
     condensed_dates = "Aug "
 
     dates.each_with_index do |date, index|
