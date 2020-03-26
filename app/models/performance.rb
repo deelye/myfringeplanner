@@ -19,10 +19,6 @@ class Performance < ApplicationRecord
 
   def shortlist_clash(planners, performance)
     planners.each do |planner|
-      # if (performance.start == planner.performance.start)
-      #   return "planner-clash"
-      # end
-
       if  (performance.start >= planner.performance.start && performance.start <= planner.performance.end) ||
           (performance.end >= planner.performance.start && performance.end <= planner.performance.end)
         return "planner-clash"
