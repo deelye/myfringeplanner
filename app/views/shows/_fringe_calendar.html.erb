@@ -16,8 +16,12 @@
     </thead>
     <tbody class="calendar-body">
       <% days = @show.performances.map do |performance| %>
-        <% performance.start.day %>
-      <% end %>
+        <% if performance.start.to_datetime < performance.start.to_datetime.beginning_of_day + 0.25 %>
+          <% performance.start.day - 1 %>
+        <% else %>
+          <% performance.start.day %>
+        <% end %>
+      <% end.uniq %>
       <% date_range.each_slice(7) do |week| %>
         <%= content_tag :tr, class: calendar.tr_classes_for(week) do %>
           <% week.each do |day| %>

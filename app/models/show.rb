@@ -93,7 +93,6 @@ class Show < ApplicationRecord
     end.uniq
 
     condensed_dates = "Aug "
-
     dates.each_with_index do |date, index|
       if index == dates.count - 1
         condensed_dates += date.to_s
