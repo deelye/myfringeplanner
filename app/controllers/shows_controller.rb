@@ -4,22 +4,16 @@ class ShowsController < ApplicationController
 
   def index
     if params[:filter]
-      @shows = Show.all
-      @start_date = params[:filter][:start_date].to_datetime
-      @end_date = params[:filter][:end_date].to_datetime
-
-      if params[:filter][:start_date].present? && params[:filter][:end_date].present?
-        if @start_date == @end_date
-          @shows = Performance.shows_on(@start_date)
-        elsif @start_date > @end_date
-          @shows = Show.all
+      if params[:filter][:start_date].present? || params[:filter][:end_date].present?
+        if params[:filter][:start_date].present? && params[:filter][:end_date].present? && params[:filter][:start_date].to_datetime > params[:filter][:end_date].to_datetime
           flash[:notice] = "Uh oh! Please make sure your start date comes before your end date!"
         else
-          @shows = Performance.shows_between(@start_date, @end_date)
+          @fringe_start_date = params[:filter][:start_date].present? ? params[:filter][:start_date].to_datetime + 0.25 : params[:filter][:end_date].to_datetime + 0.25
+          @fringe_end_date = params[:filter][:end_date].present? ? (params[:filter][:end_date] + " 05:59").to_datetime + 1 : (params[:filter][:start_date] + " 05:59").to_datetime + 1
+          @shows = Performance.shows_between(@fringe_start_date, @fringe_end_date)
         end
-      elsif params[:filter][:start_date].present? || params[:filter][:end_date].present?
-        @start_date.nil? ? date = @end_date : date = @start_date
-        @shows = Performance.shows_on(date)
+      else
+        @shows = Show.all
       end
 
       if params[:filter][:genre].present?
