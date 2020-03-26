@@ -72,6 +72,13 @@ class ShowsController < ApplicationController
       lng: @show.venue.longitude,
       infoWindow: render_to_string(partial: "info_window", locals: { show: @show })
     }
+
+    @show.performances.each do |performance|
+      if performance.start.hour >= 0 && performance.start.hour < 6
+        flash[:notice] = "#{@show.time_warning}"
+        break
+      end
+    end
   end
 
   private
