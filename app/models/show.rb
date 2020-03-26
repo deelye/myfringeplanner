@@ -87,25 +87,14 @@ class Show < ApplicationRecord
     dates = self.performances.map { |performance| performance.start.day }.uniq
     condensed_dates = "Aug "
 
-    # 1, 2, 4, 5, 6, 8, 10, 11
     dates.each_with_index do |date, index|
-      # if date == dates[index - 1] + 1 && date == dates[index + 1] - 1
       if index == dates.count - 1
         condensed_dates += date.to_s
-      else
-        # 5, 7, 8
-        if date != dates[index - 1] + 1 && date == dates[index + 1] - 1
-          # 7-
-          condensed_dates += date.to_s + '-'
-        # 5, 7, 9
-        elsif date != dates[index - 1] + 1 && date != dates[index + 1] - 1
-          # 7,
-          condensed_dates += date.to_s + ', '
-        # 6, 7, 9
-        elsif date == dates[index - 1] + 1 && date != dates[index + 1] - 1
-          #  7,
-          condensed_dates += date.to_s + ', '
-        end
+      elsif date != dates[index - 1] + 1 && date == dates[index + 1] - 1
+        condensed_dates += date.to_s + '-'
+      elsif date != dates[index - 1] + 1 && date != dates[index + 1] - 1 ||
+            date == dates[index - 1] + 1 && date != dates[index + 1] - 1
+        condensed_dates += date.to_s + ', '
       end
     end
 
