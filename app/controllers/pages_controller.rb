@@ -16,7 +16,14 @@ class PagesController < ApplicationController
     end
 
     @planners = current_user.planners.map { |planner| planner.day == @date ? planner : false }.reject { |performance| performance == false }
-    @performances = current_user.shortlist_events.select { |performance| performance.start.day == @day }
+
+    # @performances = current_user.shortlist_events.select { |performance| performance.start.day == @day }
+    # need to account for Fringe Time
+    @performances = current_user.shortlist_events.select do |performance|
+      # performance starts between 6am @date and 6am @date + 1
+      performance.start >= @date + 0.25 && performance.start < @date + 1.25
+    end
+
     @performances.sort_by! { |performance| performance.start }
 
     @markers = @planners.map do |booking|
