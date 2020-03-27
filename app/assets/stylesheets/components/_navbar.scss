@@ -152,9 +152,22 @@
 }
 
 .dropdown-menu {
+  // width: 140px !important;
   background-color: $off-white;
   border: none;
+  border-radius: 5px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+  margin: 0px !important;
+  padding: 7px 0px 0px 0px;
+}
+
+.dropdown-item {
+  display: flex;
+  height: 40px;
+  // width: 120px;
+  margin: 0px !important;
+  padding: 0px 20px;
+  align-items: center;
 }
 
 .dropdown-item:hover{
