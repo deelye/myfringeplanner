@@ -91,7 +91,10 @@ class Show < ApplicationRecord
         performance.start.day
       end
     end.uniq
+  end
 
+  def dates_string
+    dates = self.dates
     condensed_dates = "Aug "
     dates.each_with_index do |date, index|
       if index == dates.count - 1
@@ -103,8 +106,11 @@ class Show < ApplicationRecord
         condensed_dates += date.to_s + ', '
       end
     end
-
     return condensed_dates
+  end
+
+  def performance?(days, day)
+    return days.include?(day.day) ? "calendar-show-day" : "calendar-no-show-day"
   end
 
   def time_warning

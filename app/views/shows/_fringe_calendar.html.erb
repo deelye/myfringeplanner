@@ -15,32 +15,15 @@
       </tr>
     </thead>
     <tbody class="calendar-body">
-      <% days = @show.performances.map do |performance| %>
-        <% if performance.start.to_datetime < performance.start.to_datetime.beginning_of_day + 0.25 %>
-          <% performance.start.day - 1 %>
-        <% else %>
-          <% performance.start.day %>
-        <% end %>
-      <% end.uniq %>
+      <% days = @show.dates %>
       <% date_range.each_slice(7) do |week| %>
         <%= content_tag :tr, class: calendar.tr_classes_for(week) do %>
           <% week.each do |day| %>
-            <!-- NOT DRY!!! -->
-            <% if days.include?(day.day) %>
-              <%= content_tag :td, class: calendar.td_classes_for(day), class: "calendar-show-day" do %>
-                <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(block) %>
-                  <% capture_haml(day, sorted_events.fetch(day, []), &block) %>
-                <% else %>
-                  <% block.call day, sorted_events.fetch(day, []) %>
-                <% end %>
-              <% end %>
-            <% else %>
-              <%= content_tag :td, class: calendar.td_classes_for(day), class: "calendar-no-show-day" do %>
-                <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(block) %>
-                  <% capture_haml(day, sorted_events.fetch(day, []), &block) %>
-                <% else %>
-                  <% block.call day, sorted_events.fetch(day, []) %>
-                <% end %>
+            <%= content_tag :td, class: calendar.td_classes_for(day), class: "#{@show.performance?(days, day)}" do %>
+              <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(block) %>
+                <% capture_haml(day, sorted_events.fetch(day, []), &block) %>
+              <% else %>
+                <% block.call day, sorted_events.fetch(day, []) %>
               <% end %>
             <% end %>
           <% end %>
