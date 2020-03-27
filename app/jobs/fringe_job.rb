@@ -40,6 +40,7 @@ class FringeJob < ApplicationJob
       updated: show['updated'].to_datetime,
       twitter: show['twitter']
     }
+
     if show['images'].is_a?(Hash)
       show_hash[:original_image] = "https:" + show['images'].values.first['versions']['original']['url']
       show_hash[:thumb_image] = "https:" + show['images'].values.first['versions']['thumb-100']['url']
@@ -47,6 +48,7 @@ class FringeJob < ApplicationJob
       show_hash[:original_image] = 'logo.png'
       show_hash[:thumb_image] = 'logo.png'
     end
+
     show_hash
   end
 
