@@ -83,10 +83,10 @@ class Show < ApplicationRecord
     end
   end
 
-  def dates
+  def show_dates
     dates = self.performances.map do |performance|
       if performance.start.to_datetime < performance.start.to_datetime.beginning_of_day + 0.25
-      performance.start.day - 1
+        performance.start.day - 1
       else
         performance.start.day
       end
@@ -102,11 +102,42 @@ class Show < ApplicationRecord
       elsif date != dates[index - 1] + 1 && date == dates[index + 1] - 1
         condensed_dates += date.to_s + '-'
       elsif date != dates[index - 1] + 1 && date != dates[index + 1] - 1 ||
-            date == dates[index - 1] + 1 && date != dates[index + 1] - 1
+        date == dates[index - 1] + 1 && date != dates[index + 1] - 1
         condensed_dates += date.to_s + ', '
       end
     end
     return condensed_dates
+  end
+
+  def show_times
+    show_times = self.performances.map do |performance|
+      performance.start.time
+    end
+
+    times = []
+    dates = self.show_dates
+    dates.each do |date|
+      times_string = []
+      show_times.each do |show_time|
+        if show_time >= Time.new(Time.now.year, 8, date).to_datetime + 0.25 && show_time < Time.new(Time.now.year, 8, date).to_datetime + 1.25
+          times_string << show_time.strftime("%k:%M")
+        end
+      end
+      times << times_string.join(", ")
+    end
+    return times
+  end
+
+  def show_dates_times
+    days = self.show_dates
+    times = self.show_times
+
+    dates_times = []
+    days.each_with_index do |day, index|
+      dates_times << [day.to_s, times[index]]
+    end
+
+    return dates_times
   end
 
   def performance?(days, day)
