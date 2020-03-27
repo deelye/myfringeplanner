@@ -1,3 +1,12 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  vertical-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 0px !important;
+}
+
 .form-user {
   width: 50%;
   justify-content: center;
