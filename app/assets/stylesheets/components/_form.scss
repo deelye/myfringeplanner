@@ -72,20 +72,21 @@ input::placeholder {
 }
 
 .form-link-forgot-pw {
+  border-radius: 5px;
   border-style: solid !important;
   border-color: $blue !important;
   background-color: white !important;
   color: $blue !important;
 
   &:hover {
-    border-color: $pink !important;
+    border-color: $dark-blue !important;
     background-color: white !important;
-    color: $pink !important;
+    color: $dark-blue !important;
   }
 }
 
 .form-sign-up:hover {
-  color: $pink;
+  color: $dark-blue;
   text-decoration: none;
 }
 

@@ -1,7 +1,7 @@
 <div class="body-container">
   <h1>MY FRINGE <%= Time.now.year %></h1>
   <% if current_user.planners.first.nil? %>
-    <p>Hmmm... we don't see any shows in your planner. Head over to your <%= link_to "planner page", planner_path, class: "btn-pink" %> to add items from your shortlist into your Fringe Planner.</p>
+    <p>Hmmm... we don't see any shows in your planner. Head over to your <%= link_to "planner page", planner_path, class: "planners-shows-link" %> to add items from your shortlist into your Fringe Planner.</p>
   <% else %>
     <p><%= current_user.planners.first.performance.show.time_warning %></p>
     <p>Click a calendar icon to export the Fringe event to your personal calendar. </p>
