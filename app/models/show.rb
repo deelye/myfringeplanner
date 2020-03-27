@@ -106,7 +106,6 @@ class Show < ApplicationRecord
         condensed_dates += date.to_s + ', '
       end
     end
-
     return condensed_dates
   end
 
