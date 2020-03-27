@@ -110,6 +110,10 @@ class Show < ApplicationRecord
     return condensed_dates
   end
 
+  def performance?(days, day)
+    return days.include?(day.day) ? "calendar-show-day" : "calendar-no-show-day"
+  end
+
   def time_warning
     return "NOTE: Late night performance - For the purposes of listings, each day begins at 5am e.g. a performance listed as 2am Monday refers to a performance starting in the early hours of Tuesday morning."
   end
