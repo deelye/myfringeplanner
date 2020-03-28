@@ -15,16 +15,13 @@
       </tr>
     </thead>
     <tbody class="calendar-body">
-      <% days = @show.dates %>
+      <% days = @show.show_dates %>
+      <% combo = @show.show_dates_times %>
       <% date_range.each_slice(7) do |week| %>
         <%= content_tag :tr, class: calendar.tr_classes_for(week) do %>
           <% week.each do |day| %>
             <%= content_tag :td, class: calendar.td_classes_for(day), class: "#{@show.performance?(days, day)}" do %>
-              <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(block) %>
-                <% capture_haml(day, sorted_events.fetch(day, []), &block) %>
-              <% else %>
-                <% block.call day, sorted_events.fetch(day, []) %>
-              <% end %>
+              <% block.call day, sorted_events.fetch(day, []) %>
             <% end %>
           <% end %>
         <% end %>
