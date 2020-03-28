@@ -21,11 +21,11 @@
         <%= content_tag :tr, class: calendar.tr_classes_for(week) do %>
           <% week.each do |day| %>
             <%= content_tag :td, class: calendar.td_classes_for(day), class: @show.show_performance?(days,day) do %>
-              <div style="display: flex; justify-content: center">
-                <span class="<%= @show.show_date?(days, day) %>">
+              <div class="calendar-date-time-container">
+                <span class="calendar-show-date">
                   <%= day.day %>
                 </span>
-                <span class="<%= @show.show_time?(days, day) %>">
+                <span class="calendar-show-time">
                   <%= combo[day.day] %>
                 </span>
               </div>
