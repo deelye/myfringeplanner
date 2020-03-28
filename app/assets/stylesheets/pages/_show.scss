@@ -146,12 +146,15 @@ p .fringe-link {
 }
 
 .show-table {
-  color: white;
-  width: 100%;
+  table-layout: fixed;
+  width: 250px;
   height: -webkit-fill-available;
+  color: white;
 
   td {
     border: white solid 1px;
+    overflow: hidden;
+    white-space: nowrap;
   }
 }
 
@@ -183,6 +186,42 @@ p .fringe-link {
 
 .calendar-show-day {
   background-color: $blue;
+  transition-duration: 0.5s;
+
+  &:hover {
+    position: absolute;
+    z-index: 2;
+    transform-origin: center;
+    transform: scale(2.5);
+    margin-top: 5px;
+    width: auto;
+    height: auto;
+    border: 1px solid $dark-blue;
+    background-color: white;
+    padding: 3px 5px;
+    font-size: 10px;
+  }
+
+  .calendar-date-time-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .calendar-show-date {
+    position: absolute;
+  }
+
+  .calendar-show-time {
+    position: relative;
+    top: 0;
+    left: 0;
+    opacity: 0;
+
+    &:hover {
+      opacity: 1;
+      color: $dark-blue;
+    }
+  }
 }
 
 .calendar-no-show-day {
