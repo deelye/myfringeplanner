@@ -21,9 +21,14 @@
         <%= content_tag :tr, class: calendar.tr_classes_for(week) do %>
           <% week.each do |day| %>
             <%= content_tag :td, class: calendar.td_classes_for(day), class: @show.performance?(days,day) do %>
-
+              <div>
+                <span class="calendar-show-date">
                   <% block.call day, sorted_events.fetch(day, []) %>
-
+                </span>
+                <span class="calendar-show-time">
+                  <%= combo[day.day] %>
+                </span>
+              </div>
             <% end %>
           <% end %>
         <% end %>
