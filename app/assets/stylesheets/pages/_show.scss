@@ -187,17 +187,18 @@ p .fringe-link {
 .calendar-show-day {
   background-color: $blue;
   // transition-property: width;
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
 
   &:hover {
     transform-origin: center;
     // transition-property: width;
     // transition-property: height;
     transform: scale(2);
-    width: 107px;
+    width: auto;
+    padding: 5px 5px;
     height: 32px;
     background-color: white;
-    color: $dark-blue;
+    // color: $dark-blue;
     position: absolute;
     padding-top: 7px;
     border: 1px solid $dark-blue;
@@ -211,7 +212,7 @@ p .fringe-link {
   opacity: 1;
 
   &:hover {
-    opacity: 0;
+    color: white;
   }
 }
 
@@ -227,6 +228,7 @@ p .fringe-link {
     // font-size: 10px !important;
     // visibility: visible;
     opacity: 1;
+    color: $dark-blue;
   }
 }
 
