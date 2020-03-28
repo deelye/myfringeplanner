@@ -196,11 +196,11 @@ p .fringe-link {
     transform: scale(2);
     width: auto;
     padding: 5px 5px;
-    height: 32px;
+    height: auto;
     background-color: white;
     // color: $dark-blue;
     position: absolute;
-    padding-top: 7px;
+    // padding-top: 7px;
     border: 1px solid $dark-blue;
     font-size: 10px !important;
     z-index: 2;
