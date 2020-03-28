@@ -146,9 +146,9 @@ p .fringe-link {
 }
 
 .show-table {
-  color: white;
+  table-layout: fixed;
   width: 100%;
-  height: -webkit-fill-available;
+  color: white;
 
   td {
     border: white solid 1px;
