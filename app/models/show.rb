@@ -94,7 +94,7 @@ class Show < ApplicationRecord
   end
 
   def dates_string
-    dates = self.dates
+    dates = self.show_dates
     condensed_dates = "Aug "
     dates.each_with_index do |date, index|
       if index == dates.count - 1
