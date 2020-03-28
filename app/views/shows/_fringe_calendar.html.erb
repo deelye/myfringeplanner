@@ -20,12 +20,12 @@
       <% date_range.each_slice(7) do |week| %>
         <%= content_tag :tr, class: calendar.tr_classes_for(week) do %>
           <% week.each do |day| %>
-            <%= content_tag :td, class: calendar.td_classes_for(day), class: @show.performance?(days,day) do %>
-              <div>
-                <span class="calendar-show-date">
+            <%= content_tag :td, class: calendar.td_classes_for(day), class: @show.show_performance?(days,day) do %>
+              <div style="display: flex; justify-content: center">
+                <span class="<%= @show.show_date?(days, day) %>">
                   <%= day.day %>
                 </span>
-                <span class="calendar-show-time">
+                <span class="<%= @show.show_time?(days, day) %>">
                   <%= combo[day.day] %>
                 </span>
               </div>

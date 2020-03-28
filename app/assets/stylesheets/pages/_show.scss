@@ -153,6 +153,8 @@ p .fringe-link {
 
   td {
     border: white solid 1px;
+    overflow: hidden;
+    white-space: nowrap;
   }
 }
 
@@ -200,21 +202,31 @@ p .fringe-link {
     padding-top: 7px;
     border: 1px solid $dark-blue;
     font-size: 10px !important;
+    z-index: 2;
   }
 }
 
 .calendar-show-date {
+  position: absolute;
+  opacity: 1;
 
+  &:hover {
+    opacity: 0;
+  }
 }
 
 .calendar-show-time {
   // font-size: 0px;
   // display: none;
+  position: relative;
+  top: 0;
+  left: 0;
+  opacity: 0;
 
   &:hover {
     // font-size: 10px !important;
     // visibility: visible;
-
+    opacity: 1;
   }
 }
 

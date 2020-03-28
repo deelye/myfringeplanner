@@ -140,8 +140,16 @@ class Show < ApplicationRecord
     return dates_times
   end
 
-  def performance?(days, day)
+  def show_performance?(days, day)
     return days.include?(day.day) ? "calendar-show-day" : "calendar-no-show-day"
+  end
+
+  def show_date?(days, day)
+    return days.include?(day.day) ? "calendar-show-date" : ""
+  end
+
+  def show_time?(days, day)
+    return days.include?(day.day) ? "calendar-show-time" : ""
   end
 
   def time_warning
