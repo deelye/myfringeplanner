@@ -197,8 +197,9 @@ p .fringe-link {
     background-color: white;
     color: $dark-blue;
     position: absolute;
-    padding-top: 2px;
-    border: 1px solid $dark-blue
+    padding-top: 7px;
+    border: 1px solid $dark-blue;
+    font-size: 10px;
   }
 }
 
