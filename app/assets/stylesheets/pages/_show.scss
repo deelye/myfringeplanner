@@ -190,7 +190,7 @@ p .fringe-link {
   &:hover {
     background-color: $white;
     transition: 0.3s;
-    transform: scale(1.5);
+    // transform: scale(1.5);
   }
 }
 
@@ -210,11 +210,15 @@ p .fringe-link {
   bottom: 0;
   left: 0;
   right: 0;
+  height: 30px;
 
   &:hover {
     opacity: 1;
     color: $dark-blue;
     z-index: 2;
+    max-height: 40px;
+    width: 60px;
+    transform: scale(1.5);
   }
 }
 
