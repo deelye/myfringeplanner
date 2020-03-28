@@ -20,8 +20,10 @@
       <% date_range.each_slice(7) do |week| %>
         <%= content_tag :tr, class: calendar.tr_classes_for(week) do %>
           <% week.each do |day| %>
-            <%= content_tag :td, class: calendar.td_classes_for(day), class: "#{@show.performance?(days, day)}" do %>
-              <% block.call day, sorted_events.fetch(day, []) %>
+            <%= content_tag :td, class: calendar.td_classes_for(day), class: @show.performance?(days,day) do %>
+
+                  <% block.call day, sorted_events.fetch(day, []) %>
+
             <% end %>
           <% end %>
         <% end %>

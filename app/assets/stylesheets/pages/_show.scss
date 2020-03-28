@@ -147,7 +147,8 @@ p .fringe-link {
 
 .show-table {
   table-layout: fixed;
-  width: 100%;
+  width: 250px;
+  height: -webkit-fill-available;
   color: white;
 
   td {
@@ -183,6 +184,22 @@ p .fringe-link {
 
 .calendar-show-day {
   background-color: $blue;
+  // transition-property: width;
+  transition-duration: 0.5s;
+
+  &:hover {
+    transform-origin: center;
+    // transition-property: width;
+    // transition-property: height;
+    transform: scale(2);
+    width: 107px;
+    height: 32px;
+    background-color: white;
+    color: $dark-blue;
+    position: absolute;
+    padding-top: 2px;
+    border: 1px solid $dark-blue
+  }
 }
 
 .calendar-no-show-day {
