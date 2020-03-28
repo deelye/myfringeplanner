@@ -134,7 +134,7 @@ class Show < ApplicationRecord
 
     dates_times = Hash.new
     days.each_with_index do |day, index|
-      dates_times[day.to_s] = times[index]
+      dates_times[day] = times[index]
     end
 
     return dates_times

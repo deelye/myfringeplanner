@@ -142,6 +142,7 @@ p .fringe-link {
   td {
     padding: 4px 0px;
     vertical-align: middle;
+    width: 32px;
   }
 }
 
@@ -186,7 +187,8 @@ p .fringe-link {
 
   &:hover {
     background-color: $white;
-    // opacity: 0;
+    transition: 0.3s;
+    transform: scale(1.5);
   }
 }
 
@@ -197,10 +199,6 @@ p .fringe-link {
 
 .calendar-show-date {
   position: absolute;
-
-  &:hover {
-    // opacity: 0;
-  }
 }
 
 .calendar-show-time {
@@ -213,7 +211,7 @@ p .fringe-link {
 
   &:hover {
     opacity: 1;
-    color: red;
+    color: $dark-blue;
     z-index: 2;
   }
 }
