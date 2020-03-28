@@ -216,9 +216,11 @@ p .fringe-link {
     opacity: 1;
     color: $dark-blue;
     z-index: 2;
-    max-height: 40px;
-    width: 60px;
+    height: 50px;
+    max-width: 100% !important;
+    overflow: auto;
     transform: scale(1.5);
+    background-color: white;
   }
 }
 
