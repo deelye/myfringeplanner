@@ -17,7 +17,6 @@
     <tbody class="calendar-body">
       <% days = @show.show_dates %>
       <% combo = @show.show_dates_times %>
-      <% raise %>
       <% date_range.each_slice(7) do |week| %>
         <%= content_tag :tr, class: calendar.tr_classes_for(week) do %>
           <% week.each do |day| %>
