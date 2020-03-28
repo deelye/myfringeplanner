@@ -120,7 +120,7 @@ class Show < ApplicationRecord
       times_string = []
       show_times.each do |show_time|
         if show_time >= Time.new(Time.now.year, 8, date).to_datetime + 0.25 && show_time < Time.new(Time.now.year, 8, date).to_datetime + 1.25
-          times_string << show_time.strftime("%k:%M")
+          times_string << show_time.strftime("%H:%M")
         end
       end
       times << times_string.join(", ")
