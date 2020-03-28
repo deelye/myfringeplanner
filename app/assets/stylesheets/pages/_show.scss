@@ -147,9 +147,11 @@ p .fringe-link {
 }
 
 .show-table {
+  // width: 100%;
+  // height: -webkit-fill-available;
+  table-layout: fixed;
+  width: 250px;
   color: white;
-  width: 100%;
-  height: -webkit-fill-available;
 
   td {
     border: white solid 1px;
