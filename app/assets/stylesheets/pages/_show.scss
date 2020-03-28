@@ -178,11 +178,37 @@ p .fringe-link {
 
 .calendar-body {
   text-align: center;
-  background-color: $off-white;
+  background-color: $white;
 }
 
 .calendar-show-day {
   background-color: $blue;
+
+  &:hover {
+    background-color: $white;
+  }
+}
+
+.calendar-show-day-container {
+  display: flex;
+  justify-content: center;
+}
+
+.calendar-show-date {
+  position: absolute;
+}
+
+.calendar-show-time {
+  // opacity: 0;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  &:hover {
+    // opacity: 1;
+  }
 }
 
 .calendar-no-show-day {
