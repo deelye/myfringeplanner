@@ -186,6 +186,7 @@ p .fringe-link {
 
   &:hover {
     background-color: $white;
+    // opacity: 0;
   }
 }
 
@@ -196,10 +197,14 @@ p .fringe-link {
 
 .calendar-show-date {
   position: absolute;
+
+  &:hover {
+    // opacity: 0;
+  }
 }
 
 .calendar-show-time {
-  // opacity: 0;
+  opacity: 0;
   position: relative;
   top: 0;
   bottom: 0;
@@ -207,7 +212,9 @@ p .fringe-link {
   right: 0;
 
   &:hover {
-    // opacity: 1;
+    opacity: 1;
+    color: red;
+    z-index: 2;
   }
 }
 
