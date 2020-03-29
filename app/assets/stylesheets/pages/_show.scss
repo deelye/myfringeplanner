@@ -206,21 +206,22 @@ p .fringe-link {
   .calendar-date-time-container {
     display: flex;
     justify-content: center;
-  }
 
-  .calendar-show-date {
-    position: absolute;
-  }
+    .calendar-show-date {
+      position: absolute;
+    }
 
-  .calendar-show-time {
-    position: relative;
-    top: 0;
-    left: 0;
-    opacity: 0;
+    .calendar-show-time {
+      position: relative;
+      top: 0;
+      left: 0;
+      opacity: 0;
 
-    &:hover {
-      opacity: 1;
-      color: $dark-blue;
+      &:hover {
+        opacity: 1;
+        color: $dark-blue;
+        padding: 0px;
+      }
     }
   }
 }
