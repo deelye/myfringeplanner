@@ -192,14 +192,14 @@ p .fringe-link {
     position: absolute;
     z-index: 2;
     transform-origin: center;
-    transform: scale(2.5);
+    transform: scale(2.3);
     margin-top: 5px;
     width: auto;
     height: auto;
     border: 1px solid $dark-blue;
     border-radius: 5px;
     background-color: white;
-    padding: 3px 5px;
+    padding: 2px 5px;
     font-size: 10px;
   }
 
@@ -220,7 +220,6 @@ p .fringe-link {
       &:hover {
         opacity: 1;
         color: $dark-blue;
-        padding: 0px;
       }
     }
   }
