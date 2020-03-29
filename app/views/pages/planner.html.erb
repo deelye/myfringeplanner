@@ -178,15 +178,6 @@
       event.preventDefault();
   });
 
-  // reloads page in same spot upon webpage refresh if rendered (not on redirect)
-  if (document.referrer === window.location.href) {
-    if (localStorage['scroll']) {
-      window.scroll({ top: localStorage['scroll'] })
-    }
-    window.addEventListener('scroll', () => {
-      localStorage['scroll'] = window.scrollY;
-    });
-  }
   // reloads planner in same spot upon webpage refresh
   scrollable.addEventListener('scroll',function() {
     localStorage.setItem('scrollPosition',scrollable.scrollTop);

@@ -13,14 +13,3 @@
     <% end %>
   </div>
 </div>
-
-<script>
-  if (document.referrer === window.location.href) {
-    if (localStorage['scroll']) {
-      window.scroll({ top: localStorage['scroll'] })
-    }
-    window.addEventListener('scroll', () => {
-      localStorage['scroll'] = window.scrollY;
-    });
-  }
-</script>
