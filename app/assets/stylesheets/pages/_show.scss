@@ -192,35 +192,35 @@ p .fringe-link {
     position: absolute;
     z-index: 2;
     transform-origin: center;
-    transform: scale(2.5);
+    transform: scale(2.3);
     margin-top: 5px;
     width: auto;
     height: auto;
     border: 1px solid $dark-blue;
     border-radius: 5px;
     background-color: white;
-    padding: 3px 5px;
+    padding: 2px 5px;
     font-size: 10px;
   }
 
   .calendar-date-time-container {
     display: flex;
     justify-content: center;
-  }
 
-  .calendar-show-date {
-    position: absolute;
-  }
+    .calendar-show-date {
+      position: absolute;
+    }
 
-  .calendar-show-time {
-    position: relative;
-    top: 0;
-    left: 0;
-    opacity: 0;
+    .calendar-show-time {
+      position: relative;
+      top: 0;
+      left: 0;
+      opacity: 0;
 
-    &:hover {
-      opacity: 1;
-      color: $dark-blue;
+      &:hover {
+        opacity: 1;
+        color: $dark-blue;
+      }
     }
   }
 }

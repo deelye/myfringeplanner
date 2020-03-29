@@ -60,7 +60,7 @@ class Show < ApplicationRecord
       @times << @starts[index] + " - " + @ends[index]
     end
 
-    @times.join(", ")
+    return self.show_times.uniq.count == 1 ? @times.join(", ") + " (#{self.duration})" : @times.join(", ") +  " (#{self.duration})" + " (check calendar as times vary each day)"
   end
 
   def starts
@@ -125,6 +125,7 @@ class Show < ApplicationRecord
       end
       times << times_string.join(", ")
     end
+
     return times
   end
 
@@ -134,7 +135,7 @@ class Show < ApplicationRecord
 
     dates_times = Hash.new
     days.each_with_index do |day, index|
-      dates_times[day] = times[index]
+      dates_times[day] = "#{day.ordinalize}: #{times[index]}"
     end
 
     return dates_times
@@ -145,7 +146,7 @@ class Show < ApplicationRecord
   end
 
   def time_warning
-    return "NOTE: Late night performance - For the purposes of listings, each day begins at 5am e.g. a performance listed as 2am Monday refers to a performance starting in the early hours of Tuesday morning."
+    return "NB: LATE NIGHT SHOWS - For the purposes of listings, each day begins at 5am so a performance listed as 2am Monday actually starts in the early hours of Tuesday morning."
   end
 end
 

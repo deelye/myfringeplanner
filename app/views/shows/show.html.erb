@@ -35,7 +35,7 @@
     </div>
     <div class="show-bottom-details">
       <h4><u>Details</u></h4>
-      <p><i class="far fa-clock fa-fw"></i> <%= @show.times %> (<%= @show.duration %>)</p>
+      <p><i class="far fa-clock fa-fw"></i> <%= @show.times %></p>
       <p><i class="fas fa-map-marker-alt fa-fw"></i> <%= @show.venue.name %> - <%= @show.venue.space %></p>
 
       <% if @show.performances.last.price == 0 %>
