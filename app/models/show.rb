@@ -61,8 +61,6 @@ class Show < ApplicationRecord
     end
 
     return self.show_dates_times.values.uniq.count == 1 ? @times.join(", ") + " (#{self.duration})" : @times.join(", ") +  " (#{self.duration})" + " (check calendar as daily times vary)"
-
-    # return @times.join(", ")
   end
 
   def starts
