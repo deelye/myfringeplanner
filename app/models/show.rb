@@ -145,7 +145,7 @@ class Show < ApplicationRecord
   end
 
   def time_warning
-    return "NOTE: Late night performance - For the purposes of listings, each day begins at 5am e.g. a performance listed as 2am Monday refers to a performance starting in the early hours of Tuesday morning."
+    return "NB: LATE NIGHT SHOWS - For the purposes of listings, each day begins at 5am so a performance listed as 2am Monday refers to a performance starting in the early hours of Tuesday morning."
   end
 end
 
