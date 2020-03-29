@@ -60,7 +60,9 @@ class Show < ApplicationRecord
       @times << @starts[index] + " - " + @ends[index]
     end
 
-    @times.join(", ")
+    return self.show_dates_times.values.uniq.count == 1 ? @times.join(", ") + " (#{self.duration})" : @times.join(", ") +  " (#{self.duration})" + " (check calendar as daily times vary)"
+
+    # return @times.join(", ")
   end
 
   def starts
@@ -125,6 +127,7 @@ class Show < ApplicationRecord
       end
       times << times_string.join(", ")
     end
+
     return times
   end
 
