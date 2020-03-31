@@ -164,6 +164,15 @@
 </div>
 
 <script type="text/javascript">
+
+  // prevents page rendering at the top on reload
+  if (localStorage['scroll']) {
+    window.scroll({ top: localStorage['scroll'] })
+  }
+  window.addEventListener('scroll', () => {
+    localStorage['scroll'] = window.scrollY;
+  });
+
   // prevents page scrolling when planner scrolling goes beyond its top/bottom limits
   var scrollable = document.querySelector(".planner-day");
   scrollable.addEventListener('wheel', function(event) {

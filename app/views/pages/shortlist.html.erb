@@ -13,3 +13,13 @@
     <% end %>
   </div>
 </div>
+
+<!-- prevents page rendering at the top on reload -->
+<script>
+  if (localStorage['scroll']) {
+    window.scroll({ top: localStorage['scroll'] })
+  }
+  window.addEventListener('scroll', () => {
+    localStorage['scroll'] = window.scrollY;
+  });
+</script>
